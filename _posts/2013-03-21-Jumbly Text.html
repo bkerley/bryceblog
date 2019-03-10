@@ -1,0 +1,43 @@
+---
+layout: regular
+title: "Jumbly Text"
+date: 2013-03-21T01:17:57+00:00
+---
+{% raw %}<figure data-orig-height="100" data-orig-width="185" data-orig-src="https://www.evernote.com/shard/s148/sh/d1ecb5b5-9cc7-4c1c-82e5-2466be074043/0ba6720babdcf725a54f403a6fe15276/deep/0/Screenshot%203/20/13%2020:49.jpg"><img src="https://66.media.tumblr.com/66c011ccf4421eda9cca61ebd08650b8/tumblr_inline_pk2ubhQlIb1qzmlsa_540.png" alt="lorem ipsum with a bad baseline: read on!" border="1px" data-orig-height="100" data-orig-width="185" data-orig-src="https://www.evernote.com/shard/s148/sh/d1ecb5b5-9cc7-4c1c-82e5-2466be074043/0ba6720babdcf725a54f403a6fe15276/deep/0/Screenshot%203/20/13%2020:49.jpg"/></figure><p>Gross! That slightly rotated text looks terrible!</p>
+
+<p>That text has been rotated the wrong way.</p>
+
+<figure data-orig-height="79" data-orig-width="138" data-orig-src="https://www.evernote.com/shard/s148/sh/3c311d7b-9f0e-4c50-adb3-3b4a043f95c2/8291e28e734cb99e3deedf7c85224ab7/deep/0/Screenshot%203/20/13%2020:53.jpg"><img src="https://66.media.tumblr.com/2cbc4a1bf9e57a98cef362445df1df82/tumblr_inline_pk2ubiTya81qzmlsa_540.png" alt="lorem ipsum with a bad baseline but rotated the other way" border="1px" data-orig-height="79" data-orig-width="138" data-orig-src="https://www.evernote.com/shard/s148/sh/3c311d7b-9f0e-4c50-adb3-3b4a043f95c2/8291e28e734cb99e3deedf7c85224ab7/deep/0/Screenshot%203/20/13%2020:53.jpg"/></figure><p>Still wrong.</p>
+
+<h1>Rotating Vectorized Text</h1>
+
+<p>To rotate vectorized text, use a <a href="https://en.wikipedia.org/wiki/Transformation_matrix#Rotation">Rotation matrix</a> on each vertex in the text that hasn&rsquo;t been rasterized yet. If your rasterizer doesn&rsquo;t support floating-point coordinates (why would it, you can&rsquo;t have part of a pixel<sup>1</sup>), the text will look all jumbly and weird.</p>
+
+<h1>Rotating Rasterized Text</h1>
+
+<p>Render the text to a grid of pixels called a &ldquo;surface.&rdquo; Use a rotation matrix on each pixel in screen space to sample the surface, using some kind of interpolation that isn&rsquo;t just nearest-neighbor. When you sample a point that&rsquo;s not completely foreground or completely background, you&rsquo;ll get a fuzzy-looking intermediate color.</p>
+
+<figure data-orig-height="85" data-orig-width="133" data-orig-src="https://www.evernote.com/shard/s148/sh/ab71687b-beef-4a55-b4b4-a1c68508ff2b/5c7f25c517cfe2d8c5789a0e3206cb3d/deep/0/Screenshot%203/20/13%2021:10.jpg"><img src="https://66.media.tumblr.com/c9dfd553fe5d0d839f6d88399dcfddf7/tumblr_inline_pk2ubj7myu1qzmlsa_540.png" alt="a fuzzy lorem ipsum" border="1px" data-orig-height="85" data-orig-width="133" data-orig-src="https://www.evernote.com/shard/s148/sh/ab71687b-beef-4a55-b4b4-a1c68508ff2b/5c7f25c517cfe2d8c5789a0e3206cb3d/deep/0/Screenshot%203/20/13%2021:10.jpg"/></figure><h1>What this means for your designs that have rotated text</h1>
+
+<p>Vectorized text is snapped to pixels in Firefox 17.0 on Mac OS X, Chrome 25.0.1364.172 m on Windows, many browsers I didn&rsquo;t feel like testing, and Photoshop. If this jumbly look is okay or you don&rsquo;t target these, you don&rsquo;t really care.</p>
+
+<p>In a web page, you have two ways of rotating text:</p>
+
+<code><pre>      .jumbly {
+        transform: rotateZ(1.5deg); 
+      }
+      
+      .smooth {
+        transform: rotate3d(0, 0, 1, 1.5deg); 
+      }
+    </pre></code>
+ 
+<p>The former, <code>rotateZ</code>, rotates vectorized text. The latter, <code>rotate3d</code>, uses a 3d transform that happens to rasterize the text before rendering it. Since this looks correct in more browsers, use that.</p>
+
+<figure data-orig-height="357" data-orig-width="166" data-orig-src="https://www.evernote.com/shard/s148/sh/a496fec8-a7fc-4eea-95bc-f9bca7c444fa/ada98392fbb3ca13d3971e4de8fbf4b1/deep/0/Screenshot%203/20/13%2021:16.jpg"><img src="https://66.media.tumblr.com/66155c09f1463ba487d86c8b495e5f6a/tumblr_inline_pk2ublOaYX1qzmlsa_540.png" alt="fuzzy and smooth text samples in times new roman" border="1px" data-orig-height="357" data-orig-width="166" data-orig-src="https://www.evernote.com/shard/s148/sh/a496fec8-a7fc-4eea-95bc-f9bca7c444fa/ada98392fbb3ca13d3971e4de8fbf4b1/deep/0/Screenshot%203/20/13%2021:16.jpg"/></figure><h1>Sources</h1>
+
+<p>Source code for the sample pages can be found in the <a href="https://github.com/bkerley/jumbly_text/">jumbly_text repo on GitHub.</a> I put a <a href="http://bkerley.github.com/jumbly_text/">demo page</a> up too.</p>
+
+<h4>Notes</h4>
+<ol><li>Well, sub pixel rendering is a thing, but you can only have three parts of a pixel in that case.</li>
+</ol>{% endraw %}

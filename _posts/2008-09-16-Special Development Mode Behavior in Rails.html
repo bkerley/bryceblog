@@ -1,0 +1,18 @@
+---
+layout: regular
+title: "Special Development Mode Behavior in Rails"
+date: 2008-09-16T19:19:06+00:00
+---
+{% raw %}<pre class="textmate-source sunburst"><span class="meta meta_rails meta_rails_controller">  <span class="keyword keyword_control keyword_control_def keyword_control_def_ruby">def</span> create
+    if RAILS_ENV == <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>development'
+      session[<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>url] = params[<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>url]
+      redirect_to homepage_path
+      return
+    end
+    store = OpenID::Store::Filesystem.new(RAILS_ROOT + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>/tmp')
+    consumer = OpenID::Consumer.new(session, store)
+    oid_req = consumer.begin params[<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>url]
+    realm = request.protocol + request.host_with_port
+    return_to = session_url
+    redirect_to oid_req.redirect_url(realm, return_to)
+  end</span></pre>{% endraw %}

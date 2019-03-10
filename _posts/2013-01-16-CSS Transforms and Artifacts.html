@@ -1,0 +1,16 @@
+---
+layout: regular
+title: "CSS Transforms and Artifacts"
+date: 2013-01-16T03:22:36+00:00
+---
+{% raw %}<p>Modern CSS has super-cool 2D and 3D transformations. <a href="http://coding.smashingmagazine.com/2012/01/06/adventures-in-the-third-dimension-css-3-d-transforms/">Smashing Magazine has a nice explanation.</a> There&rsquo;s some caveats though that might be new to web developers.</p>
+<p>Web browsers have to work hard to make things fit pixels. For example, they have to come up with a sane way to render <a href="http://ejohn.org/blog/sub-pixel-problems-in-css/">four columns, each taking up 25% of a 50px parent column</a> in a way that looks the least terrible. As part of this, they have to fudge things around a bit: adjacent elements with the same properties may have different sizes.</p>
+<p>The problem comes when you rotate or otherwise transform elements off the pixel grid. How do you render a line 1° off of horizontal? You either stair-step it, turning it into a jagged line; or you anti-alias it, turning it into a fuzzy line. The latter looks better, so you see lots of anti-aliased lines.</p>
+<p>What happens then when you have two objects with a similar background, on top of an object with a different background, both rotated a bit but still ideally flush?</p>
+<div><img src="http://i.bf1c.us/Panic_Blog_%C2%BB_Page_not_found.png" alt="rendering artifact in the Panic Blog 404 page"/></div>
+<p>The gap is less than a pixel wide, but still shows up because of how the anti-aliasing of both edges works.</p>
+<div><img src="http://i.bf1c.us/Panic_Blog_%C2%BB_Page_not_found-2.png" alt="no artifacts"/></div>
+<p>In this case, I moused over the sticky note for &ldquo;Prompt&rdquo; (excellent app by the way), and the artifacts disappeared. My guess is that Chrome has different rendering techniques based on which effects are active, and the one with the sticky note enlarged doesn&rsquo;t have the same artifact issues.</p>
+<h1>Solving the artifact problem</h1>
+<p>I have no idea; looking at the way Panic implemented their site, I don&rsquo;t see anything obvious, and it&rsquo;s possible that the artifact-causing rendering technique is something automatically applied that you wouldn&rsquo;t be able to control with CSS anyways.</p>
+<p>For now, I&rsquo;m just going to have to be aware of it, and keep an eye open for the best way to fix it.</p>{% endraw %}

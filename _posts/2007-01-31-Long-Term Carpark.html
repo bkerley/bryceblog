@@ -1,0 +1,39 @@
+---
+layout: regular
+title: "Long-Term Carpark"
+date: 2007-01-31T07:45:43+00:00
+---
+{% raw %}<p>In GCL:</p>
+
+<pre><code>>>(cadr '(1 2 3))
+
+2
+</code></pre>
+
+<p>Old and Busted:</p>
+
+<pre><code>irb(main):001:0> require 'carpark.rb'
+=> true
+irb(main):002:0> [1,2,3].cadr
+NoMethodError: undefined method `cdr' for 1:Fixnum
+    from ./carpark.rb:17:in `send'
+    from ./carpark.rb:17:in `method_missing'
+    from (irb):2
+irb(main):003:0> [1,2,3].cdar
+=> 2
+</code></pre>
+
+<p>New and Working:</p>
+
+<pre><code>irb(main):001:0> require 'carpark.rb'
+=> true
+irb(main):002:0> [1,2,3].cadr
+=> 2
+</code></pre>
+
+<p>Delivered straight to your door!</p>
+
+<pre><code>svn co <a href="http://brycekerley.net/svn/carpark/">http://brycekerley.net/svn/carpark/</a> carpark
+</code></pre>
+
+<p>Gems forthcoming (maybe this weekend).</p>{% endraw %}

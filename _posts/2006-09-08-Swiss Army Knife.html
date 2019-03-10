@@ -1,0 +1,15 @@
+---
+layout: regular
+title: "Swiss Army Knife"
+date: 2006-09-08T04:43:54+00:00
+---
+{% raw %}<p>Short post because it&rsquo;s late and I&rsquo;m tired, but Ruby&rsquo;s pretty damn useful if you have boring tasks you want to automate:</p>
+
+<pre><code>#!/usr/bin/env ruby
+f = File.new(ARGV[0], 'r').read
+f.each_byte do |b|
+  $stdout.write('0x'+b.to_s(16)+', ')
+end
+</code></pre>
+
+<p>in case you ever wanted to take your big binary file and inline it as a C array.</p>{% endraw %}

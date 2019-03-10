@@ -1,0 +1,34 @@
+---
+layout: regular
+title: "How to bounce Compiz"
+date: 2006-09-26T14:30:42+00:00
+---
+{% raw %}<p>I&rsquo;ve had this problem with Compiz (both compiz-vanilla and <s>compiz-quinnstorm</s> beryl), but after I&rsquo;ve been using my desktop for a while (could be minutes or days), Compiz just sort of freezes up and won&rsquo;t accept mouse or keyboard events (mouseovers, buttons, whatever).  So I&rsquo;ve got a NASTY HACK to bounce it easily.</p>
+
+<p>Right now, since I&rsquo;m using GDM, my gnome session starts connected to a dbus daemon, with all the environment variables that entails.  However, if Compiz freezes, I plainly can&rsquo;t use my current gnome session to restart compiz.</p>
+
+<p><img src="/typo/files/Screenshot-Sessions.png" alt="Gnome sessions control panel"/></p>
+
+<p>Here we see that compiz-manager starts up first, followed by my startcompiz script.  Compiz-manager&rsquo;s the handy little notification area app that provides a menu to do things, and also starts compiz for me.  Why is my script running right after it?</p>
+
+<p>Because it doesn&rsquo;t really start compiz anymore.  The part that&rsquo;s not commented out:</p>
+
+<pre><code>        echo "   Fixing backspace"
+            xmodmap -e "keycode 22 = BackSpace"
+
+        echo "   Preparing fixcompiz"
+            rm fixcompiz
+            echo export DISPLAY=$DISPLAY >> fixcompiz
+            echo export DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRESS >> fixcompiz
+            echo compiz --replace dbus csm >> fixcompiz
+            chmod u+x fixcompiz
+</code></pre>
+
+<p>Since this runs from within a gnome session, $DISPLAY and $DBUS_SESSION_BUS_ADDRESS are defined, so this simply populates ~/fixcompiz as so:</p>
+
+<pre><code>export DISPLAY=:0.0
+export DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-vCUILqIE6W,guid=589d124566cc145b6368533289986500
+compiz --replace dbus csm
+</code></pre>
+
+<p>Now, when your compiz breaks, you can ssh or switch to a shell terminal and just do ./fixcompiz.</p>{% endraw %}

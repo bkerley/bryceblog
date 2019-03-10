@@ -1,0 +1,16 @@
+---
+layout: regular
+title: "How I Got Into Ruby, Part 1"
+date: 2013-04-12T16:00:22+00:00
+---
+{% raw %}<p>I&rsquo;ve programmed computers since I got a TI-83 graphing calculator for high school algebra; learning TI-83 BASIC in high school, figuring out the &ldquo;right&rdquo; or at least &ldquo;best&rdquo; ways to work with it was a fun challenge. After that, I learned the typical PHP/MySQL environment during the general-education years of college, and Perl from coworkers at a job.</p>
+
+<p>During this time (2003-2005), I also picked up a book about Python, on the recommendation of friends online. It remained unopened, as PHP was easy to get deployed and the Python book didn&rsquo;t immediately launch into making and deploying web applications.</p>
+
+<p>I found a job working for Prof. Jennifer Collins, a meteorology professor at USF, doing general/light software work. Prof. Collins ran a rooftop weather station, and wanted to make this weather data, along with images from RADAR and satellite services, available on a screen in the building&rsquo;s lobby. The first thing I tore in to was the TCL and PHP setup that served weather images, current conditions, and historic data. Images came from the McIDAS software, data from a directory full of tens of thousands of CSV files (one for every ten minutes the weather station ran).</p>
+
+<p>At the same time, my good friend Sam Stephenson recommended that I learn Rails, then in an early pre-1.0 version. Writing the application was easy and quick, however the CGI process for serving each page was not. I got to experience the &ldquo;joy&rdquo; of configuring FastCGI on 2005-era Fedora Linux, and eventually got to use Zed Shaw&rsquo;s fantastic Mongrel app server (once it supported directory prefixes, which he released literally the second day I was working with it).</p>
+
+<p>Since then, I&rsquo;ve worked with Ruby nearly constantly, even in extremely hostile/incompatible situations. I worked for a little over a year performing security audits for a large enterprise-y client. In one research project for auditing, I needed a VBScript file to scrape configuration information from a Windows machine. Instead of suffering VBScript (a truly awful language,)  I wrote the bare minimum to load a few different configuration entry types, and templatized the rest to be driven by a Ruby application.</p>
+
+<p>In the next installment, I&rsquo;ll go into how I developed this into a career.</p>{% endraw %}

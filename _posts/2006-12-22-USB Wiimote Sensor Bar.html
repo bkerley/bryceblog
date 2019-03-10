@@ -1,0 +1,24 @@
+---
+layout: regular
+title: "USB Wiimote Sensor Bar"
+date: 2006-12-22T07:57:36+00:00
+---
+{% raw %}<p>After messing around with <a href="http://sourceforge.net/projects/darwiin-remote/">Darwiin Remote</a> for a week or two, I decided I was done messing with crummy relative movement (tilt back for up, forwards for down, keep perfectly level for standing still), so I conned my little brother into helping me make a rig of USB-powered infrared LEDs for my iBook.</p>
+
+<p>Starting with two IR LEDs from Radio Shack, some anonymous red LED ripped from an old computer case (so we could know that it worked), spare wires, and a USB cord from a bad old digital camera (it was so cheap that if you turned it off or removed batteries the RAM keeping your pictures around would power off, also it was purple and more than twice as large as my current phone).</p>
+
+<p>First we used a handy <a href="http://led.linear1.org/led.wiz">LED circuit wizard</a> to figure out what kind of resistor we needed:</p>
+
+<p><a href="http://www.flickr.com/photos/bonzoesc/328415489/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/143/328415489_12afdb4796_o.jpg" width="380" height="331" alt="Schematic"/></a></p>
+
+<p>After that, we went out, found some resistors, and realizing we didn&rsquo;t have one the right resistance, made one out of other resistors (hooray for remembering Physics 2).</p>
+
+<p><a href="http://www.flickr.com/photos/bonzoesc/328415348/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/127/328415348_93ebef2a77.jpg" width="500" height="375" alt="Resistor Network"/></a></p>
+
+<p>Then we soldered up the LEDs, daisy chaining them on the end of longish wires to make adjusting the spacing easy/feasible.  Having them about an inch apart works from about a foot, but it&rsquo;s easy enough to tweak.</p>
+
+<p><a href="http://www.flickr.com/photos/bonzoesc/328415405/" title="Photo Sharing"><img src="http://farm1.static.flickr.com/138/328415405_6c3f4662ab.jpg" width="500" height="375" alt="IR LED"/></a></p>
+
+<p>Finally, we cut up the old camera cable to get power, first using the colors (I think they were black and red for ground/+5V respectively), but verifying with a DVM (the two long pins on the edge of the connector are the power pins, and you can <a href="http://en.wikipedia.org/wiki/USB#USB_signaling_2">check against Wikipedia</a> to be sure).</p>
+
+<p>In the end, it was less than an hour&rsquo;s work including scavenging for parts around the house.  It works pretty well with DarwiinRemote 0.3.1, but I keep having to nuke my Wiimote&rsquo;s entry from the Bluetooth prefpane in between uses.</p>{% endraw %}

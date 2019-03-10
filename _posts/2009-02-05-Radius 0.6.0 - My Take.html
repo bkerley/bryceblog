@@ -1,0 +1,34 @@
+---
+layout: regular
+title: "Radius 0.6.0 - My Take"
+date: 2009-02-05T02:45:00+00:00
+---
+{% raw %}<p><a href="http://radius.rubyforge.org/">Radius</a> is &ldquo;powerful tag-based templates,&rdquo; or in
+  layman&rsquo;s terms, it&rsquo;s safe templates for Ruby that look like HTML.</p>
+
+<pre><code><ul>
+  <g:stooge>
+    <li><g:name /></li>
+  </g:stooge>
+</ul>
+</code></pre>
+
+<p>Radius 0.5.2 kind of sucked though.  The more params you had on tags,
+the slower it got:</p>
+
+<p><script src="http://gist.github.com/54789.js"></script>
+(left column is number of params)</p>
+
+<p>Since our big app at work uses Radius not just as user->system templating code, but as
+system->system processing code, we were generating Radius tags with forty params, which
+Radius’s regex would have taken about <em>eight months</em> to chew up.</p>
+
+<p>So
+<a href="http://github.com/bkerley/radius/blob/c0157e4ee59c03b9a6ed946ced4ff850b26650d9/lib/radius/parser/scan.rl">I rewrote it</a>,
+in Ragel which is just flat out nicer. Instead of dealing with a regex, you’re describing
+a state machine; they both get turned into NFAs in the end.</p>
+
+<p>Looks like the gem hasn’t built yet on github, so if you want it you’ll have to
+<a href="http://github.com/bkerley/radius/">build it yourself</a>
+(it’ll be bkerley-radius-0.6.0 when it does go). I’ll try to edit this post when
+it’s available.</p>{% endraw %}

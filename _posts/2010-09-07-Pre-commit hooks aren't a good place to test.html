@@ -1,0 +1,12 @@
+---
+layout: regular
+title: "Pre-commit hooks aren't a good place to test"
+date: 2010-09-07T18:11:36+00:00
+---
+{% raw %}<p><em>Inspired by reading &ldquo;<a href="http://rubypond.com/blog/slaying-dragons-git-bash-ruby">Slaying dragons with git, bash, and ruby</a>&rdquo; by Glenn Gillen.</em></p>
+
+<p>I don&rsquo;t use pre-commit hooks to make sure my code is nice and clean, to make sure all my tests pass, or to make sure there&rsquo;s no debugging stuff left; there&rsquo;s no place for it in my workflow.</p>
+
+<p><a href="http://jamesshore.com/Blog/Red-Green-Refactor.html">Red, Green, Refactor</a> is what I try to do, with a commit after each step. This way, if I decide that I hate the current test, implementation, or refactoring, I can quickly roll it back without hitting &ldquo;undo&rdquo; in different files. As a side effect, I&rsquo;m constantly committing with failing tests.</p>
+
+<p>If you need a little digital nanny to keep you from breaking the build, try &ldquo;autotest,&rdquo; (or a similar automatic-testing tool) and just make sure it comes up green before you push or send a pull request.</p>{% endraw %}

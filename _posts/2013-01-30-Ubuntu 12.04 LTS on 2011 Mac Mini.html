@@ -1,0 +1,54 @@
+---
+layout: regular
+title: "Ubuntu 12.04 LTS on 2011 Mac Mini"
+date: 2013-01-30T02:05:00+00:00
+---
+{% raw %}<p>This post should be short and sweet, because it was easy. This is a Macmini5,3, and with Ubuntu Server 12.04.</p>
+<ol><li>Boot the Mac Mini and do the initial setup stuff.</li>
+<li>Using Disk Utility, resize the Mac partition to 40GB or so.</li>
+<li>Hook up an external CD drive (my Mini doesn&rsquo;t have an internal one).</li>
+<li>Download Ubuntu, and burn it to a CD.</li>
+<li>Hold down &ldquo;option&rdquo; while you reboot the Mac Mini with the CD in.</li>
+<li>Use the arrow keys to pick the &ldquo;EFI Boot&rdquo; option when it appears on the far right.</li>
+<li>Go through the normal Ubuntu install process. <em>Make sure you configure a wired network connection.</em></li>
+<li>The system should boot into Linux after setup.</li>
+<li>Do Linux things.</li>
+</ol><h1>I lied</h1>
+<p>This post should be short and sweet, but I&rsquo;m bad at computers.</p>
+<p>Since I kind of quit doing PC hardware I mostly stopped having spare wired keyboards around; my desktop has a wired keyboard, my notebook computers are keyboards, and there&rsquo;s some Bluetooth keyboards that came with computers in the closet. The only spare wired board I have is an Apple Design Keyboard, which hooks to USB through a Griffin iMate.</p>
+<a href="http://www.flickr.com/photos/bonzoesc/8428797912/" title="Apple Design Keyboard"><img src="http://farm9.staticflickr.com/8211/8428797912_dc0cae0ce9_z.jpg" width="480" height="640" alt="Apple Design Keyboard"/></a>
+<p>The iMate is not a USB HID device. It&rsquo;s an Apple Desktop Bus adaptor that exposes ADB to the system. Mac OS X 10.8 Mountain Lion still has ADB keyboard drivers. Ubuntu does not (Linux might, but Ubuntu doesn&rsquo;t put them on the install CD because it&rsquo;s <s>2012</s> 2013 and Apple haven&rsquo;t shipped ADB hardware for eight years). So I had to swap the USB keyboard off my desktop for the ADB keyboard.</p>
+<p><em>Side note: look at the funky blue color of the USB cable on the iMate.</em></p>
+<p>During Ubuntu setup, I didn&rsquo;t have a spare network port at my desk, so I told it I&rsquo;d do the network later when I plugged it in downstairs. Setup went normally, and the computer booted to a console. Hooray! Time to move the computer downstairs.</p>
+<img src="http://i.bf1c.us/1._bkerley_Dieter_~_(zsh).png" alt="re-created screenshot of me repeatedly running nmap" title="re-created screenshot of me repeatedly running nmap" width="682" height="910"/><p>Hmm, Airport Utility doesn&rsquo;t show me a list of what IP addresses its DHCP server has allocated, but I can hammer everything with nmap! I learned that my Nest thermostat has a network presence, but couldn&rsquo;t find my Linux box.</p>
+<p><em>Wait, I thought I saw the light on the front blinking, could it possibly be freaking out because it has no monitor?</em></p>
+<p>I bring the thing upstairs, and decide it should also have a network connection. I disconnect the PS3 and TV from wires (the PS3 has wifi, and the TV sucks at network stuff anyways), and rummage through the closet for the World&rsquo;s Ugliest Switch.</p>
+<a href="http://www.flickr.com/photos/bonzoesc/8428794362/" title="World's Ugliest Switch, 2006"><img src="http://farm9.staticflickr.com/8092/8428794362_ec0e04cb50_o.jpg" width="288" height="352" alt="World's Ugliest Switch, 2006"/></a>
+<p>In 2006, this switch was recovered from (what amounts to) the trash after being ruined by a thunderstorm. My roommate and I replaced the busted power supply board with an old power cord for an internal hard drive, and jammed a wire into an ATX power supply wiring block to give it the 5V it wanted. Since then I&rsquo;ve lost the ATX supply we hacked, so I had to spend a few minutes finding an appropriate wire to strip, finding the appropriate tool to do so (fingernail clippers), and the appropriate way to keep it in the wire harness (packing tape, which didn&rsquo;t work very well, but it worked).</p>
+
+<h1>Network Configuration <em>and</em> Leaps of Faith</h1>
+<p>After getting the Mini hooked to the monitor, keyboard, and network, I found that it didn&rsquo;t just assume I wanted to auto-discover network settings; it didn&rsquo;t want to join the network at all. I told it to discover settings, rebooted it, and it worked, and showed on mmap.</p>
+<p>Moved it back downstairs, and all was good!</p><p>I&rsquo;m using the machine as a virtual machine host with OpenStack. I want an easy way to try stuff with Chef and other tools to make computers disposable in a sense: I want fixing settings to be done by demolishing the computer and re-building it, not by manually connecting and editing a file. OpenStack likes to have manually assigned IPs.</p>
+<p>I open Airport Utility, tell it to only pass out IP addresses from 1-100 instead of 1-200, wait for it to restart, and reconfigure the VM host to be 101.</p>
+<p>This involves changing a file that controls the network interface, asking the computer to take the interface down and back up, and hoping you didn&rsquo;t mess it up or you&rsquo;ll have to physically go to the computer and fix it. Low stakes when it&rsquo;s downstairs, but still…</p>
+
+<code><pre>~> sudo ifdown eth0; sudo ifup eth0
+[sudo] password for bkerley: 
+ * Disconnecting iSCSI targets   ...done.
+ * Stopping iSCSI initiator service   ...done.
+ * Starting iSCSI initiator service iscsid   ...done.
+ * Setting up iSCSI targets   ...done.
+ssh stop/waiting
+ssh start/running, process 27089
+~>  
+</pre></code>
+<p>Somehow, I got it right the first time. Exciting!</p>
+<p> By this time, it&rsquo;s late, and I just go to bed with the SSH connection hanging open.</p>
+<p>In the morning, it&rsquo;s not on the network. First order of business:</p>
+
+<blockquote class="twitter-tweet"><p><a href="https://twitter.com/search/%23offee">#offee</a> time</p>    <div><a href="https://twitter.com/coffee_dad/status/286282991280484352">January 2, 2013</a></div></blockquote>
+<script src="//platform.twitter.com/widgets.js" charset="utf-8" type="text/javascript"></script><p>With my hot cup of aeropressed Panther Finca las Mercedes (good coffee), I reboot the machine on my way upstairs, wait a minute, and it&rsquo;s back. I read the logs, and it forgot to not auto-configure, and changed addresses on me in the middle of the night. That should be fixed since I rebooted it.</p>
+<p>I went to switch keyboards on my desktop, but I pulled the wrong cord. The groovy translucent blue the iMate uses is also the same color as the Firewire 800 cord for my external SSD I run my iMac from, so I had to reboot that after facepalming.</p>
+<blockquote class="twitter-tweet"><p>here’s a little computing pro tip for you guys: do NOT unplug the drive the OS is on when you’re trying to unplug the keyboard</p>    <div><a href="https://twitter.com/BonzoESC/status/296304518075928576">January 29, 2013</a></div></blockquote>
+<p>I also forgot to configure name resolution (turns &ldquo;facebook.com&rdquo; into &ldquo;173.252.110.27&rdquo;), so that involved a second leap of faith.</p>
+<p>With that nailed down, I seem to have run out of broken things to mess with, which is pretty much the story of computing right there.</p>{% endraw %}

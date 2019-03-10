@@ -1,0 +1,20 @@
+---
+layout: regular
+title: "Riak on Samsung ARM7 Chromebook"
+date: 2013-05-31T19:01:10+00:00
+---
+{% raw %}<p>Here&rsquo;s how to run the <a href="http://basho.com/riak/">Riak distributed database</a> on a Samsung Chromebook.</p>
+<ol><li>Follow the <a href="http://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/samsung-arm-chromebook">Developer Mode instructions</a> to enable developer mode.</li>
+<li>Follow the <a href="https://github.com/dnschneid/crouton">Crouton instructions</a> to get a Debian-like chroot. I used <code>sudo sh -e ./crouton -t xfce</code> to get something graphical but not huge like Gnome.</li>
+<li><code>sudo apt-get install erlang git build-essential</code> to get the dependencies.</li>
+<li><a href="http://docs.basho.com/riak/latest/downloads/">Download the Riak source</a>.</li>
+<li><code>tar zxf riak-<strong><TAB></strong></code></li>
+<li><code>cd riak-<strong><TAB></strong></code></li>
+<li><code>make</code></li>
+<li><code>make rel</code></li>
+<li><code>cd rel/riak</code></li>
+<li><code>./bin/riak start</code></li>
+</ol><p>That&rsquo;ll get Riak running locally. I literally just did this, so I have no idea how to get it visible to the world; that might come later.</p>
+
+
+<img src="https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-prn2/968846_10101839022021971_1821747454_n.jpg" alt="Riak /stats output"/>{% endraw %}

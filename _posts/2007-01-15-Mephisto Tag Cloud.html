@@ -1,0 +1,38 @@
+---
+layout: regular
+title: "Mephisto Tag Cloud"
+date: 2007-01-15T20:51:13+00:00
+---
+{% raw %}<p>Back when I used <a href="http://typosphere.org/">Typo</a>, I enjoyed having the Tags sidebar module available to show that I only really write about three subjects on any regular basis.  However, while <a href="http://mephistoblog.com/">Mephisto</a> did come with tag support, I couldn&rsquo;t make them different sizes, forcing users to actually read tiny numbers if they wanted to know which categories were bigger.  So, (since you know how I roll), I had to figure out how to do it.</p>
+
+<p><img src="http://brycekerley.net/mp/assets/2007/1/15/screenshot_1-15-2007_1-15-2007_10-47-0_10-47-0.png" alt="Grapher showing logarithm function"/></p>
+
+<p>Basically, a tag cloud is a collection of tags sized by their relative popularity.  My favorite function for sizing them is the logarithm, because it doesn&rsquo;t let big tags get ridiculously far ahead of smaller ones.  In particular, I&rsquo;m using y=(8* ln(x)) + 8 to calculate font size in points (y) from number of articles (x).  The smallest a tag can be (with a single article) is 8pt, and at 100 articles it only gets up to 44pt, which is perfectly reasonable for my number of articles.  Fortunately, the multiplier is tweakable.</p>
+
+<h1>Usage</h1>
+
+<p>Here&rsquo;s my tag.liquid:</p>
+
+<pre class="textmate-source sunburst"><span class="source source_liquid source_liquid_tags source_liquid_tags_embedded source_liquid_tags_embedded_html">{% include <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>shared' %}</span>
+<span class="punctuation punctuation_definition punctuation_definition_tag punctuation_definition_tag_html"><</span>h2>All Tags<span class="punctuation punctuation_definition punctuation_definition_tag punctuation_definition_tag_html"></</span>h2>
+<span class="punctuation punctuation_definition punctuation_definition_tag punctuation_definition_tag_html"><</span>ul class=<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_html">"</span>monthblock">
+{% <span class="keyword keyword_control keyword_control_ruby">for</span> tag in site.tags %}<span class="punctuation punctuation_definition punctuation_definition_tag punctuation_definition_tag_html"><</span>li style=<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_html">"</span>font-size: {{tag | tagged_articles | calc_tag_weight}}pt">{{<span class="meta meta_syntax meta_syntax_ruby meta_syntax_ruby_start-block"> </span>tag | link_to_tag  }}<span class="punctuation punctuation_definition punctuation_definition_tag punctuation_definition_tag_html"></</span>li>
+{% endfor %}
+<span class="punctuation punctuation_definition punctuation_definition_tag punctuation_definition_tag_html"></</span>ul>
+</pre>
+
+<p>(the weirdly long line is so that my HTML comes out looking nice)</p>
+
+<h1>Getting the plugin</h1>
+
+<p>Mephisto supports installing (and keeping updated) plugins right from svn, which is pretty sweet.</p>
+
+<p>I highly recommend the trunk release - there&rsquo;s not much there to break. (famous last words)</p>
+
+<pre><code>#in your mephisto root
+script/plugin install -x <a href="http://brycekerley.net/svn/mephisto_tag_cloud/trunk/">http://brycekerley.net/svn/mephisto_tag_cloud/trunk/</a>
+</code></pre>
+
+<h1><s>Whining about</s> Reporting bugs</h1>
+
+<p>Send bug reports to <a href="mailto:bkerley@brycekerley.net">bkerley@brycekerley.net</a> after checking <a href="http://brycekerley.net/trac/trac.fcgi/report/1">Trac</a> to see if they&rsquo;re fixed.  Ticket submission&rsquo;s not on Trac because it&rsquo;s a spam magnet and I don&rsquo;t feel like putting up with it.</p>{% endraw %}

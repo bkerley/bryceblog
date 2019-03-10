@@ -1,0 +1,58 @@
+---
+layout: regular
+title: "A Nicer Syntax for Nicer Search"
+date: 2013-09-13T02:46:00+00:00
+---
+{% raw %}<p>Riak&rsquo;s Yokozuna (or &ldquo;yz&rdquo; for short) full-text search feature has been a long time coming. <a href="https://github.com/basho/yokozuna/commit/bce28004900463aa665a866c35342a2569baedc8">The first commit</a> by <a href="https://twitter.com/rzezeski">Ryan Zezeski</a> is from June of 2012, and we&rsquo;ll get it released with Riak 2.0 this year. Yokozuna integrates Apache Solr full-text search with Riak.</p>
+
+<p>The last few months of my two years (as of today!) at Basho have had me on the Clients team, where I&rsquo;ve been building the <a href="https://rubygems.org/gems/riak-client">Riak Ruby client</a>, that allows Ruby applications to store and retrieve data from Riak. As part of this, we&rsquo;re getting the clients ready for Riak 2.0, which includes Yokozuna support.</p>
+
+<h1>The Competition</h1>
+<p>Rails 3 included the <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface</a>, which makes writing complicated queries and getting objects back easy:</p>
+
+<div class="highlight"><pre>party.users.where(given_name: given_name).count
+</pre></div>
+
+<p>Instead of requiring the programmer to know the syntax of both Ruby and SQL, this query interface does a pretty good job of making the SQL semantics make sense in Ruby.</p>
+
+<h1>Solr is Not SQL and Riak is Not SQL</h1>
+<p>The Apache Solr full-text search engine is a database with a query langage. It&rsquo;s distinct from SQL: instead of describing and manipulating relations like SQL, it&rsquo;s completely built around querying a collection of documents.</p>
+<code><pre>bryce:"hi" OR bryce:"hello"</pre></code>
+<p>Yokozuna is built on Solr. Saving a Riak object in a yz-indexed bucket triggers the indexing process, which parses the document, finds keywords, and puts them in an index. Depending on the document, it may have multiple fields to index. For example, a JSON document containing a hash has lots of fields, an XML document is full of fields, and a plain text document has one big field.</p>
+<p>Querying for values in the index returns a list of matches, which include the Riak bucket and key where the document is stored: <tt>_yz_rb</tt> and <tt>_yz_rk</tt> for &ldquo;Riak Bucket&rdquo; and &ldquo;Riak Key,&rdquo; respectively. With that result set, the developer can then load the keys at their leisure.</p>
+
+<h1>Ruby is Not Solr</h1>
+<p>Putting Solr/Lucene query strings together is almost as awful as putting SQL together, and almost as dangerous too: Solr injection doesn&rsquo;t have as many dangers as SQL injection, but they&rsquo;re still there. Fortunately, we have a known-nice interface for building queries, and we can take what we need:</p>
+<div class="highlight"><pre>q = @bucket.query.
+        where(name_t: '*e*').
+        order(created_dt: 'asc').
+        limit(5).
+        offset(5)
+</pre></div>
+<p>This is implemented in the <a href="https://github.com/bkerley/riak-yz-query">Riak Yokozuna query</a> Ruby gem I put together on Sunday. It adds a <tt>query</tt> method to <tt>Riak::Bucket</tt> objects, which returns a <tt> Riak::YzQuery::QueryBuilder</tt> instance, on which the rest of the query expression is built.</p>
+<p>A nice part about Solr is that it only includes matching index entries (SQL <tt>WHERE</tt>), and specifies sorting (<tt>ORDER</tt>), row selection, and other query features separately. This means that we can generally keep our concerns separate, and nothing&rsquo;s really stopping us from building the &ldquo;where&rdquo; and &ldquo;order&rdquo; clauses as we go.</p>
+<p>A <tt>QueryBuilder</tt> instance provides the four query methods seen above, and &ldquo;chains&rdquo; them so that they return a new <tt>QueryBuilder</tt> that represents the original one modified by the new query data:</p>
+<div class="highlight"><pre>q = @bucket.query.where name_t: 'Andrew'
+q.keys #=> ["PtgA5YsxWpSg7RzTY2eJVJ81hDQ", "OL1quOfOKiYEmxYsqvjf9cyRmH3"]
+q2 = q.where name_t: 'Stone'
+q2.keys #=> ["OL1quOfOKiYEmxYsqvjf9cyRmH3"]
+</pre></div>
+<p>They also have the <tt>keys</tt> and <tt>values</tt> methods to perform the query and retrieve the response and the values for the keys in the response.</p>
+<h2>Limit and Offset</h2>
+<p>These are just integers, so the <tt>QueryBuilder</tt> simply chains off a new instance with these new values.</p>
+<h2>Order</h2>
+<p>A Solr order clause is very similar to the <tt>ORDER BY</tt> clause in SQL. To order by a document&rsquo;s &ldquo;name&rdquo; field ascending, and &ldquo;created_at&rdquo; descending when two documents have the same name, the clause in both SQL and Solr is &ldquo;name asc, created_at desc&rdquo;. The gem allows you to build this several ways:</p>
+<div class="highlight"><pre>q = @bucket.query.where(name_t: 'Andrew').order(created_dt: 'asc').keys
+#=> ["OL1quOfOKiYEmxYsqvjf9cyRmH3", "PtgA5YsxWpSg7RzTY2eJVJ81hDQ"]
+q = @bucket.query.where(name_t: 'Andrew').order('created_dt desc').keys
+#=> ["PtgA5YsxWpSg7RzTY2eJVJ81hDQ", "OL1quOfOKiYEmxYsqvjf9cyRmH3"]
+</pre></div>
+<h2>Where</h2>
+<p>This is where the complexity is: I wanted to build something as flexible as Active Record&rsquo;s where clauses, that would take hashes for equality matches, arrays for parameter escaping, and strings for more complicated querying. I also wanted to support ranges, times, numbers, in addition to strings. As a result, the <a href="https://github.com/bkerley/riak-yz-query/blob/v0.0.1/lib/riak/yz_query/where_clause.rb"><tt>WhereClause</tt></a> class is as complicated as the <tt>QueryBuilder</tt>.</p>
+<p>When creating where clauses with hashes alone, handling it is fairly simple: just keep merging the hashes together, and at the end, join the pairs with &ldquo;AND&rdquo; and send that to Yokozuna.</p>
+<p>For strings (and arrays, which I treat like strings after deparameterizing them) I didn&rsquo;t want to deal with parsing them back out to hashes, so I just parenthesize them and AND them together. If I&rsquo;m joining a string and a hash, the hash gets converted to a string, and everything follows from there.</p>
+<h1>Nicer</h1>
+<p>A big benefit of this approach is that it minimizes &ldquo;string programming.&rdquo; Instead of having huge monolithic Solr strings in your models, instead you have syntax-checked Ruby with no, or at least smaller, strings. The chaining means it&rsquo;s easier to manipulate and paginate the queries prior to expensive fetch operations or showing the results to the user.</p>
+<p>At the same time, it&rsquo;s not strictly <em>necessary</em>, so it&rsquo;ll remain separate from but dependent on the Riak Ruby client proper. It&rsquo;s a nice way to build queries, but doesn&rsquo;t really provide any of the plumbing necessary to run them itself.</p>
+<h1>Today and Tomorrow</h1>
+<p>The gem is published on RubyGems and the source is on GitHub, but it&rsquo;s in no way production ready: the tests are hardcoded to my local Riak install, it depends on an unstable development version of Riak (<a href="https://github.com/basho/riak/tree/riak-2.0.0pre1">2.0.0pre1</a>), and the very literal bleeding edge of the Riak Ruby client. I&rsquo;d like to get it 1.0 after Riak 2 comes out, but time will tell.</p>{% endraw %}

@@ -1,0 +1,126 @@
+---
+layout: regular
+title: "Defcon CTF Quals - Trivia 300"
+date: 2009-06-11T00:29:00+00:00
+---
+{% raw %}<p>This year&rsquo;s Defcon Capture the Flag qualifiers were this weekend, and as usual,
+  I competed with 0x28 Thieves at the University of South Florida (which is in Tampa,
+  and not South Florida.) The contest was a similar format to previous years (forty-eight
+  hours to score as many points as fast as possible on a Jeopardy-style board), although
+  the team running it was <a href="http://ddtek.biz/">Diutinus Defense Technologies</a>, instead of
+  <a href="http://kenshoto.com/">Kenshoto</a> as in previous years.</p>
+
+<p>The most fun problem for me was Trivia 300, phrased as such:</p>
+
+<blockquote>
+  <p>pwn2.ddtek.biz:11511, provide 200 valid solutions in a row
+and you will get a prize, but you better be quick!
+Password == MAZE4J002PLAY</p>
+</blockquote>
+
+<p>Netcat (<code>nc</code>) to that server, password in hand, gives you:</p>
+
+<pre><code>Good luck! You have 8 seconds per maze.
+Maze solutions must be presented as a single line of input.
+###############
+##.#...##.....#
+#....#....##.##
+#.#.#.#.#.....#
+#...#.....#.#.#
+#.##..#.#.##..#
+#.#.#...#...s##
+#.....#..#.#..#
+#.#.#..#....#.#
+#.#.#.#.#.#f.##
+#..#.......#..#
+##...#.#.#..#.#
+#.#.##...##.#.#
+#...#..#......#
+#.#..#...##.#.#
+#..#...#......#
+##..##..#.#.#.#
+###....#......#
+###############
+</code></pre>
+
+<p>Hey, I remember this from data structures!</p>
+
+<h1>Writing your own</h1>
+
+<p>If you want to try your hand at this before getting the spoilers and
+hints below (or concurrent to them), I peeled off a few mazes for
+you: <a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt"></a><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt">http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt</a></p>
+
+<p>If you want to use those with my code, you’ll have to rewrite it to
+not shell out to <code>nc</code>.</p>
+
+<h1>Maze solving</h1>
+
+<p>There’s two high-level strategies for finding your way out of a maze:</p>
+
+<ul><li>Depth-first: go straight to a dead end, rewind to the last unused
+fork you saw, and try again.  Uses a stack to remember the current path.</li>
+<li>Breadth-first: traverse every path from the current one, keeping
+them in a queue.  Also requires a writable copy of the maze to mark
+the traversed paths.</li>
+</ul><p>Breadth-first is usually a better choice: it always finds the shortest
+path. Also, I remembered how to implement it.</p>
+
+<h1>Implementation in Ruby</h1>
+
+<p>I’ve got links to my code here: there’s cusses since it’s competition
+code.  Also, please excuse my horrible style (defining functions all
+over the place, no classes, etc.) for the same reason.</p>
+
+<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L17-L34">Lines 17-34</a></p>
+
+<p>The first thing you have to do is download the maze, by reading lines
+until you see one that’s all <code>#</code>s (walls).  Chuck the line strings in
+an array.  While you’re at it, find the start.</p>
+
+<p>Also, since ddtek occasionally generates mazes that have the start
+point under the finish point, now is a good time to fail out.</p>
+
+<p>When that’s done, the real work begins.</p>
+
+<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L67-L93">Lines 67-93</a></p>
+
+<p>In each queue entry, I store the row and column to be traversed, and
+the path leading up to that point; the only entry at first is the
+start (represented by an <code>s</code> on the map).</p>
+
+<p>While there’s still queue entries, dequeue the first entry, get its
+neighbors, and see if any are pathable or finish entries.  Add any
+pathable entries to the queue (along with a freshly-lengthened path),
+and if there’s a finish entry, jump out of the loop with the updated path.</p>
+
+<p>If <code>Array#shift</code> fails to pull an entry off the processing queue,
+plainly we’ve found an unsolvable maze.</p>
+
+<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L98-L124">Lines 98-124</a></p>
+
+<p>Finally, go down the path from the finish node, decoding it into
+cardinal directions.  Send that over the wire, and go to the next maze
+if you haven’t solved two hundred.</p>
+
+<h1>Implementation Details</h1>
+
+<p>Ruby’s <code>TCPSocket</code> was failing pretty hard, and I didn’t feel like
+troubleshooting it.  Using <code>nc</code> worked okay, but what actually got
+us all the way to maze #200 was using <code>nc -i1</code>, which basically
+flushes buffers every second whether they’re full or not (please
+do not use this explanation in any serious context.)</p>
+
+<h1>Trivia 300 Solutions</h1>
+
+<p>Source code of my solution:
+<a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb"></a><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb">http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb</a></p>
+
+<p>Solution from The Art of Approximation in Science and Engineering:
+<a href="http://pastebin.com/f79ce0843"></a><a href="http://pastebin.com/f79ce0843">http://pastebin.com/f79ce0843</a></p>
+
+<h1>Solutions to other Problems</h1>
+
+<p>Awesome and exhaustive writeups on everything from VedaGodz: <a href="http://shallweplayaga.me/"></a><a href="http://shallweplayaga.me/">http://shallweplayaga.me/</a></p>
+
+<p>Binary 300, from KOrUPt of SapHeads: <a href="http://korupt.co.uk/?p=132"></a><a href="http://korupt.co.uk/?p=132">http://korupt.co.uk/?p=132</a></p>{% endraw %}

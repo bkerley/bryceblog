@@ -1,0 +1,18 @@
+---
+layout: regular
+title: "Propagation and Payload"
+date: 2006-05-02T18:42:00+00:00
+---
+{% raw %}<p><a href="http://daringfireball.net/2006/05/good_journalism">From Daring Fireball</a></p>
+
+<blockquote>
+  <p>The bugs reported by Ferris are legitimate bugs, but to my eyes (and Rosyna’s — who thinks Ferris is counting the same TIFF rendering bug twice), they’re all just ways to make an application crash, one of which has already been fixed in 10.4.6. But Ferris reports that this one, regarding Safari, “causes the application to crash, and or [sic] may allow for an attacker to execute arbitrary code”. Emphasis on the may in “may allow”, apparently, because the only thing his examples do is cause Safari to crash.</p>
+  
+  <p>Anything that causes Safari to crash certainly sucks. And presumably Apple is working not just to fix these particular bugs, but to fix the architecture of Safari to make it less vulnerable in general to these sort of bugs in the system’s image-parsing routines. But the genius here — and I’m not sure whether the credit goes to Ferris or Goodin, so let’s just credit them both — is in the leap from bugs which, as Ferris originally described, “may allow for an attacker to execute arbitrary code”, to bugs which, in Goodin’s article, “potentially [allow] a criminal to execute code remotely and gain access to passwords and other sensitive information”.</p>
+</blockquote>
+
+<p>I&rsquo;d like to comment on this just a bit from the view of somebody who&rsquo;s somewhat familiar with security.</p>
+
+<p>An application crash bug on certain inputs can lead to pretty much two classes of exploits - denial of service (crashing to some unusable state, be it not running or an infinite loop) and arbitrary code execution.  However, the difference between these two classes isn&rsquo;t always apparent - an incorrectly used buffer overflow exploit might clobber the RP or something farther up the stack in a way that just breaks the program, instead of hitting the shellcode.  Since there&rsquo;s not a huge community working on breaking Safari yet, it&rsquo;s possible that nobody&rsquo;s done the research to get any shellcode working with this DoS exploit.  It&rsquo;s also possible that it&rsquo;s not totally possible to use it for code execution.</p>
+
+<p>Most code execution exploits can lead to remote code execution and compromise of information, however.  The Metasploit Framework provides a useful way to separate the attack vector (exploit in the msf parlance) and the shellcode (payload).  Once an exploit has been written for msf, it&rsquo;s trivial to use it with any of the dozen or so payloads, some of which are fantastically powerful remote shells allowing the attacker to stage other exploits (such as a privilege escalation exploit to get superuser access), join a VNC server to a current desktop session, or any number of other enjoyable diversions.</p>{% endraw %}

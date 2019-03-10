@@ -1,0 +1,33 @@
+---
+layout: regular
+title: "Defcon Decompression, Part 2"
+date: 2007-08-15T04:28:30+00:00
+---
+{% raw %}<p>Once we actually got into the CTF game image (running on FreeBSD 6.2), we hit a brick wall, hard.  While there were a few web services with possible SQL injections, the majority of it was all binary services.</p>
+
+<p>(A continuation of <a href="http://brycekerley.net/mp/2007/8/11/defcon-decompression-1">Defcon Decompression, Part 1</a>)</p>
+
+<p>I&rsquo;ve never done binary reversing, never really buffer overflowed anything, so basically I felt really unprepared for 90% of the challenges in the game.  However, I did start sorting through the two web services, one on a custom binary web server with PHP support, and the other a PHP website on Apache.</p>
+
+<p>The first one had an easy exploit:</p>
+
+<pre class="textmate-source sunburst">    s <span class="keyword keyword_operator keyword_operator_assignment keyword_operator_assignment_ruby">=</span> TCPSocket.new(<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>10.0.<span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>n}.1", 8081)
+    s.puts(<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>GET /../key HTTP/1.1")
+    s.puts
+    puts s.read</pre>
+
+<p>The fix was easy too: move the web server&rsquo;s htdocs directory deeper a level to break the obvious/scripted attack.  Breaking an attack wtihout improving security&rsquo;s actually a technique supported by Chris Eagle of Sk3wl0fr00t (they crushed us) and <a href="http://brycekerley.net/assets/2007/8/15/DC-14-Eagle.pdf">presented at Defcon last year</a>.  We knew there would be other problems in that service, but really our binary guys were spread pretty thin.</p>
+
+<p>The second service was much more complicated, and somewhere while looking through it we missed a couple SQL injections that we didn&rsquo;t notice again until Sunday (long after they&rsquo;d been patched).  What we were able to do, however, was use the makeuser service to make shell accounts on remote machines, and then go steal their database credentials for easy access to flags and overwrites.  I also started running attention-depletion attacks that created fake users and fake profiles in the second web service for grins.</p>
+
+<p>The biggest scores for our team came from breakthroughs, but not the service-centric ones:</p>
+
+<p>Late Friday night, <a href="http://pure-z3x.info/">Z3x</a> was hanging out near Kenshoto&rsquo;s skybox where the game server was stored, and basically got the guard to let him in.  We received a call from him asking what to do to their server.  After some deliberation, we said he should just put a sticky note on it saying &ldquo;Breakthrough!  500 points, 0x28 Thieves.&rdquo;  After doing that, somebody else got in the room (turns out it was somebody from another team doing the same thing XD) and he quickly left, returning triumphant to the hotel room we were hanging out in with a handful of the Kenshoto guys&rsquo; name tags (<a href="http://flickr.com/photos/bonzoesc/1014195075/">warning: swears</a>).</p>
+
+<p>On Saturday night, Jim was hanging out with the Kenshoto guys, and they soon realized that they locked the closet and desperately needed something out of it.  After the Lockpicking Convention guys tried on the door for about 15 minutes, Jim cut a notch out of his room key and opened the door in about 20 seconds total.</p>
+
+<p>We got rewarded for both of these handsomely, and on Sunday morning we jumped up from 8th to 6th in the rankings.  However, the (very friendly) Korean Song of Freedom got back ahead of us in the last hour, leaving us in 7th.</p>
+
+<p>After the awards ceremony (including hearing about the amazingly complicated Mystery Box Challenge), we walked down to the Wynn for the buffet, which had a sizable line.  Forging ahead, I was pleased to find that it was not only much better than TI&rsquo;s buffet (making it the best buffet I&rsquo;ve ever been to), but it also had the nicest bathrooms I&rsquo;ve ever been in.</p>
+
+<p>After that, had a couple beers with Zap to finish off the big jug he bought Thursday afternoon, and retired in anticipation of the 7am flight home.</p>{% endraw %}

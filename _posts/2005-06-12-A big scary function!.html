@@ -1,0 +1,19 @@
+---
+layout: regular
+title: "A big scary function!"
+date: 2005-06-12T03:56:00+00:00
+---
+{% raw %}<p>I wrote a big scary function today.</p>
+
+<p>Visualize an electronic stock exchange where piles of shares exist.  Piles consist of an owner id, corporation id, and a quantity of shares they represent.</p>
+
+<p>For trading to be flexible, piles have to be broken up into smaller piles until they become atomic piles of single shares.  However, a single pile of two or more shares is far more efficient to store than two or more piles of single shares.  Therefore, you have to be able to merge piles of similar owner and corporation.</p>
+
+<p>Here&rsquo;s what I do:
+1) Get a list of piles sorted by owner and corporation.
+2) Pick the first pile and designate it as the big pile.
+3) If the next pile is similar to the big pile, merge them.
+4) If not, next pile is the new big pile.
+5) Repeat until all piles have been checked once.</p>
+
+<p>It looks like my part gets the luxury of running in linear time since I can get a sorted list to start from.</p>{% endraw %}

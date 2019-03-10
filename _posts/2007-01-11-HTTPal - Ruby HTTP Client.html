@@ -1,0 +1,45 @@
+---
+layout: regular
+title: "HTTPal - Ruby HTTP Client"
+date: 2007-01-11T07:05:07+00:00
+---
+{% raw %}<p>HTTPal is a Ruby library that behaves more like a regular web browser than Net::HTTP does - it keeps state around between requests.  This is incredibly useful for automating scripts that log in and perform actions on sites using cookied sessions, referer tracking, etc.</p>
+
+<h1>Usage</h1>
+
+<p><a href="http://bonzoesc.net/provingground/cookie.php">http://bonzoesc.net/provingground/cookie.php</a> is a page that in the absence of a cookie, sets one and prints &lsquo;hope you lok&rsquo;.  In the presence of a cookie, it prints 'you do&rsquo;.</p>
+
+<pre><code>irb(main):001:0> require 'lib/httpal'
+=> true
+irb(main):002:0> b = HTTPal::Browser.new
+=> #<HTTPal::Browser:0xb7ad8498 @referer=nil, @cookies=[]>
+irb(main):003:0> b.get('http://bonzoesc.net/provingground/cookie.php').body
+=> "hope you lok"
+irb(main):004:0> b.get('http://bonzoesc.net/provingground/cookie.php').body
+=> "you do"
+irb(main):005:0> HTTPal::Browser.new.use {
+irb(main):006:1* puts get('http://bonzoesc.net/provingground/cookie.php').body
+irb(main):007:1> puts get('http://bonzoesc.net/provingground/cookie.php').body
+irb(main):008:1> }
+hope you lok
+you do
+=> nil
+irb(main):009:0> 
+</code></pre>
+
+<p>You can call the <code>get</code> and <code>post</code> methods either directly on the object, or from within a block sent to the <code>use</code> method (because I thought that would be awesome).</p>
+
+<h1>Getting It</h1>
+
+<pre><code># unstable = I love to break this version for fun whenever I want
+svn co <a href="http://brycekerley.net/svn/httpal/trunk">http://brycekerley.net/svn/httpal/trunk</a> httpal
+
+# first tested public release
+svn co <a href="http://brycekerley.net/svn/httpal/tags/001_firstpub">http://brycekerley.net/svn/httpal/tags/001_firstpub</a> test  
+</code></pre>
+
+<p>Don&rsquo;t expect a regular schedule for tagged/tested releases - for now this project is pretty much on an as-I-need-it basis.</p>
+
+<h1><s>Whining about</s> Reporting bugs</h1>
+
+<p>Send bug reports to <a href="mailto:bkerley@brycekerley.net">bkerley@brycekerley.net</a> after checking <a href="http://brycekerley.net/trac/trac.fcgi/report/1">Trac</a> to see if they&rsquo;re fixed.  Ticket submission&rsquo;s not on Trac because it&rsquo;s a spam magnet and I don&rsquo;t feel like putting up with it.</p>{% endraw %}

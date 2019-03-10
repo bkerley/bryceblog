@@ -1,0 +1,14 @@
+---
+layout: regular
+title: "Build Scripts"
+date: 2006-10-10T23:54:53+00:00
+---
+{% raw %}<p>Visual Studio 2003&rsquo;s build scripts are kind of weird.  The generator doesn&rsquo;t default to escaping directory names correctly, so you have to remember to put quotes around things.  It also just runs it as a batch file, which means that it has to inline a bunch of debug code to catch errors.</p>
+
+<p>Build script for the c# xmp reader that&rsquo;s going to become the tagger for the plasticimages project:</p>
+
+<pre><code>xcopy "$(SolutionDir)Redland\bin\Debug\\*.dll" . /d /y
+xcopy "$(ProjectDir)win32dep\\*.*" . /d /y
+</code></pre>
+
+<p>Useful post I ripped the xcopy from: <a href="http://geekswithblogs.net/dchestnutt/archive/2006/05/30/80113.aspx">http://geekswithblogs.net/dchestnutt/archive/2006/05/30/80113.aspx</a></p>{% endraw %}

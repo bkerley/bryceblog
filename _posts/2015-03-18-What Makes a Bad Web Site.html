@@ -1,0 +1,13 @@
+---
+layout: regular
+title: "What Makes a Bad Web Site"
+date: 2015-03-18T22:44:22+00:00
+---
+{% raw %}<h1>Breaking Scrolling</h1>
+<p>Don&rsquo;t break scrolling. The very first web browsers over twenty years ago could scroll just fine. It&rsquo;s okay to have pagination links, or to not have transitions as things &ldquo;load.&rdquo; Slow loading is the enemy, not a goal.</p>
+<img src="http://i.imgur.com/z261qHo.gif" title="formless void when scrolling"/><h1>Thoughtless Layout</h1>
+<p>That you can break your content into two columns doesn&rsquo;t mean you should. Two columns makes sense when you&rsquo;re trying to fit a lot of text on a piece of paper while keeping the number of words per line to a friendly length, <a href="http://en.wikipedia.org/wiki/Line_length">maybe about 50 characters.</a> On-screen, you don&rsquo;t have to worry about saving paper, so you can just have one tall column instead of two small ones.</p>
+<p>Keeping everything in a single column on-screen means you don&rsquo;t have to worry about some algorithm orphaning important lines of a code block.</p>
+<img src="http://i.imgur.com/CHeVHfN.gif" title="orphaned code block"/><h1>Glitchy Navigation</h1>
+<p>Many browsers allow you to navigate by swiping the page, either on a trackpad or a touchscreen. Don&rsquo;t break this navigation to add superfluous transitions that the browser has already added. Letting the browser handle transitions is <em>okay</em>, since it lets users navigate history faster.</p>
+<img src="http://i.imgur.com/hAxn4Zp.gif" title="extra navigation transitions"/>{% endraw %}

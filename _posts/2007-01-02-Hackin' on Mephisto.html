@@ -1,0 +1,21 @@
+---
+layout: regular
+title: "Hackin' on Mephisto"
+date: 2007-01-02T04:52:05+00:00
+---
+{% raw %}<p>If you&rsquo;ve been watching this blog disturbingly closely, you may have noticed some improvements on my Mephisto install.</p>
+
+<p>First of all, I fixed the tags from the Typo import by running this snippet in the Rails console:</p>
+
+<pre class="textmate-source sunburst"><span class="support support_class support_class_ruby">Article</span>.find_all.each do |a|
+  t = a.tag.gsub(<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>,<span class="punctuation punctuation_definition punctuation_definition_group punctuation_definition_group_ruby">(</span>\w)/,<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>, \1')
+  a.tag = t
+  a.save
+end
+</pre>
+
+<p>By doing this, I was able to fix the <a href="http://www.brycekerley.net/mp/tags/">tags page</a> to actually allow (get this!) tag-based viewing of articles.  As such, tags now appear below each post.</p>
+
+<p>I also added google sitemap support with <a href="http://exdolo.com/2006/9/2/mephisto-google-sitemap-plugin">Stephen Caudill&rsquo;s plugin</a>, although I did hack around a bit to make it also map the one non-mephisto page on here (daily I consider just trashing it).</p>
+
+<p>I&rsquo;m just generally happy with Mephisto.  Typo was getting kind of bloated and inflexible, and Mephisto just seems a lot easier to hack on.  I&rsquo;m not <strong>completely</strong> sure that&rsquo;s due to the system and not my growing famillarity with Rails, but it does wear quite well.</p>{% endraw %}

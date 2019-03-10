@@ -1,0 +1,11 @@
+---
+layout: regular
+title: "Using GDB on Ruby's Guts"
+date: 2006-09-23T02:35:21+00:00
+---
+{% raw %}<p>I just happened to see this on <a href="http://weblog.jamisbuck.org/2006/9/22/inspecting-a-live-ruby-process">Jamis Buck&rsquo;s Blog</a> today.  Looks pretty neat, apparently it&rsquo;s as simple as calling the rb_raise function from the debugger, which prints a stack trace:</p>
+
+<pre><code>call (void)rb_raise((int)rb_eException, "raising an exception")
+</code></pre>
+
+<p>You can also apparently chew up the stack in a more complicated fashion.  It&rsquo;ll be neat to figure out what else you can do to a running ruby process.</p>{% endraw %}

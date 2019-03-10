@@ -1,0 +1,23 @@
+---
+layout: unknown
+title: "Lisp-style \"quoting\" in ruby? - A question from adrusi - Forrst"
+date: 2011-05-11T01:02:05+00:00
+---
+{% raw %}<pre>&lt;post id=&quot;5377226659&quot; url=&quot;http://blog.brycekerley.net/post/5377226659&quot; url-with-slug=&quot;http://blog.brycekerley.net/post/5377226659/lisp-style-quoting-in-ruby-a-question-from&quot; type=&quot;link&quot; date-gmt=&quot;2011-05-11 01:02:05 GMT&quot; date=&quot;Tue, 10 May 2011 21:02:05&quot; unix-timestamp=&quot;1305075725&quot; format=&quot;html&quot; reblog-key=&quot;gB2lqlBz&quot; slug=&quot;lisp-style-quoting-in-ruby-a-question-from&quot; state=&quot;published&quot; is_reblog=&quot;false&quot; tumblelog=&quot;bryceblog&quot; bookmarklet=&quot;true&quot;&gt;
+  &lt;link-text&gt;Lisp-style &quot;quoting&quot; in ruby? - A question from adrusi - Forrst&lt;/link-text&gt;
+  &lt;link-url&gt;http://forrst.com/posts/Lisp_style_quoting_in_ruby-9lj&lt;/link-url&gt;
+  &lt;link-description&gt;&amp;lt;p&amp;gt;Ruby doesn&amp;amp;rsquo;t support that particular technique because it&amp;amp;rsquo;s object-oriented more than it&amp;amp;rsquo;s functional:&amp;lt;/p&amp;gt;
+&amp;lt;pre class=&quot;prettyprint&quot;&amp;gt; 
+[1, 2, 3].each{|n| puts n}
+&amp;lt;/pre&amp;gt;
+&amp;lt;p&amp;gt;However, in 1.9.2, you can snatch a &amp;lt;code&amp;gt;Method&amp;lt;/code&amp;gt; from an object using the &amp;lt;code&amp;gt;Object#method&amp;lt;/code&amp;gt; method:&amp;lt;/p&amp;gt;
+&amp;lt;pre class=&quot;prettyprint&quot;&amp;gt; 
+method(:print) #=&amp;amp;gt; #&amp;amp;lt;Method: Object(Kernel)#print&amp;amp;gt;
+5.method(:+).call(8) #=&amp;amp;gt; 13
+&amp;lt;/pre&amp;gt;
+&amp;lt;p&amp;gt;And you can even turn a &amp;lt;code&amp;gt;Method&amp;lt;/code&amp;gt; into a &amp;lt;code&amp;gt;Proc&amp;lt;/code&amp;gt; or syntactic block:&amp;lt;/p&amp;gt;
+&amp;lt;pre class=&quot;prettyprint&quot;&amp;gt; 
+&quot;big balls&quot;.method(:split).to_proc #=&amp;amp;gt; #&amp;amp;lt;Proc:0x00000100d98ec8 (lambda)&amp;amp;gt;
+[1, 2, 3].each(&amp;amp;amp;method(:puts))
+&amp;lt;/pre&amp;gt;&lt;/link-description&gt;
+&lt;/post&gt;</pre>{% endraw %}

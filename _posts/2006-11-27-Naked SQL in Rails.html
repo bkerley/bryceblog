@@ -1,0 +1,47 @@
+---
+layout: regular
+title: "Naked SQL in Rails"
+date: 2006-11-27T17:54:19+00:00
+---
+{% raw %}<p>Jamis Buck tells us to <a href="http://weblog.jamisbuck.org/2006/11/7/don-t-be-afraid-of-harnessing-sql">not be afraid of harnessing SQL</a> in our Rails apps, because honestly you get some situations where ActiveRecord&rsquo;s not all that hot:
+<code line_numbers="”list”">
+Processing ScoreboardController#redo_score (for 10.69.0.108 at 2006-11-25 18:21:23) [POST]
+  Session ID: 42ffe9708b41170379431beb2b0e6d1b
+  Parameters: {"action"=>"redo_score", "controller"=>"scoreboard"}
+  user Load (0.001182)   SELECT * FROM users 
+  user Columns (0.000607)   SHOW FIELDS FROM users
+  hoopty Columns (0.000287)   SHOW FIELDS FROM hooptys
+  SQL (0.000694)   SELECT count(<em>) AS count_all FROM hooptys WHERE (hooptys.user_id = 8) 
+  SQL (0.000787)   SELECT count(</em>) AS count_all FROM hooptys WHERE (hooptys.user_id = 1) 
+  SQL (0.001862)   SELECT count(<em>) AS count_all FROM hooptys WHERE (hooptys.user_id = 14) 
+  SQL (0.000767)   SELECT count(</em>) AS count_all FROM hooptys WHERE (hooptys.user_id = 8) 
+  SQL (0.001033)   SELECT count(*) AS count_all FROM hooptys WHERE (hooptys.user_id = 8) 
+  hoopty Count (0.035854)   SELECT COUNT(DISTINCT hooptys.id) FROM hooptys LEFT OUTER JOIN wheels ON wheels.id = hooptys.wheel_id WHERE (hooptys.user_id = 3 AND tire_id = 1) 
+  hoopty Count (0.031429)   SELECT COUNT(DISTINCT hooptys.id) FROM hooptys LEFT OUTER JOIN wheels ON wheels.id = hooptys.wheel_id WHERE (hooptys.user_id = 3 AND tire_id = 2) 
+   and so on
+</code></p>
+
+<p>Since ActiveRecord::Base&rsquo;s #count method doesn&rsquo;t really do what we want, we were originally hitting it n*m queries per page load, 
+which sucked the life out of our app:</p>
+
+<p>Completed in 3.93758 (0 reqs/sec) | Rendering: 0.33898 (8%) | DB: 3.52800 (89%) | 200 OK [http://10.69.0.42/scoreboard/redo_score]</p>
+
+<p>So, we had to write our own application-specific SQL and a method to take the results and put it in a useful data structure.
+<code lang="ruby" line_numbers="”list”">
+    def self.full_array
+        x = Array.new
+        @scores = ActiveRecord::Base.connection.select_all(
+        %Q{SELECT COUNT(hooptys.id) as count, wheels.tire_id, hooptys.user_id
+        FROM hooptys LEFT OUTER JOIN wheels ON wheels.id = hooptys.wheel_id
+        GROUP BY wheels.tire_id, hooptys.user_id
+        ORDER BY hooptys.user_id, wheels.tire_id
+        }
+        )
+        @scores.each do |v|
+            x[v["user_id"].to_i] = Array.new unless x[v["user_id"].to_i]
+            x[v["user_id"].to_i][v["tire_id"].to_i] = v["count"].to_i
+        end
+        return x
+    end
+</code>
+Excitement!</p>{% endraw %}

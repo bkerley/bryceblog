@@ -1,0 +1,20 @@
+---
+layout: regular
+title: "Quickly Get Started With Kibana and Elasticsearch"
+date: 2015-02-23T11:36:47+00:00
+---
+{% raw %}<p>I wanted to see what Elasticsearch queries Kibana ran.</p>
+<ol><li>Have Pow & Homebrew set up correctly on your Mac.</li>
+<li>brew install elasticsearch # may involve having to brew install a java</li>
+<li>Download and decompress kibana from <a href="http://www.elasticsearch.org/overview/kibana/installation/">http://www.elasticsearch.org/overview/kibana/installation/</a></li>
+<li>cd kibana</li>
+<li>cp /usr/local/opt/elasticsearch/config/elasticsearch.yml .</li>
+<li>in the elasticsearch.yml:
+<code><pre>http.cors.enabled: true
+http.cors.allow-origin: <a href="http://kibana.dev">http://kibana.dev</a>
+</pre></code></li>
+<li>ln -s . public</li>
+<li>ln -s `pwd` ~/.pow/kibana</li>
+<li>elasticsearch &ndash;config=elasticsearch.yml</li>
+<li>visit <a href="http://kibana.dev">http://kibana.dev</a></li>
+</ol>{% endraw %}

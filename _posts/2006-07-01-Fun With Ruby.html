@@ -1,0 +1,26 @@
+---
+layout: regular
+title: "Fun With Ruby"
+date: 2006-07-01T21:33:27+00:00
+---
+{% raw %}<p>I was messing around with a project this week in Ruby, and right as I was trying to figure out how to best implement extensibility and modularity, <a href="http://eigenclass.org/hiki.rb?ruby+plugins">this article came along</a>.</p>
+
+<p>Main module require&rsquo;d from main.rb:</p>
+
+<pre><code>class Statement
+  @@statementtypes = Array.new
+
+  #implements plug-in nature of statements
+  def self.inherited(stmttype)
+    @@statementtypes << stmttype
+  end
+end
+
+Dir["statements/*.rb"].each do |x|
+  load x
+end
+</code></pre>
+
+<p>And each .rb file in statements/ has a class that inherits from Statement.</p>
+
+<p>No details yet on what the project is, aside from that it&rsquo;s fun and challenging.</p>{% endraw %}

@@ -1,0 +1,17 @@
+---
+layout: regular
+title: "Address Bar Cryptography"
+date: 2013-01-09T04:37:00+00:00
+---
+{% raw %}<p>It&rsquo;s hard to make authenticated encryption fit in an address bar. If you want to be compatible with IE, you&rsquo;re stuck with 2048 bytes or less.</p>
+<pre><code>Pre-encryption data length: 166
+IV length: 16
+Data length: 166
+Signature length: 139
+Cert length: 397
+Encoded length: 836</code></pre>
+<p>Some acronyms: AES-256-CFB, ECDSA, NIST P-521 / secp521r1, JSON, Base64.</p>
+<pre><code>encoded = [iv, encrypted_data, signature, service.public_key.to_der, service.signature].
+  map{|d| Base64.urlsafe_encode64 d}.
+  join(',')</code></pre>
+<p>I could get it smaller at the expense of harder key management if I simply pre-shared the service&rsquo;s public key and didn&rsquo;t have to pack a bunch of certificate things at the end.</p>{% endraw %}

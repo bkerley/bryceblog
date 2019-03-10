@@ -1,0 +1,54 @@
+---
+layout: regular
+title: "Don't Forget to Add Your Indices"
+date: 2007-04-25T03:42:43+00:00
+---
+{% raw %}<p>Found the problem making that SQL query from yesterday take so long.  As it turns out, there was a quirk in our ad hoc &ldquo;configuration management&rdquo; system.</p>
+
+<p>About a week before competition, we started keeping a database pre-loaded with teams and services updated, so that it didn&rsquo;t strike 9:50 on 4/20 and leave us with a big gob of work to be done in <em>incredibly</em> short order.</p>
+
+<p>Compounded with this, we had been working on the scoreboard pretty heavily over the same time span, trying to speed it up.  It was during this period in which the big query (from yesterday) was written, as well as a migration to add indices to a table that needed them:</p>
+
+<pre class="textmate-source sunburst"><span class="meta meta_class meta_class_ruby">class IndexUp<span class="entity entity_other entity_other_inherited-class entity_other_inherited-class_ruby"> < ActiveRecord::Migration</span></span>
+  <span class="keyword keyword_control keyword_control_def keyword_control_def_ruby">def</span> self.up
+    add_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, [<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>team_id, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>service_id, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>flag_id, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>value])
+    add_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>service_id)
+    add_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>team_id)
+    add_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>flag_id)
+    add_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>value)
+  end
+
+  <span class="keyword keyword_control keyword_control_def keyword_control_def_ruby">def</span> self.down
+    remove_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, [<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>team_id, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>service_id, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>flag_id, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>value])
+    remove_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>team_id)
+    remove_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>service_id)
+    remove_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>flag_id)
+    remove_index(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>uptimes, <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>value)
+  end
+end
+
+</pre>
+
+<p>We kept testing the whole week, satisfied with the speed of the scoreboard on the test data that had been accumulating all week just by running the uptime checker/flag placer against a handful of VMs.</p>
+
+<p>Morning of, we&rsquo;ve got the whole setup from the previous day in a satisfactory condition, so we copy the directory for the database right on top of the one filled with test data.</p>
+
+<pre><code>RAILS_ENV=production rake db:migrate
+</code></pre>
+
+<p>That&rsquo;s what we forgot.  With the indices above, the big query ran in 0.6 seconds instead of the 6 it was taking on the machine we tested with today.</p>
+
+<p>So even if we do nothing else, the scoreboard next game won&rsquo;t be as bad, because instead of a cache miss taking 20 seconds (and queueing up 20 seconds worth of cascading cache misses), it&rsquo;ll now only queue up 1 second of cascading cache misses.</p>
+
+<p>And I think we have a solution for that too.</p>
+
+<h3>Prefetching in Rails</h3>
+
+<p>The plan right now is to use caching on both the SQL output and page caching.  Since we can&rsquo;t completely negate the penalty of a page cache miss (or the cascading cache misses), we&rsquo;re planning to also cache SQL output.  Since you can easily populate the SQL cache from outside an HTTP request (using <code>script/runner</code> for example), we can set up the two sets of caches to complement each other, operated by a script parallel to the HTTP service:</p>
+
+<ol><li>Expire (either by force or a cache that knows expiration) the SQL cache.</li>
+<li>Perform SQL requests that will get cached.</li>
+<li>Expire the page cache.</li>
+</ol><p>The next request <em>might</em> still cause a cascading cache miss, but since it&rsquo;ll all be in-process misses (the data will be cooling its heels in the cache), it shouldn&rsquo;t bring anything to its knees.</p>
+
+<p>I&rsquo;m still hoping that this won&rsquo;t be necessary for our scoreboard, but I&rsquo;m throwing it out here for criticism and in case somebody else needs it.</p>{% endraw %}

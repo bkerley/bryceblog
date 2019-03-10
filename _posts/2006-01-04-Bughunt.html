@@ -1,0 +1,10 @@
+---
+layout: regular
+title: "Bughunt"
+date: 2006-01-04T16:57:00+00:00
+---
+{% raw %}<p>While fixing some .htaccess/redirection issues to get LiveJournal to point to a recent RSS feed, I was using an old Java program I wrote to see the headers/guff Apache was giving me:</p>
+
+<p><img src="http://brycekerley.net/typo/files/httpimp-02.png" alt="HTTPimp gives me a 404"/></p>
+
+<p>After trying the preview button that shows the request headers HTTPimp sends, I identified a bug - when it breaks the URL into address, path, and query parts, it mostly stitches them together correctly, except for the ? between path and query.</p>{% endraw %}

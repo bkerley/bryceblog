@@ -1,0 +1,21 @@
+---
+layout: regular
+title: "Bitcoin Mining on Amazon EC2"
+date: 2011-05-09T21:40:31+00:00
+---
+{% raw %}<p><em>This isn&rsquo;t profitable; if you do this, stop after a while because you can get a better US Dollar to Bitcoin exchange rate basically anywhere else.</em></p>
+
+<p>You might think it&rsquo;s a good idea to learn how to use Amazon EC2 at some point, especially with their big juicy GPU Computing instances. Here&rsquo;s how to use one to throw hard-earned US dollars away for fractional Bitcoins.</p>
+
+<ol><li>Sign up for an EC2 account at <a href="https://aws.amazon.com/">https://aws.amazon.com/</a></li>
+<li>While waiting for your account to be activated, review <a href="http://mailman.mit.edu/pipermail/starcluster/2010-December/000572.html">http://mailman.mit.edu/pipermail/starcluster/2010-December/000572.html</a> and copy the AMI name (&ldquo;ami-12b6477b&rdquo;).</li>
+<li>Once the account is activated, log in to the AWS Management Console.</li>
+<li>Bid on a Spot Instance, use a Reserved Instance, or start a regular Instance of the &ldquo;cg1.4xlarge&rdquo; flavor.</li>
+<li>Go through the setup steps and remember to save the ssh key.</li>
+<li>While you wait for the instance to start, copy the ssh key to your .ssh directory and chmod it 400 like the on-screen instructions say.</li>
+<li>Once the instance is running, ssh in:<br/><code>ssh -i .ssh/yourkey.pem root@ec2-12-34-56-78.compute-5.amazonaws.com</code></li>
+<li>Use git to clone the python opencl miner from <a href="https://github.com/Kiv/poclbm">https://github.com/Kiv/poclbm</a> :</li>
+<li>git clone https://github.com/Kiv/poclbm.git</li>
+<li>Start two instances of the miner, in this case pointing at <a href="http://deepbit.net">http://deepbit.net</a> with username &ldquo;cooldudeirl&rdquo; and password &ldquo;asdf&rdquo;:<br/><code>python26 poclbm.py -d0 --host=deepbit.net --port=8332 --user=cooldudeirl --pass=asdf & python26 poclbm.py -d1  --host=deepbit.net --port=8332 --user=cooldudeirl --pass=asdf</code></li>
+<li><s>Profit</s> This isn&rsquo;t actually profitable.
+</li></ol>{% endraw %}

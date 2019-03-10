@@ -1,0 +1,24 @@
+---
+layout: regular
+title: "Generating an X.509 Cert in Ruby"
+date: 2008-10-22T22:40:49+00:00
+---
+{% raw %}<p>Ruby&rsquo;s openssl module has basically no documentation because all its methods are added on dynamically or something.</p>
+
+<p>Mega-thanks to the <a href="http://jruby.org">JRuby team</a>.  This would have been impossible to write if I didn&rsquo;t scrape from <a href="https://svn.codehaus.org/jruby/branches/openssl/test/openssl/utils.rb">https://svn.codehaus.org/jruby/branches/openssl/test/openssl/utils.rb</a> and <a href="https://svn.codehaus.org/jruby/branches/openssl/test/openssl/test_x509crl.rb">https://svn.codehaus.org/jruby/branches/openssl/test/openssl/test_x509crl.rb</a></p>
+
+<pre><code>require 'openssl'
+key = OpenSSL::PKey::RSA.generate(4096)
+pub = key.public_key
+ca = OpenSSL::X509::Name.parse("/C=US/ST=Florida/L=Miami/O=Waitingf/OU=Poopstat/CN=waitingf.org/emailAddress=bkerley@brycekerley.net")
+cert = OpenSSL::X509::Certificate.new
+cert.version = 2
+cert.serial = 1
+cert.subject = ca
+cert.issuer = ca
+cert.public_key = pub
+cert.not_before = Time.now
+cert.not_after = Time.now + 3600
+File.open("private.pem", "w") { |f| f.write key.to_pem }
+File.open("cert.pem", "w") { |f| f.write cert.to_pem }
+</code></pre>{% endraw %}

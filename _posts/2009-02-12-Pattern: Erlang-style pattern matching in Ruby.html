@@ -1,0 +1,36 @@
+---
+layout: regular
+title: "Pattern: Erlang-style pattern matching in Ruby"
+date: 2009-02-12T02:13:00+00:00
+---
+{% raw %}Mostly for grins, I decided to implement Erlang-style pattern matching in Ruby on Sunday afternoon.
+
+<pre><code>p.match(/lmao/) { :butts }
+p.match(/lol/) { :buttes }
+p.match(wc) { "atomics" }
+p[888]
+# => "atomics"
+p["a butt lmao"]
+# => :butts
+p["lolqdb"]
+# => :buttes
+</code></pre>
+
+<p>Fork/clone <a href="http://github.com/bkerley/pattern/">Pattern on Github</a>, and read on for commentary.</p>
+
+<h1>How it works</h1>
+
+<p>In the example above, <code>p</code> is a <code>Pattern::Matcher</code> object, that wraps arguments and blocks from the <code>#match</code>
+method into a <code>Pattern::Entry</code> object, and stores those objects in an array in order of definition. When
+called with the <code>#[]</code> method, it goes through that array and calls the stored block from the first entry that
+answers positively to <code>Pattern::Entry#match?</code>.</p>
+
+<p>A <code>Pattern::Entry</code> is basically a tuple of an argument list and a proc to execute on match.  The only real
+cleverness is checking for a <code>Pattern::Wildcard</code> object, and checking with <code>#===</code>, which picks an appropriate
+comparison for the objects involved (uses <code>Regexp#=~</code> if the left value is a <code>Regexp</code> and right is a <code>String</code>,
+for example.)</p>
+
+<h1>What could be done</h1>
+
+<p>Things I’ve got ideas for but haven’t done yet include extending the Wildcard object to allow for <code>Array#first</code>
+and <code>Object#class</code> (or <code>Class#ancestors</code>) checks, since those don’t work with <code>#===</code>.</p>{% endraw %}

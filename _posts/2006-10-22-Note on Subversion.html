@@ -1,0 +1,12 @@
+---
+layout: regular
+title: "Note on Subversion"
+date: 2006-10-22T20:21:46+00:00
+---
+{% raw %}<p>Learned this today when setting up an fsfs repository; if users are going to be using svn+ssh or some other method that reads and writes to the database as their uid, you need to make the permissions setgid:</p>
+
+<pre><code>cd repodir
+chmod -R g+s .
+</code></pre>
+
+<p>What this does is makes any new files in the directory take the group of the directory, and not the primary group of the user that created them.</p>{% endraw %}

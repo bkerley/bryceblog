@@ -1,0 +1,44 @@
+---
+layout: regular
+title: "Setting default tags for arbitrary applications in ruby-wmii"
+date: 2007-01-06T01:00:21+00:00
+---
+{% raw %}<p>I&rsquo;ve been running <a href="http://wmii.suckless.org/">wmii</a> with the <a href="http://eigenclass.org/hiki.rb?wmii+ruby">ruby-wmii</a> configuration/script/event loop for a few months now, and just today decided to scratch an itch I&rsquo;ve been having.</p>
+
+<p>Basically, I keep a &lsquo;1&rsquo; tag around with the floating model so I can overlap my web browser and IRC window (my IRC window needs to stay a fixed size because it&rsquo;s shared between multiple machines using screen).  However, when I start rhythmbox, I want it managed (and incidentally, full-screen) on the 'rock&rsquo; tag.</p>
+
+<p>As it turns out, this is cake:</p>
+
+<pre class="textmate-source sunburst"><span class="variable variable_other variable_other_constant variable_other_constant_ruby">WMII</span>::Configuration.define do
+  border      1
+  font        <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>fixed"
+  selcolors   <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>#FFFFFF #224422 #228822"
+  normcolors  <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>#FFFFFF #668866 #228822"
+  colmode     <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>default'
+  colwidth    0
+  grabmod     <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>Mod1'
+  rules <<EOF
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>Kdict.*/ -> dict
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>XMMS.*/ -> ~
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>Gimp.*/ -> ~
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>MPlayer.*/ -> ~
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>XForm.*/ -> ~
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>XSane.*/ -> ~
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>fontforge.*/ -> ~
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>KoLmafia.*/ -> ~
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>Rhythmbox.*/ -> rock
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>.*/ -> !
+<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>.*/ -> 1
+EOF
+
+<span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> MORE CONFIG
+
+end</pre>
+
+<p>Simply adding the rhythmbox matcher was all it took.</p>
+
+<p>Also, as a bonus tip, if you&rsquo;re a Gentoo user that has problems with ruby-wmii and wmii-3.5, you might want to downgrade to wmii-3.1 .  However, simply emerging wmii-3.1 (probably from your portage overlay) will error out unless you unmerge the libixp ebuild that wmii-3.5 depends on:</p>
+
+<pre><code>sudo emerge -C libixp
+sudo emerge -av '=wmii-3.1-r4'
+</code></pre>{% endraw %}

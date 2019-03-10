@@ -1,0 +1,37 @@
+---
+layout: regular
+title: "CTF Quals"
+date: 2007-06-05T06:22:00+00:00
+---
+{% raw %}<p>Finished quals (as <a href="http://0x28.net">[0x28] Thieves</a>) not much more than 24 hours ago (Sunday night), and I&rsquo;ve had some time to think about what happened, what we ruled at, and what kind of sucked for us.</p>
+
+<p>First off <a href="http://kenshoto.com/ctf07/quals_final.html">final scores</a> and <a href="http://kenshoto.com/ctf07/quals_raw.txt">raw data</a>.</p>
+
+<h2>I am proud of:</h2>
+
+<pre><code>Trivia 100 2007-06-02 03:22:39
+Trivia 200 2007-06-02 03:22:47
+Trivia 400 2007-06-02 03:23:50
+Trivia 300 2007-06-02 03:28:10
+</code></pre>
+
+<p>We rule at google.  The fifth trivia (single x86 instruction binary logarithm) was harder (bsrl).</p>
+
+<pre><code>Web Hacking 500 2007-06-02 23:13:31
+</code></pre>
+
+<p>This one was a brick wall until I noticed that the cookie dbh => 2130706433 had a couple interesting representations:</p>
+
+<pre><code>0 :> c = 2130706433
+     # => 2130706433
+0 :> c.to_s(8)
+     # => "17700000001"
+0 :> c.to_s(16)
+     # => "7f000001"
+</code></pre>
+
+<p>Setting the cookie to the binary-encoded representation of one of our IP addresses showed an incoming connection on 3306, home to MySQL.  Configuring our box to respond to their SQL requests verifying our admin status got us an admin session on the site.  Switching the dbh cookie back while keeping the session id allowed us to see the privileged information and answer this one before anybody else did, controlling the board.</p>
+
+<h2>Not so proud of:</h2>
+
+<p>Yeah I don&rsquo;t know anything about doing a buffer overflow on Mac and jumping into libc to do stuff.  That&rsquo;s something I&rsquo;m definitely practicing on before Cipher 3 next month and Defcon CTF in August.</p>{% endraw %}
