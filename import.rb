@@ -56,6 +56,14 @@ posts_xml.css("posts").children.each do |post|
     kind = 'quote'
     quote_source_el = post.css('quote-source')
     body = "<blockquote>#{CGI.unescapeHTML quote_el.text}</blockquote>\n<cite>#{CGI.unescapeHTML quote_source_el.text}</cite>"
+  elsif (link_url_el = post.css('link-url')).length > 0
+    kind = 'link'
+    link_text = post.css('link-text').text || link_url_el.text
+    link_desc = CGI.unescapeHTML post.css('link-description').text
+    body = <<EOB
+<a href="#{link_url_el.text}">#{link_text}</a>
+<p>#{link_desc}</p>
+EOB
   else
     kind = 'unknown'
     body = "<pre>#{CGI.escapeHTML post.to_xml}</pre>"
@@ -63,7 +71,8 @@ posts_xml.css("posts").children.each do |post|
 
   fm = <<EOM
 ---
-layout: #{kind}
+kind: #{kind}
+layout: post
 title: #{title.inspect}
 date: #{date.iso8601}
 ---
