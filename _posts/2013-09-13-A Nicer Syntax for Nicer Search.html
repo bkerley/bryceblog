@@ -4,25 +4,25 @@ layout: post
 title: "A Nicer Syntax for Nicer Search"
 date: 2013-09-13T02:46:00+00:00
 ---
-{% raw %}<p>Riak&rsquo;s Yokozuna (or &ldquo;yz&rdquo; for short) full-text search feature has been a long time coming. <a href="https://github.com/basho/yokozuna/commit/bce28004900463aa665a866c35342a2569baedc8">The first commit</a> by <a href="https://twitter.com/rzezeski">Ryan Zezeski</a> is from June of 2012, and we&rsquo;ll get it released with Riak 2.0 this year. Yokozuna integrates Apache Solr full-text search with Riak.</p>
+{% raw %}<p>Riak&rsquo;s Yokozuna (or &ldquo;yz&rdquo; for short) full-text search feature has been a long time coming. <a href="https://github.com/basho/yokozuna/commit/bce28004900463aa665a866c35342a2569baedc8">The first commit</a> by <a href="https://twitter.com/rzezeski">Ryan Zezeski</a> is from June of 2012, and we&rsquo;ll get it released with Riak 2.0 this year. Yokozuna integrates Apache Solr full-text search with Riak.</p>{% endraw %}
 
-<p>The last few months of my two years (as of today!) at Basho have had me on the Clients team, where I&rsquo;ve been building the <a href="https://rubygems.org/gems/riak-client">Riak Ruby client</a>, that allows Ruby applications to store and retrieve data from Riak. As part of this, we&rsquo;re getting the clients ready for Riak 2.0, which includes Yokozuna support.</p>
+{% raw %}<p>The last few months of my two years (as of today!) at Basho have had me on the Clients team, where I&rsquo;ve been building the <a href="https://rubygems.org/gems/riak-client">Riak Ruby client</a>, that allows Ruby applications to store and retrieve data from Riak. As part of this, we&rsquo;re getting the clients ready for Riak 2.0, which includes Yokozuna support.</p>{% endraw %}
 
-<h1>The Competition</h1>
-<p>Rails 3 included the <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface</a>, which makes writing complicated queries and getting objects back easy:</p>
+{% raw %}<h1>The Competition</h1>
+<p>Rails 3 included the <a href="http://guides.rubyonrails.org/active_record_querying.html">Active Record Query Interface</a>, which makes writing complicated queries and getting objects back easy:</p>{% endraw %}
 
-<div class="highlight"><pre>party.users.where(given_name: given_name).count
-</pre></div>
+{% raw %}<div class="highlight"><pre>party.users.where(given_name: given_name).count
+</pre></div>{% endraw %}
 
-<p>Instead of requiring the programmer to know the syntax of both Ruby and SQL, this query interface does a pretty good job of making the SQL semantics make sense in Ruby.</p>
+{% raw %}<p>Instead of requiring the programmer to know the syntax of both Ruby and SQL, this query interface does a pretty good job of making the SQL semantics make sense in Ruby.</p>{% endraw %}
 
-<h1>Solr is Not SQL and Riak is Not SQL</h1>
+{% raw %}<h1>Solr is Not SQL and Riak is Not SQL</h1>
 <p>The Apache Solr full-text search engine is a database with a query langage. It&rsquo;s distinct from SQL: instead of describing and manipulating relations like SQL, it&rsquo;s completely built around querying a collection of documents.</p>
 <code><pre>bryce:"hi" OR bryce:"hello"</pre></code>
 <p>Yokozuna is built on Solr. Saving a Riak object in a yz-indexed bucket triggers the indexing process, which parses the document, finds keywords, and puts them in an index. Depending on the document, it may have multiple fields to index. For example, a JSON document containing a hash has lots of fields, an XML document is full of fields, and a plain text document has one big field.</p>
-<p>Querying for values in the index returns a list of matches, which include the Riak bucket and key where the document is stored: <tt>_yz_rb</tt> and <tt>_yz_rk</tt> for &ldquo;Riak Bucket&rdquo; and &ldquo;Riak Key,&rdquo; respectively. With that result set, the developer can then load the keys at their leisure.</p>
+<p>Querying for values in the index returns a list of matches, which include the Riak bucket and key where the document is stored: <tt>_yz_rb</tt> and <tt>_yz_rk</tt> for &ldquo;Riak Bucket&rdquo; and &ldquo;Riak Key,&rdquo; respectively. With that result set, the developer can then load the keys at their leisure.</p>{% endraw %}
 
-<h1>Ruby is Not Solr</h1>
+{% raw %}<h1>Ruby is Not Solr</h1>
 <p>Putting Solr/Lucene query strings together is almost as awful as putting SQL together, and almost as dangerous too: Solr injection doesn&rsquo;t have as many dangers as SQL injection, but they&rsquo;re still there. Fortunately, we have a known-nice interface for building queries, and we can take what we need:</p>
 <div class="highlight"><pre>q = @bucket.query.
         where(name_t: '*e*').

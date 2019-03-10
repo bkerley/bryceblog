@@ -4,32 +4,32 @@ layout: post
 title: "Colors in less on Mac"
 date: 2006-10-18T16:11:04+00:00
 ---
-{% raw %}<p>I got tired of less on my mac being less colorful than on gentoo:</p>
+{% raw %}<p>I got tired of less on my mac being less colorful than on gentoo:</p>{% endraw %}
 
-<p><img src="http://brycekerley.net/typo/files/colorless.png" alt="Colorful less output of a C file"/></p>
+{% raw %}<p><img src="http://brycekerley.net/typo/files/colorless.png" alt="Colorful less output of a C file"/></p>{% endraw %}
 
-<p>After some mucking around with equery to figure out what&rsquo;s going on, here&rsquo;s what you can do.</p>
+{% raw %}<p>After some mucking around with equery to figure out what&rsquo;s going on, here&rsquo;s what you can do.</p>{% endraw %}
 
-<h2>Console Setup</h2>
+{% raw %}<h2>Console Setup</h2>{% endraw %}
 
-<pre><code>sudo port install less
+{% raw %}<pre><code>sudo port install less
 curl "http://sources.gentoo.org/viewcvs.py/*checkout*/gentoo-x86/sys-apps/less/files/lesspipe.sh" > lesspipe.sh
 curl <a href="http://www-zeuthen.desy.de/~friebel/unix/less/code2color">http://www-zeuthen.desy.de/~friebel/unix/less/code2color</a> > code2color
 sudo cp code2color lesspipe.sh /opt/local/bin/
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Note that we&rsquo;re pulling code2color from its author&rsquo;s website, and grabbing lesspipe.sh from the gentoo rsync source.  If you don&rsquo;t want to pull them from the web, you can also grab these from your local gentoo box.</p>
+{% raw %}<p>Note that we&rsquo;re pulling code2color from its author&rsquo;s website, and grabbing lesspipe.sh from the gentoo rsync source.  If you don&rsquo;t want to pull them from the web, you can also grab these from your local gentoo box.</p>{% endraw %}
 
-<h2>Environment variables</h2>
+{% raw %}<h2>Environment variables</h2>{% endraw %}
 
-<pre><code>export LESS="-R -M --shift 5"                               
+{% raw %}<pre><code>export LESS="-R -M --shift 5"                               
 export LESSOPEN="|lesspipe.sh %s"
-</code></pre>
+</code></pre>{% endraw %}
 
-<h2>Instructions</h2>
+{% raw %}<h2>Instructions</h2>{% endraw %}
 
-<p>We have the files in the right spot now, all that&rsquo;s needed is to take the right environment variables put them in your shell&rsquo;s environment.  Check the manpage for your shell, but if you want it to be there for everybody try /etc/profile or /etc/zprofile; if you want to hoard it use ~/.zshenv or ~/.bash_profile .</p>
+{% raw %}<p>We have the files in the right spot now, all that&rsquo;s needed is to take the right environment variables put them in your shell&rsquo;s environment.  Check the manpage for your shell, but if you want it to be there for everybody try /etc/profile or /etc/zprofile; if you want to hoard it use ~/.zshenv or ~/.bash_profile .</p>{% endraw %}
 
-<h2>Future work</h2>
+{% raw %}<h2>Future work</h2>{% endraw %}
 
-<p>All I have to do now is modify lesspipe.sh so it calls otool for Mac binaries, but I have to figure out a good argument set first.</p>{% endraw %}
+{% raw %}<p>All I have to do now is modify lesspipe.sh so it calls otool for Mac binaries, but I have to figure out a good argument set first.</p>{% endraw %}

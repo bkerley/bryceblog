@@ -17,17 +17,17 @@ date: 2013-03-07T02:32:46+00:00
 <dt>hsl(300, 100%, 50%)</dt>
 <dd>HSL color, decimal degree for hue, and percents for saturation and lightness<sup>2</sup></dd>
 <dt>
-</dt></dl><p>The written-out RGB and HSL declarations with decimal-encoded numbers don&rsquo;t specify precision per se. <a href="http://www.w3.org/TR/css3-color/#colorunits">The W3C recommendation for the CSS Color Module</a> doesn&rsquo;t either. If you wanted, you could jam negative numbers or decimal places in there:</p>
+</dt></dl><p>The written-out RGB and HSL declarations with decimal-encoded numbers don&rsquo;t specify precision per se. <a href="http://www.w3.org/TR/css3-color/#colorunits">The W3C recommendation for the CSS Color Module</a> doesn&rsquo;t either. If you wanted, you could jam negative numbers or decimal places in there:</p>{% endraw %}
 
-<blockquote>
+{% raw %}<blockquote>
   <p>Values outside the device gamut should be clipped or mapped into the
    gamut when the gamut is known: the red, green, and blue values must be
-   changed to fall within the range supported by the device. […]</p>
+   changed to fall within the range supported by the device. […]</p>{% endraw %}
 
-  <div class="example">
-   <p style="display:none">Example(s):</p>
+{% raw %}  <div class="example">
+   <p style="display:none">Example(s):</p>{% endraw %}
 
-<code>
+{% raw %}<code>
    <pre>
 em { color: rgb(255,0,0) }       /* integer range 0 - 255 */
 em { color: rgb(300,0,0) }       /* clipped to rgb(255,0,0) */
@@ -36,13 +36,13 @@ em { color: rgb(110%, 0%, 0%) }  /* clipped to rgb(100%,0%,0%) */
 </pre>
 </code>
   </div>
-</blockquote>
+</blockquote>{% endraw %}
 
-<p>Since the W3C doesn&rsquo;t provide much guidance, we have to see how browsers implement colors.</p>
+{% raw %}<p>Since the W3C doesn&rsquo;t provide much guidance, we have to see how browsers implement colors.</p>{% endraw %}
 
-<h2>Google Chrome, Apple Safari, and other WebKit Browsers</h2>
+{% raw %}<h2>Google Chrome, Apple Safari, and other WebKit Browsers</h2>{% endraw %}
 
-<p>
+{% raw %}<p>
 CSS parsing is done by WebCore, mostly in <a href="https://code.google.com/p/chromium/codesearch#chromium/src/third_party/WebKit/Source/WebCore/css/CSSParser.cpp&q=rgba%20hsla%20lang:%5Ec%2B%2B%24&sq=package:chromium&l=6107"><code>WebCore/css/CSSParser.cpp</code></a><sup>3</sup>.
 It calls <code>CSSParser::parseColorParameters</code> for RGB colors:
 </p>
@@ -74,33 +74,33 @@ RGBA32 makeRGBAFromHSLA(double hue, double saturation, double lightness, double 
                     static_cast<int>(calcHue(temp1, temp2, hue - 1.0 / 3.0) * scaleFactor),
                     static_cast<int>(alpha * scaleFactor));
 }
-</pre></code>
+</pre></code>{% endraw %}
 
-<p>We see that our carefully described, bespoke, artisanal, floating point colors are being converted down to 24-bit RGB (well, 32-bit RGBA).</p>
+{% raw %}<p>We see that our carefully described, bespoke, artisanal, floating point colors are being converted down to 24-bit RGB (well, 32-bit RGBA).</p>{% endraw %}
 
-<h2>Mozilla Firefox and other Mozilla Browsers</h2>
+{% raw %}<h2>Mozilla Firefox and other Mozilla Browsers</h2>
 <p>HSL conversion for CSS is done in <a href="https://hg.mozilla.org/mozilla-central/file/f64b3dbe0b53/layout/style/nsCSSParser.cpp#l4291"><code>layout/style/nsCSSParser.cpp</code></a>:</p>
 <code><pre>
 bool CSSParserImpl::ParseHSLColor(nscolor& aColor,
                                   char aStop)
 {
-  float h, s, l;
+  float h, s, l;{% endraw %}
 
-  //… 
+{% raw %}  //… {% endraw %}
 
-  if (ExpectSymbol(aStop, true)) {
+{% raw %}  if (ExpectSymbol(aStop, true)) {
     aColor = <strong>NS_HSL2RGB(h, s, l);</strong>
     return true;
-</pre></code>
+</pre></code>{% endraw %}
 
-<p>HSL is converted into an <code>nscolor</code> instance. As implemented in <a href="https://hg.mozilla.org/mozilla-central/file/f64b3dbe0b53/gfx/src/nsColor.h"><code>gfx/src/nsColor.h</code></a>, it&rsquo;s a 32-bit RGBA thing, just like WebKit.</p>
+{% raw %}<p>HSL is converted into an <code>nscolor</code> instance. As implemented in <a href="https://hg.mozilla.org/mozilla-central/file/f64b3dbe0b53/gfx/src/nsColor.h"><code>gfx/src/nsColor.h</code></a>, it&rsquo;s a 32-bit RGBA thing, just like WebKit.</p>{% endraw %}
 
-<h2>Conclusion</h2>
+{% raw %}<h2>Conclusion</h2>{% endraw %}
 
-<p>Storing more than 32 bits of color in your RGB/RGBA declarations is silly. If you use either of the 24-bit representations above (or the 12-bit representation, since it converts losslessly into 24-bit), you&rsquo;ll get correct<sup>4</sup> colors.</p>
-<p>If you use HSL colors, you&rsquo;ll lose some precision in conversion, but probably no worse than you&rsquo;ll lose when your site gets displayed on a 18-bit or fewer display (such as in the iPhone 3GS and earlier).</p>
+{% raw %}<p>Storing more than 32 bits of color in your RGB/RGBA declarations is silly. If you use either of the 24-bit representations above (or the 12-bit representation, since it converts losslessly into 24-bit), you&rsquo;ll get correct<sup>4</sup> colors.</p>
+<p>If you use HSL colors, you&rsquo;ll lose some precision in conversion, but probably no worse than you&rsquo;ll lose when your site gets displayed on a 18-bit or fewer display (such as in the iPhone 3GS and earlier).</p>{% endraw %}
 
-<h4>Notes</h4>
+{% raw %}<h4>Notes</h4>
 <ol><li>&ldquo;hexit&rdquo; is like a digit but hexadecimal instead of decimal. If you like contractions, &ldquo;hexadecimal digit&rdquo; becomes &ldquo;hexit.&rdquo;</li>
 <li>The degrees component doesn&rsquo;t have a glyph because it&rsquo;s unintuitive to type: ⌥⇧8 on Mac OS X, Alt-0176 on Windows, ⌃⇧-UB0 on Ubuntu.</li>
 <li>I&rsquo;m not pasting whole functions because C++ is ugly and verbose.</li>

@@ -4,29 +4,29 @@ layout: post
 title: "Ruby 2.0: Keyword Arguments"
 date: 2013-03-29T02:09:00+00:00
 ---
-{% raw %}<p>Ruby’s had nice method arguments for as long as I’ve been using it: optional arguments, grabbing arguments into an array, automatically compressing a trailing hash into a single argument:</p>
+{% raw %}<p>Ruby’s had nice method arguments for as long as I’ve been using it: optional arguments, grabbing arguments into an array, automatically compressing a trailing hash into a single argument:</p>{% endraw %}
 
-<pre><code>opt "okay", lets: 'do it'
-# call method "opt" with first argument "okay" and second argument {:lets=>'do it'}</code></pre>
+{% raw %}<pre><code>opt "okay", lets: 'do it'
+# call method "opt" with first argument "okay" and second argument {:lets=>'do it'}</code></pre>{% endraw %}
 
-<p>New in Ruby 2.0 is a rather enviable Python feature, keyword arguments:</p>
+{% raw %}<p>New in Ruby 2.0 is a rather enviable Python feature, keyword arguments:</p>{% endraw %}
 
-<pre><code>def kw(x, y: "default y")
+{% raw %}<pre><code>def kw(x, y: "default y")
 end
   
 kw "hello", y: "hasta la vista"
-# kw called with x="hello" and y="hasta la vista"
+# kw called with x="hello" and y="hasta la vista"{% endraw %}
 
-kw "oops"
-# kw called with x="hello" and y="default y"
+{% raw %}kw "oops"
+# kw called with x="hello" and y="default y"{% endraw %}
 
-kw "hello", "friends"
+{% raw %}kw "hello", "friends"
 # #<ArgumentError: wrong number of arguments (2 for 1)> raised
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>This is sometimes better than hash compression. Frequently you’ll end up setting a bunch of defaults for missing hash entries<sup>1</sup>; keyword arguments simplify that.</p>
+{% raw %}<p>This is sometimes better than hash compression. Frequently you’ll end up setting a bunch of defaults for missing hash entries<sup>1</sup>; keyword arguments simplify that.</p>{% endraw %}
 
-<p><a href="https://gist.github.com/bkerley/5268037">I put some sample code on Gist</a> and owe quite a bit to Urabe Shyouhei for their excellent <a href="https://speakerdeck.com/shyouhei/whats-new-in-ruby-2-dot-0">“What’s New in Ruby 2.0” slide deck.</a></p>
+{% raw %}<p><a href="https://gist.github.com/bkerley/5268037">I put some sample code on Gist</a> and owe quite a bit to Urabe Shyouhei for their excellent <a href="https://speakerdeck.com/shyouhei/whats-new-in-ruby-2-dot-0">“What’s New in Ruby 2.0” slide deck.</a></p>
 <h4>Notes</h4>
 <ol><li>Some increasingly-worse ways to set defaults from missing hash entries can be found on <a href="http://stackoverflow.com/questions/5931313/ruby-method-with-argument-hash-with-default-values-how-to-dry">Stack Overflow</a>.</li>
 </ol>{% endraw %}

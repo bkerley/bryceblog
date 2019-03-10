@@ -4,35 +4,35 @@ layout: post
 title: "Attention Former Programming Languages Students"
 date: 2007-10-02T06:13:34+00:00
 ---
-{% raw %}<p>Last fall I took Dr. Albrecht&rsquo;s awesome &ldquo;Programming Languages&rdquo; class at USF.  On a whim today, I took a look at one of the postscript programs I had written.</p>
+{% raw %}<p>Last fall I took Dr. Albrecht&rsquo;s awesome &ldquo;Programming Languages&rdquo; class at USF.  On a whim today, I took a look at one of the postscript programs I had written.</p>{% endraw %}
 
-<p>Some parts I can understand readily:</p>
+{% raw %}<p>Some parts I can understand readily:</p>{% endraw %}
 
-<pre><code>(Grade Calculator by Bryce Kerley U-number) dup dup
+{% raw %}<pre><code>(Grade Calculator by Bryce Kerley U-number) dup dup
 .85 .90 1 setrgbcolor %spiffy watermark
--20 9.5 144 pt textdraw
+-20 9.5 144 pt textdraw{% endraw %}
 
-
+{% raw %}
 0 0 0 setrgbcolor
 2 10 12 pt textdraw %front and center
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Some parts I remember fondly due to sheer smarmy cleverness (i.e. using the rgbcolor register as a loop index):</p>
+{% raw %}<p>Some parts I remember fondly due to sheer smarmy cleverness (i.e. using the rgbcolor register as a loop index):</p>{% endraw %}
 
-<pre><code>currentrgbcolor %load current color
+{% raw %}<pre><code>currentrgbcolor %load current color
 dup 1 eq %if our blue was last filled up
-{pop pop pop 0.4 0 0.4} if %darken it down to purple
+{pop pop pop 0.4 0 0.4} if %darken it down to purple{% endraw %}
 
-3 1 roll %rotate it to the next primary or to brown/navy from purple
+{% raw %}3 1 roll %rotate it to the next primary or to brown/navy from purple
 setrgbcolor
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>And some parts that I forgot to comment I don&rsquo;t understand:</p>
+{% raw %}<p>And some parts that I forgot to comment I don&rsquo;t understand:</p>{% endraw %}
 
-<pre><code>pop dup grades exch get
+{% raw %}<pre><code>pop dup grades exch get
 1 add exch
 grades 3 1 roll exch put
 true
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>So, if you&rsquo;re working in a &ldquo;puzzle language&rdquo; like Postscript you might want to include more useful comments than you normally do.</p>{% endraw %}
+{% raw %}<p>So, if you&rsquo;re working in a &ldquo;puzzle language&rdquo; like Postscript you might want to include more useful comments than you normally do.</p>{% endraw %}

@@ -4,53 +4,53 @@ layout: post
 title: "USF CTF 2007"
 date: 2007-04-24T03:31:03+00:00
 ---
-{% raw %}<p>We finally hosted the <a href="http://ctf07.usf.edu/">USF CTF 2007</a> event last Friday.  It&rsquo;s been a few days, so now it&rsquo;s time for me to post what I&rsquo;ve thought of it so far.</p>
+{% raw %}<p>We finally hosted the <a href="http://ctf07.usf.edu/">USF CTF 2007</a> event last Friday.  It&rsquo;s been a few days, so now it&rsquo;s time for me to post what I&rsquo;ve thought of it so far.</p>{% endraw %}
 
-<h2>What did I do</h2>
+{% raw %}<h2>What did I do</h2>{% endraw %}
 
-<p>I was responsible for the privatemessage (<a href="http://rubyonrails.org/">Rails</a>), profile (<a href="http://rubyonrails.org/">Rails</a>), and psifertex (<a href="http://code.whytheluckystiff.net/camping/">Camping</a>) services. I also created the file recovery (<a href="http://ctf07.usf.edu/challenges/hatten_ar_din.dmg">hatten_ar_din.dmg</a>) challenge.  If you desperately need hints for these, please contact me privately (I don&rsquo;t want to spoil them publicly until at least a year has passed).  Otherwise, feel free to comment here.</p>
+{% raw %}<p>I was responsible for the privatemessage (<a href="http://rubyonrails.org/">Rails</a>), profile (<a href="http://rubyonrails.org/">Rails</a>), and psifertex (<a href="http://code.whytheluckystiff.net/camping/">Camping</a>) services. I also created the file recovery (<a href="http://ctf07.usf.edu/challenges/hatten_ar_din.dmg">hatten_ar_din.dmg</a>) challenge.  If you desperately need hints for these, please contact me privately (I don&rsquo;t want to spoil them publicly until at least a year has passed).  Otherwise, feel free to comment here.</p>{% endraw %}
 
-<p>I also worked on small parts of the scoreboard, including the interaction model for the flag depositor (nc 10.0.0.40 31336) and research for other parts of the system.</p>
+{% raw %}<p>I also worked on small parts of the scoreboard, including the interaction model for the flag depositor (nc 10.0.0.40 31336) and research for other parts of the system.</p>{% endraw %}
 
-<h2>Did Like</h2>
+{% raw %}<h2>Did Like</h2>{% endraw %}
 
-<p>The scripts scoring my services seemed to work without issue.  We spent an awful lot of time beforehand troubleshooting these, and originally I wasn&rsquo;t sure they&rsquo;d hold up.</p>
+{% raw %}<p>The scripts scoring my services seemed to work without issue.  We spent an awful lot of time beforehand troubleshooting these, and originally I wasn&rsquo;t sure they&rsquo;d hold up.</p>{% endraw %}
 
-<p>My services seemed to be about where I wanted them to be difficulty-wise.  Psifertex and Privatemessage were relatively easy, both to attack and defend.  Profile was more subtle, with only one team actually stealing more than two flags from it.  While defg, the Georgia Tech team was able to score on it reliably, I&rsquo;m not certain they ever scripted an attack on it (our baseline for granting a breakthrough bonus).</p>
+{% raw %}<p>My services seemed to be about where I wanted them to be difficulty-wise.  Psifertex and Privatemessage were relatively easy, both to attack and defend.  Profile was more subtle, with only one team actually stealing more than two flags from it.  While defg, the Georgia Tech team was able to score on it reliably, I&rsquo;m not certain they ever scripted an attack on it (our baseline for granting a breakthrough bonus).</p>{% endraw %}
 
-<p>The file recovery challenge was never solved.  I&rsquo;m not going to talk about this much publicly, because I still don&rsquo;t think anybody has recovered the password from it.</p>
+{% raw %}<p>The file recovery challenge was never solved.  I&rsquo;m not going to talk about this much publicly, because I still don&rsquo;t think anybody has recovered the password from it.</p>{% endraw %}
 
-<h2>Did Not Like</h2>
+{% raw %}<h2>Did Not Like</h2>{% endraw %}
 
-<p>The scoreboard was <strong><em>SLOW</em></strong>.  By the end of the game, after taking all but a single request off of it, the overview of it was taking ten seconds to render, almost all of it waiting on a massive query:</p>
+{% raw %}<p>The scoreboard was <strong><em>SLOW</em></strong>.  By the end of the game, after taking all but a single request off of it, the overview of it was taking ten seconds to render, almost all of it waiting on a massive query:</p>{% endraw %}
 
-<pre class="textmate-source sunburst">        <span class="meta meta_function meta_function_method meta_function_method_with-arguments meta_function_method_with-arguments_ruby">def count_all(services)</span>
+{% raw %}<pre class="textmate-source sunburst">        <span class="meta meta_function meta_function_method meta_function_method_with-arguments meta_function_method_with-arguments_ruby">def count_all(services)</span>
                 total_o_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT COUNT(DISTINCT captures.id) FROM captures LEFT OUTER JOIN flags ON flags.id = captures.flag_id WHERE captures.team_id = t),0) AS total_o"
     total_d_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT SUM(uptimes.value) FROM uptimes WHERE team_id=t),0) AS total_d"
-    total_bonus_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT SUM(amount) FROM bonuses WHERE team_id=t),0) AS bonuses"
+    total_bonus_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT SUM(amount) FROM bonuses WHERE team_id=t),0) AS bonuses"{% endraw %}
 
-    last_capture = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT UNIX_TIMESTAMP(time) FROM captures WHERE captures.team_id = t ORDER BY captures.time DESC LIMIT 0,1),0) AS l_cap"
-    last_defend = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT UNIX_TIMESTAMP(time) FROM uptimes WHERE team_id = t ORDER BY time DESC LIMIT 0,1),0) AS l_def"
+{% raw %}    last_capture = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT UNIX_TIMESTAMP(time) FROM captures WHERE captures.team_id = t ORDER BY captures.time DESC LIMIT 0,1),0) AS l_cap"
+    last_defend = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT UNIX_TIMESTAMP(time) FROM uptimes WHERE team_id = t ORDER BY time DESC LIMIT 0,1),0) AS l_def"{% endraw %}
 
-    final_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>SELECT teams.longname, IFNULL(teams.ip,'0.0.0.0') AS ip, teams.id AS t, teams.shortname AS sname, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>total_o_query}, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>total_d_query}, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>total_bonus_query}"
+{% raw %}    final_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>SELECT teams.longname, IFNULL(teams.ip,'0.0.0.0') AS ip, teams.id AS t, teams.shortname AS sname, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>total_o_query}, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>total_d_query}, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>total_bonus_query}"
     final_query = final_query + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>last_capture}, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>last_defend}"
                 services.each do |s|
                   service_o_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT COUNT(captures.id) FROM captures,flags WHERE service_id=<span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>s.id} AND flags.id = captures.flag_id AND captures.team_id=t GROUP BY captures.team_id),0) AS <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>s.shortname}_o"
       service_d_query = <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>IFNULL((SELECT SUM(uptimes.value) FROM uptimes WHERE service_id=<span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>s.id} and team_id=t),0) AS <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>s.shortname}_d"
       final_query = final_query + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>service_o_query}, <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>service_d_query}"
-    end
+    end{% endraw %}
 
-    final_query = final_query + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span> FROM teams ORDER BY (SELECT SUM(total_o+total_d+bonuses)) DESC, t ASC"
+{% raw %}    final_query = final_query + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span> FROM teams ORDER BY (SELECT SUM(total_o+total_d+bonuses)) DESC, t ASC"{% endraw %}
 
-    result = ActiveRecord::Base.connection.select_all(final_query)
+{% raw %}    result = ActiveRecord::Base.connection.select_all(final_query)
     return result unless result.empty? or result.nil?
     exit
   end
-</pre>
+</pre>{% endraw %}
 
-<p>Ten seconds for a page is crap, and we anticipated page loads being a problem, so we configured the scoreboard to use page caching for anything world-facing.  However, a confluence of conditions (+4 alliteration bonus) broke this.</p>
+{% raw %}<p>Ten seconds for a page is crap, and we anticipated page loads being a problem, so we configured the scoreboard to use page caching for anything world-facing.  However, a confluence of conditions (+4 alliteration bonus) broke this.</p>{% endraw %}
 
-<ul><li>A request that hits a cached page will bypass Rails entirely.  Conversely, a request that is a cache miss will hit Rails.  This is by design.</li>
+{% raw %}<ul><li>A request that hits a cached page will bypass Rails entirely.  Conversely, a request that is a cache miss will hit Rails.  This is by design.</li>
 <li>The only way to expire a cached page is deletion.</li>
 <li>Rails writes the cached page at the end of a request, because the information necessary to write it isn&rsquo;t available beforehand.</li>
 <li>If two requests for the same cache miss are processed close enough in time that the second request won&rsquo;t start before the first one finishes, both will miss.</li>
@@ -58,8 +58,8 @@ date: 2007-04-24T03:31:03+00:00
 <li>When Mongrel runs out of free request &ldquo;slots&rdquo;, the oldest request gets closed before completion.</li>
 <li>When your SQL server takes 50 seconds to fulfill a query, your Mongrel will probably close that request before it finishes.</li>
 <li>So if you keep getting hit, the page never writes out and you always have misses driving up load on SQL.</li>
-</ul><p>The ghetto competition way we fixed this was putting plain ol&rsquo; Apache on one machine, and using wget to fetch it pages from Mongrel.  We could have it wait 20 seconds between requests, and this reduced load allowed queries to finish in less than 10 seconds, while still allowing the depositor and scoring scripts to continue their business.</p>
+</ul><p>The ghetto competition way we fixed this was putting plain ol&rsquo; Apache on one machine, and using wget to fetch it pages from Mongrel.  We could have it wait 20 seconds between requests, and this reduced load allowed queries to finish in less than 10 seconds, while still allowing the depositor and scoring scripts to continue their business.</p>{% endraw %}
 
-<p>I&rsquo;d like to fix this by separating out the monolithic SQL into smaller, maintainable queries; and caching the output of those with a smarter algorithm (maybe one that generates the next result prior to the previous one expiring).</p>
+{% raw %}<p>I&rsquo;d like to fix this by separating out the monolithic SQL into smaller, maintainable queries; and caching the output of those with a smarter algorithm (maybe one that generates the next result prior to the previous one expiring).</p>{% endraw %}
 
-<p>Other than that, it was a good game, and I&rsquo;d like to thank everybody who put up with the slowness and had a good time.  We plan on making this an annual event, so that should give us plenty of time to tighten up the issues that we had.</p>{% endraw %}
+{% raw %}<p>Other than that, it was a good game, and I&rsquo;d like to thank everybody who put up with the slowness and had a good time.  We plan on making this an annual event, so that should give us plenty of time to tighten up the issues that we had.</p>{% endraw %}

@@ -4,11 +4,11 @@ layout: post
 title: "Writing a Postfix Calculator in Erlang"
 date: 2008-01-06T07:59:17+00:00
 ---
-{% raw %}<p>I&rsquo;ve been messing around with IRC bots in different languages on and off for the last year, including a couple in Ruby (public broadcast messages for <a href="http://brycekerley.net/mp/2007/4/23/usf-ctf-2007">USF CTF 2007</a> and a stevenote countdown timer), and more recently, &ldquo;tostada,&rdquo; a multifunction one in Erlang, which now contains a full-blown programming language implementation.</p>
+{% raw %}<p>I&rsquo;ve been messing around with IRC bots in different languages on and off for the last year, including a couple in Ruby (public broadcast messages for <a href="http://brycekerley.net/mp/2007/4/23/usf-ctf-2007">USF CTF 2007</a> and a stevenote countdown timer), and more recently, &ldquo;tostada,&rdquo; a multifunction one in Erlang, which now contains a full-blown programming language implementation.</p>{% endraw %}
 
-<p>The Erlang one&rsquo;s functionality started pretty simply, as a bunch of hand-coded triggers and replies:</p>
+{% raw %}<p>The Erlang one&rsquo;s functionality started pretty simply, as a bunch of hand-coded triggers and replies:</p>{% endraw %}
 
-<pre><code>command("channel",Cmd) ->
+{% raw %}<pre><code>command("channel",Cmd) ->
   format("This is ~p",[Cmd#toscmd.channel]);
 command("version",) ->
   "I don't have a version.";
@@ -20,17 +20,17 @@ command("sleep",Cmd) ->
   Sleeptime = list_to_integer(lists:nth(1, Cmd#toscmd.args)),
   timer:sleep(Sleeptime),
   format("I am awake after sleeping ~p", [Sleeptime]).
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>However, this seemed pretty anemic compared to the other bot in the channel, Shaniqua, which is basically a frontend for a programmable tcl interpreter, allowing it to do stuff as far-reaching as being a slot machine one second, and fetching stuff from Flickr the next.  I wanted tostada to not be completely worthless, but I also wanted it to be all-Erlang because I don&rsquo;t really know Erlang yet.</p>
+{% raw %}<p>However, this seemed pretty anemic compared to the other bot in the channel, Shaniqua, which is basically a frontend for a programmable tcl interpreter, allowing it to do stuff as far-reaching as being a slot machine one second, and fetching stuff from Flickr the next.  I wanted tostada to not be completely worthless, but I also wanted it to be all-Erlang because I don&rsquo;t really know Erlang yet.</p>{% endraw %}
 
-<p>So I decided to write a stack-based programming language in Erlang, because this kind of language is quick and easy.  I called it &ldquo;obscura&rdquo; for reasons I&rsquo;ve now forgotten.</p>
+{% raw %}<p>So I decided to write a stack-based programming language in Erlang, because this kind of language is quick and easy.  I called it &ldquo;obscura&rdquo; for reasons I&rsquo;ve now forgotten.</p>{% endraw %}
 
-<h1>Erlang</h1>
+{% raw %}<h1>Erlang</h1>{% endraw %}
 
-<p>Erlang is a functional programming language invented by Ericsson for reliable parallel programming.  To do this, it imposes certain constraints and supports certain conventions.</p>
+{% raw %}<p>Erlang is a functional programming language invented by Ericsson for reliable parallel programming.  To do this, it imposes certain constraints and supports certain conventions.</p>{% endraw %}
 
-<ul><li>The proper name for a function is <code>functionname/numargs</code>.  <code>multiply(X, Y) -> X*Y.</code> is named <code>multiply/2</code>.</li>
+{% raw %}<ul><li>The proper name for a function is <code>functionname/numargs</code>.  <code>multiply(X, Y) -> X*Y.</code> is named <code>multiply/2</code>.</li>
 <li>Functions can have multiple bodies.  Erlang selects the best one based on arguments as labeled, and guards (basically caveats, such as <code>double(X) when is_integer(X)</code> )  See <code>command/2</code> above for an example of a function selected on the value of its first argument.</li>
 <li>Statements in the same function body are separated with commas &ldquo;<code>,</code>&rdquo; ; multiple bodies for the same function are separated with semicolons &ldquo;<code>;</code>&rdquo; ; the last body of a function is terminated with a period &ldquo;<code>.</code>&rdquo; .  See <code>command/2</code> above for examples.</li>
 <li>Variables are scoped to the function they&rsquo;re in.  Global variables are discouraged, because they promote coupling.</li>
@@ -38,175 +38,175 @@ command("sleep",Cmd) ->
 <li>Variables are assigned once per function.  See previous bullet.</li>
 <li>In a function&rsquo;s arguments, <code>_</code> (underscore) is used to indicate an argument that you don&rsquo;t care about.  If you use a variable name, the compiler will whine if it&rsquo;s never used.  This is a good thing.</li>
 <li>If the last thing you do in a function is call another function, you don&rsquo;t create a new stack frame.  Thus, tail recursion is the preferred way to loop.</li>
-</ul><p>Example tail recursion:</p>
+</ul><p>Example tail recursion:</p>{% endraw %}
 
-<pre><code>sum(List) -> sum(List, 0).
+{% raw %}<pre><code>sum(List) -> sum(List, 0).
 sum([], Tot) -> % base case - empty list
   Tot;
 sum([Car|Cdr], Tot) -> % add current entry to running total
   sum(Cdr, Tot + Cdr).
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Note the use of a running total argument to <code>sum/2</code>.  This is necessary because simply returning <code>sum(Cdr) + Car</code> will leave the current call on the stack, taking up more memory.</p>
+{% raw %}<p>Note the use of a running total argument to <code>sum/2</code>.  This is necessary because simply returning <code>sum(Cdr) + Car</code> will leave the current call on the stack, taking up more memory.</p>{% endraw %}
 
-<p>Erlang has quite usable documentation available online at <a href="http://www.erlang.org/doc/">http://www.erlang.org/doc/</a>, and is <a href="http://www.erlang.org/download.html">free to download</a> for most modern operating systems, and Windows too.</p>
+{% raw %}<p>Erlang has quite usable documentation available online at <a href="http://www.erlang.org/doc/">http://www.erlang.org/doc/</a>, and is <a href="http://www.erlang.org/download.html">free to download</a> for most modern operating systems, and Windows too.</p>{% endraw %}
 
-<h1>Parsing</h1>
+{% raw %}<h1>Parsing</h1>{% endraw %}
 
-<p>You only need to parse two things to do simple arithmetic operations: integers and operators.  Likewise, the only state you need to hold boils down to the remaining program and the current state of the stack.  Let&rsquo;s parse first, so we have something to test operators with.</p>
+{% raw %}<p>You only need to parse two things to do simple arithmetic operations: integers and operators.  Likewise, the only state you need to hold boils down to the remaining program and the current state of the stack.  Let&rsquo;s parse first, so we have something to test operators with.</p>{% endraw %}
 
-<p>We start off with basically a blank slate:</p>
+{% raw %}<p>We start off with basically a blank slate:</p>{% endraw %}
 
-<pre><code>-module (obscura).
+{% raw %}<pre><code>-module (obscura).
 -author ("bkerley@brycekerley.net").
 -include ("command.hrl").
 -export ([eval/1]).
--import (io_lib, [format/2]).
+-import (io_lib, [format/2]).{% endraw %}
 
-eval(Line) ->
+{% raw %}eval(Line) ->
   format("~p",[Line]).
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>At this point, we can call <code>obscura:eval("3 4 +")</code> and get outÉ what we entered.  For simplicity&rsquo;s sake, we can write a parser in two steps:</p>
+{% raw %}<p>At this point, we can call <code>obscura:eval("3 4 +")</code> and get outÉ what we entered.  For simplicity&rsquo;s sake, we can write a parser in two steps:</p>{% endraw %}
 
-<ol><li>Split the line with <code>string:tokens/2</code> into an array of words.</li>
+{% raw %}<ol><li>Split the line with <code>string:tokens/2</code> into an array of words.</li>
 <li>Convert each word to an integer.  Failing that, leave it as a string.</li>
-</ol><p>And coded:</p>
+</ol><p>And coded:</p>{% endraw %}
 
-<pre><code>eval(Line) ->
+{% raw %}<pre><code>eval(Line) ->
   Nodes = integerize(string:tokens(Line, " "), []),
-  format("~p",[Nodes]).
+  format("~p",[Nodes]).{% endraw %}
 
-integerize([],Accum) ->
+{% raw %}integerize([],Accum) ->
   lists:reverse(Accum);
 integerize([First|Rest], Accum) ->
-  integerize(Rest, [try_integerize(First)|Accum]).
+  integerize(Rest, [try_integerize(First)|Accum]).{% endraw %}
 
-try_integerize(Candidate) ->
+{% raw %}try_integerize(Candidate) ->
   try
     list_to_integer(Candidate)
   catch
     error:_ ->
       Candidate
   end.
-</code></pre>
+</code></pre>{% endraw %}
 
-<p><code>integerize/2</code> is the recursive conversion function.  Since Erlang optimizes tail recursion, and it uses a singly-linked list for everything, we don&rsquo;t want to traverse to the end of the array every step (an O(N) operation each time, or O(N<sup>2</sup>) for the whole line), simply tacking new entries on at the beginning (an O(1) operation each time), and reverse it at the end (so the whole line is O(N), much better).</p>
+{% raw %}<p><code>integerize/2</code> is the recursive conversion function.  Since Erlang optimizes tail recursion, and it uses a singly-linked list for everything, we don&rsquo;t want to traverse to the end of the array every step (an O(N) operation each time, or O(N<sup>2</sup>) for the whole line), simply tacking new entries on at the beginning (an O(1) operation each time), and reverse it at the end (so the whole line is O(N), much better).</p>{% endraw %}
 
-<p><code>try_integerize/1</code> is</p>
+{% raw %}<p><code>try_integerize/1</code> is</p>{% endraw %}
 
-<p>Now, when <code>eval</code>ing &ldquo;3 4 +&rdquo;, we get an array containing 3, 4, and &ldquo;+&rdquo;.  That&rsquo;s the easy part, so on to the fun part.</p>
+{% raw %}<p>Now, when <code>eval</code>ing &ldquo;3 4 +&rdquo;, we get an array containing 3, 4, and &ldquo;+&rdquo;.  That&rsquo;s the easy part, so on to the fun part.</p>{% endraw %}
 
-<h1>Arithmetic</h1>
+{% raw %}<h1>Arithmetic</h1>{% endraw %}
 
-<p><code>eval/1</code> needs to call a function to actually turn the parsed array into results, which I&rsquo;ll call <code>eval/2</code>.  <code>eval/2</code> will be recursive (tail-recursive, so we don&rsquo;t blow up the stack), so it needs our two state elements from before as arguments - remaining line, and current stack.  New version of <code>eval/1</code> that calls <code>eval/2</code>:</p>
+{% raw %}<p><code>eval/1</code> needs to call a function to actually turn the parsed array into results, which I&rsquo;ll call <code>eval/2</code>.  <code>eval/2</code> will be recursive (tail-recursive, so we don&rsquo;t blow up the stack), so it needs our two state elements from before as arguments - remaining line, and current stack.  New version of <code>eval/1</code> that calls <code>eval/2</code>:</p>{% endraw %}
 
-<pre><code>eval(Line) ->
+{% raw %}<pre><code>eval(Line) ->
   Nodes = integerize(string:tokens(Line, " "), []),
   eval(Nodes, []).
-</code></pre>
+</code></pre>{% endraw %}
 
-<h2>Pushing to the stack</h2>
+{% raw %}<h2>Pushing to the stack</h2>{% endraw %}
 
-<p>Let&rsquo;s implement the &ldquo;push&rdquo; operation since it&rsquo;s simple.  When the first word in the remaining line is an integer, put it at the beginning of the stack array.</p>
+{% raw %}<p>Let&rsquo;s implement the &ldquo;push&rdquo; operation since it&rsquo;s simple.  When the first word in the remaining line is an integer, put it at the beginning of the stack array.</p>{% endraw %}
 
-<pre><code>eval([First|Rest], Stack) when is_integer(First) -> % push
+{% raw %}<pre><code>eval([First|Rest], Stack) when is_integer(First) -> % push
   eval(Rest, [First|Stack]);
-</code></pre>
+</code></pre>{% endraw %}
 
-<h2>Cars and Cdrs</h2>
+{% raw %}<h2>Cars and Cdrs</h2>{% endraw %}
 
-<p>This might be your first time with Erlang&rsquo;s <code>car</code>/<code>cdr</code> equivalent, and guard expression.  Basically, <code>[First|Rest]</code> is the expression for a list with first element in the <code>First</code> variable, and the sublist of every other element in the <code>Last</code> variable.</p>
+{% raw %}<p>This might be your first time with Erlang&rsquo;s <code>car</code>/<code>cdr</code> equivalent, and guard expression.  Basically, <code>[First|Rest]</code> is the expression for a list with first element in the <code>First</code> variable, and the sublist of every other element in the <code>Last</code> variable.</p>{% endraw %}
 
-<pre><code>Array = [1, 2, 3, 4],
+{% raw %}<pre><code>Array = [1, 2, 3, 4],
 [First|Rest] = Array,
 First = 1,
 Rest = [2, 3, 4].
 % if you flip line 2 and run this code backwards it'll  be successful :D
-</code></pre>
+</code></pre>{% endraw %}
 
-<h2>Printing results</h2>
+{% raw %}<h2>Printing results</h2>{% endraw %}
 
-<p>With the code so far, as soon as we run out of words in the line, we&rsquo;ll error out with a <code>badmatch</code> error (Erlang couldn&rsquo;t find an appropriate function body for our arguments).  Let&rsquo;s just return the <code>Stack</code> when our array of remaining words is empty.</p>
+{% raw %}<p>With the code so far, as soon as we run out of words in the line, we&rsquo;ll error out with a <code>badmatch</code> error (Erlang couldn&rsquo;t find an appropriate function body for our arguments).  Let&rsquo;s just return the <code>Stack</code> when our array of remaining words is empty.</p>{% endraw %}
 
-<pre><code>eval([], Stack) -> % no more ops, dump stack
+{% raw %}<pre><code>eval([], Stack) -> % no more ops, dump stack
   Stack;
-</code></pre>
+</code></pre>{% endraw %}
 
-<h2>Base case and fallback</h2>
+{% raw %}<h2>Base case and fallback</h2>{% endraw %}
 
-<p>Right now, if we do anything other than pushing an integer to the stack or running out of remaining words, Erlang will fail and dump a <code>badmatch</code> error report to your screen.</p>
+{% raw %}<p>Right now, if we do anything other than pushing an integer to the stack or running out of remaining words, Erlang will fail and dump a <code>badmatch</code> error report to your screen.</p>{% endraw %}
 
-<p>Oops.  Let&rsquo;s add a base case that&rsquo;ll match every word that hasn&rsquo;t already been matched with an appropriate operation.</p>
+{% raw %}<p>Oops.  Let&rsquo;s add a base case that&rsquo;ll match every word that hasn&rsquo;t already been matched with an appropriate operation.</p>{% endraw %}
 
-<pre><code>eval([Invalid|Rest], Stack) ->
+{% raw %}<pre><code>eval([Invalid|Rest], Stack) ->
   format("Invalid opcode \"~s\".  Rest: ~w Stack: ~w",[Invalid, Rest, Stack]).
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Now, whenever you execute <code>3 4 +</code> you should get a friendly error.</p>
+{% raw %}<p>Now, whenever you execute <code>3 4 +</code> you should get a friendly error.</p>{% endraw %}
 
-<h2>Simple Addition and Multiplication</h2>
+{% raw %}<h2>Simple Addition and Multiplication</h2>{% endraw %}
 
-<p>Let&rsquo;s write the addition operator so we don&rsquo;t get an error at all when we do <code>3 4 +</code>:</p>
+{% raw %}<p>Let&rsquo;s write the addition operator so we don&rsquo;t get an error at all when we do <code>3 4 +</code>:</p>{% endraw %}
 
-<pre><code>eval(["+"|Rest], Stack) ->
+{% raw %}<pre><code>eval(["+"|Rest], Stack) ->
   [Alpha|[Bravo|Remain]] = Stack,
   Sum = Alpha + Bravo,
   eval(Rest, [Sum|Remain]);
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>This body of <code>eval/2</code> (which should go above the &ldquo;Invalid opcode&rdquo; body of the same function in your source file) only gets selected when it&rsquo;s presented with an array beginning with the string &ldquo;+&rdquo; as its first argument.  When it is selected, it:</p>
+{% raw %}<p>This body of <code>eval/2</code> (which should go above the &ldquo;Invalid opcode&rdquo; body of the same function in your source file) only gets selected when it&rsquo;s presented with an array beginning with the string &ldquo;+&rdquo; as its first argument.  When it is selected, it:</p>{% endraw %}
 
-<ol><li>Pulls the first two entries from <code>Stack</code> into the variables <code>Alpha</code> and <code>Bravo</code>, using the nested array notation from above.</li>
+{% raw %}<ol><li>Pulls the first two entries from <code>Stack</code> into the variables <code>Alpha</code> and <code>Bravo</code>, using the nested array notation from above.</li>
 <li>Adds <code>Alpha</code> and <code>Bravo</code> together and calls the result <code>Sum</code>.</li>
 <li>Recurs <code>eval/2</code> with the <code>Rest</code> of the input line, and a new stack consisting of the <code>Sum</code> in front of the <code>Remain</code>ing stack.</li>
-</ol><p>Let&rsquo;s implement multiplication too:</p>
+</ol><p>Let&rsquo;s implement multiplication too:</p>{% endraw %}
 
-<pre><code>eval(["*"|Rest], Stack) ->
+{% raw %}<pre><code>eval(["*"|Rest], Stack) ->
   [Alpha|[Bravo|Remain]] = Stack,
   Sum = Alpha * Bravo,
   eval(Rest, [Sum|Remain]);
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Not too surprisingly, there&rsquo;s a lot of repeated code here, since they&rsquo;re both operations that pop off the stack twice, perform  calculation, and push a result on.  There&rsquo;ll be even more repetition as we implement division, subtraction, and various bit-twiddling operations.  Let&rsquo;s put a stop to that.</p>
+{% raw %}<p>Not too surprisingly, there&rsquo;s a lot of repeated code here, since they&rsquo;re both operations that pop off the stack twice, perform  calculation, and push a result on.  There&rsquo;ll be even more repetition as we implement division, subtraction, and various bit-twiddling operations.  Let&rsquo;s put a stop to that.</p>{% endraw %}
 
-<h2>Popping twice</h2>
+{% raw %}<h2>Popping twice</h2>{% endraw %}
 
-<p>The first thing we do in any of these binary operations is always going to be popping two entries off the stack.  Let&rsquo;s write <code>pop_two/1</code>, which takes the <code>Stack</code>, and returns its first two entries and the remaining stack in a tuple (that we&rsquo;ll immediately unpack).</p>
+{% raw %}<p>The first thing we do in any of these binary operations is always going to be popping two entries off the stack.  Let&rsquo;s write <code>pop_two/1</code>, which takes the <code>Stack</code>, and returns its first two entries and the remaining stack in a tuple (that we&rsquo;ll immediately unpack).</p>{% endraw %}
 
-<pre><code>pop_two(Stack) ->
+{% raw %}<pre><code>pop_two(Stack) ->
   [Alpha|[Bravo|Remain]] = Stack,
   {Alpha, Bravo, Remain}.
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>And rewrite addition and multiplication to use it:</p>
+{% raw %}<p>And rewrite addition and multiplication to use it:</p>{% endraw %}
 
-<pre><code>eval(["+"|Rest], Stack) ->
+{% raw %}<pre><code>eval(["+"|Rest], Stack) ->
   {Alpha, Bravo, Remain} = pop_two(Stack),
   Sum = Alpha + Bravo,
-  eval(Rest, [Sum|Remain]);
+  eval(Rest, [Sum|Remain]);{% endraw %}
 
-eval(["*"|Rest], Stack) ->  
+{% raw %}eval(["*"|Rest], Stack) ->  
   [Alpha|[Bravo|Remain]] = Stack,
   Sum = Alpha * Bravo,
   eval(Rest, [Sum|Remain]);
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Actually, let&rsquo;s not.  Doing it this way does clear up some possibly confusing syntax; but what we <em>really</em> want is a way to get rid of <em>even more</em> repeated code, such as the first and last lines of the function.</p>
+{% raw %}<p>Actually, let&rsquo;s not.  Doing it this way does clear up some possibly confusing syntax; but what we <em>really</em> want is a way to get rid of <em>even more</em> repeated code, such as the first and last lines of the function.</p>{% endraw %}
 
-<pre><code>eval(["+"|Rest], Stack) ->
+{% raw %}<pre><code>eval(["+"|Rest], Stack) ->
   Addition = fun (A,B) ->
     A+B
   end,
-  binary_op(Addition, Stack, Rest);
+  binary_op(Addition, Stack, Rest);{% endraw %}
 
-eval(["*"|Rest], Stack) ->
+{% raw %}eval(["*"|Rest], Stack) ->
   binary_op(fun (A,B) -> A*B end, Stack, Rest);
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Now <em>this</em> is functional programming!  We can just say that <code>Addition</code> is a function with an arity of 2 and that returns the sum of its arguments, and call a hypothetical <code>binary_op/3</code>  that handles all the popping, pushing, and recurring.  We don&rsquo;t even have to assign the <code>fun</code> for the operation to a variable, just use it in place (see the multiplication operation).</p>
+{% raw %}<p>Now <em>this</em> is functional programming!  We can just say that <code>Addition</code> is a function with an arity of 2 and that returns the sum of its arguments, and call a hypothetical <code>binary_op/3</code>  that handles all the popping, pushing, and recurring.  We don&rsquo;t even have to assign the <code>fun</code> for the operation to a variable, just use it in place (see the multiplication operation).</p>{% endraw %}
 
-<pre><code>binary_op(Fun, Stack, Rest) ->
+{% raw %}<pre><code>binary_op(Fun, Stack, Rest) ->
   [Alpha|[Bravo|Remain]] = Stack,
   case Fun(Alpha, Bravo) of
     {op_fail, Desc} ->
@@ -214,12 +214,12 @@ eval(["*"|Rest], Stack) ->
     Result ->
       eval(Rest, [Result|Remain])
   end.
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>This is a bit more complicated than <em>strictly</em> necessary, but this lets the <code>fun</code> we&rsquo;re called with throw an error message if necessary (for example, if we have operations that can only operate on integers) by returning a 2-tuple with the <code>op_fail</code> symbol in the first position, and a <code>Desc</code>ription of the error in the second.</p>
+{% raw %}<p>This is a bit more complicated than <em>strictly</em> necessary, but this lets the <code>fun</code> we&rsquo;re called with throw an error message if necessary (for example, if we have operations that can only operate on integers) by returning a 2-tuple with the <code>op_fail</code> symbol in the first position, and a <code>Desc</code>ription of the error in the second.</p>{% endraw %}
 
-<h1>Looking Ahead</h1>
+{% raw %}<h1>Looking Ahead</h1>{% endraw %}
 
-<p>I haven&rsquo;t explored any operations beyond addition and multiplication in this post because their implementation should be self-evident.</p>
+{% raw %}<p>I haven&rsquo;t explored any operations beyond addition and multiplication in this post because their implementation should be self-evident.</p>{% endraw %}
 
-<p>I also haven&rsquo;t gone into any serious programming language features like storing and retrieving values, subprocedures, conditionals, and so on because this is just a calculator project (but rest assured those are coming).</p>{% endraw %}
+{% raw %}<p>I also haven&rsquo;t gone into any serious programming language features like storing and retrieving values, subprocedures, conditionals, and so on because this is just a calculator project (but rest assured those are coming).</p>{% endraw %}

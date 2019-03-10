@@ -4,16 +4,16 @@ layout: post
 title: "Long-Term Carpark"
 date: 2007-01-31T07:45:43+00:00
 ---
-{% raw %}<p>In GCL:</p>
+{% raw %}<p>In GCL:</p>{% endraw %}
 
-<pre><code>>>(cadr '(1 2 3))
+{% raw %}<pre><code>>>(cadr '(1 2 3)){% endraw %}
 
-2
-</code></pre>
+{% raw %}2
+</code></pre>{% endraw %}
 
-<p>Old and Busted:</p>
+{% raw %}<p>Old and Busted:</p>{% endraw %}
 
-<pre><code>irb(main):001:0> require 'carpark.rb'
+{% raw %}<pre><code>irb(main):001:0> require 'carpark.rb'
 => true
 irb(main):002:0> [1,2,3].cadr
 NoMethodError: undefined method `cdr' for 1:Fixnum
@@ -22,19 +22,19 @@ NoMethodError: undefined method `cdr' for 1:Fixnum
     from (irb):2
 irb(main):003:0> [1,2,3].cdar
 => 2
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>New and Working:</p>
+{% raw %}<p>New and Working:</p>{% endraw %}
 
-<pre><code>irb(main):001:0> require 'carpark.rb'
+{% raw %}<pre><code>irb(main):001:0> require 'carpark.rb'
 => true
 irb(main):002:0> [1,2,3].cadr
 => 2
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Delivered straight to your door!</p>
+{% raw %}<p>Delivered straight to your door!</p>{% endraw %}
 
-<pre><code>svn co <a href="http://brycekerley.net/svn/carpark/">http://brycekerley.net/svn/carpark/</a> carpark
-</code></pre>
+{% raw %}<pre><code>svn co <a href="http://brycekerley.net/svn/carpark/">http://brycekerley.net/svn/carpark/</a> carpark
+</code></pre>{% endraw %}
 
-<p>Gems forthcoming (maybe this weekend).</p>{% endraw %}
+{% raw %}<p>Gems forthcoming (maybe this weekend).</p>{% endraw %}

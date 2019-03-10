@@ -4,22 +4,22 @@ layout: post
 title: "Taking ActiveRecord off the Web"
 date: 2007-02-20T07:15:15+00:00
 ---
-{% raw %}<h1>Standalone console app</h1>
+{% raw %}<h1>Standalone console app</h1>{% endraw %}
 
-<p>So, let&rsquo;s get this party started with a simple console app that uses ActiveRecord.  You can grab the following example from <a href="http://brycekerley.net/svn/ar-console/1-simple.rb">http://brycekerley.net/svn/ar-console/1-simple.rb</a> .</p>
+{% raw %}<p>So, let&rsquo;s get this party started with a simple console app that uses ActiveRecord.  You can grab the following example from <a href="http://brycekerley.net/svn/ar-console/1-simple.rb">http://brycekerley.net/svn/ar-console/1-simple.rb</a> .</p>{% endraw %}
 
-<p>The first things to do are to include rubygems and the activerecord gem (hopefully the machine you&rsquo;re running the app on has these installed).  Once that&rsquo;s done, go ahead and <code>establish_connection</code> to the database, sqlite3 in this case.</p>
+{% raw %}<p>The first things to do are to include rubygems and the activerecord gem (hopefully the machine you&rsquo;re running the app on has these installed).  Once that&rsquo;s done, go ahead and <code>establish_connection</code> to the database, sqlite3 in this case.</p>{% endraw %}
 
-<pre class="textmate-source sunburst"><span class="meta meta_require meta_require_ruby">require <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>rubygems'</span>
-<span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>active_record'
+{% raw %}<pre class="textmate-source sunburst"><span class="meta meta_require meta_require_ruby">require <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>rubygems'</span>
+<span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>active_record'{% endraw %}
 
-ActiveRecord::Base.establish_connection(
+{% raw %}ActiveRecord::Base.establish_connection(
   <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>adapter => <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>sqlite3',
-  <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>dbfile => <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>ar-console.db')</pre>
+  <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>dbfile => <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>ar-console.db')</pre>{% endraw %}
 
-<p>Now, I&rsquo;m going to detour to directly interacting with the database in this case &ndash; in Rails, you use migrations to handle working with the data definition SQL (creating, altering, &c. tables).  In the absence of that, you can do it by hand.</p>
+{% raw %}<p>Now, I&rsquo;m going to detour to directly interacting with the database in this case &ndash; in Rails, you use migrations to handle working with the data definition SQL (creating, altering, &c. tables).  In the absence of that, you can do it by hand.</p>{% endraw %}
 
-<pre>
+{% raw %}<pre>
 ~/ar-console> sqlite3 ar-console.db
 SQLite version 3.3.6
 Enter ".help" for instructions
@@ -28,44 +28,44 @@ sqlite> .schema
 CREATE TABLE names (id integer primary key, firstname varchar(20), lastname varchar(20));
 sqlite> ^D
 ~/ar-console>
-</pre>
+</pre>{% endraw %}
 
-<p>Now that we have a table to interface with, we have to define a class that aligns with the table and inherits from the <code>ActiveRecord::Base</code> class.  You can require this inline defintion from an external file, or even <code>Dir.glob('some_rails_app/app/models/*.rb').each { |m| require m }</code> to load all the models for <code>some_rails_app</code> in one fell swoop.  <em>Stay away from this way of integrating with a rails app for now &ndash; there&rsquo;s a much better way.</em></p>
+{% raw %}<p>Now that we have a table to interface with, we have to define a class that aligns with the table and inherits from the <code>ActiveRecord::Base</code> class.  You can require this inline defintion from an external file, or even <code>Dir.glob('some_rails_app/app/models/*.rb').each { |m| require m }</code> to load all the models for <code>some_rails_app</code> in one fell swoop.  <em>Stay away from this way of integrating with a rails app for now &ndash; there&rsquo;s a much better way.</em></p>{% endraw %}
 
-<pre class="textmate-source sunburst"><span class="meta meta_rails meta_rails_model"><span class="keyword keyword_control keyword_control_class keyword_control_class_ruby">class</span> Name<span class="entity entity_other entity_other_inherited-class entity_other_inherited-class_ruby"> < ActiveRecord::Base</span>
-</span>end
+{% raw %}<pre class="textmate-source sunburst"><span class="meta meta_rails meta_rails_model"><span class="keyword keyword_control keyword_control_class keyword_control_class_ruby">class</span> Name<span class="entity entity_other entity_other_inherited-class entity_other_inherited-class_ruby"> < ActiveRecord::Base</span>
+</span>end{% endraw %}
 
-x = Name.new(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>firstname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>Hans", <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>lastname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>Gruber")
-x.save
+{% raw %}x = Name.new(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>firstname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>Hans", <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>lastname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>Gruber")
+x.save{% endraw %}
 
-y = Name.new(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>firstname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>John", <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>lastname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>McClane")
-y.save
+{% raw %}y = Name.new(<span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>firstname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>John", <span class="punctuation punctuation_definition punctuation_definition_constant punctuation_definition_constant_ruby">:</span>lastname=><span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>McClane")
+y.save{% endraw %}
 
-Name.find_all.each { |n| puts n.inspect }
-</pre>
+{% raw %}Name.find_all.each { |n| puts n.inspect }
+</pre>{% endraw %}
 
-<p>Finally, just for grins, we add some movie characters to the database, save them, and show who&rsquo;s going to be running around Nakatomi Plaza today.</p>
+{% raw %}<p>Finally, just for grins, we add some movie characters to the database, save them, and show who&rsquo;s going to be running around Nakatomi Plaza today.</p>{% endraw %}
 
-<h1>Flexible configuration</h1>
+{% raw %}<h1>Flexible configuration</h1>{% endraw %}
 
-<p>What if you want to move the configuration out into a .yml file just like rails?  Turns out this isn&rsquo;t terribly hard - Ruby comes with YAML support, so we can trivially use the same yaml file that Rails does.  Adding <code>database.yml</code> support is nigh-trivial; our only caveat is that if you&rsquo;re using SQLite you have to remember the path to the database is evaluated from where you execute the Ruby with this setup, seen in <a href="http://brycekerley.net/svn/ar-console/2-yamlized.rb">http://brycekerley.net/svn/ar-console/2-yamlized.rb</a>.</p>
+{% raw %}<p>What if you want to move the configuration out into a .yml file just like rails?  Turns out this isn&rsquo;t terribly hard - Ruby comes with YAML support, so we can trivially use the same yaml file that Rails does.  Adding <code>database.yml</code> support is nigh-trivial; our only caveat is that if you&rsquo;re using SQLite you have to remember the path to the database is evaluated from where you execute the Ruby with this setup, seen in <a href="http://brycekerley.net/svn/ar-console/2-yamlized.rb">http://brycekerley.net/svn/ar-console/2-yamlized.rb</a>.</p>{% endraw %}
 
-<pre class="textmate-source sunburst"><span class="meta meta_require meta_require_ruby">require <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>yaml'</span>
+{% raw %}<pre class="textmate-source sunburst"><span class="meta meta_require meta_require_ruby">require <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>yaml'</span>
 <span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>rubygems'
-<span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>active_record'
+<span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>active_record'{% endraw %}
 
-ActiveRecord::Base.establish_connection(YAML::load_file(<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>database.yml')[<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>development'])</pre>
+{% raw %}ActiveRecord::Base.establish_connection(YAML::load_file(<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>database.yml')[<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>development'])</pre>{% endraw %}
 
-<h1>Leeching Off Rails</h1>
+{% raw %}<h1>Leeching Off Rails</h1>{% endraw %}
 
-<p>Sometimes you want a console app to hook right in to Rails, but not serve web pages.  As it turns out, we can do this quite cleverly, by loading the Rails environment the same way <code>dispatch.cgi</code> or <code>script/console</code> does.  As an added bonus, we get to use Rails migrations, models are loaded for us, and so on.  You do get to break all your business logic that you implemented as controllers, but <a href="http://weblog.jamisbuck.org/2006/10/18/skinny-controller-fat-model">you should be using a fat model and a skinny controller</a> for this very reason.</p>
+{% raw %}<p>Sometimes you want a console app to hook right in to Rails, but not serve web pages.  As it turns out, we can do this quite cleverly, by loading the Rails environment the same way <code>dispatch.cgi</code> or <code>script/console</code> does.  As an added bonus, we get to use Rails migrations, models are loaded for us, and so on.  You do get to break all your business logic that you implemented as controllers, but <a href="http://weblog.jamisbuck.org/2006/10/18/skinny-controller-fat-model">you should be using a fat model and a skinny controller</a> for this very reason.</p>{% endraw %}
 
-<p>The files we actually care about are <code>boot.rb</code> and <code>environment.rb</code>, in your app&rsquo;s <code>config</code> directory.  Assuming you want your app to live in a subdirectory off of your app&rsquo;s <code>/</code> (i.e. next to <code>public</code>, <code>app</code>, and <code>vendor</code>), the incantation you need to establish the connection is as in <a href="http://brycekerley.net/svn/ar-console/3-railed.rb">http://brycekerley.net/svn/ar-console/3-railed.rb</a>:</p>
+{% raw %}<p>The files we actually care about are <code>boot.rb</code> and <code>environment.rb</code>, in your app&rsquo;s <code>config</code> directory.  Assuming you want your app to live in a subdirectory off of your app&rsquo;s <code>/</code> (i.e. next to <code>public</code>, <code>app</code>, and <code>vendor</code>), the incantation you need to establish the connection is as in <a href="http://brycekerley.net/svn/ar-console/3-railed.rb">http://brycekerley.net/svn/ar-console/3-railed.rb</a>:</p>{% endraw %}
 
-<pre class="textmate-source sunburst"><span class="meta meta_require meta_require_ruby">require File.dirname(__FILE__) + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>/../config/boot' </span>
+{% raw %}<pre class="textmate-source sunburst"><span class="meta meta_require meta_require_ruby">require File.dirname(__FILE__) + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>/../config/boot' </span>
 <span class="keyword keyword_other keyword_other_special-method keyword_other_special-method_ruby">require</span> File.dirname(__FILE__) + <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>/../config/environment' 
-ActiveRecord::Base.establish_connection </pre>
+ActiveRecord::Base.establish_connection </pre>{% endraw %}
 
-<h1>Coda</h1>
+{% raw %}<h1>Coda</h1>{% endraw %}
 
-<p>To snap up all the examples from this in one fell swoop, <code>svn co <a href="http://brycekerley.net/svn/ar-console/">http://brycekerley.net/svn/ar-console/</a> ar-console</code> .  If you&rsquo;ve got any questions, fire away in the comments.</p>{% endraw %}
+{% raw %}<p>To snap up all the examples from this in one fell swoop, <code>svn co <a href="http://brycekerley.net/svn/ar-console/">http://brycekerley.net/svn/ar-console/</a> ar-console</code> .  If you&rsquo;ve got any questions, fire away in the comments.</p>{% endraw %}

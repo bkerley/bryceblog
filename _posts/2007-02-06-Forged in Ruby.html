@@ -4,9 +4,9 @@ layout: post
 title: "Forged in Ruby"
 date: 2007-02-06T07:24:13+00:00
 ---
-{% raw %}<p>HTTPal and Carpark are now on Rubyforge.  What does this mean for you?</p>
+{% raw %}<p>HTTPal and Carpark are now on Rubyforge.  What does this mean for you?</p>{% endraw %}
 
-<pre>bkerley@sandwich ~> sudo gem install Carpark
+{% raw %}<pre>bkerley@sandwich ~> sudo gem install Carpark
 Attempting local installation of 'Carpark'
 Local gem file not found: Carpark*.gem
 Attempting remote installation of 'Carpark'
@@ -17,21 +17,21 @@ Attempting local installation of 'HTTPal'
 Local gem file not found: HTTPal*.gem
 Attempting remote installation of 'HTTPal'
 Successfully installed HTTPal-19
-bkerley@sandwich ~> sudo gem list
+bkerley@sandwich ~> sudo gem list{% endraw %}
 
-*** LOCAL GEMS ***
+{% raw %}*** LOCAL GEMS ***{% endraw %}
 
-Carpark (18)
-    car and cdr array functions
+{% raw %}Carpark (18)
+    car and cdr array functions{% endraw %}
 
-HTTPal (19)
+{% raw %}HTTPal (19)
     HTTP browser library
-</pre>
+</pre>{% endraw %}
 
-<p>You can still grab the source from my svn (the repos are at <a href="http://brycekerley.net/svn/carpark/">http://brycekerley.net/svn/carpark/</a> and <a href="http://brycekerley.net/svn/httpal/">http://brycekerley.net/svn/httpal/</a> ), and they now include Rakefiles to test and gem-ify them.  However, you&rsquo;ll need to make a <a href="http://docs.rubygems.org/read/chapter/21">gem-signing key</a> to do so without hacking the Rakefile.</p>
+{% raw %}<p>You can still grab the source from my svn (the repos are at <a href="http://brycekerley.net/svn/carpark/">http://brycekerley.net/svn/carpark/</a> and <a href="http://brycekerley.net/svn/httpal/">http://brycekerley.net/svn/httpal/</a> ), and they now include Rakefiles to test and gem-ify them.  However, you&rsquo;ll need to make a <a href="http://docs.rubygems.org/read/chapter/21">gem-signing key</a> to do so without hacking the Rakefile.</p>{% endraw %}
 
-<p>Pretty much I&rsquo;m just using Rubyforge for hosting the gems, at least until there&rsquo;s substantial documentation available for either package.</p>
+{% raw %}<p>Pretty much I&rsquo;m just using Rubyforge for hosting the gems, at least until there&rsquo;s substantial documentation available for either package.</p>{% endraw %}
 
-<h1>Licensing</h1>
+{% raw %}<h1>Licensing</h1>{% endraw %}
 
-<p>Carpark is public domain, and HTTPal is LGPL.  I reserve the right to change these in the future, and I still have to mark up the source.</p>{% endraw %}
+{% raw %}<p>Carpark is public domain, and HTTPal is LGPL.  I reserve the right to change these in the future, and I still have to mark up the source.</p>{% endraw %}

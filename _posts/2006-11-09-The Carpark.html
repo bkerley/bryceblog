@@ -4,26 +4,26 @@ layout: post
 title: "The Carpark"
 date: 2006-11-09T04:15:00+00:00
 ---
-{% raw %}<p>In LISP, there’s a collection of functions used to slice up lists - car and cdr are the basic ones, but you can stack them up like this:</p>
+{% raw %}<p>In LISP, there’s a collection of functions used to slice up lists - car and cdr are the basic ones, but you can stack them up like this:</p>{% endraw %}
 
-<pre><code>(car '(1 2 3)) => 1
+{% raw %}<pre><code>(car '(1 2 3)) => 1
 (cdr '(1 2 3)) => (2 3)
 (cdar '(1 2 3)) => (car '(2 3)) => 2
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>These are kind of useful, but according to <a href="http://en.wikipedia.org/wiki/CAR_and_CDR">Wikipedia</a>:</p>
+{% raw %}<p>These are kind of useful, but according to <a href="http://en.wikipedia.org/wiki/CAR_and_CDR">Wikipedia</a>:</p>{% endraw %}
 
-<blockquote>
+{% raw %}<blockquote>
   <p>Most Lisps set a limit on the number of composed forms they support; Common Lisp and Scheme both provide forms with up to four repetitions of the a and d.</p>
-</blockquote>
+</blockquote>{% endraw %}
 
-<p>So, since I work in Ruby more often than LISP, these functions have two weaknesses for me:</p>
+{% raw %}<p>So, since I work in Ruby more often than LISP, these functions have two weaknesses for me:</p>{% endraw %}
 
-<ol><li>They’re in the wrong language</li>
+{% raw %}<ol><li>They’re in the wrong language</li>
 <li>There’s an artificial and arbitrary limit to how many I can stack up</li>
-</ol><p>So I thought to myself � I can hook method_missing on an Array in Ruby…</p>
+</ol><p>So I thought to myself � I can hook method_missing on an Array in Ruby…</p>{% endraw %}
 
-<pre><code lang="ruby">
+{% raw %}<pre><code lang="ruby">
 # carpark.rb
 # RubyTut
 #
@@ -32,9 +32,9 @@ date: 2006-11-09T04:15:00+00:00
 #
 # Subversion info:
 #
-# $Id: carpark.rb 176 2006-11-09 04:12:04Z bkerley $
+# $Id: carpark.rb 176 2006-11-09 04:12:04Z bkerley ${% endraw %}
 
-class Array
+{% raw %}class Array
   def method_missing(m, *a)
     s = m.to_s
     return super.method_missing(m, a) unless s =~ /c[ad]+r/
@@ -44,16 +44,16 @@ class Array
       return self[1..-1] if o[0..0] == “d”
     end
     return self[0].send(“c#{o[1..-1]}r”.to_sym) if o[0..0]==”a”
-    return self[1..-1].send(“c#{o[1..-1]}r”.to_sym) if o[0..0]==”d”
+    return self[1..-1].send(“c#{o[1..-1]}r”.to_sym) if o[0..0]==”d”{% endraw %}
 
-    return "failed #{o}"
+{% raw %}    return "failed #{o}"
   end
 end
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Sample run:</p>
+{% raw %}<p>Sample run:</p>{% endraw %}
 
-<pre><code>irb(main):001:0> require 'carpark'
+{% raw %}<pre><code>irb(main):001:0> require 'carpark'
 => true
 irb(main):002:0> x = [[[[1, 2, 3], 4, 5], 5, 6, [420], 11], 3]
 => [[[[1, 2, 3], 4, 5], 5, 6, [420], 11], 3]
@@ -63,6 +63,6 @@ irb(main):004:0> x.cdar
 => 3
 irb(main):005:0> x.caaadr
 => [2, 3]
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Use wisely�</p>{% endraw %}
+{% raw %}<p>Use wisely�</p>{% endraw %}

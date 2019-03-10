@@ -4,17 +4,17 @@ layout: post
 title: "HLSL: UV swap"
 date: 2005-12-21T17:54:00+00:00
 ---
-{% raw %}<p><a href="/textpattern/images/42.jpg"><img src="/textpattern/images/42t.jpg" alt="Inverted brightness from Corner Gas"/></a></p>
+{% raw %}<p><a href="/textpattern/images/42.jpg"><img src="/textpattern/images/42t.jpg" alt="Inverted brightness from Corner Gas"/></a></p>{% endraw %}
 
-<p>This shader swaps the U and V channels in the YUV color space with a single matrix multiplication.  The constants in the matrix are calculated based on <a href="http://en.wikipedia.org/wiki/YUV">wikipedia&rsquo;s RGB -> YUV matrix</a>, the corresponding YUV -> RGB matrix, and the simple reversing matrix R obtained by:</p>
+{% raw %}<p>This shader swaps the U and V channels in the YUV color space with a single matrix multiplication.  The constants in the matrix are calculated based on <a href="http://en.wikipedia.org/wiki/YUV">wikipedia&rsquo;s RGB -> YUV matrix</a>, the corresponding YUV -> RGB matrix, and the simple reversing matrix R obtained by:</p>{% endraw %}
 
-<ol><li>Take the 4x4 identity matrix I
+{% raw %}<ol><li>Take the 4x4 identity matrix I
 </li><li>Swap the second and third rows (corresponding to U and V).
-</li></ol><p>Multiply the three matrices RGB->YUV, R, and YUV->RGB.  Get a computer to do it because the math is boring.</p>
+</li></ol><p>Multiply the three matrices RGB->YUV, R, and YUV->RGB.  Get a computer to do it because the math is boring.</p>{% endraw %}
 
-<pre>sampler s0 : register(s0);
+{% raw %}<pre>sampler s0 : register(s0);{% endraw %}
 
-float4 main(float2 tex : TEXCOORD0) : COLOR
+{% raw %}float4 main(float2 tex : TEXCOORD0) : COLOR
 {
     float4x4 matUVshiftRGB = {
 -0.00029999999999998084, 0.00013179999999999513, 1.0041311, 0,
@@ -23,6 +23,6 @@ float4 main(float2 tex : TEXCOORD0) : COLOR
 0, 0, 0, 0};
     // matrix math!
     return mul(tex2D( s0, tex), matUVshiftRGB);
-}</pre>
+}</pre>{% endraw %}
 
-<p>This shader was made to use with <a href="http://sourceforge.net/projects/guliverkli/">Media Player Classic</a>.</p>{% endraw %}
+{% raw %}<p>This shader was made to use with <a href="http://sourceforge.net/projects/guliverkli/">Media Player Classic</a>.</p>{% endraw %}

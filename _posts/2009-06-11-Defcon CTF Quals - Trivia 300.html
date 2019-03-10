@@ -9,19 +9,19 @@ date: 2009-06-11T00:29:00+00:00
   and not South Florida.) The contest was a similar format to previous years (forty-eight
   hours to score as many points as fast as possible on a Jeopardy-style board), although
   the team running it was <a href="http://ddtek.biz/">Diutinus Defense Technologies</a>, instead of
-  <a href="http://kenshoto.com/">Kenshoto</a> as in previous years.</p>
+  <a href="http://kenshoto.com/">Kenshoto</a> as in previous years.</p>{% endraw %}
 
-<p>The most fun problem for me was Trivia 300, phrased as such:</p>
+{% raw %}<p>The most fun problem for me was Trivia 300, phrased as such:</p>{% endraw %}
 
-<blockquote>
+{% raw %}<blockquote>
   <p>pwn2.ddtek.biz:11511, provide 200 valid solutions in a row
 and you will get a prize, but you better be quick!
 Password == MAZE4J002PLAY</p>
-</blockquote>
+</blockquote>{% endraw %}
 
-<p>Netcat (<code>nc</code>) to that server, password in hand, gives you:</p>
+{% raw %}<p>Netcat (<code>nc</code>) to that server, password in hand, gives you:</p>{% endraw %}
 
-<pre><code>Good luck! You have 8 seconds per maze.
+{% raw %}<pre><code>Good luck! You have 8 seconds per maze.
 Maze solutions must be presented as a single line of input.
 ###############
 ##.#...##.....#
@@ -42,86 +42,86 @@ Maze solutions must be presented as a single line of input.
 ##..##..#.#.#.#
 ###....#......#
 ###############
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Hey, I remember this from data structures!</p>
+{% raw %}<p>Hey, I remember this from data structures!</p>{% endraw %}
 
-<h1>Writing your own</h1>
+{% raw %}<h1>Writing your own</h1>{% endraw %}
 
-<p>If you want to try your hand at this before getting the spoilers and
+{% raw %}<p>If you want to try your hand at this before getting the spoilers and
 hints below (or concurrent to them), I peeled off a few mazes for
-you: <a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt"></a><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt">http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt</a></p>
+you: <a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt"></a><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt">http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazes.txt</a></p>{% endraw %}
 
-<p>If you want to use those with my code, you’ll have to rewrite it to
-not shell out to <code>nc</code>.</p>
+{% raw %}<p>If you want to use those with my code, you’ll have to rewrite it to
+not shell out to <code>nc</code>.</p>{% endraw %}
 
-<h1>Maze solving</h1>
+{% raw %}<h1>Maze solving</h1>{% endraw %}
 
-<p>There’s two high-level strategies for finding your way out of a maze:</p>
+{% raw %}<p>There’s two high-level strategies for finding your way out of a maze:</p>{% endraw %}
 
-<ul><li>Depth-first: go straight to a dead end, rewind to the last unused
+{% raw %}<ul><li>Depth-first: go straight to a dead end, rewind to the last unused
 fork you saw, and try again.  Uses a stack to remember the current path.</li>
 <li>Breadth-first: traverse every path from the current one, keeping
 them in a queue.  Also requires a writable copy of the maze to mark
 the traversed paths.</li>
 </ul><p>Breadth-first is usually a better choice: it always finds the shortest
-path. Also, I remembered how to implement it.</p>
+path. Also, I remembered how to implement it.</p>{% endraw %}
 
-<h1>Implementation in Ruby</h1>
+{% raw %}<h1>Implementation in Ruby</h1>{% endraw %}
 
-<p>I’ve got links to my code here: there’s cusses since it’s competition
+{% raw %}<p>I’ve got links to my code here: there’s cusses since it’s competition
 code.  Also, please excuse my horrible style (defining functions all
-over the place, no classes, etc.) for the same reason.</p>
+over the place, no classes, etc.) for the same reason.</p>{% endraw %}
 
-<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L17-L34">Lines 17-34</a></p>
+{% raw %}<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L17-L34">Lines 17-34</a></p>{% endraw %}
 
-<p>The first thing you have to do is download the maze, by reading lines
+{% raw %}<p>The first thing you have to do is download the maze, by reading lines
 until you see one that’s all <code>#</code>s (walls).  Chuck the line strings in
-an array.  While you’re at it, find the start.</p>
+an array.  While you’re at it, find the start.</p>{% endraw %}
 
-<p>Also, since ddtek occasionally generates mazes that have the start
-point under the finish point, now is a good time to fail out.</p>
+{% raw %}<p>Also, since ddtek occasionally generates mazes that have the start
+point under the finish point, now is a good time to fail out.</p>{% endraw %}
 
-<p>When that’s done, the real work begins.</p>
+{% raw %}<p>When that’s done, the real work begins.</p>{% endraw %}
 
-<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L67-L93">Lines 67-93</a></p>
+{% raw %}<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L67-L93">Lines 67-93</a></p>{% endraw %}
 
-<p>In each queue entry, I store the row and column to be traversed, and
+{% raw %}<p>In each queue entry, I store the row and column to be traversed, and
 the path leading up to that point; the only entry at first is the
-start (represented by an <code>s</code> on the map).</p>
+start (represented by an <code>s</code> on the map).</p>{% endraw %}
 
-<p>While there’s still queue entries, dequeue the first entry, get its
+{% raw %}<p>While there’s still queue entries, dequeue the first entry, get its
 neighbors, and see if any are pathable or finish entries.  Add any
 pathable entries to the queue (along with a freshly-lengthened path),
-and if there’s a finish entry, jump out of the loop with the updated path.</p>
+and if there’s a finish entry, jump out of the loop with the updated path.</p>{% endraw %}
 
-<p>If <code>Array#shift</code> fails to pull an entry off the processing queue,
-plainly we’ve found an unsolvable maze.</p>
+{% raw %}<p>If <code>Array#shift</code> fails to pull an entry off the processing queue,
+plainly we’ve found an unsolvable maze.</p>{% endraw %}
 
-<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L98-L124">Lines 98-124</a></p>
+{% raw %}<p><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb#L98-L124">Lines 98-124</a></p>{% endraw %}
 
-<p>Finally, go down the path from the finish node, decoding it into
+{% raw %}<p>Finally, go down the path from the finish node, decoding it into
 cardinal directions.  Send that over the wire, and go to the next maze
-if you haven’t solved two hundred.</p>
+if you haven’t solved two hundred.</p>{% endraw %}
 
-<h1>Implementation Details</h1>
+{% raw %}<h1>Implementation Details</h1>{% endraw %}
 
-<p>Ruby’s <code>TCPSocket</code> was failing pretty hard, and I didn’t feel like
+{% raw %}<p>Ruby’s <code>TCPSocket</code> was failing pretty hard, and I didn’t feel like
 troubleshooting it.  Using <code>nc</code> worked okay, but what actually got
 us all the way to maze #200 was using <code>nc -i1</code>, which basically
 flushes buffers every second whether they’re full or not (please
-do not use this explanation in any serious context.)</p>
+do not use this explanation in any serious context.)</p>{% endraw %}
 
-<h1>Trivia 300 Solutions</h1>
+{% raw %}<h1>Trivia 300 Solutions</h1>{% endraw %}
 
-<p>Source code of my solution:
-<a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb"></a><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb">http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb</a></p>
+{% raw %}<p>Source code of my solution:
+<a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb"></a><a href="http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb">http://github.com/bkerley/quals09/blob/dcdec7c06d705b7d1f8d11b4e115287bfea96760/trivia300/mazer.rb</a></p>{% endraw %}
 
-<p>Solution from The Art of Approximation in Science and Engineering:
-<a href="http://pastebin.com/f79ce0843"></a><a href="http://pastebin.com/f79ce0843">http://pastebin.com/f79ce0843</a></p>
+{% raw %}<p>Solution from The Art of Approximation in Science and Engineering:
+<a href="http://pastebin.com/f79ce0843"></a><a href="http://pastebin.com/f79ce0843">http://pastebin.com/f79ce0843</a></p>{% endraw %}
 
-<h1>Solutions to other Problems</h1>
+{% raw %}<h1>Solutions to other Problems</h1>{% endraw %}
 
-<p>Awesome and exhaustive writeups on everything from VedaGodz: <a href="http://shallweplayaga.me/"></a><a href="http://shallweplayaga.me/">http://shallweplayaga.me/</a></p>
+{% raw %}<p>Awesome and exhaustive writeups on everything from VedaGodz: <a href="http://shallweplayaga.me/"></a><a href="http://shallweplayaga.me/">http://shallweplayaga.me/</a></p>{% endraw %}
 
-<p>Binary 300, from KOrUPt of SapHeads: <a href="http://korupt.co.uk/?p=132"></a><a href="http://korupt.co.uk/?p=132">http://korupt.co.uk/?p=132</a></p>{% endraw %}
+{% raw %}<p>Binary 300, from KOrUPt of SapHeads: <a href="http://korupt.co.uk/?p=132"></a><a href="http://korupt.co.uk/?p=132">http://korupt.co.uk/?p=132</a></p>{% endraw %}

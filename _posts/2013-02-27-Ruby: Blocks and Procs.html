@@ -21,9 +21,9 @@ date: 2013-02-27T01:38:35+00:00
     def with
       yield self
     end
-  end
+  end{% endraw %}
 
-# calling
+{% raw %}# calling
 "hello".with{|h| puts h}
 # prints "hello"
 </pre></code>
@@ -35,27 +35,27 @@ date: 2013-02-27T01:38:35+00:00
 <p>There&rsquo;s a few methods, like <code>proc</code>, that turn a block into a <code>Proc</code>. <code>lambda</code> is very similar. They&rsquo;re easy to write:</p>
 <code><pre>def my_proc(&block)
   block
-end
+end{% endraw %}
 
-tripler = my_proc{|n| n * 3} 
+{% raw %}tripler = my_proc{|n| n * 3} 
 #=> #<Proc:0x007f8e9506d170@(irb):5></pre></code>
-<p>The ampersand in the argument list to <code>my_proc</code> is what transforms the block into a <code>Proc</code>, and then we simply return it.</p>
+<p>The ampersand in the argument list to <code>my_proc</code> is what transforms the block into a <code>Proc</code>, and then we simply return it.</p>{% endraw %}
 
-<p>You can use the ampersand to turn a <code>Proc</code> into a block too:</p>
+{% raw %}<p>You can use the ampersand to turn a <code>Proc</code> into a block too:</p>
 <code><pre>(1..5).map doubler
-# ArgumentError: wrong number of arguments(1 for 0)
+# ArgumentError: wrong number of arguments(1 for 0){% endraw %}
 
-(1..5).map &doubler
+{% raw %}(1..5).map &doubler
 #=> [2, 4, 6, 8, 10]</pre></code>
 <p>And you can call a <code>Proc</code> directly without having to turn it into a block too:</p>
 <code><pre>doubler.call 4
-#=> 8
+#=> 8{% endraw %}
 
-doubler[5]
-#=> 10
+{% raw %}doubler[5]
+#=> 10{% endraw %}
 
-doubler.(6) # the dot before the parentheses is significant
+{% raw %}doubler.(6) # the dot before the parentheses is significant
 #=> 12
-</pre></code>
+</pre></code>{% endraw %}
 
-<p>Blocks and <code>Proc</code>s can be confusing. I hope this helps!</p>{% endraw %}
+{% raw %}<p>Blocks and <code>Proc</code>s can be confusing. I hope this helps!</p>{% endraw %}

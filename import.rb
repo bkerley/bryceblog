@@ -83,7 +83,7 @@ EOM
   File.open(filename, 'w') do |f|
     f.write fm
     f.write "{% raw %}"
-    f.write body
+    f.write body.gsub("\n\n", "{% endraw %}\n\n{% raw %}")
     f.write "{% endraw %}"
   end
 

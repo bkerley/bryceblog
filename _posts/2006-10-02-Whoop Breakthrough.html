@@ -4,9 +4,9 @@ layout: post
 title: "Whoop Breakthrough"
 date: 2006-10-02T03:16:26+00:00
 ---
-{% raw %}<p>Made a big milestone today on the ol&rsquo; senior project.  A week ago, I was <a href="/typo/articles/2006/09/24/rdf-is-a-pain">bellyachin&rsquo;</a> about reading XMP into key-value pairs.  Pretty much just today, I got enough code in to not just get the key-value pairs, but store them in a normalized sqlite database:</p>
+{% raw %}<p>Made a big milestone today on the ol&rsquo; senior project.  A week ago, I was <a href="/typo/articles/2006/09/24/rdf-is-a-pain">bellyachin&rsquo;</a> about reading XMP into key-value pairs.  Pretty much just today, I got enough code in to not just get the key-value pairs, but store them in a normalized sqlite database:</p>{% endraw %}
 
-<pre><code>bkerley@thedude ~/[...]/ape> ./ape tests/bigxmp.jpg
+{% raw %}<pre><code>bkerley@thedude ~/[...]/ape> ./ape tests/bigxmp.jpg
 Debug: XMP found at 0x000062d4
 Debug: loaded 27 key-value pairs
 bkerley@thedude ~/[...]/ape> sqlite3 ape.db "
@@ -17,8 +17,8 @@ from properties join proptypes on properties.proptype_id=proptypes.id"
 25|http://ns.adobe.com/photoshop/1.0/City|who cares
 26|http://ns.adobe.com/photoshop/1.0/Doctor|Doc Cottle
 27|http://ns.adobe.com/photoshop/1.0/History|
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>What&rsquo;s next is porting the XMP reading part to C# for a visual XMP editor, which should be easy since I won&rsquo;t need so much custom code.</p>
+{% raw %}<p>What&rsquo;s next is porting the XMP reading part to C# for a visual XMP editor, which should be easy since I won&rsquo;t need so much custom code.</p>{% endraw %}
 
-<p>All this and I also got my postscript project for another class done on Thursday afternoon (said class was cancelled).</p>{% endraw %}
+{% raw %}<p>All this and I also got my postscript project for another class done on Thursday afternoon (said class was cancelled).</p>{% endraw %}

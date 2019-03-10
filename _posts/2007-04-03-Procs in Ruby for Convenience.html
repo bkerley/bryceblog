@@ -4,32 +4,32 @@ layout: post
 title: "Procs in Ruby for Convenience"
 date: 2007-04-03T05:33:20+00:00
 ---
-{% raw %}<p>This was pretty raunchy (especially when the call to <code>log()</code> was repeated every other line in a 50-line script).  So when I wrote a similar script, I put most of the redundancy into a <code>Proc</code> object:</p>
+{% raw %}<p>This was pretty raunchy (especially when the call to <code>log()</code> was repeated every other line in a 50-line script).  So when I wrote a similar script, I put most of the redundancy into a <code>Proc</code> object:</p>{% endraw %}
 
-<pre class="sunburst textmate-source">l = <span class="support support_class support_class_ruby">Proc</span>.new do |m|
+{% raw %}<pre class="sunburst textmate-source">l = <span class="support support_class support_class_ruby">Proc</span>.new do |m|
   log(team, service_id, m, Time.now())
-end
+end{% endraw %}
 
-register b, team.ip, u, p
+{% raw %}register b, team.ip, u, p
 l.call <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>A registered <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>u} / <span class="punctuation punctuation_section punctuation_section_embedded punctuation_section_embedded_ruby">#{</span>p}"
 session b, team.ip, u, p do |d|
   do_something d
 end
-l.call <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>A did something"</pre>
+l.call <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>A did something"</pre>{% endraw %}
 
-<h2>How does this work?</h2>
+{% raw %}<h2>How does this work?</h2>{% endraw %}
 
-<p>Ruby blocks are one of the most visible and distinctive pieces of syntax in Ruby.  Their close friend, the <code>Proc</code> object, is how you separate the logic of a block from syntax and store it in a variable (or turn it into a method, but that&rsquo;s something else).</p>
+{% raw %}<p>Ruby blocks are one of the most visible and distinctive pieces of syntax in Ruby.  Their close friend, the <code>Proc</code> object, is how you separate the logic of a block from syntax and store it in a variable (or turn it into a method, but that&rsquo;s something else).</p>{% endraw %}
 
-<p>Blocks and <code>Proc</code>s are <a href="http://innig.net/software/ruby/closures-in-ruby.rb">similar to closures</a> as seen in other languages, in that they bind to variables in the scope where they&rsquo;re defined.  Above, we note that <code>team</code> and <code>service_id</code> aren&rsquo;t defined within the block&rsquo;s scope, so Ruby instead looks to the enclosing scope for their values.  Since it is able to find them there, those values get attached to the block, so that wherever the block goes, those values for <code>team</code> and <code>service_id</code> will follow.  Since <code>m</code> is specified as an argument to the block (the <code>|m|</code> syntax), Ruby doesn&rsquo;t go looking for it.</p>
+{% raw %}<p>Blocks and <code>Proc</code>s are <a href="http://innig.net/software/ruby/closures-in-ruby.rb">similar to closures</a> as seen in other languages, in that they bind to variables in the scope where they&rsquo;re defined.  Above, we note that <code>team</code> and <code>service_id</code> aren&rsquo;t defined within the block&rsquo;s scope, so Ruby instead looks to the enclosing scope for their values.  Since it is able to find them there, those values get attached to the block, so that wherever the block goes, those values for <code>team</code> and <code>service_id</code> will follow.  Since <code>m</code> is specified as an argument to the block (the <code>|m|</code> syntax), Ruby doesn&rsquo;t go looking for it.</p>{% endraw %}
 
-<p>Since the block wasn&rsquo;t going to be useful just sitting there, I converted it into a <code>Proc</code> object and stashed it in <code>l</code>.  At this point, the 1-ary (takes one argument) <code>Proc</code> in <code>l</code> contains the logic from the block, and the values from the variables above, all encapsulated neatly in a one-letter variable.  Since it&rsquo;s just a normal object, we can call its methods:</p>
+{% raw %}<p>Since the block wasn&rsquo;t going to be useful just sitting there, I converted it into a <code>Proc</code> object and stashed it in <code>l</code>.  At this point, the 1-ary (takes one argument) <code>Proc</code> in <code>l</code> contains the logic from the block, and the values from the variables above, all encapsulated neatly in a one-letter variable.  Since it&rsquo;s just a normal object, we can call its methods:</p>{% endraw %}
 
-<pre class="sunburst textmate-source">l.arity
+{% raw %}<pre class="sunburst textmate-source">l.arity
 <span class="comment comment_line comment_line_number-sign comment_line_number-sign_ruby"># => 1
 </span>l[<span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>lol']
 <span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> => does logging stuff
 l.call <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">'</span>lol'
-<span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> => does logging stuff</pre>
+<span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> => does logging stuff</pre>{% endraw %}
 
-<p>Either calling method (either <code>[]</code> or <code>call</code>) is smaller than the whole shebang from the first script above, so that&rsquo;s a big win for DRY.</p>{% endraw %}
+{% raw %}<p>Either calling method (either <code>[]</code> or <code>call</code>) is smaller than the whole shebang from the first script above, so that&rsquo;s a big win for DRY.</p>{% endraw %}

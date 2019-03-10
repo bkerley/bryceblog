@@ -4,25 +4,25 @@ layout: post
 title: "HLSL: Redvision"
 date: 2005-12-21T16:55:00+00:00
 ---
-{% raw %}<p><a href="/textpattern/images/41t.jpg"><img src="/textpattern/images/41t.jpg" alt="Frame from The Daily Show"/></a></p>
+{% raw %}<p><a href="/textpattern/images/41t.jpg"><img src="/textpattern/images/41t.jpg" alt="Frame from The Daily Show"/></a></p>{% endraw %}
 
-<pre>/*
+{% raw %}<pre>/*
 redvision by Bryce Kerley
 makes it black and white except for areas with twice as much red
 as both other channels combined
 */
 sampler s0 : register(s0);
-float4 p0 : register(c0);
+float4 p0 : register(c0);{% endraw %}
 
-#define width (p0[0])
+{% raw %}#define width (p0[0])
 #define height (p0[1])
 #define counter (p0[2])
 #define clock (p0[3])
-#define threshold (0.0)
+#define threshold (0.0){% endraw %}
 
-#define PI acos(-1)
+{% raw %}#define PI acos(-1){% endraw %}
 
-float4 main(float2 tex : TEXCOORD0) : COLOR
+{% raw %}float4 main(float2 tex : TEXCOORD0) : COLOR
 {
     float4 c0;
     //the thresholds are in the float4() function
@@ -34,6 +34,6 @@ float4 main(float2 tex : TEXCOORD0) : COLOR
         c0 = dot(tex2D(s0, tex), float4(0.299, 0.587, 0.114, 0));
     }
     return c0;
-}</pre>
+}</pre>{% endraw %}
 
-<p>This shader was made to use with <a href="http://sourceforge.net/projects/guliverkli/">Media Player Classic</a>.</p>{% endraw %}
+{% raw %}<p>This shader was made to use with <a href="http://sourceforge.net/projects/guliverkli/">Media Player Classic</a>.</p>{% endraw %}

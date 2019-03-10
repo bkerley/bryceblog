@@ -4,17 +4,17 @@ layout: post
 title: "You can't use prime numbers to cheat on CRDTs"
 date: 2012-04-11T00:50:16+00:00
 ---
-{% raw %}<p>Conflict-free Replicated Data Types, or CRDTs, are a simple way to make a data structure that works well in an eventually consistent environment, such as the <a href="http://basho.com/products/riak-overview/">Riak distributed database</a> my employer makes. I&rsquo;ve had &ldquo;google CRDTs&rdquo; on my to-do list for months; each time I had a hard time getting in to it. Last week, somebody linked me to <a href="http://aphyr.com/">Kyle Kingsbury&rsquo;s</a> Ruby implementation of them, and I was very <em>very</em> happy to see that the README file is awesome.</p>
+{% raw %}<p>Conflict-free Replicated Data Types, or CRDTs, are a simple way to make a data structure that works well in an eventually consistent environment, such as the <a href="http://basho.com/products/riak-overview/">Riak distributed database</a> my employer makes. I&rsquo;ve had &ldquo;google CRDTs&rdquo; on my to-do list for months; each time I had a hard time getting in to it. Last week, somebody linked me to <a href="http://aphyr.com/">Kyle Kingsbury&rsquo;s</a> Ruby implementation of them, and I was very <em>very</em> happy to see that the README file is awesome.</p>{% endraw %}
 
-<p>Seriously: <a href="https://github.com/aphyr/meangirls">https://github.com/aphyr/meangirls</a> has an awesome README, easily the best CRDT resource I&rsquo;ve read. Thanks, Kyle and <a href="http://seancribbs.com/">Sean Cribbs</a>!</p>
+{% raw %}<p>Seriously: <a href="https://github.com/aphyr/meangirls">https://github.com/aphyr/meangirls</a> has an awesome README, easily the best CRDT resource I&rsquo;ve read. Thanks, Kyle and <a href="http://seancribbs.com/">Sean Cribbs</a>!</p>{% endraw %}
 
-<h1>Counters and Primary Keys</h1>
+{% raw %}<h1>Counters and Primary Keys</h1>{% endraw %}
 
-<p>One thing that you get with a consistent database (such as Postgres, MySQL, and Redis) is a counter that you can use to generate nice-looking IDs that are not enormous. Think the &ldquo;943&rdquo; in <a href="https://github.com/blog/943-rubyconf-block-party">https://github.com/blog/943-rubyconf-block-party</a>, vs. the &ldquo;182302468733018112&rdquo; in <a href="https://twitter.com/#!/HIMANSHU/status/182302468733018112">https://twitter.com/#!/HIMANSHU/status/182302468733018112</a>.</p>
+{% raw %}<p>One thing that you get with a consistent database (such as Postgres, MySQL, and Redis) is a counter that you can use to generate nice-looking IDs that are not enormous. Think the &ldquo;943&rdquo; in <a href="https://github.com/blog/943-rubyconf-block-party">https://github.com/blog/943-rubyconf-block-party</a>, vs. the &ldquo;182302468733018112&rdquo; in <a href="https://twitter.com/#!/HIMANSHU/status/182302468733018112">https://twitter.com/#!/HIMANSHU/status/182302468733018112</a>.</p>{% endraw %}
 
-<p>You can use a G-Counter (see the meangirls README) to count things, but it doesn&rsquo;t work as a primary key: if two nodes increment their entries at the same time, they&rsquo;ll both have the same value.</p>
+{% raw %}<p>You can use a G-Counter (see the meangirls README) to count things, but it doesn&rsquo;t work as a primary key: if two nodes increment their entries at the same time, they&rsquo;ll both have the same value.</p>{% endraw %}
 
-<pre><code>{
+{% raw %}<pre><code>{
   'type': 'g-counter',
   'e': {
     'a': 1,
@@ -22,15 +22,15 @@ date: 2012-04-11T00:50:16+00:00
     'c': 2
   }
 }
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>If <code>a</code> and <code>b</code> increment at the same time, they&rsquo;ll both get a new value of <code>(1+5+2) + 1 = 9</code>. Since the whole point of a primary key is to be unique, that won&rsquo;t do.</p>
+{% raw %}<p>If <code>a</code> and <code>b</code> increment at the same time, they&rsquo;ll both get a new value of <code>(1+5+2) + 1 = 9</code>. Since the whole point of a primary key is to be unique, that won&rsquo;t do.</p>{% endraw %}
 
-<h1>Prime numbers</h1>
+{% raw %}<h1>Prime numbers</h1>{% endraw %}
 
-<p>Now, what if each node has a different prime number that they increment by? Let&rsquo;s make nodes <code>a</code>, <code>b</code>, and <code>c</code> use <code>3</code>, <code>5</code>, and <code>7</code>, respectively.</p>
+{% raw %}<p>Now, what if each node has a different prime number that they increment by? Let&rsquo;s make nodes <code>a</code>, <code>b</code>, and <code>c</code> use <code>3</code>, <code>5</code>, and <code>7</code>, respectively.</p>{% endraw %}
 
-<pre><code>{
+{% raw %}<pre><code>{
   'type': 'g-counter',
   'e': {
     'a': 3,
@@ -38,17 +38,17 @@ date: 2012-04-11T00:50:16+00:00
     'c': 14
   }
 }
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>This counter has a value of <code>(3+25+14) = 42</code>.</p>
+{% raw %}<p>This counter has a value of <code>(3+25+14) = 42</code>.</p>{% endraw %}
 
-<p>Now, if <code>a</code> and <code>b</code> increment at the same time, <code>a</code> will see <code>(3+25+14) + 3 = 45</code>, <code>b</code> will see <code>(3+25+14) + 5 = 47</code>. When <code>c</code> looks later and merges them, it&rsquo;ll come up with <code>49</code>, but that&rsquo;s not a problem: we just didn&rsquo;t want <code>a</code> and <code>b</code> to increment to the same value.</p>
+{% raw %}<p>Now, if <code>a</code> and <code>b</code> increment at the same time, <code>a</code> will see <code>(3+25+14) + 3 = 45</code>, <code>b</code> will see <code>(3+25+14) + 5 = 47</code>. When <code>c</code> looks later and merges them, it&rsquo;ll come up with <code>49</code>, but that&rsquo;s not a problem: we just didn&rsquo;t want <code>a</code> and <code>b</code> to increment to the same value.</p>{% endraw %}
 
-<p>Here&rsquo;s the problem: if <code>a</code> increments 5 times in the same duration that <code>b</code> increments 3 times without their versions getting merged, they&rsquo;ll land on the same number, since <code>5 * 3 = 3 * 5</code>.</p>
+{% raw %}<p>Here&rsquo;s the problem: if <code>a</code> increments 5 times in the same duration that <code>b</code> increments 3 times without their versions getting merged, they&rsquo;ll land on the same number, since <code>5 * 3 = 3 * 5</code>.</p>{% endraw %}
 
-<h1>Big prime numbers</h1>
+{% raw %}<h1>Big prime numbers</h1>{% endraw %}
 
-
+{% raw %}
 <p>
 You can use prime numbers larger than 
 <code>
@@ -59,17 +59,17 @@ You can use prime numbers larger than
 5
 </code>
  to mitigate this a bit. I&rsquo;ll be using the RSA key generator from 
-<a href="http://ats.oka.nu/titaniumcore/js/crypto/RSA.sample1.html">
+<a href="http://ats.oka.nu/titaniumcore/js/crypto/RSA.sample1.html">{% endraw %}
 
-</a><a href="http://ats.oka.nu/titaniumcore/js/crypto/RSA.sample1.html">
+{% raw %}</a><a href="http://ats.oka.nu/titaniumcore/js/crypto/RSA.sample1.html">
 http://ats.oka.nu/titaniumcore/js/crypto/RSA.sample1.html
-</a>
+</a>{% endraw %}
 
-
+{% raw %}
  set to 16 bit keys for this.
-</p>
+</p>{% endraw %}
 
-<p>
+{% raw %}<p>
 Here are two bigger primes: 
 <code>
 a = 185399
@@ -91,9 +91,9 @@ b
 c = 200819
 </code>
 ):
-</p>
+</p>{% endraw %}
 
-<pre><code>
+{% raw %}<pre><code>
 {
   'type': 'g-counter',
   'e': {
@@ -102,11 +102,11 @@ c = 200819
     'c': 401638
   }
 }
-</code></pre>
+</code></pre>{% endraw %}
 
+{% raw %}{% endraw %}
 
-
-<p>
+{% raw %}<p>
 This counter has a total of… 
 <code>
 1215682

@@ -4,27 +4,27 @@ layout: post
 title: "Rails Debug Bar"
 date: 2008-09-21T14:54:37+00:00
 ---
-{% raw %}<p>Saw a <a href="http://rob.cogit8.org/blog/2008/Sep/19/introducing-django-debug-toolbar/">Django Debug Bar</a> yesterday, decided I wanted to try to build one for Rails.  Ridiculously incomplete right now, but it&rsquo;s not too hard to expand.</p>
+{% raw %}<p>Saw a <a href="http://rob.cogit8.org/blog/2008/Sep/19/introducing-django-debug-toolbar/">Django Debug Bar</a> yesterday, decided I wanted to try to build one for Rails.  Ridiculously incomplete right now, but it&rsquo;s not too hard to expand.</p>{% endraw %}
 
-<p><a href="http://www.flickr.com/photos/bonzoesc/2875753158/" title="Rails Debug Bar by BonzoESC, on Flickr"><img src="http://farm4.static.flickr.com/3066/2875753158_7938f9c3d2_o.png" width="699" height="150" alt="Rails Debug Bar"/></a></p>
+{% raw %}<p><a href="http://www.flickr.com/photos/bonzoesc/2875753158/" title="Rails Debug Bar by BonzoESC, on Flickr"><img src="http://farm4.static.flickr.com/3066/2875753158_7938f9c3d2_o.png" width="699" height="150" alt="Rails Debug Bar"/></a></p>{% endraw %}
 
-<p>From root of your rails app:
-    git submodule add git://github.com/bkerley/railsdebugbar.git vendor/plugins/railsdebugbar</p>
+{% raw %}<p>From root of your rails app:
+    git submodule add git://github.com/bkerley/railsdebugbar.git vendor/plugins/railsdebugbar</p>{% endraw %}
 
-<p>In the ApplicationController or any other controller:</p>
+{% raw %}<p>In the ApplicationController or any other controller:</p>{% endraw %}
 
-<pre><code>class ApplicationController < ActionController::Base
+{% raw %}<pre><code>class ApplicationController < ActionController::Base
   after_filter ::RailsDebugBar
 end
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Hacking in additional entries isn&rsquo;t too hard:</p>
+{% raw %}<p>Hacking in additional entries isn&rsquo;t too hard:</p>{% endraw %}
 
-<pre><code>class RailsDebugBar
+{% raw %}<pre><code>class RailsDebugBar
   def self.filter(controller)
-…
+…{% endraw %}
 
-    parts = ["DEBUG",
+{% raw %}    parts = ["DEBUG",
       rails_version,
       "#{controller.class.to_s}/#{controller.action_name}.#{controller.request.format}",
       controller.response.status,
@@ -32,6 +32,6 @@ end
       ["Response headers"]+ hash_to_array(controller.response.headers),
       # ADD MORE HERE
     ]
-</code></pre>
+</code></pre>{% endraw %}
 
-<p><a href="http://github.com/bkerley/railsdebugbar/tree/master">Fork and modify it on github</a></p>{% endraw %}
+{% raw %}<p><a href="http://github.com/bkerley/railsdebugbar/tree/master">Fork and modify it on github</a></p>{% endraw %}

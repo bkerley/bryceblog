@@ -20,14 +20,14 @@ Processing ScoreboardController#redo_score (for 10.69.0.108 at 2006-11-25 18:21:
   hoopty Count (0.035854)   SELECT COUNT(DISTINCT hooptys.id) FROM hooptys LEFT OUTER JOIN wheels ON wheels.id = hooptys.wheel_id WHERE (hooptys.user_id = 3 AND tire_id = 1) 
   hoopty Count (0.031429)   SELECT COUNT(DISTINCT hooptys.id) FROM hooptys LEFT OUTER JOIN wheels ON wheels.id = hooptys.wheel_id WHERE (hooptys.user_id = 3 AND tire_id = 2) 
    and so on
-</code></p>
+</code></p>{% endraw %}
 
-<p>Since ActiveRecord::Base&rsquo;s #count method doesn&rsquo;t really do what we want, we were originally hitting it n*m queries per page load, 
-which sucked the life out of our app:</p>
+{% raw %}<p>Since ActiveRecord::Base&rsquo;s #count method doesn&rsquo;t really do what we want, we were originally hitting it n*m queries per page load, 
+which sucked the life out of our app:</p>{% endraw %}
 
-<p>Completed in 3.93758 (0 reqs/sec) | Rendering: 0.33898 (8%) | DB: 3.52800 (89%) | 200 OK [http://10.69.0.42/scoreboard/redo_score]</p>
+{% raw %}<p>Completed in 3.93758 (0 reqs/sec) | Rendering: 0.33898 (8%) | DB: 3.52800 (89%) | 200 OK [http://10.69.0.42/scoreboard/redo_score]</p>{% endraw %}
 
-<p>So, we had to write our own application-specific SQL and a method to take the results and put it in a useful data structure.
+{% raw %}<p>So, we had to write our own application-specific SQL and a method to take the results and put it in a useful data structure.
 <code lang="ruby" line_numbers="”list”">
     def self.full_array
         x = Array.new

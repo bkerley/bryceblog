@@ -4,15 +4,15 @@ layout: post
 title: "ghost with the post"
 date: 2006-10-05T22:19:47+00:00
 ---
-{% raw %}<p>Finished the final postscript for programming languages this morning.  It was a program to take a list of grades from a file and produce a chart showing how many grades fell into each letter (A, B, C, D, and F):</p>
+{% raw %}<p>Finished the final postscript for programming languages this morning.  It was a program to take a list of grades from a file and produce a chart showing how many grades fell into each letter (A, B, C, D, and F):</p>{% endraw %}
 
-<p><img src="/typo/files/grades.png" alt="Picture of example output"/></p>
+{% raw %}<p><img src="/typo/files/grades.png" alt="Picture of example output"/></p>{% endraw %}
 
-<p>A fairly fun language, although not something I can see myself using very often.  It is way nicer than using PHP to draw pictures, just because the graphics features offer flexibility instead of just drawing lines and fillin&rsquo; stuff, but the general weirdness of the stack paradigm makes it more difficult to work with.</p>
+{% raw %}<p>A fairly fun language, although not something I can see myself using very often.  It is way nicer than using PHP to draw pictures, just because the graphics features offer flexibility instead of just drawing lines and fillin&rsquo; stuff, but the general weirdness of the stack paradigm makes it more difficult to work with.</p>{% endraw %}
 
-<p>WHAT WOULD a postscript-like language in ruby look like?</p>
+{% raw %}<p>WHAT WOULD a postscript-like language in ruby look like?</p>{% endraw %}
 
-<pre><code>showpage do |p|
+{% raw %}<pre><code>showpage do |p|
   scale 72 72
   moveto 0 0
   lineto 10 10
@@ -21,6 +21,6 @@ date: 2006-10-05T22:19:47+00:00
   setsrokewidth 1 pt
   stroke
 end
-</code></pre>
+</code></pre>{% endraw %}
 
-<p>Transforming that to PS might be a pain, but it&rsquo;d be a pretty neat ruby graphics API anyways.</p>{% endraw %}
+{% raw %}<p>Transforming that to PS might be a pain, but it&rsquo;d be a pretty neat ruby graphics API anyways.</p>{% endraw %}

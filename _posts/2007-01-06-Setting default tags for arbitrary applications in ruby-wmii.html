@@ -4,13 +4,13 @@ layout: post
 title: "Setting default tags for arbitrary applications in ruby-wmii"
 date: 2007-01-06T01:00:21+00:00
 ---
-{% raw %}<p>I&rsquo;ve been running <a href="http://wmii.suckless.org/">wmii</a> with the <a href="http://eigenclass.org/hiki.rb?wmii+ruby">ruby-wmii</a> configuration/script/event loop for a few months now, and just today decided to scratch an itch I&rsquo;ve been having.</p>
+{% raw %}<p>I&rsquo;ve been running <a href="http://wmii.suckless.org/">wmii</a> with the <a href="http://eigenclass.org/hiki.rb?wmii+ruby">ruby-wmii</a> configuration/script/event loop for a few months now, and just today decided to scratch an itch I&rsquo;ve been having.</p>{% endraw %}
 
-<p>Basically, I keep a &lsquo;1&rsquo; tag around with the floating model so I can overlap my web browser and IRC window (my IRC window needs to stay a fixed size because it&rsquo;s shared between multiple machines using screen).  However, when I start rhythmbox, I want it managed (and incidentally, full-screen) on the 'rock&rsquo; tag.</p>
+{% raw %}<p>Basically, I keep a &lsquo;1&rsquo; tag around with the floating model so I can overlap my web browser and IRC window (my IRC window needs to stay a fixed size because it&rsquo;s shared between multiple machines using screen).  However, when I start rhythmbox, I want it managed (and incidentally, full-screen) on the 'rock&rsquo; tag.</p>{% endraw %}
 
-<p>As it turns out, this is cake:</p>
+{% raw %}<p>As it turns out, this is cake:</p>{% endraw %}
 
-<pre class="textmate-source sunburst"><span class="variable variable_other variable_other_constant variable_other_constant_ruby">WMII</span>::Configuration.define do
+{% raw %}<pre class="textmate-source sunburst"><span class="variable variable_other variable_other_constant variable_other_constant_ruby">WMII</span>::Configuration.define do
   border      1
   font        <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>fixed"
   selcolors   <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_begin punctuation_definition_string_begin_ruby">"</span>#FFFFFF #224422 #228822"
@@ -30,16 +30,16 @@ date: 2007-01-06T01:00:21+00:00
 <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>Rhythmbox.*/ -> rock
 <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>.*/ -> !
 <span class="punctuation punctuation_definition punctuation_definition_string punctuation_definition_string_ruby">/</span>.*/ -> 1
-EOF
+EOF{% endraw %}
 
-<span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> MORE CONFIG
+{% raw %}<span class="punctuation punctuation_definition punctuation_definition_comment punctuation_definition_comment_ruby">#</span> MORE CONFIG{% endraw %}
 
-end</pre>
+{% raw %}end</pre>{% endraw %}
 
-<p>Simply adding the rhythmbox matcher was all it took.</p>
+{% raw %}<p>Simply adding the rhythmbox matcher was all it took.</p>{% endraw %}
 
-<p>Also, as a bonus tip, if you&rsquo;re a Gentoo user that has problems with ruby-wmii and wmii-3.5, you might want to downgrade to wmii-3.1 .  However, simply emerging wmii-3.1 (probably from your portage overlay) will error out unless you unmerge the libixp ebuild that wmii-3.5 depends on:</p>
+{% raw %}<p>Also, as a bonus tip, if you&rsquo;re a Gentoo user that has problems with ruby-wmii and wmii-3.5, you might want to downgrade to wmii-3.1 .  However, simply emerging wmii-3.1 (probably from your portage overlay) will error out unless you unmerge the libixp ebuild that wmii-3.5 depends on:</p>{% endraw %}
 
-<pre><code>sudo emerge -C libixp
+{% raw %}<pre><code>sudo emerge -C libixp
 sudo emerge -av '=wmii-3.1-r4'
 </code></pre>{% endraw %}

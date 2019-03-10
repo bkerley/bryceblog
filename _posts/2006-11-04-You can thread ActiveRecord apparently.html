@@ -4,9 +4,9 @@ layout: post
 title: "You can thread ActiveRecord apparently"
 date: 2006-11-04T22:04:45+00:00
 ---
-{% raw %}<p>For those situations where you want multiple threads doing database stuff in your Ruby app (but not in Rails - threading Rails doesn&rsquo;t make much sense), turn ActiveRecord&rsquo;s concurrency support on:</p>
+{% raw %}<p>For those situations where you want multiple threads doing database stuff in your Ruby app (but not in Rails - threading Rails doesn&rsquo;t make much sense), turn ActiveRecord&rsquo;s concurrency support on:</p>{% endraw %}
 
-<pre><code>ActiveRecord::Base.allow_concurrency = true
-</code></pre>
+{% raw %}<pre><code>ActiveRecord::Base.allow_concurrency = true
+</code></pre>{% endraw %}
 
-<p>Found on <a href="http://blog.defv.be/archives/16/activerecord-ruby-and-threads">this useful blog</a>.</p>{% endraw %}
+{% raw %}<p>Found on <a href="http://blog.defv.be/archives/16/activerecord-ruby-and-threads">this useful blog</a>.</p>{% endraw %}
