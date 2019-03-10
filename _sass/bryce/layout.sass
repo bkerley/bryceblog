@@ -1,13 +1,38 @@
+$top-scoot: 4em
+$bottom-scoot: 6em
+
+
 html
   background-color: #001
+  height: 100%
 
-header, main, footer
+body
+  display: grid
+  min-height: 100%
+  grid-template-rows: auto 1fr auto
+  grid-template-cols: 1fr
+
+header, main
   margin: 2em auto
   padding: 1em
   max-width: 60em
+  min-width: 40em
 
 header
+  margin-top: -$top-scoot
+  padding-top: $top-scoot
   transform: rotateZ(-1.2deg)
 
+main
+  width: 60em
+
 footer
-  transform: rotateZ(2.4deg)
+  overflow: hidden
+  margin: 2em auto 0
+  width: 50em
+  .wrapper
+    margin: 0 auto
+    padding: 1em
+    width: 40em
+    transform: rotateZ(2.4deg) translateY($bottom-scoot)
+    padding-bottom: $bottom-scoot
