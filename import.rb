@@ -1,9 +1,13 @@
 require 'active_support/core_ext/string'
 require 'cgi'
+require 'fileutils'
 require 'nokogiri'
 require 'time'
 
 DIR = "3d2d5cffaf2f88acc50f3b71858c4fdd500503305fb46f4c4a5abf661bb3a931"
+POST_IMAGE_DIR = "assets/post_images"
+
+FileUtils.mkdir_p POST_IMAGE_DIR
 
 posts_xml = Nokogiri::XML(File.read("./ingest/#{DIR}/posts/posts.xml"))
 
@@ -45,8 +49,9 @@ posts_xml.css("posts").children.each do |post|
     kind = 'photo'
     media = Dir.glob("./ingest/#{DIR}/media/#{id}*")
     body = media.map do |m|
-      m.inspect
-    end
+      FileUtils.cp(m, POST_IMAGE_DIR)
+      "<img src=\"/#{POST_IMAGE_DIR}/#{File.basename(m)}\" />"
+    end.join("<br />\n")
   elsif (quote_el = post.css('quote-text')).length > 0
     kind = 'quote'
     quote_source_el = post.css('quote-source')

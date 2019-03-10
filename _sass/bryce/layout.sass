@@ -17,13 +17,48 @@ header, main
   max-width: 60em
   min-width: 40em
 
-header
+body > header
   margin-top: -$top-scoot
   padding-top: $top-scoot
   transform: rotateZ(-1.2deg)
 
 main
   width: 60em
+
+  .post-header
+    display: grid
+    grid-template-columns: auto auto
+    h1
+      grid-column: 1
+      grid-row: 1
+      overflow: wrap
+    time
+      grid-column: 2
+      grid-row: 1
+      text-align: right
+      border-left: 1px solid
+      padding-left: 0.25em
+    p.post-meta
+      grid-column-start: 1
+      grid-column-end: 2
+      grid-row: 2
+
+  img
+    max-width: 100%
+
+
+  .home
+    ul.post-list
+      list-style-type: none
+      padding-left: 0
+      li
+        time
+          display: inline
+          margin-right: 1em
+        h3
+          display: inline
+          font-size: 2em
+
 
 footer
   overflow: hidden

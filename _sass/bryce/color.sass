@@ -11,7 +11,10 @@ $cream-paper-lowlight: #bcb9a8
 
 $cream-paper-gradient: linear-gradient(to right, $cream-paper-highlight 0%, $cream-paper-main 2%,$cream-paper-lowlight 100%)
 
-header, footer .wrapper
+$emerald-light: #084b64
+$emerald-dark: #09263c
+
+body > header, footer .wrapper
   background: $scratch-paper-highlight
   background: $scratch-paper-gradient
   box-shadow: 2px 2px 4px black
@@ -20,3 +23,10 @@ main
   background: $cream-paper-main
   background: $cream-paper-gradient
   box-shadow: 2px 2px black
+
+main
+  h1, h2, h3, h4, h5, h6, time
+    color: $emerald-dark
+
+  time
+    border-color: $emerald-dark
