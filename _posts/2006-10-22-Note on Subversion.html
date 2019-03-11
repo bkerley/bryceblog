@@ -1,8 +1,14 @@
 ---
-kind: regular
 layout: post
-title: "Note on Subversion"
-date: 2006-10-22T20:21:46+00:00
+date: '2006-10-22T20:21:46+00:00'
+title: Note on Subversion
+tags:
+- subversion
+- software
+redirect_from:
+- "/post/572520007"
+- "/post/572520007/note-on-subversion"
+kind: regular
 ---
 {% raw %}<p>Learned this today when setting up an fsfs repository; if users are going to be using svn+ssh or some other method that reads and writes to the database as their uid, you need to make the permissions setgid:</p>{% endraw %}
 

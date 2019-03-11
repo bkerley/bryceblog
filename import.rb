@@ -3,6 +3,7 @@ require 'cgi'
 require 'fileutils'
 require 'nokogiri'
 require 'time'
+require 'yaml'
 
 DIR = "3d2d5cffaf2f88acc50f3b71858c4fdd500503305fb46f4c4a5abf661bb3a931"
 POST_IMAGE_DIR = "assets/post_images"
@@ -14,9 +15,15 @@ posts_xml = Nokogiri::XML(File.read("./ingest/#{DIR}/posts/posts.xml"))
 TITLE_ELEMENTS = %w{regular-title link-text conversation-title}
 
 posts_xml.css("posts").children.each do |post|
+  fm = {
+    layout: 'post'
+  }
+
   id = post['id']
 
   date = Time.parse post['date-gmt']
+  fm['date'] = date.iso8601
+
   title_element_name = TITLE_ELEMENTS.detect do |en|
     post.css(en).length > 0
   end
@@ -33,8 +40,17 @@ posts_xml.css("posts").children.each do |post|
     title = date.getlocal.to_s if title.empty?
   end
 
+  fm['title'] = title
+
   kind = nil
   body = nil
+  fm['tags'] = post.css('tag').map{ |t| t.text }
+
+  fm['redirect_from'] = [post['url'], post['url-with-slug']]
+                    .compact
+                    .map do |u|
+    URI(u).path
+  end
 
   if (body_el = post.css('regular-body')).length > 0
     kind = 'regular'
@@ -69,19 +85,13 @@ EOB
     body = "<pre>#{CGI.escapeHTML post.to_xml}</pre>"
   end
 
-  fm = <<EOM
----
-kind: #{kind}
-layout: post
-title: #{title.inspect}
-date: #{date.iso8601}
----
-EOM
+  fm['kind'] = kind
 
   filename = "./_posts/#{date.strftime('%Y-%m-%d')}-#{title.dasherize}.html"
 
   File.open(filename, 'w') do |f|
-    f.write fm
+    f.write YAML.dump fm.stringify_keys
+    f.puts '---'
     f.write "{% raw %}"
     f.write body.gsub("\n\n", "{% endraw %}\n\n{% raw %}")
     f.write "{% endraw %}"

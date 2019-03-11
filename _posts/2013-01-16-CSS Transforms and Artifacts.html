@@ -1,8 +1,12 @@
 ---
-kind: regular
 layout: post
-title: "CSS Transforms and Artifacts"
-date: 2013-01-16T03:22:36+00:00
+date: '2013-01-16T03:22:36+00:00'
+title: CSS Transforms and Artifacts
+tags: []
+redirect_from:
+- "/post/40654267802"
+- "/post/40654267802/css-transforms-and-artifacts"
+kind: regular
 ---
 {% raw %}<p>Modern CSS has super-cool 2D and 3D transformations. <a href="http://coding.smashingmagazine.com/2012/01/06/adventures-in-the-third-dimension-css-3-d-transforms/">Smashing Magazine has a nice explanation.</a> There&rsquo;s some caveats though that might be new to web developers.</p>
 <p>Web browsers have to work hard to make things fit pixels. For example, they have to come up with a sane way to render <a href="http://ejohn.org/blog/sub-pixel-problems-in-css/">four columns, each taking up 25% of a 50px parent column</a> in a way that looks the least terrible. As part of this, they have to fudge things around a bit: adjacent elements with the same properties may have different sizes.</p>
