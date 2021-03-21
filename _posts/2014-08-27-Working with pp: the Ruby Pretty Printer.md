@@ -19,8 +19,10 @@ kind: regular
 
 {% raw %}<p>Out of the box, a Riak CRDT set looked like:</p>{% endraw %}
 
-{% raw %}<pre><code>#<Riak::Crdt::Set:0x007fbec39d87b0 @bucket=#<Riak::Bucket {bucketname}, @key="cats", @bucket_type="sets", @options={}, @dirty=true>
-</code></pre>{% endraw %}
+```
+#<Riak::Crdt::Set:0x007fbec39d87b0 @bucket=#<Riak::Bucket {bucketname},
+  @key="cats", @bucket_type="sets", @options={}, @dirty=true>
+```
 
 {% raw %}<p>This was terrible for several reasons: the actual value of the set wasn&rsquo;t listed, the <code>object_id</code> is a ridiculous thing, and the bucket type/bucket/key relationship is hard to read. The end goal was something that made it easy to identify which object was which, what it contained, and elide unimportant implementation details.</p>{% endraw %}
 

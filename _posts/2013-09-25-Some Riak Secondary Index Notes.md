@@ -26,46 +26,49 @@ somebody adds records, they may or may not show up in the results either.</p>{% 
 
 {% raw %}<h2>Pagination is nice but not as complete as SQL</h2>{% endraw %}
 
-{% raw %}<p>Riak 1.4 added pagination for secondary indexes. It’s not as nice as
+Riak 1.4 added pagination for secondary indexes. It’s not as nice as
 traditional pagination as seen in
 <a href="https://rubygems.org/gems/will_paginate">will_paginate</a>, which has the luxury
-of making SQL queries:</p>
-<div class="highlight"><pre>SELECT COUNT(*)
+of making SQL queries:
+
+```sql
+SELECT COUNT(*)
     FROM posts
     WHERE
         published_at IS NOT NULL AND
-        user_id = 12345;{% endraw %}
+        user_id = 12345;
 
-{% raw %}SELECT *
+SELECT *
     FROM posts
     WHERE
         published_at IS NOT NULL AND
         user_id = 12345
     LIMIT 5
     OFFSET 30;
-</pre></div>{% endraw %}
+```
 
-{% raw %}<p>Riak 2i has no equivalent of the former short of fetching all the keys, and
+Riak 2i has no equivalent of the former short of fetching all the keys, and
 if it did implement it, you’d be better off just querying for all
-the posts in range and paginating in-client.</p>{% endraw %}
+the posts in range and paginating in-client.
 
-{% raw %}<div class="highlight"><pre>i = Riak::SecondaryIndex.new(
+```ruby
+i = Riak::SecondaryIndex.new(
     posts_bucket,
     'user_publish_bin',
     ('12345_0000000000'..'12345_1380074400')
-    ){% endraw %}
+    )
 
-{% raw %}# these calculations almost certainly contain bugs
+# these calculations almost certainly contain bugs
 total_pages = i.keys.length / 5
 offset = params[:page] * 5
-current_page = pages[offset..(offset + 5)]{% endraw %}
+current_page = pages[offset..(offset + 5)]
 
-{% raw %}posts = posts_bucket.get_many current_page
-</pre></div>{% endraw %}
+posts = posts_bucket.get_many current_page
+```
 
 {% raw %}<p>With that said, the pagination features are useful if you don’t
 mind jamming client state into links: the continuation slug from pagination
-means that users that stop and read posts won’t see the same post at the top 
+means that users that stop and read posts won’t see the same post at the top
 of the next page when you make a new one. If you can get away with “Previous,” “Next,” and maybe a list of previous pages, pagination is right up your alley.</p>{% endraw %}
 
 {% raw %}<h2>Streaming is Useful</h2>{% endraw %}
@@ -76,13 +79,14 @@ feeding these keys into a processing queue to be handled elsewhere, this is
 nice, can save you some memory (and therefore GC pauses), and isn’t even
 difficult.</p>{% endraw %}
 
-{% raw %}<div class="highlight"><pre>i = Riak::SecondaryIndex.new buck, 'index_int', 0..50{% endraw %}
+```ruby
+i = Riak::SecondaryIndex.new buck, 'index_int', 0..50
 
-{% raw %}i.keys {|k| puts k.inspect}
+i.keys {|k| puts k.inspect}
 # ["0", "1", "2", "3", "4", "5", "6"]
 # ["7", "8", "9", "10", … "49"]
 # []
-</pre></div>{% endraw %}
+```
 
 {% raw %}<p>You&rsquo;ll notice in this case that the stream is chunky, and that the chunks aren&rsquo;t evenly sized. What happened is that the first few results became available right away, and by the time that message was out the door, all the rest of the results were ready to go.</p>{% endraw %}
 
