@@ -28,6 +28,8 @@ mastodon:
     instance: m.bonzoesc.net
 rss: feed
 
+hide_before: 1577836800
+
 # Build settings
 markdown: kramdown
 # theme: bk2019-theme

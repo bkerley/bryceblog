@@ -10,11 +10,24 @@ layout: default
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {{ page.date | date: date_format }}
     </time>
-    <p class="post-meta">
       {%- if page.author -%}
+    <p class="post-meta">
         • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
+      </p>{%- endif -%}
   </header>
+
+  {% assign page_timestamp = page.date | date: "%s" | plus: 0 %}
+  {% if site.hide_before > page_timestamp %}
+  <div class="old-warning">
+    <h1>Message from 2021</h1>
+    <p>
+      This post is pretty old! Opinions and technical information in it
+      are almost certainly oudated. Commands and configurations will
+      probably not work. Consider the age of the content before putting
+      any of it into practice.
+    </p>
+  </div>
+  {% endif %}
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
