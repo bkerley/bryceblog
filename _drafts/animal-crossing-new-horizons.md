@@ -7,7 +7,7 @@ tags:
 kind: regular
 ---
 
-I remember when my friend Will got Animal Crossing for Gamecube. It looked
+I remember when my friend Will got "Animal Crossing" for Gamecube. It looked
 cool the first night, it looked cool a week later, but I got yelled at when
 I asked to make a character and cut down a bunch of trees, because Will had
 to listen to Mr. Resetti gripe about Will rolling back my changes the
@@ -75,7 +75,14 @@ Through all of this, the pre-release reviews for New Horizons
 went out of control;
 the promise of being able to virutally visit your friends' "homes" and interact
 with characters in a relaxed non-threatening cartoon was *really* appealing
-in a world without "dining out" or "bars."
+in a world without "dining out" or "bars." Obviously, I had to give "Warframe"
+a shot.
+
+I didn't dislike Warframe while I played it, but the ramp from
+the tutorial missions into the opening of the game and the funnel into paying
+for stuff kind of wigged me out since I was playing pretty late on March 19,
+2020 and knew I shouldn't be buying a bunch of content for a game I was mostly
+playing on a whim in the remaining hours before New Horizons.
 
 COUPLE HOURS OF WARFRAME ON SWITCH
 
