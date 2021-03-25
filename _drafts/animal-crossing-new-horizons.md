@@ -68,10 +68,13 @@ that the (completely dog shit) mayor got COVID from Bolsonaro's visit.
 
 The week after that was weird. I first made a mask out of a T-shirt, bought
 some masks, did some woodworking, was very paranoid while shopping, and
-finished "Kentucky Route Zero," which is absolutely brilliant and you simply
-must play it.
+finished "Kentucky Route Zero." (KRZ) Kentucky Route Zero is superb; after I
+completed it, I saw it described as a game that's less about how you interact
+with the magically realistic Kentucky, but about how you feel about the
+predicaments imposed on the varied and well-written characters. It's not at
+all a difficult game, but it is absolutely brilliant.
 
-Through all of this, the pre-release reviews for New Horizons
+Through this first week of lockdown, the pre-release reviews for New Horizons
 went out of control;
 the promise of being able to virutally visit your friends' "homes" and interact
 with characters in a relaxed non-threatening cartoon was *really* appealing
@@ -82,11 +85,49 @@ I didn't dislike Warframe while I played it, but the ramp from
 the tutorial missions into the opening of the game and the funnel into paying
 for stuff kind of wigged me out since I was playing pretty late on March 19,
 2020 and knew I shouldn't be buying a bunch of content for a game I was mostly
-playing on a whim in the remaining hours before New Horizons.
+playing on a whim in the remaining hours before New Horizons. It might've been
+an enjoyable experience to get into the flow and rhythm of it, but that didn't
+happen.
 
-COUPLE HOURS OF WARFRAME ON SWITCH
+# Actually Getting Into Animal Crossing: New Horizons
 
-FIRST FEW HOURS
+I waited until after work on launch day to actually get in to ACNH. It's been
+a year, so I don't actually remember it super well, but I do remember enjoying
+it, but at the same time, the first-day content runs out after a few hours,
+leaving you without much to do except shake trees. As your first week
+progresses, new stuff becomes an option each day.
+
+An experience I thoroughly enjoyed was the shared experience of starting the
+game at the same time as everyone, and kind of learning bits and pieces about
+the game organically.
+I remember visiting an
+acquaintance's island, and he gave me the ladder and vaulting pole because I
+hadn't realized you'd have to buy stuff to navigate.
+
+One of the features I spent a lot of time with in that first period was the
+"Mystery Island Tour." It's hard to explain without actually talking about
+what Animal Crossing even is, so&hellip;
+
+# What is Animal Crossing?
+
+Animal Crossing is a series of games in which you live in a small village,
+maybe with a few other humans, and with up to ten animals. There's not
+much that you have to do, but you're encouraged to make friends with your
+neighbors, grow flowers, plant trees, furnish (and at notable expense,
+upgrade) your house, decorate the island, and catch bugs and fish for your
+village's museum.
+
+The game runs on a real time clock and calendar,
+which means that some
+activities can only be done once a day, fish and bugs and weather may or
+may not appear at a given time of day or during a given month, and some
+things you might want to do will take days, or weeks, or months.
+
+The quick description might be that it's a relaxing game
+about delayed gratification
+and being a good neighbor.
+
+New Horizons sets your village on a desert island.
 
 LATE NIGHTS ISLAND HOPPING AND THE LEGEND OF RANCHO ISLAND
 
