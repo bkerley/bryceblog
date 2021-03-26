@@ -127,13 +127,71 @@ The quick description might be that it's a relaxing game
 about delayed gratification
 and being a good neighbor.
 
-New Horizons sets your village on a desert island.
+New Horizons sets your village on an island. You start off in a tent, the
+island has a single kind of fruit and a couple kinds of flower growing
+on it. In my case, I had cherry trees, cosmos flowers on the main central
+island, and windflowers in the hills. You also have two random neighbors;
+mine were [Fuchsia](https://nookipedia.com/wiki/Fuchsia), a fuchsia-colored
+doe, and [Sprocket](https://nookipedia.com/wiki/Sprocket), a robot ostrich.
 
-LATE NIGHTS ISLAND HOPPING AND THE LEGEND OF RANCHO ISLAND
+The first week of growing your island involves collecting bugs and fish
+and donating them to
+Tom Nook (the racoon bureaucrat), and eventually Blathers (an owl who
+serves as the museum
+curator); selling stuff (fruits, sticks, bugs & fish that the museum already
+has, basically anything) to Timmy & Tommy (raccoon shopkeepers); and eventually
+the options for stuff to buy or build at a workbench really opens up. This
+runs in conflict with the daily limitations of life on your island. A tree only
+fruits every three days, you can only get so many rocks and iron, and there's
+only so much you can buy after selling bugs and fish.
 
-WORKOUT DIGRESSION
+The way the game addresses this is by adding "Mystery Island Tours," which
+take you on an airplane ride to an instanced island that has trees, flowers,
+and occasionally a few other interesting occurrences. In the early weeks of the
+game, the legend of "Rancho Island" circulated.
 
-REVIEW OF TRAINZ FOR IPAD
+Most of the bugs in Animal Crossing are harmless. The man-faced stinkbug can't
+hurt you, but tarantulas and scorpions will send you to your front door or the
+airplane you flew in on if you don't know exactly how to be careful after dark.
+However, this minor risk pays off, since these bugs are worth up to
+50 times what a less-venomous bug would be. *Hypothetically,* if there was an
+entire Mystery Island full of tarantulae ("ranchos"), you could make a lot of
+progress paying for your next house upgrade.
+
+This is of course entirely hypothetical for me, since I've visited and
+clear-cut a hundred or so Mystery Islands, and never found Rancho Island. What
+I have found are lots of wood, rocks, the full complement of fruits, and new
+residents for any empty houses. I'm not killing entire evenings island hopping
+like I did in the spring of 2020, but that's largely because the way the game
+fits into my schedule has changed.
+
+I visited Japan in 2018, and because the transit systems in and around Tokyo are
+superb, it's easy to simply not notice that you've walked several miles until
+your muscles, honed by a decade of desk work, start protesting. While enjoying
+an espresso and a comfortable chair indoors at the Hakone Open-Air Museum,
+I groused to a friend that I was
+terribly sore, and he correctly diagnosed me as fat and out of shape.
+
+Since that trip, I've started working out on a regular basis. First it was
+just riding the recumbent bike for a half hour a couple times a week, then
+it was five times a week, then it was with more time at higher resistances,
+and once it became clear I wasn't going to be "going places" for a month or
+two or twelve, it became seven days a week. On its own, it's pretty boring,
+so I listen to a podcast, and play a game that doesn't have a lot of
+language.
+At first it was "Polytopia" on iPad, which is a Civilization-style game
+that you can normallycomplete in a half hour or less, which I've been
+playing on and off since 2015, because that's exactly what I want sometimes.
+
+As the reality of no-travel started to settle in, I got "Trainz Simulator 2,"
+also for iPad. It's a game in which you drive trains. It comes with a handful
+of maps and missions, more are available for $2 per bundle, and the game is
+janky, some of the paid content is busted, and it's been neglected since 2014.
+
+After a couple weeks of that I realized I could just play ACNH
+while on the stationary bike. I've been making good progress, both on the
+fitness goals and my island.
+
 
 SEEING THE CREDITS
 
