@@ -7,87 +7,87 @@ tags:
 kind: regular
 ---
 
-I remember when my friend Will got "Animal Crossing" for Gamecube. It looked
-cool the first night, it looked cool a week later, but I got yelled at when
-I asked to make a character and cut down a bunch of trees, because Will had
-to listen to Mr. Resetti gripe about Will rolling back my changes the
-fast way. It seemed cute, but I wasn't at Will's enough to find any fulfillment
-from his copy, and I wasn't planning on buying a Gamecube.
+    I remember when my friend Will got "Animal Crossing" for Gamecube. It looked
+    cool the first night, it looked cool a week later, but I got yelled at when
+    I asked to make a character and cut down a bunch of trees, because Will had
+    to listen to Mr. Resetti gripe about Will rolling back my changes the
+    fast way. It seemed cute, but I wasn't at Will's enough to find any fulfillment
+    from his copy, and I wasn't planning on buying a Gamecube.
 
-For like eighteen years after that I'd hear about Animal Crossing occasionally,
-see one of their characters throw down against a generic anime swordhaver in
-Smash Bros., but I didn't really have any interest in a Nintendo DS or Wii.
+    For like eighteen years after that I'd hear about Animal Crossing occasionally,
+    see one of their characters throw down against a generic anime swordhaver in
+    Smash Bros., but I didn't really have any interest in a Nintendo DS or Wii.
 
-When I lived with Will, and he got "The Legend of Zelda: Breath of the Wild"
-(BOTW)
-for Wii U, I watched him play a bunch and lucked into getting a Switch for that
-game (which is perfect, wish I could play it for the first time again).
-Another benefit of living with Will was getting to use his gaming PC to play
-"Doom" (the 2016 version that I refer to as "Doom 4"), which is also perfect.
+    When I lived with Will, and he got "The Legend of Zelda: Breath of the Wild"
+    (BOTW)
+    for Wii U, I watched him play a bunch and lucked into getting a Switch for that
+    game (which is perfect, wish I could play it for the first time again).
+    Another benefit of living with Will was getting to use his gaming PC to play
+    "Doom" (the 2016 version that I refer to as "Doom 4"), which is also perfect.
 
-From 2017 through 2019, on Switch, I
-ended up with
-"Mario Kart 8 Deluxe" (good, dreading the day I have to destroy
-a nephew or niece in it),
-"Splatoon 2" (keep reading!),
-"Golf Story" (it's alright, the golfing got too hard for my
-patience),
-and a few other games in 2017. Through 2018 and 2019 I played *a lot* of
-Splatoon 2, and quite a few single-player games, often while traveling.
-I deleted a trans-Atlantic trip with "Dead Cells," and trans-Pacific
-flights with "Celeste," "Night in the Woods," and "Shovel Knight." I tried
-the "Dark Souls" port and hated it.
-I played through "Super Mario Odyssey" over the course of a few weekends and
-found it brilliant. Once you beat the big boss and get the credits roll, the
-set of new goals that was hinted at throughout unlock and the real game
-begins.
+    From 2017 through 2019, on Switch, I
+    ended up with
+    "Mario Kart 8 Deluxe" (good, dreading the day I have to destroy
+    a nephew or niece in it),
+    "Splatoon 2" (keep reading!),
+    "Golf Story" (it's alright, the golfing got too hard for my
+    patience),
+    and a few other games in 2017. Through 2018 and 2019 I played *a lot* of
+    Splatoon 2, and quite a few single-player games, often while traveling.
+    I deleted a trans-Atlantic trip with "Dead Cells," and trans-Pacific
+    flights with "Celeste," "Night in the Woods," and "Shovel Knight." I tried
+    the "Dark Souls" port and hated it.
+    I played through "Super Mario Odyssey" over the course of a few weekends and
+    found it brilliant. Once you beat the big boss and get the credits roll, the
+    set of new goals that was hinted at throughout unlock and the real game
+    begins.
 
-A lot of people I chat with online were lamenting the simultaneous
-announcements
-(at the end of a fiscal quarter, thinking emoji) that "Doom Eternal" and
-"Animal Crossing: New Horizons" ("New Horizons" or "ACNH")
-would be pushed back to 2020, and I was a bit
-sad but it's not like I was going to bother with a gaming PC or an
-Animal Crossing game so whatever.
+    A lot of people I chat with online were lamenting the simultaneous
+    announcements
+    (at the end of a fiscal quarter, thinking emoji) that "Doom Eternal" and
+    "Animal Crossing: New Horizons" ("New Horizons" or "ACNH")
+    would be pushed back to 2020, and I was a bit
+    sad but it's not like I was going to bother with a gaming PC or an
+    Animal Crossing game so whatever.
 
-But "New Horizons" kept coming up in conversation. Outside a film
-screening in February 2020, I got in a conversation about if this new virus
-would make it to the US, but another person changed the topic to if
-Tom Nook (the racoon bureaucrat) is a villain for immediately and repeatedly
-putting you into debt, or benign for giving you a home with no strict
-obligation to pay for the privilege.
+    But "New Horizons" kept coming up in conversation. Outside a film
+    screening in February 2020, I got in a conversation about if this new virus
+    would make it to the US, but another person changed the topic to if
+    Tom Nook (the racoon bureaucrat) is a villain for immediately and repeatedly
+    putting you into debt, or benign for giving you a home with no strict
+    obligation to pay for the privilege.
 
-I went on a business trip March 9, 2020. Through the course of the week,
-the news got pretty grim pretty quickly. First, the Starbucks near the
-destination banned personal cups. Then, my coworkers decided they needed
-to rush home while they still could. The meeting ended with a dire warning to
-tell the project owners if we did get symptoms in the coming weeks.
+    I went on a business trip March 9, 2020. Through the course of the week,
+    the news got pretty grim pretty quickly. First, the Starbucks near the
+    destination banned personal cups. Then, my coworkers decided they needed
+    to rush home while they still could. The meeting ended with a dire warning to
+    tell the project owners if we did get symptoms in the coming weeks.
 
-Finally, while I was waiting for my bag back in Miami, the TV news was saying
-that the (completely dog shit) mayor got COVID from Bolsonaro's visit.
+    Finally, while I was waiting for my bag back in Miami, the TV news was saying
+    that the (completely dog shit) mayor got COVID from Bolsonaro's visit.
 
-The week after that was weird. I first made a mask out of a T-shirt, bought
-some masks, did some woodworking, was very paranoid while shopping, and
-finished "Kentucky Route Zero." (KRZ) Kentucky Route Zero is superb; after I
-completed it, I saw it described as a game that's less about how you interact
-with the magically realistic Kentucky, but about how you feel about the
-predicaments imposed on the varied and well-written characters. It's not at
-all a difficult game, but it is absolutely brilliant.
+    The week after that was weird. I first made a mask out of a T-shirt, bought
+    some masks, did some woodworking, was very paranoid while shopping, and
+    finished "Kentucky Route Zero." (KRZ) Kentucky Route Zero is superb; after I
+    completed it, I saw it described as a game that's less about how you interact
+    with the magically realistic Kentucky, but about how you feel about the
+    predicaments imposed on the varied and well-written characters. It's not at
+    all a difficult game, but it is absolutely brilliant.
 
-Through this first week of lockdown, the pre-release reviews for New Horizons
-went out of control;
-the promise of being able to virutally visit your friends' "homes" and interact
-with characters in a relaxed non-threatening cartoon was *really* appealing
-in a world without "dining out" or "bars." Obviously, I had to give "Warframe"
-a shot.
+    Through this first week of lockdown, the pre-release reviews for New Horizons
+    went out of control;
+    the promise of being able to virutally visit your friends' "homes" and interact
+    with characters in a relaxed non-threatening cartoon was *really* appealing
+    in a world without "dining out" or "bars." Obviously, I had to give "Warframe"
+    a shot.
 
-I didn't dislike Warframe while I played it, but the ramp from
-the tutorial missions into the opening of the game and the funnel into paying
-for stuff kind of wigged me out since I was playing pretty late on March 19,
-2020 and knew I shouldn't be buying a bunch of content for a game I was mostly
-playing on a whim in the remaining hours before New Horizons. It might've been
-an enjoyable experience to get into the flow and rhythm of it, but that didn't
-happen.
+    I didn't dislike Warframe while I played it, but the ramp from
+    the tutorial missions into the opening of the game and the funnel into paying
+    for stuff kind of wigged me out since I was playing pretty late on March 19,
+    2020 and knew I shouldn't be buying a bunch of content for a game I was mostly
+    playing on a whim in the remaining hours before New Horizons. It might've been
+    an enjoyable experience to get into the flow and rhythm of it, but that didn't
+    happen.
 
 # Actually Getting Into Animal Crossing: New Horizons
 
@@ -190,29 +190,108 @@ janky, some of the paid content is busted, and it's been neglected since 2014.
 
 After a couple weeks of that I realized I could just play ACNH
 while on the stationary bike. I've been making good progress, both on the
-fitness goals and my island.
+fitness goals and my island. The former I've been measuring based on how much
+out of my way I have to take when I go to the store to get a full move ring
+on my watch. The latter, the game gives you a few indicators.
 
+In New Horizons, both your house and island are rated. Once your island is
+fully-inhabited with ten animal neighbors, and sufficiently clean and
+decorated to merit three (of five) stars, the musician K.K. Slider
+shows up and performs the game's theme song to the game's credits roll.
 
-SEEING THE CREDITS
+To me, this echoes another Switch game, Super Mario Odyssey.
+Through Mario's (pretty fun, first 3-D Mario game I've beaten)
+Odyssey through EPCOT-tier versions of different
+~~countries~~ kingdoms, you pick up "Power Moons" to advance through the game.
+However, through your exploring, you'll see ghostly un-collectable power moons.
+Only once you conclude the main storyline and watch the credits do they
+materialize and enable what's basically the remaining half of the game.
 
-STEADY STATE
+ACNH's post-credits gameplay isn't drastically different from before, but it
+does feel nice to hear the theme song with all your neighbors.
 
-VILLAGERS ARE FREE TO ENTER THE VOID
+Fundamentally, New Horizons is about the steady state. Showing up each day,
+doing the chores, talking to neighbors,
+seeing which visitors are around, and slowly getting your
+island and house ratings up.
 
-SUMMER OF COVID AND THE FIRST CAMERA DIGRESSION
+As of this writing, New Horizons has almost 400 animal neighbors, and if you
+want to spend time with them all, they're going to have to cycle through the
+ten houses you have. Every couple weeks, one of them will ask if they should
+move out. For my first few months playing, I always said yes.
 
-VILLAGERS ARE NOT FREE TO ENTER THE VOID
+Around this time, I was kind of falling into a new hobby. For a lot of 2018
+and 2019, I was really into calligraphy, to the extent of getting a
+webcam setup so I could stream writing sessions. However, the webcam I
+have wasn't super-pleasant for this. It didn't render colors super well,
+required a lot of fussing with computer UI to focus consistently, and just
+looked like a tiny sensor and tiny lens was shooting video. So I got a DSLR.
+Used entry-level Canon, APS-C sensor, 18-55mm lens, memory card.
 
-SUSPENSION OF DISBELIEF
+This immediately became something I was into. The parks in my neighborhood
+were reopening (people weren't catching or spreading a respiratory disease
+at parks in the spring and summer), I learned how to find lizards, I got
+a longer 55-250mm lens to take pictures of iguanas, I learned how to find
+lizards better, got more lenses, got into taking nice walks in the park a
+few times a week, and have pretty much been having a lovely time.
 
-FINDING A NEIGHBOR ON NOOKAZON
+Fuchsia, one of my original neighbors, asked to leave. I said no, for the
+first time.
+While originally the randomness of the game was appealing to
+me, by this time I realized I was getting plenty of recreational chaos on
+long walks with a camera. This kind of changed my relationship to the
+game, specifically on how I chose to suspend my disbelief.
 
-SPLATFEST DIGRESSION
+Suspension of disbelief is important to me. It makes the last warthog run
+in Halo more exciting when you have it, and it just ruins that last
+Avengers movie when the green man vs. purple man punching fight just
+destroys it for you. I've found that even though I always find my mind
+resting on the game's RNGs and reward cycles and occasional trips to
+[Nookipedia](https://nookipedia.com), the Animal Crossing wiki, it somehow
+always feeds into my desire to keep my streak going, get my neighbors'
+photos, and otherwise just have a nice half-hour or so.
+
+The game's special events are interesting in this regard. There're
+holidays like "Bunny Day" (Easter Sunday), "Toy Day" (Christmas Eve),
+"Festivale" (a Brasilian-themed Carnival), and
+Halloween; these tend to have a special character, a handful of items
+to get through normal gameplay stuff, and new lines from your
+neighbors. They're neat, but I'm kind of wondering how it'd work if
+you had, like, an adult and a few kids time-sharing an island on
+Christmas Eve.
+
+Splatoon 2 had special "Splatfest" events; originally monthly until
+July 2019 (I went for team Order&hellip;), they brought three old ones
+and a new promotional one back for four quarters in 2020 and 2021. It was
+nice! Splatoon is basically the opposite of Animal Crossing: it's a fast
+multiplayer shooter, with a complete game playing out from matchmaking to
+the lobby in about five minutes. Each one of these was a blast; got to play and
+voice chat with friends from fedi, get back into a fun action game, and then be
+basically done for a few months, since I don't really have the space in my
+life for it on a regular basis.
+
+One thing that was hard to make space for ws the quest for a new neighbor.
+When a neighbor leaves, they're "in boxes" (their house is bare, with boxes
+piled up, and they're theatrically sweeping the corners) for a day,
+their lot is vacant for a day, and then your new neighbor is there the next.
+When there's a vacant lot, you have a few choices.
+
+1. Do nothing, and get a random neighbor. At one point, I had three lazy
+   slob neighbors, who basically had one personality split between them.
+   Three neighbors that have crusty shirts and bugs whispering secrets
+   in their ear gets tiring.
+2. Go on Mystery Island Tours. When you have a vacancy, these islands have
+   an animal there that is willing to move to your island. This speeds up
+   the random/do nothing option, and gives you some choice, but it's still
+   random, and more than once I've been up way later than I should've looking
+   for a non-slob.
+3. Visit another player's island, and talk to a future-ex-neighbor of theirs
+   that's in boxes.
+
+There's an opportunity here to solve XXXXX
 
 THE QUEST FOR BLUE ROSES
 
-CHRISTMAS AND NEW YEARS AND HOW SPECIAL EVENTS WORK
-
 ITEM/CATALOG FOMO IS VALID
 
-THE QUEST FOR FIVE STARS
+    THE QUEST FOR FIVE STARS
