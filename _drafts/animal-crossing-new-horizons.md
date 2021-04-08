@@ -129,6 +129,8 @@ and being a good neighbor.
 
 # Exploring New Horizons
 
+![my character is near a tent, and the date "3/20/2020" is superimposed in the corner like an old 35mm camera](/assets/post_images/acnh/moved_in.jpeg)
+
 New Horizons sets your village on an island. You start off in a tent, the
 island has a single kind of fruit and a couple kinds of flower growing
 on it. In my case, I had cherry trees, cosmos flowers on the main central
@@ -285,7 +287,12 @@ life for it on a regular basis.
 One thing that was hard to make space for was the quest for a new neighbor.
 When a neighbor leaves, they're "in boxes" (their house is bare, with boxes
 piled up, and they're theatrically sweeping the corners) for a day,
-their lot is vacant for a day, and then your new neighbor is there the next.
+their lot is vacant for a day, and then your new neighbor is there the next
+ (with
+boxes, but unpacking them.)
+
+![a penguin named Gwen, holding a broom and surrounded by boxes, saying she needs to finish unpacking](/assets/post_images/acnh/welcome_gwen.jpg)
+
 When there's a vacant lot, you have a few choices.
 
 1. Do nothing, and get a random neighbor. At one point, I had three lazy
