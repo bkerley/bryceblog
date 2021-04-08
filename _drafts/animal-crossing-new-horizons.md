@@ -272,6 +272,8 @@ neighbors. They're neat, but I'm kind of wondering how it'd work if
 you had, like, an adult and a few kids time-sharing an island on
 Christmas Eve.
 
+![Blathers the museum owl pondering an ink-squirting contest of champions](/assets/post_images/acnh/blathers_ponders_splatoon.jpeg)
+
 Splatoon 2 had special "Splatfest" events; originally monthly until
 July 2019 (I went for team Order&hellip;), they brought three old ones
 and a new promotional one back for four quarters in 2020 and 2021. It was
