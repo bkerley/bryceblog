@@ -291,7 +291,7 @@ their lot is vacant for a day, and then your new neighbor is there the next
  (with
 boxes, but unpacking them.)
 
-![a penguin named Gwen, holding a broom and surrounded by boxes, saying she needs to finish unpacking](/assets/post_images/acnh/welcome_gwen.jpg)
+![a penguin named Gwen, holding a broom and surrounded by boxes, saying she needs to finish unpacking](/assets/post_images/acnh/welcome_gwen.jpeg)
 
 When there's a vacant lot, you have a few choices.
 
