@@ -127,6 +127,8 @@ The quick description might be that it's a relaxing game
 about delayed gratification
 and being a good neighbor.
 
+# Exploring New Horizons
+
 New Horizons sets your village on an island. You start off in a tent, the
 island has a single kind of fruit and a couple kinds of flower growing
 on it. In my case, I had cherry trees, cosmos flowers on the main central
@@ -165,6 +167,8 @@ residents for any empty houses. I'm not killing entire evenings island hopping
 like I did in the spring of 2020, but that's largely because the way the game
 fits into my schedule has changed.
 
+# Yeah! That gets me pumped!
+
 I visited Japan in 2018, and because the transit systems in and around Tokyo are
 superb, it's easy to simply not notice that you've walked several miles until
 your muscles, honed by a decade of desk work, start protesting. While enjoying
@@ -194,6 +198,8 @@ fitness goals and my island. The former I've been measuring based on how much
 out of my way I have to take when I go to the store to get a full move ring
 on my watch. The latter, the game gives you a few indicators.
 
+# Beat the Game and Watch the Credits
+
 In New Horizons, both your house and island are rated. Once your island is
 fully-inhabited with ten animal neighbors, and sufficiently clean and
 decorated to merit three (of five) stars, the musician K.K. Slider
@@ -214,6 +220,8 @@ Fundamentally, New Horizons is about the steady state. Showing up each day,
 doing the chores, talking to neighbors,
 seeing which visitors are around, and slowly getting your
 island and house ratings up.
+
+# Wild Lizards
 
 As of this writing, New Horizons has almost 400 animal neighbors, and if you
 want to spend time with them all, they're going to have to cycle through the
@@ -242,7 +250,7 @@ me, by this time I realized I was getting plenty of recreational chaos on
 long walks with a camera. This kind of changed my relationship to the
 game, specifically on how I chose to suspend my disbelief.
 
-Suspension of disbelief is important to me. It makes the last warthog run
+Suspension of disbelief is important to me. It makes the last Warthog run
 in Halo more exciting when you have it, and it just ruins that last
 Avengers movie when the green man vs. purple man punching fight just
 destroys it for you. I've found that even though I always find my mind
@@ -250,6 +258,8 @@ resting on the game's RNGs and reward cycles and occasional trips to
 [Nookipedia](https://nookipedia.com), the Animal Crossing wiki, it somehow
 always feeds into my desire to keep my streak going, get my neighbors'
 photos, and otherwise just have a nice half-hour or so.
+
+# The Bunny Day Music is Really Good
 
 The game's special events are interesting in this regard. There're
 holidays like "Bunny Day" (Easter Sunday), "Toy Day" (Christmas Eve),
@@ -270,7 +280,9 @@ voice chat with friends from fedi, get back into a fun action game, and then be
 basically done for a few months, since I don't really have the space in my
 life for it on a regular basis.
 
-One thing that was hard to make space for ws the quest for a new neighbor.
+# Boxing Day
+
+One thing that was hard to make space for was the quest for a new neighbor.
 When a neighbor leaves, they're "in boxes" (their house is bare, with boxes
 piled up, and they're theatrically sweeping the corners) for a day,
 their lot is vacant for a day, and then your new neighbor is there the next.
@@ -288,10 +300,75 @@ When there's a vacant lot, you have a few choices.
 3. Visit another player's island, and talk to a future-ex-neighbor of theirs
    that's in boxes.
 
-There's an opportunity here to solve XXXXX
+(We're somehow 2600 words into this review and just getting to multiplayer!)
 
-THE QUEST FOR BLUE ROSES
+In addition to Mystery Island Tours, you can invite other players to your
+island (with the game's "Best Friends" list, the system's friend list, or
+a Dodo Code&trade; that lets anyone visit), and visit someone else's island.
+The latter option enables more sites like [Nookazon](https://nookazon.com)
+where you can list items and neighbors for free or trade. I was initially
+resistant to the trade in named characters, but I realized I wanted an octopus
+neighbor, and instead of just rolling the dice endlessly, I could get one with
+an hour of effort.
 
-ITEM/CATALOG FOMO IS VALID
+Later, I found out that in Nookazon's chat server, there's a free neighbor
+exchange channel, for when you either just want one of your neighbors to find
+a new place to live instead of entering the void, or aren't picky and want
+to spare another human that feeling.
 
-    THE QUEST FOR FIVE STARS
+I've not used a clearinghouse like Nookazon for anything except neighbors. I
+haven't felt that there's been an item or colorway of an item worth it
+(got burned by oysters in GTA: San Andreas back when it came out on the
+original Xbox (good game tho)), but I get the mentality.
+In my case, I emphasize with the character "Eddie Krieger" in ["17776"
+by Jon Bois](https://www.sbnation.com/a/17776-football):
+
+> I don't want to tell you because I don't want to deprive you of mystery.
+> Uncertainty is our greatest scarcity. You should be delighted to not know
+> something. [&hellip;]
+> Mystery is an exhaustible resource.
+> If you depend on that to make you happy, you better start saving it instead
+> of gorging yourself like a little piglet.
+
+In my case, one experience I didn't want to deprive myself of was breeding
+flowers. I got most of them in the first few months, but then I learned about
+blue roses.
+
+# Colored Glasses
+
+[Flowers in Animal Crossing: New Horizons][acnh-flowers] have complex genetics.
+All flowers have three trinary genes, and roses have a fourth. You can get
+flower seeds with known genes from the store or Leif
+(traveling sl0th merchant, will
+also buy your weeds for a premium), and from there you can get on a
+[blue rose flowchart][flowchart]
+that will almost certainly span months.
+
+I started ["Asteriation's 4-Step Method"][asteriation] in September.
+The flowchart  says you don't
+have to worry about testing the genetics of clones, but it is slower because
+of that. I figured testing would be a pain and I'd forget to do it, but keeping
+the flowchart open on my phone wasn't a huge lift. Getting started was actually
+hard, because rose seeds of every color aren't consistently available.
+I ended up
+getting some seeds from my friend Eirik's hoard, and got it rolling
+that first week of September 2020.
+Not quite two months later, on November 29, I had my first blue roses!
+
+![my character standing next to blue rose buds](/assets/post_images/acnh/blue_roses.jpeg)
+
+[acnh-flowers]: https://aiterusawato.github.io/satogu/acnh/flowers/
+[flowchart]: https://yuexr.github.io/acnh/bluerose.html
+[asteriation]: https://yuexr.github.io/acnh/bluerose.html#aster4step-method
+
+I have one rose color left: gold roses. These require a "golden watering can,"
+which requires a five-star island. A year into this game, and I'm still not
+there somehow. I'd like to get there, but I haven't really felt like I need
+to put in the effort to do so. Like so much else in this game, I've read online
+about a thing, but the gameplay loop that I experience daily, over a year after
+release, is so damn *comfy* that I haven't engaged in a big project to shake
+that up in a few months.
+
+And that's worth something to me, and the few people I know that are still
+playing New Horizons. It's comfortable, it's not stressful, and I'm glad it's
+part of my life right now.
