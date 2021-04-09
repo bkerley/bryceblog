@@ -1,10 +1,14 @@
 ---
 layout: post
-title: Review: Animal Crossing: New Horizons
+date: '2021-04-09T12:00:00-04:00'
+title: "Review: Animal Crossing: New Horizons"
 tags:
+    - blog
     - game
     - review
+    - since-2021
 kind: regular
+css_id: acnh_review
 ---
 
 I remember when my friend Will got "Animal Crossing" for Gamecube. It looked
@@ -344,6 +348,8 @@ flowers. I got most of them in the first few months, but then I learned about
 blue roses.
 
 # Colored Glasses
+
+![Leif buying 21,140 bells worth of weed](assets/post_images/acnh/leif_buying_weed.jpeg)
 
 [Flowers in Animal Crossing: New Horizons][acnh-flowers] have complex genetics.
 All flowers have three trinary genes, and roses have a fourth. You can get
