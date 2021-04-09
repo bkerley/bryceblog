@@ -1,15 +1,65 @@
 ---
 layout: post
-date: '2021-04-09T12:00:00-04:00'
+date: '2021-04-07T12:00:00-04:00'
 title: "Review: Animal Crossing: New Horizons"
 tags:
-    - blog
     - game
     - review
     - since-2021
 kind: regular
 css_id: acnh_review
 ---
+
+<style type="text/css">
+#acnh_review div.photo img {
+    border: 0.5em solid white;
+    filter: drop-shadow(0 0.25em 0.5em black)
+}
+
+#acnh_review div.photo.center {
+    text-align: center;
+}
+
+#acnh_review div.photo.center img {
+    width: 75%;
+}
+
+#acnh_review div.photo.left img,
+#acnh_review div.photo.right img {
+    margin: 1em 0 2em;
+    width: 65%;
+}
+
+#acnh_review div.mini.photo img {
+    width: 35%
+}
+
+#acnh_review div.small.photo img {
+    width: 45%;
+}
+
+#acnh_review div.left.photo img {
+    float: left;
+    margin-right: 2em;
+}
+
+#acnh_review div.right.photo img {
+    float: right;
+    margin-left: 2em;
+}
+
+#acnh_review div.jaunty.left.photo img {
+    transform: rotate(-3.1deg);
+}
+
+#acnh_review div.jaunty.right.photo img {
+    transform: rotate(2.8deg);
+}
+
+#acnh_review h1 {
+  clear: both;
+}
+</style>
 
 I remember when my friend Will got "Animal Crossing" for Gamecube. It looked
 cool the first night, it looked cool a week later, but I got yelled at when
@@ -133,7 +183,11 @@ and being a good neighbor.
 
 # Exploring New Horizons
 
+<div class="left photo mini jaunty">
+
 ![my character is near a tent, and the date "3/20/2020" is superimposed in the corner like an old 35mm camera](/assets/post_images/acnh/moved_in.jpeg)
+
+</div>
 
 New Horizons sets your village on an island. You start off in a tent, the
 island has a single kind of fruit and a couple kinds of flower growing
@@ -206,6 +260,12 @@ on my watch. The latter, the game gives you a few indicators.
 
 # Beat the Game and Watch the Credits
 
+<div class="photo center">
+
+![K.K. Slider holding a guitar in the town square with the whole island out to watch](/assets/post_images/acnh/kk_slider.jpeg)
+
+</div>
+
 In New Horizons, both your house and island are rated. Once your island is
 fully-inhabited with ten animal neighbors, and sufficiently clean and
 decorated to merit three (of five) stars, the musician K.K. Slider
@@ -242,6 +302,12 @@ required a lot of fussing with computer UI to focus consistently, and just
 looked like a tiny sensor and tiny lens was shooting video. So I got a DSLR.
 Used entry-level Canon, APS-C sensor, 18-55mm lens, memory card.
 
+<div class="right small photo jaunty">
+
+![a grey-colored green iguana on a concrete curb in front of plants](/assets/post_images/acnh/iguana.jpeg)
+
+</div>
+
 This immediately became something I was into. The parks in my neighborhood
 were reopening (people weren't catching or spreading a respiratory disease
 at parks in the spring and summer), I learned how to find lizards, I got
@@ -276,10 +342,14 @@ neighbors. They're neat, but I'm kind of wondering how it'd work if
 you had, like, an adult and a few kids time-sharing an island on
 Christmas Eve.
 
+<div class="left small photo jaunty">
+
 ![Blathers the museum owl pondering an ink-squirting contest of champions](/assets/post_images/acnh/blathers_ponders_splatoon.jpeg)
 
+</div>
+
 Splatoon 2 had special "Splatfest" events; originally monthly until
-July 2019 (I went for team Order&hellip;), they brought three old ones
+July 2019 (I went for team Chaos, booyah!), they brought three old ones
 and a new promotional one back for four quarters in 2020 and 2021. It was
 nice! Splatoon is basically the opposite of Animal Crossing: it's a fast
 multiplayer shooter, with a complete game playing out from matchmaking to
@@ -297,7 +367,11 @@ their lot is vacant for a day, and then your new neighbor is there the next
  (with
 boxes, but unpacking them.)
 
+<div class="right small photo">
+
 ![a penguin named Gwen, holding a broom and surrounded by boxes, saying she needs to finish unpacking](/assets/post_images/acnh/welcome_gwen.jpeg)
+
+</div>
 
 When there's a vacant lot, you have a few choices.
 
@@ -349,7 +423,11 @@ blue roses.
 
 # Colored Glasses
 
-![Leif buying 21,140 bells worth of weed](assets/post_images/acnh/leif_buying_weed.jpeg)
+<div class="right photo mini jaunty">
+
+![Leif buying 21,140 bells worth of weed](/assets/post_images/acnh/leif_buying_weed.jpeg)
+
+</div>
 
 [Flowers in Animal Crossing: New Horizons][acnh-flowers] have complex genetics.
 All flowers have three trinary genes, and roses have a fourth. You can get
@@ -370,7 +448,11 @@ getting some seeds from my friend Eirik's hoard, and got it rolling
 that first week of September 2020.
 Not quite two months later, on November 29, I had my first blue roses!
 
+<div class="photo center">
+
 ![my character standing next to blue rose buds](/assets/post_images/acnh/blue_roses.jpeg)
+
+</div>
 
 [acnh-flowers]: https://aiterusawato.github.io/satogu/acnh/flowers/
 [flowchart]: https://yuexr.github.io/acnh/bluerose.html

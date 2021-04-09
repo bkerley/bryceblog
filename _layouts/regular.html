@@ -15,7 +15,11 @@ layout: default
       {%- endif -%}</p>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
+  <div class="post-content e-content" itemprop="articleBody"
+       {%- if page.css_id -%}
+       id="{{ page.css_id }}"
+       {%- endif -%}
+       >
     {{ content }}
   </div>
 
