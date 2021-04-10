@@ -19,7 +19,7 @@ email: bkerley@brycekerley.net
 description: >- # this means to ignore newlines until "baseurl:"
   © 2005-2021 Bryce Kerley.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://blog.brycekerley.net"
 #twitter_username: jekyllrb
 github_username:  bkerley
 mastodon:
