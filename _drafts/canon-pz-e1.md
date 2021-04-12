@@ -17,6 +17,9 @@ to the [EF-S 18-135mm f/3.5-5.6 IS USM][the_lens] lens.
 
 [the_lens]: https://global.canon/en/c-museum/product/ef454.html
 
+*Thanks to Scolopendra, Compgeke, Adam B-L, Rabenaas, and Theros for some
+questions and thoughts!*
+
 # A Quick Intro to Lens Accessories, Lenses, and Cameras
 
 In modern parlance, a camera's a tool for capturing an image. There's a lens
@@ -124,8 +127,7 @@ little flappy paddles on the steering wheel.
 The PZ-E1 has a few controls on the side. A big locking lever, a zoom lever
 that slides forwards and backwards, a manual/power zoom ("MZ" and "PZ") switch,
 and a switch between slow & fast.
-
-The PZ-E1 takes four AAA batteries, and when locked on to the lens,
+When locked on to the lens,
 while the camera and lens are awake, and set to "PZ," you can use the zoom
 lever to control the zoom.
 
@@ -140,6 +142,13 @@ be possible even if the lamp is on." I suspect the zoom motor's set up to not
 cook itself in this case, although I don't know if it's an electronic interlock
 or if it just doesn't try very hard.
 
+| | mass (grams) |
+|-|-:|
+| PZ-E1 alone | 115g |
+| PZ-E1 and 4 AAA batteries | 161g |
+| PZ-E1, batteries, and lens | 706g |
+| PZ-E1, batteries, lens, Rebel T6 | 1200g |
+
 # Experience
  
 "Slow" is in fact slow, taking over ten seconds to go all the way from 18mm to
@@ -150,7 +159,7 @@ about a second to get started in either speed, which is included in those
 numbers.
 
 If it's set to "MZ" manual zoom, you can zoom manually. I find that unpleasant,
-since the zoom motor covers up the part of the lens i like to hold. Unlocking
+since the zoom motor covers up the part of the lens I like to hold. Unlocking
 and removing it works, but it's not easy to snap it back on.
 
 It's quiet!
@@ -164,16 +173,28 @@ The entry-level camera I have doesn't support this.
 
 # Home Cinematography
 
-I've tried a few home strategies for dolly zooms. Walking forwards or backwards
-in flip-flops is hard to do smoothly. Pivoting my fanciest tripod around while
-racking the arm in and out is also hard to do smoothly. I've toyed with the
+I've tried a few home strategies for dolly zooms. 
+
+GIRAFFES ATTEMPT
+Walking forwards or backwards
+in flip-flops is hard to do smoothly.
+
+TRIPOD ATTEMPT
+Pivoting my fanciest tripod around while
+racking the arm in and out is also hard to do smoothly. 
+
+I've toyed with the
 thought of using one of those shitty little rental scooters, but that seems
-like a good way to break expensive things like lenses or bones. An automatic
+like a good way to break expensive things like lenses or bones. A
 car that creeps at a fixed speed might be ideal, but then it's a group film
 project,
 and [I've not done one of those since high school.][festiva-commercial]
 
 [festiva-commercial]: https://www.youtube.com/watch?v=mrfrW_bcCDo
+
+Beyond the dolly zoom, you can use it like a normal camcorder, but honestly,
+snap zooms are cool, and the place the PZ-E1 attaches to makes it hard for me
+to do those.
 
 Aside from not having a smooth way to control the camera's position in space,
 I don't have a particularly comfortable camera to hold. Big VHS
@@ -206,6 +227,10 @@ would be overkill. If you don't want to RE the eight contacts between the
 lens and zoom motor (or don't think they add much value, like if you have an
 older/cheaper camera that doesn't have any control functions), an ESP-32 would
 be fine.
+
+PICTURE OF CAMERA NOT SITTING FLAT
+
+"Does it sit flat?" no
 
 # The Big Questions
 
