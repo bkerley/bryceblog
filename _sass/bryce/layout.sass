@@ -1,45 +1,17 @@
 $top-scoot: 4em
 $bottom-scoot: 3em
 
-html
-  height: 100%
-
 body
-  display: grid
-  min-height: 100%
-  grid-template-rows: auto 1fr auto
+  padding: 0
+  margin: 0
 
-header, main
-  margin: 0 auto
-  padding: 1em
-  max-width: 60em
-  min-width: 40em
-
-body > header
-  margin-top: -$top-scoot
-  padding-top: $top-scoot
-  transform: rotateZ(-1.2deg)
+header
+  margin-bottom: 1rem
+  padding: 1rem
 
 main
-  width: 60em
-
-  .post-header
-    display: grid
-    grid-template-columns: auto auto
-    h1
-      grid-column: 1
-      grid-row: 1
-      overflow: wrap
-    time
-      grid-column: 2
-      grid-row: 1
-      text-align: right
-      border-left: 1px solid
-      padding-left: 0.25em
-    p.post-meta
-      grid-column-start: 1
-      grid-column-end: 2
-      grid-row: 2
+  padding: 1rem
+  margin-bottom: 1rem
 
   img
     max-width: 100%
@@ -61,17 +33,65 @@ main
           margin-top: 0
           margin-bottom: 0
 
-
 footer
-  overflow: hidden
-  margin: 0 auto 0
-  width: 50em
   .wrapper
+    padding: 1rem
+    ul
+      list-style-type: none
+      padding-left: 0
+
+@media (min-width: 60rem)
+  html
+    height: 100%
+
+  body
+    display: grid
+    min-height: 100%
+    grid-template-rows: auto 1fr auto
+
+  header, main
     margin: 0 auto
     padding: 1em
-    width: 40em
-    transform: rotateZ(2.4deg) translateY($bottom-scoot)
-    padding-bottom: 2 * $bottom-scoot
-    .footer-col-wrapper
+    max-width: 60rem
+    min-width: 40rem
+
+  body > header
+    margin-top: -$top-scoot
+    padding-top: $top-scoot
+    transform: rotateZ(-1.2deg)
+
+  main
+    max-width: 50rem
+
+    .post-header
       display: grid
-      grid-template-columns: auto auto auto
+      grid-template-columns: auto auto
+      h1
+        grid-column: 1
+        grid-row: 1
+        overflow: wrap
+      time
+        grid-column: 2
+        grid-row: 1
+        text-align: right
+        border-left: 1px solid
+        padding-left: 0.25em
+      p.post-meta
+        grid-column-start: 1
+        grid-column-end: 2
+        grid-row: 2
+
+
+  footer
+    overflow: hidden
+    margin: 0 auto 0
+    max-width: 50em
+    .wrapper
+      margin: 0 auto
+      padding: 1em
+      width: 40em
+      transform: rotateZ(2.4deg) translateY($bottom-scoot)
+      padding-bottom: 2 * $bottom-scoot
+      .footer-col-wrapper
+        display: grid
+        grid-template-columns: auto auto auto

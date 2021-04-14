@@ -59,6 +59,33 @@ css_id: acnh_review
 #acnh_review h1 {
   clear: both;
 }
+
+@media (min-width: 60rem) {
+    #acnh_review div.left.photo img {
+        margin-left: -4em;
+    }
+
+    #acnh_review div.right.photo img {
+        margin-right: -4em;
+    }
+
+    #acnh_review div.photo.center img {
+        width: 85%;
+    }
+
+    #acnh_review div.photo.left img,
+    #acnh_review div.photo.right img {
+        width: 75%;
+    }
+
+    #acnh_review div.mini.photo img {
+        width: 45%
+    }
+
+    #acnh_review div.small.photo img {
+        width: 55%;
+    }
+}
 </style>
 
 I remember when my friend Will got "Animal Crossing" for Gamecube. It looked
