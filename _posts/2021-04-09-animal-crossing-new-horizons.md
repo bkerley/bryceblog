@@ -13,7 +13,7 @@ css_id: acnh_review
 <style type="text/css">
 #acnh_review div.photo img {
     border: 0.5em solid white;
-    filter: drop-shadow(0 0.25em 0.5em black)
+    filter: drop-shadow(0 0.25em 0.5em black);
 }
 
 #acnh_review div.photo.center {
