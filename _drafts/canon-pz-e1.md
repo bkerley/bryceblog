@@ -18,15 +18,16 @@ css_id: pz-e1
 
 #pz-e1 figure {
       border-bottom: 1px solid #010;
-}
-
-#pz-e1 figure {
       text-align: center;
 }
 
-#pz-e1 figure.comparison img {
-      width: 45%;
+#pz-e1 figure video,
+#pz-e1 figure img {
       filter: drop-shadow(0 0.25em 0.5em black);
+}
+
+#pz-e1 figure.comparison img {
+      width: 90%;
       vertical-align: middle;
       margin: 0.25rem;
 }
@@ -34,6 +35,12 @@ css_id: pz-e1
 #pz-e1 figure figcaption {
       font-size: 0.9rem;
       font-style: italic;
+}
+
+@media (min-width: 60rem) {
+      #pz-e1 figure.comparison img {
+            width: 45%;
+      }
 }
 </style>
 
@@ -69,8 +76,6 @@ small but complete camera system jammed into a smartphone, and that's
 legitimately an incredible combination that's got billions of people having fun
 taking pictures.
 
-PICTURE OF MY PHONE NEXT TO MY CAMERA WITH SENSOR EXPOSED
-
 On the flipmode, if you're willing to deal with a bigger, heavier camera that
 does less than a phone, you're going to be spending that weight and volume
 on a nicer sensor, and a mechanism to allow swapping lens assemblies. If you
@@ -80,31 +85,31 @@ better when you have more lens and sensor area to capture light with.
 
 <figure class="comparison">
 <img src="/assets/post_images/pz-e1/thumb/full-amiibo-bad.jpg"
-srcset="/assets/post_images/pz-e1/full-amiibo-bad.jpg 4x" 
+srcset="/assets/post_images/pz-e1/thumb/full-amiibo-bad.jpg 1x, /assets/post_images/pz-e1/full-amiibo-bad.jpg 4x" 
 alt="a green squid figurine on an apple newton"
 />
 <img src="/assets/post_images/pz-e1/thumb/full-amiibo-good.jpg"
-srcset="/assets/post_images/pz-e1/full-amiibo-good.jpg 4x" 
+srcset="/assets/post_images/pz-e1/thumb/full-amiibo-good.jpg 1x, /assets/post_images/pz-e1/full-amiibo-good.jpg 4x" 
 alt="a green squid figurine on an apple newton"
 />
 
 <figcaption>
-Both pictures are of a green squid figurine on top of an Apple Newton. The left one looks a bit more green, and the right one has a less-in-focus background.
+Both pictures are of a green squid figurine on top of an Apple Newton. The first one looks a bit more green, and the second one has a less-in-focus background.
 </figcaption>
 </figure>
 
 <figure class="comparison">
 <img src="/assets/post_images/pz-e1/thumb/squid-amiibo-bad.jpg"
-srcset="/assets/post_images/pz-e1/squid-amiibo-bad.jpg 4x" 
+srcset="/assets/post_images/pz-e1/thumb/squid-amiibo-bad.jpg 1x, /assets/post_images/pz-e1/squid-amiibo-bad.jpg 4x" 
 alt="the eyes of a green squid figurine"
 />
 <img src="/assets/post_images/pz-e1/thumb/squid-amiibo-good.jpg"
-srcset="/assets/post_images/pz-e1/squid-amiibo-good.jpg 4x" 
+srcset="/assets/post_images/pz-e1/thumb/squid-amiibo-good.jpg 1x, /assets/post_images/pz-e1/squid-amiibo-good.jpg 4x" 
 alt="the eyes of a green squid figurine"
 />
 
 <figcaption>
-Both pictures are of a green squid figurine's eyes. The left one is a bit washed out and lacks detail, and the right one has visible stirations in its irises.
+Both pictures are of a green squid figurine's eyes. The first one is a bit washed out and lacks detail, and the second one has visible stirations in its irises.
 </figcaption>
 </figure>
 
@@ -172,11 +177,11 @@ gear teeth and control contacts that interface with it.
 
 <figure class="comparison">
 <img src="/assets/post_images/pz-e1/thumb/camera_lens_bottom.jpg"
-srcset="/assets/post_images/pz-e1/camera_lens_bottom.jpg 4x" 
+srcset="/assets/post_images/pz-e1/thumb/camera_lens_bottom.jpg 1x, /assets/post_images/pz-e1/camera_lens_bottom.jpg 4x" 
 alt="the bottom of a camera lens, with eight flat contacts and a ring of sprocket teeth"
 />
 <img src="/assets/post_images/pz-e1/thumb/top_connectors.jpg"
-srcset="/assets/post_images/pz-e1/top_connectors.jpg 4x" 
+srcset="/assets/post_images/pz-e1/thumb/top_connectors.jpg 1x, /assets/post_images/pz-e1/top_connectors.jpg 4x" 
 alt="the zoom motor with pogo pins and a gear wheel"
 />
 </figure>
@@ -224,9 +229,34 @@ If it's set to "MZ" manual zoom, you can zoom manually. I find that unpleasant,
 since the zoom motor covers up the part of the lens I like to hold. Unlocking
 and removing it works, but it's not easy to snap it back on.
 
-It's quiet!
+It's audible when you zoom on fast, basically not on slow.
+The "mic" recordings are done with a Blue Yeti, about 3" from the camera, and a freshly-opened can of La Croix about 9" away.
 
-XXXX RECORD IT WITH THE BIG MIKE, COMPARED WITH CAN OF LA CROIX XXXX
+<table>
+  <tr>
+    <td>&nbsp;</td>
+    <th>mic</th>
+    <th>camera</th>
+  </tr>
+  <tr>
+    <th>slow</th>
+    <td>
+      <audio preload="none" controls src="/assets/post_images/pz-e1/slow_mic.mp3"></audio>
+    </td>
+    <td>
+      <audio preload="none" controls src="/assets/post_images/pz-e1/slow_cam.mp3"></audio>
+    </td>
+  </tr>
+  <tr>
+    <th>fast</th>
+    <td>
+      <audio preload="none" controls src="/assets/post_images/pz-e1/fast_mic.mp3"></audio>
+    </td>
+    <td>
+      <audio preload="none" controls src="/assets/post_images/pz-e1/fast_cam.mp3"></audio>
+    </td>
+  </tr>
+</table>
 
 ## Software Support
 
@@ -242,7 +272,7 @@ I've tried a few home strategies for dolly zooms.
 <video 
 src="/assets/post_images/pz-e1/giraffe.m4v" 
 poster="/assets/post_images/pz-e1/giraffe-poster.jpg"
-controls width=640 height=360 preload=none>
+controls width=640 height=360 preload="none">
 </video>
 
 <figcaption>
@@ -257,13 +287,14 @@ Walking forwards or backwards in flip-flops is hard to do smoothly.
 <video 
 src="/assets/post_images/pz-e1/shelf.m4v" 
 poster="/assets/post_images/pz-e1/shelf-poster.jpg"
-controls width=640 height=360 preload=none>
+controls width=640 height=360 preload="none">
 </video>
 
 <figcaption>
 
-Pivoting my fanciest tripod around while
-racking the arm in and out is also hard to do smoothly. 
+Pivoting my fanciest tripod around while racking the arm in and out is also
+hard to do smoothly. My camera doesn't fire the autofocus while filming
+video either.
 
 </figcaption>
 </figure>
@@ -281,6 +312,17 @@ Beyond the dolly zoom, you can use it like a normal camcorder, but honestly,
 snap zooms are cool, and the place the PZ-E1 attaches to makes it hard for me
 to do those.
 
+<figure>
+<img src="/assets/post_images/pz-e1/thumb/normal_pose.jpg"
+srcset="/assets/post_images/pz-e1/thumb/normal_pose.jpg 1x, /assets/post_images/pz-e1/normal_pose.jpg 4x" 
+alt="I'm holding the camera without zoom motor and with my left hand on the side of the lens"
+/>
+<img src="/assets/post_images/pz-e1/thumb/pz_pose.jpg"
+srcset="/assets/post_images/pz-e1/thumb/pz_pose.jpg 1x, /assets/post_images/pz-e1/pz_pose.jpg 4x" 
+alt="I'm holding the camera with my hand under the zoom motor"
+/>
+</figure>
+
 Aside from not having a smooth way to control the camera's position in space,
 I don't have a particularly comfortable camera to hold. Big VHS
 video cameras aren't
@@ -294,7 +336,11 @@ them with the big screen on the back. Without a tripod, and with the PZ-E1
 attached, you're cradling a 1200g (2.6lb) camera about a foot away from your
 face.
 
-PICTURE OF ME HOLDING THE CAMERA THIS WAY
+<div class="photo center">
+
+![I'm holding a camera several inches from my face, with an awkward strap](/assets/post_images/pz-e1/video_pose.jpg)
+
+</div>
 
 If I was filming a bike race or something, where I wanted to park my tripod
 somewhere and take smooth footage, it'd be different, but I'm usually busy
