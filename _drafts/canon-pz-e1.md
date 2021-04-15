@@ -7,9 +7,41 @@ tags:
     - canon
     - since-2021
 kind: regular
+css_id: pz-e1
 ---
 
-PHOTO OF THE UNIT, INCLUDING TOP AND CONTROL SIDE
+<style type="text/css">
+#pz-e1 div.photo.center {
+  text-align: center;
+  filter: drop-shadow(0 0.25em 0.5em black);
+}
+
+#pz-e1 figure {
+      border-bottom: 1px solid #010;
+}
+
+#pz-e1 figure {
+      text-align: center;
+}
+
+#pz-e1 figure.comparison img {
+      width: 45%;
+      filter: drop-shadow(0 0.25em 0.5em black);
+      vertical-align: middle;
+      margin: 0.25rem;
+}
+
+#pz-e1 figure figcaption {
+      font-size: 0.9rem;
+      font-style: italic;
+}
+</style>
+
+<div class="photo center">
+
+![a rectangular box with a cylinder subtracted from the top, with a "Canon" brand on one side, and switches and levers on another](/assets/post_images/pz-e1/whole_unit.jpg)
+
+</div>
 
 The Canon PZ-E1 is a little lens accessory I was curious about.
 It adds smooth zooming
@@ -46,7 +78,35 @@ have the right configuration ready at the right time, you can take a
 better-looking picture than a phone camera, just because the physics works
 better when you have more lens and sensor area to capture light with.
 
-SLR AND PHONE PICTURES OF THE SAME THING
+<figure class="comparison">
+<img src="/assets/post_images/pz-e1/thumb/full-amiibo-bad.jpg"
+srcset="/assets/post_images/pz-e1/full-amiibo-bad.jpg 4x" 
+alt="a green squid figurine on an apple newton"
+/>
+<img src="/assets/post_images/pz-e1/thumb/full-amiibo-good.jpg"
+srcset="/assets/post_images/pz-e1/full-amiibo-good.jpg 4x" 
+alt="a green squid figurine on an apple newton"
+/>
+
+<figcaption>
+Both pictures are of a green squid figurine on top of an Apple Newton. The left one looks a bit more green, and the right one has a less-in-focus background.
+</figcaption>
+</figure>
+
+<figure class="comparison">
+<img src="/assets/post_images/pz-e1/thumb/squid-amiibo-bad.jpg"
+srcset="/assets/post_images/pz-e1/squid-amiibo-bad.jpg 4x" 
+alt="the eyes of a green squid figurine"
+/>
+<img src="/assets/post_images/pz-e1/thumb/squid-amiibo-good.jpg"
+srcset="/assets/post_images/pz-e1/squid-amiibo-good.jpg 4x" 
+alt="the eyes of a green squid figurine"
+/>
+
+<figcaption>
+Both pictures are of a green squid figurine's eyes. The left one is a bit washed out and lacks detail, and the right one has visible stirations in its irises.
+</figcaption>
+</figure>
 
 A convenient thing is for lenses to be able to change their length/angle, or
 "zoom" to change the composition of a shot independent of where the camera is
@@ -110,7 +170,16 @@ gear teeth and control contacts that interface with it.
       said the USM was slightly better, and eh, why not? Made a profit
       re-selling the STM one.
 
-PICTURE OF BOTTOM OF LENS, NEXT TO TOP OF MOTOR
+<figure class="comparison">
+<img src="/assets/post_images/pz-e1/thumb/camera_lens_bottom.jpg"
+srcset="/assets/post_images/pz-e1/camera_lens_bottom.jpg 4x" 
+alt="the bottom of a camera lens, with eight flat contacts and a ring of sprocket teeth"
+/>
+<img src="/assets/post_images/pz-e1/thumb/top_connectors.jpg"
+srcset="/assets/post_images/pz-e1/top_connectors.jpg 4x" 
+alt="the zoom motor with pogo pins and a gear wheel"
+/>
+</figure>
 
 I'm going to mention the concept of the lens being "awake" below. It's not
 just a package of optics, but instead has a little computer that drives
@@ -142,13 +211,6 @@ be possible even if the lamp is on." I suspect the zoom motor's set up to not
 cook itself in this case, although I don't know if it's an electronic interlock
 or if it just doesn't try very hard.
 
-| | mass (grams) |
-|-|-:|
-| PZ-E1 alone | 115g |
-| PZ-E1 and 4 AAA batteries | 161g |
-| PZ-E1, batteries, and lens | 706g |
-| PZ-E1, batteries, lens, Rebel T6 | 1200g |
-
 # Experience
  
 "Slow" is in fact slow, taking over ten seconds to go all the way from 18mm to
@@ -175,13 +237,36 @@ The entry-level camera I have doesn't support this.
 
 I've tried a few home strategies for dolly zooms. 
 
-GIRAFFES ATTEMPT
-Walking forwards or backwards
-in flip-flops is hard to do smoothly.
+<figure>
 
-TRIPOD ATTEMPT
+<video 
+src="/assets/post_images/pz-e1/giraffe.m4v" 
+poster="/assets/post_images/pz-e1/giraffe-poster.jpg"
+controls width=640 height=360 preload=none>
+</video>
+
+<figcaption>
+
+Walking forwards or backwards in flip-flops is hard to do smoothly.
+
+</figcaption>
+</figure>
+
+<figure>
+
+<video 
+src="/assets/post_images/pz-e1/shelf.m4v" 
+poster="/assets/post_images/pz-e1/shelf-poster.jpg"
+controls width=640 height=360 preload=none>
+</video>
+
+<figcaption>
+
 Pivoting my fanciest tripod around while
 racking the arm in and out is also hard to do smoothly. 
+
+</figcaption>
+</figure>
 
 I've toyed with the
 thought of using one of those shitty little rental scooters, but that seems
@@ -219,16 +304,30 @@ volunteering to run a radio at those events.
 
 "How precise is the step motor/servo?" As far as I can tell, it's not.
 
-"How much weight does it add to the camera?" XXXXX grams. XXXX of that are the
-AAA batteries.
+"How much weight does it add to the camera?" With the motor and four AAA
+batteries, it's about 13% of the whole assembly with my Rebel T6.
+With 
 
-"Can I do the same thing with a servo motor and a raspberry pi?" Yeah. A Pi
+| | mass (grams) |
+|-|-:|
+| PZ-E1 alone | 115g |
+| PZ-E1 and 4 AAA batteries | 161g |
+| PZ-E1, batteries, and lens | 706g |
+| PZ-E1, batteries, lens, Rebel T6 | 1200g |
+
+
+
+"Can I do the same thing with a servo motor and a raspberry pi?" Probably, but a Pi
 would be overkill. If you don't want to RE the eight contacts between the
 lens and zoom motor (or don't think they add much value, like if you have an
 older/cheaper camera that doesn't have any control functions), an ESP-32 would
 be fine.
 
-PICTURE OF CAMERA NOT SITTING FLAT
+<div class="photo center">
+
+![The camera with zoom motor NOT sitting flat](/assets/post_images/pz-e1/sitting_flat.jpg)
+
+</div>
 
 "Does it sit flat?" no
 
