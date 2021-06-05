@@ -11,7 +11,7 @@ date: '2021-06-05T16:20:00-04:00'
 ---
 
 <style type="text/css">
-#elixir-update code {
+#elixir-update pre {
   font-size: 0.9rem;
 }
 </style>
