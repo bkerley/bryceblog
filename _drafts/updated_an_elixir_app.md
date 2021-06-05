@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "I Updated an Old Elixir Phoenix App"
+title: "Da Search Zone: Updating an Old Elixir Phoenix App"
 tags:
     - programming
     - updates
@@ -136,5 +136,58 @@ The buildpack grabs its version from
 
 [new-buildpack-config]: https://github.com/bkerley/tmfsz/commit/41632a81bdddc3facd6b13fec728cd2fe9738128
 
-PG2 ERROR AND WHAT IT MEANS, WHERE THE CLUES CAME FROM, DISABLE IT IN
-`config.exs`
+Next were a bunch of errors about `PG2`, which first sent me on a wild goose
+chase trying to update the `postgrex` Postgres library. It looked up to date,
+so I started searching, and found a good
+[Elixir Forum thread about the PG2 error][pg2-elixir-forum], in which
+José Valim (the creator of Elixir) notes that you can update the
+`phoenix_pubsub` library. I tried that for a while, but I didn't really want to
+update `phoenix`[^update], which pins a `phoenix_pubsub` version.
+Further downthread, someone else mentions that you can remove it from
+`config.exs` if you're not using it, [which worked.][commit-no-pubsub]
+
+
+[pg2-elixir-forum]: https://elixirforum.com/t/cannot-start-app-after-update-with-erlang-24/39708
+[^update]: I probably should, since I don't know what security landmines are in
+           the Phoenix I have…
+
+[commit-no-pubsub]: https://github.com/bkerley/tmfsz/commit/9396cb23b0c03bc21bedd901ab4ce8e0213ab981
+
+Finally, there was an error on application start about it needing `plug_cowboy`,
+so [I installed that,][commit-howdy].
+
+[commit-howdy]: https://github.com/bkerley/tmfsz/commit/eee7e1c4e66dd0129153e06535d3540362fab032
+
+With that change, [da search z0ne][searchz0ne] is up and running again!
+
+[searchz0ne]: https://dasearch.zone
+
+# Things to Fix, Things to Update
+
+There're a few things I'd still like to do with da search z0ne:
+
+* Transcribe ~1760 tweets
+* Automatically remove retweets and other tweets without images from the
+  transcription pool
+* Do something smarter with tweets that (the da share z0ne) admin deletes;
+  [this is really frustrating][deleted-tweets] but it's neat to see
+  da search z0ne used as an archive tool
+* Update to modern Phoenix
+
+[deleted-tweets]: https://twitter.com/xkeepah/status/1065758061841723392
+
+On that last thing, there's something that'd be nice to have from the
+Phoenix framework: easier-to-find upgrade guides. I found a
+[Phoenix 1.4 to 1.5 guide](https://gist.github.com/chrismccord/e53e79ef8b34adf5d8122a47db44d22f)
+by Chris McCord (Phoenix creator) on his Gist[^gist] site, but, as far as
+I can tell, that was mostly
+a chance search engine find. A guides site similar to the official and
+excellent
+[Ruby on Rails Guides][rails-guides] site would be a nice place to keep
+both old-version release notes and an up-to-date guide on getting to the
+newest version, but to me the [Phoenix documentation][phx-docs] site just
+kind of feels like an awkward API site combined with an awkward prose site.
+
+[^gist]: GitHub's light/flat/single-serving quick code hosting tool
+[rails-guides]: https://guides.rubyonrails.org
+[phx-docs]: https://hexdocs.pm/phoenix/overview.html
