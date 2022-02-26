@@ -26,4 +26,4 @@ WORKDIR /src/site
 
 EXPOSE 4000
 
-CMD ["jekyll", "serve", "-H", "0.0.0.0", "-P", "4000"]
+CMD ["bundle", "exec", "jekyll", "serve", "-H", "0.0.0.0", "-P", "4000", "--drafts", "--future"]
