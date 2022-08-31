@@ -1,0 +1,327 @@
+---
+layout: post
+title: "July Odyssey"
+tags:
+    - travel
+    - photography
+    - since-2021
+kind: regular
+css_id: july2022odyssey
+---
+
+<style type="text/css">
+</style>
+
+<div class="photo center">
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306283842/in/datetaken/" title="Toorcamp Dome"><img src="https://live.staticflickr.com/65535/52306283842_f60f46a027_b.jpg" width="1024" height="683" alt="Toorcamp Dome"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
+
+I went to [Toorcamp][toorcamp] this year!
+I've been traveling to outdoor hacker camps every
+year or so since 
+[Chaos Communication Camp 2015][cccamp15],
+although there was a gap while 
+Toorcamp 2020 became Toorcamp 2022.
+
+
+[toorcamp]: https://toorcamp.toorcon.net
+[cccamp15]: https://events.ccc.de/camp/2015/wiki/Main_Page
+
+Since 2018, I've kind of wanted to turn the event into
+an excuse to visit friends and do some US travel that's
+not the brisk and strict point-to-point nature of air travel.
+
+<div class="aside">
+
+## But wait, what if you don't get a non-stop flight?
+
+Airports aren't really a *place* per se, 
+yeah they're a place but the nature of that place
+is (sorry) *liminal*;
+an airport is mostly just a bunch of hallways 
+lined with (never enough) chairs, 
+interchangeable lounges,
+stores, and quick service kitchens.
+
+I won't *not* have a [Mango Cart][mangocart] at 
+the LAX AAdmiral's Club but let's not pretend it's
+a Los Angeles experience, 
+just a place to enjoy free wifi and a restroom where
+you don't have to brace your forehead on the wall to fit.
+
+[mangocart]: https://untappd.com/b/golden-road-brewing-mango-cart/1919131
+
+</div>
+
+Since I don't like driving, I decided to take
+Amtrak.
+And since I also had to work in July,
+I only took it for part of the trip.
+I'd fly to Seattle, do computer camp,
+see some friends in town afterwards,
+take the train south to visit a friend in
+southern Washington,
+continue south for what would hopefully
+be a nice morning in Sacramento and not a stressful
+connection,
+then catch the California Zephyr first to Denver,
+see more friends there over the weekend after Toorcamp,
+get back on the Zephyr to Chicago,
+and fly home from there.
+
+# Miami to Toorcamp
+
+<div class="photos mini right">
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306291412/in/datetaken/" title="Waiting at Miami Airport"><img src="https://live.staticflickr.com/65535/52306291412_0992402641_b.jpg" width="1024" height="683" alt="Waiting at Miami Airport"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306291347/in/datetaken/" title="IBR_2989"><img src="https://live.staticflickr.com/65535/52306291347_1027f4a2cc_c.jpg" width="800" height="533" alt="IBR_2989"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307543080/in/datetaken/" title="IBR_3016"><img src="https://live.staticflickr.com/65535/52307543080_090de6ed52_c.jpg" width="800" height="533" alt="IBR_3016"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
+
+I flew to Seattle,
+spent an evening with Greg and Josh,
+and the next day caught a ride with another
+Toorcamp attendee.
+
+The ferry ride was gorgeous; 
+we were on the one that left right before sunset, 
+and it was incredible to be sailing right into all the
+spectacular colors.
+
+Toorcamp was a blast too!
+I got to see a bunch of friends, 
+made some new ones,
+leveled up my radio license,
+and of course talked about computers a bit.
+
+<div class="photo center">
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307474618/in/datetaken/" title="IBR_3160"><img src="https://live.staticflickr.com/65535/52307474618_bd3c719f66_c.jpg" width="800" height="533" alt="IBR_3160"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
+
+All in, it was a super great event and 
+I'm thinking about what to do for next time.
+
+# Cascades and Starlight
+
+<div class="photos mini right">
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52325278971" title="IMG_4889"><img src="https://live.staticflickr.com/65535/52325278971_b0e5808037_b.jpg" width="1024" height="768" alt="IMG_4889"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52325278936/in/photostream/" title="IMG_4937"><img src="https://live.staticflickr.com/65535/52325278936_47eb666758_c.jpg" width="800" height="600" alt="IMG_4937"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
+
+After spending a day in Seattle 
+(shopping and visiting friends, of course),
+I caught the Cascades line to south Washington.
+The walk down to the station from my hotel wasn't too bad,
+even if I was a bit overencumbered
+with stuff I'd bought the previous day.
+Since I wasn't going far,
+I just got to enjoy breakfast and my morning games
+(Wordle, among others).
+
+My friend in south Washington lives somewhere mad rural;
+on the drive to his place we got to see some funky
+local landmarks,
+like an indoor flea market that's
+"open" but feels abandoned most days, 
+a weird and possibly illegal event space,
+a massive and ugly bird sculpture that's
+*rumored* to contain a helicopter
+(all of these are the *same place*).
+
+It honestly made me think of rural Saskatchewan, 
+but with stuff more concentrated due to terrain.
+I had a ton of fun out there at the farm,
+seeing chickens, shooting guns,
+subjecting everyone to the bottle of
+Jeppson's Malört that I horked from Toorcamp.
+
+The next morning, after breakfast, I went back to
+town to catch the Coast Starlight south.
+Unlike the Cascades line, 
+the Starlight is a proper long-distance train,
+with sleeper cars, sit down dining, an observation car,
+the whole deal.
+I had a roomette, since I was gonna be riding overnight,
+and also computing a bunch.
+
+The sleeper train experience is pretty nice, 
+once you get over the bumps, 
+the non-deterministic arrival schedule,
+and unreliable cell service.
+I'm not being ironic;
+it's way more spacious than anything in the skies,
+you can get up and walk around,
+and every few hours there's a "smoke break"
+where you can get off the train for a bit.
+
+The roomette is pretty good too.
+You get two chairs that face each other and recline,
+wider than US first class airplane seats. 
+You get power and a huge window.
+There's an easy bed to get in to, 
+made by reclining the two seats together.
+There's a difficult bed that pulls down from the
+ceiling,
+and on the Superliner trains it's nice and dark up there too.
+
+<div class="photos 4up">
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307463728/in/datetaken/" title="IBR_3472"><img src="https://live.staticflickr.com/65535/52307463728_82f0b4c4a1_c.jpg" width="800" height="533" alt="IBR_3472"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307472923/in/datetaken/" title="IBR_3474"><img src="https://live.staticflickr.com/65535/52307472923_cd19a69c8c_c.jpg" width="800" height="533" alt="IBR_3474"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307539210/in/datetaken/" title="IBR_3496"><img src="https://live.staticflickr.com/65535/52307539210_0d32ed0dde_c.jpg" width="800" height="533" alt="IBR_3496"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307471988/in/datetaken/" title="IBR_3524"><img src="https://live.staticflickr.com/65535/52307471988_d40aa9fd5a_c.jpg" width="800" height="533" alt="IBR_3524"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
+
+The Starlight has a substantial smoke break
+in Portland, which is a gorgeous station;.
+South of there, 
+coincidentally when I was getting dinner,
+it passes Odell Lake,
+which another passenger at the table commented
+was "more trees than [they'd] ever seen in [their] life!"
+Over lunch I'd had the meyer lemon cake for dessert, 
+so with dinner I decided to get the chocolate cheesecake, 
+which was super rich and dense.
+
+We were expected in Sacramento at, like, 6:30am
+the next day, 
+and by the time I finished dinner we were still on time
+(outlier)
+so I set my alarm for 6am, 
+got everything I wouldn't need in the morning packed,
+and made it an early night.
+
+# Sacramento
+
+Nobody told me I'd have a fun time in Sacramento.
+Getting out of the train station at 6:30
+(checked everything at the luggage counter except 
+my wallet, phone, and rented camera)
+was interesting. It felt like much of the town hadn't woken up,
+and while the train station was pretty close to the capitol,
+Downtown Sacramento doesn't have a lot going on for
+visitors at 7am.
+
+<div class="photos 4up">
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307466018/in/datetaken/" title="Milka Coffee Roasters"><img src="https://live.staticflickr.com/65535/52307466018_ce0cd6fd01_c.jpg" width="800" height="533" alt="Milka Coffee Roasters"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307002036/in/datetaken/" title="R0000442"><img src="https://live.staticflickr.com/65535/52307002036_21df7311d6_c.jpg" width="800" height="533" alt="R0000442"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306279927/in/datetaken/" title="R0000452"><img src="https://live.staticflickr.com/65535/52306279927_8c4fee53f5_c.jpg" width="533" height="800" alt="R0000452"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307538315/in/datetaken/" title="IBR_3623"><img src="https://live.staticflickr.com/65535/52307538315_a6d1700620_c.jpg" width="800" height="533" alt="IBR_3623"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
+
+I'd looked around online and found
+[Milka Coffee Roasters][milka], 
+a coffee shop about a mile walk away, so I set out.
+I got there a few seconds before the barista did,
+but I did enjoy legit one of the best espressos I've
+ever had, 
+a maple latte which was also great, and a muffin.
+
+[milka]: https://www.milkacoffee.com
+
+After that, I set off again, wandered around the Capitol
+building, and decided to see if anything was open in
+the Old Sacramento tourist district.
+The train museum wasn't, 
+but trains are big and they were pretty easy to see from outside.
+A little diner was, 
+so I had a more substantial breakfast while sitting outside.
+After that, I walked over the river 
+mostly for the sake of filling the ring on my watch,
+and headed back to the station way earlier than necessary.
+
+# California Zephyr, Above Denver
+
+The California Zephyr is two things.
+It's an absolute beast of a journey,
+a 2400 mile trek from San Francisco[^sf] area to
+Chicago, over 52 hours[^hours].
+It's also a pretty typical Amtrak long-distance train,
+with similar amenities to the Coast Starlight.
+
+[^sf]: well, Oakland[^oak]
+[^oak]: well, Emeryville
+[^hours]: listed as 51h40m eastbound, 
+    but you will not go that fast
+
+This ride, I'd booked a full bedroom 
+since it was the longest leg of the trip.
+The bedroom's great. 
+You get a chair, a big couch that folds down into a bed,
+another bed that pulls out of the ceiling,
+and a little private bathroom with both a toilet
+and a shower.
+
+The real reason to take the Zephyr is the scenery, 
+especially through the Rockies 
+between Grand Junction and Denver.
+Most of the route is along the Colorado River, 
+through the mountains,
+with people out on the water showing the whole train their
+backside as tradition.
+
+PUT A PIC OF A GUY'S ASS HERE
+
+The conductor[^conductor], Brad, for this leg was fantastic too,
+with tons of facts about the route and a great sense of
+humor. 
+A few times up in the mountains, 
+we'd stop for a while to wait for a switch to move,
+and at least once he stepped off the train to
+wrangle it by hand.
+
+[^conductor]: on Amtrak, the conductor is the main
+    person for the passenger part of the operation,
+    similar to a purser on an airplane or ship
+
+THAT TUNNEL THAT'S THE TOP OF AMERICA
+
+DENVER AS THE TOP OF AMERICA IN COMMON PARLANCE
+
+According to Brad, the trackage west of Denver isn't
+particularly well maintained by the freight railroad
+that owns it,
+and with modern summer heat,
+they have to slow the train way down to avoid damaging it.
+That meant that we got in to Denver hours late,
+but the dinner on the train was so nice and my
+plans for after arrival were so sparse I didn't mind.
+
+# A Weekend in Denver
+
+coffee
+
+dragon boat races and festival
+
+bbq
+
+normie breakfast place, too busy
+
+station 26
+
+epic
+
+ramen
+
+waiting for the train
+
+# California Zephyr, Below Denver
+
+BOARDING AFTER PRIVATE CARS GET WRANGLED
+
+ROOMETTE THAT SMELLED KINDA FUNKY
+
+LOTS OF CORN
+
+# Chicago
+
+EVENING IN CHICAGO
+
+$26 MANHATTAN F'REAL?
+
+GOOD BREAKFAST PLACE
+
+TAKING THE BLUE LINE AND LISTENING TO A GUY
+TRY AND TEACH ONE OF HIS KIDS ROCK-PAPER-SCISSORS
+
+WAITING AT ORD
+
+BACK IN MIAMI
