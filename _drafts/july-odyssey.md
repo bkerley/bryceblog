@@ -253,10 +253,12 @@ and a shower.
 The real reason to take the Zephyr is the scenery, 
 especially through the Rockies 
 between Grand Junction and Denver.
-Most of the route is along the Colorado River, 
+Most of the second day's route is along the Colorado River, 
 through the mountains,
 with people out on the water showing the whole train their
 backside as tradition.
+It was enjoyably busy on the river for a Friday afternoon,
+and the scenery didn't disappoint.
 
 PUT A PIC OF A GUY'S ASS HERE
 
@@ -272,9 +274,45 @@ wrangle it by hand.
     person for the passenger part of the operation,
     similar to a purser on an airplane or ship
 
-THAT TUNNEL THAT'S THE TOP OF AMERICA
+A fun bit of trivia: the Zephyr passes through the
+[Moffat Tunnel][moffat-wiki] in the Rockies,
+a six-mile tunnel that's
+the highest point on Amtrak's network,
+and commences the train's descent into Denver, 
+and basically Chicago.
 
-DENVER AS THE TOP OF AMERICA IN COMMON PARLANCE
+[moffat-wiki]: https://en.wikipedia.org/wiki/Moffat_Tunnel
+
+Brad described it as, in some ways, the top of America,
+and while it wasn't the emotional high point of my whole
+trip[^emotional], 
+it definitely marked, for me, the beginning of the
+end of the odyssey.
+
+[^emotional]: that would probably be celebrating
+    after passing the radio test,
+    having a really good whisky,
+    or learning about how [Shadytel][shadytel] ran
+    phone service to the upper camp in exchange for
+    taking a good picture
+
+[shadytel]: https://shady.tel/
+
+I was going to spend a weekend in Denver, 
+the top of America, where the 
+romantic southwest transitions to
+the cultural northwest and 
+geographic midwest without
+being threatening to people from the east.
+I was going to see friends that had fled Miami
+years prior for something that wasn't the
+fast pace of the northeast,
+the ethereal gloom of the northwest,
+or California.
+But after that I'd continue downhill towards
+Chicago,
+nothing more planned than a hotel reservation and an airplane
+ticket.
 
 According to Brad, the trackage west of Denver isn't
 particularly well maintained by the freight railroad
@@ -287,21 +325,65 @@ plans for after arrival were so sparse I didn't mind.
 
 # A Weekend in Denver
 
-coffee
+Earlier on Friday, I'd texted my friends in Denver.
+A couple of them, said they were going to be busy
+all day Saturday,
+racing dragon boats at Sloan Lake, just west of downtown.
+Another friend, Javi, was working Saturday but not Sunday.
 
-dragon boat races and festival
+So Saturday morning I woke up, washed up,
+found a coffee place, and took the light rail out to
+Sloan Lake to see if I could figure out where 
+the dragons were.
 
-bbq
+After a hot but dry walk up the hill from the light rail, 
+I found myself in a quiet but massive park, 
+with what might be some activity at the far side of the lake.
+So I kept walking around the lake, and eventually got to 
+a massive festival, with a bag check at the entrance,
+tons of food vendors, multiple stages, 
+an unusably oversubscribed cell network,
+and a bunch of different teams of racers, 
+and I had no idea where my friends were!
 
-normie breakfast place, too busy
+I got a bottle of water, 
+and found a spot that was alright for watching the races 
+but top-notch for watching the racers getting on and
+off the boats, 
+and I found one of them pretty soon after that.
+He (and the rest of the team that'd just won their race)
+led me to their club's tent where his wife was,
+and we hung out in the shade and shelter from the 
+itinerant afternoon rain, 
+enjoying spam musubi and fun company.
+I met a few other people that were spectating
+and talked a lot about Toorcamp,
+but eventually as it stayed hot yet drizzly,
+we split up for the afternoon, 
+although I did get an invitation and an offered ride
+to what ended being a fun and relaxing backyard
+cookout that evening.
 
-station 26
+The next morning I went to a very busy but pretty good
+breakfast place (got the huevos rancheros)
+before checking out at the hotel and
+dropping my bags at Union Station.
+From there, 
+I caught the train east out to suburban big box hell,
+and walked from there to Station 26 Brewing.
+We hung out for a few hours, 
+had some brews and listened to the band.
+We then made our way across town to 
+Epic Brewing, in an area that didn't seem unlike Wynwood.
+After a drink there, 
+we went to a neat basement ramen shop, 
+and then he dropped me off back at Union Station.
 
-epic
-
-ramen
-
-waiting for the train
+Of course I was still thinking in airport timing, 
+and I had about ninety minutes to kill at the station.
+I developed photos from the busy day,
+had a manhattan from the bar right there in the waiting room,
+and eventually moseyed outside to get on the train.
 
 # California Zephyr, Below Denver
 
