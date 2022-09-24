@@ -9,9 +9,6 @@ kind: regular
 css_id: july2022odyssey
 ---
 
-<style type="text/css">
-</style>
-
 <div class="photo center">
 <a href="https://www.flickr.com/photos/bonzoesc/52306283842/in/datetaken/" title="Toorcamp Dome"><img src="https://live.staticflickr.com/65535/52306283842_f60f46a027_b.jpg" width="1024" height="683" alt="Toorcamp Dome"></a>
 </div>
