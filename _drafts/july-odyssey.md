@@ -109,7 +109,7 @@ where a few people stayed in yurts.
 As a fun chance encounter, 
 while walking back to the main camp from 
 the yurt zone, 
-I enjoyed a quick conversation with
+I had a quick conversation with
 Annalee Newitz, 
 an author whose books I've enjoyed 
 and the event's keynote speaker.
