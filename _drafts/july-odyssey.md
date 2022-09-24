@@ -13,7 +13,7 @@ css_id: july2022odyssey
 </style>
 
 <div class="photo center">
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306283842/in/datetaken/" title="Toorcamp Dome"><img src="https://live.staticflickr.com/65535/52306283842_f60f46a027_b.jpg" width="1024" height="683" alt="Toorcamp Dome"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a href="https://www.flickr.com/photos/bonzoesc/52306283842/in/datetaken/" title="Toorcamp Dome"><img src="https://live.staticflickr.com/65535/52306283842_f60f46a027_b.jpg" width="1024" height="683" alt="Toorcamp Dome"></a>
 </div>
 
 I went to [Toorcamp][toorcamp] this year!
@@ -72,9 +72,9 @@ and fly home from there.
 # Miami to Toorcamp
 
 <div class="photos mini right">
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306291412/in/datetaken/" title="Waiting at Miami Airport"><img src="https://live.staticflickr.com/65535/52306291412_0992402641_b.jpg" width="1024" height="683" alt="Waiting at Miami Airport"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306291347/in/datetaken/" title="IBR_2989"><img src="https://live.staticflickr.com/65535/52306291347_1027f4a2cc_c.jpg" width="800" height="533" alt="IBR_2989"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307543080/in/datetaken/" title="IBR_3016"><img src="https://live.staticflickr.com/65535/52307543080_090de6ed52_c.jpg" width="800" height="533" alt="IBR_3016"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a href="https://www.flickr.com/photos/bonzoesc/52306291412/in/datetaken/" title="Waiting at Miami Airport"><img src="https://live.staticflickr.com/65535/52306291412_0992402641_b.jpg" width="1024" height="683" alt="Waiting at Miami Airport"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52306291347/in/datetaken/" title="IBR_2989"><img src="https://live.staticflickr.com/65535/52306291347_1027f4a2cc_c.jpg" width="800" height="533" alt="IBR_2989"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307543080/in/datetaken/" title="IBR_3016"><img src="https://live.staticflickr.com/65535/52307543080_090de6ed52_c.jpg" width="800" height="533" alt="IBR_3016"></a>
 </div>
 
 I flew to Seattle,
@@ -87,14 +87,40 @@ we were on the one that left right before sunset,
 and it was incredible to be sailing right into all the
 spectacular colors.
 
-Toorcamp was a blast too!
+Toorcamp was amazing as always.
+Orcas Island, 
+or at least the Doe Bay resort it's held at,
+is spectacular.
+It's the mostly wild Pacific Northwest,
+with tall trees, complex terrain,
+not-unfriendly fauna, 
+and simply stunning summer weather,
+with (to this Florida Man) cold nights and days that
+may be anywhere from hot and sunny to
+etheral and gloomy.
 I got to see a bunch of friends, 
 made some new ones,
 leveled up my radio license,
 and of course talked about computers a bit.
 
+I'm also glad I snuck off a few times to 
+just wander through a big garden, 
+down to the shore where the seabirds frolicked
+mostly free of people, 
+and up through the woods to a quiet district
+where a few people stayed in yurts.
+As a fun chance encounter, 
+while walking back to the main camp from 
+the yurt zone, 
+I enjoyed a quick conversation with
+Annalee Newitz, 
+an author whose books I've enjoyed 
+and the event's keynote speaker.
+
+
+
 <div class="photo center">
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307474618/in/datetaken/" title="IBR_3160"><img src="https://live.staticflickr.com/65535/52307474618_bd3c719f66_c.jpg" width="800" height="533" alt="IBR_3160"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a href="https://www.flickr.com/photos/bonzoesc/52307474618/in/datetaken/" title="IBR_3160"><img src="https://live.staticflickr.com/65535/52307474618_bd3c719f66_c.jpg" width="800" height="533" alt="IBR_3160"></a>
 </div>
 
 All in, it was a super great event and 
@@ -103,8 +129,8 @@ I'm thinking about what to do for next time.
 # Cascades and Starlight
 
 <div class="photos mini right">
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52325278971" title="IMG_4889"><img src="https://live.staticflickr.com/65535/52325278971_b0e5808037_b.jpg" width="1024" height="768" alt="IMG_4889"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52325278936/in/photostream/" title="IMG_4937"><img src="https://live.staticflickr.com/65535/52325278936_47eb666758_c.jpg" width="800" height="600" alt="IMG_4937"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a href="https://www.flickr.com/photos/bonzoesc/52325278971" title="IMG_4889"><img src="https://live.staticflickr.com/65535/52325278971_b0e5808037_b.jpg" width="1024" height="768" alt="IMG_4889"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52325278936/in/photostream/" title="IMG_4937"><img src="https://live.staticflickr.com/65535/52325278936_47eb666758_c.jpg" width="800" height="600" alt="IMG_4937"></a>
 </div>
 
 After spending a day in Seattle 
@@ -160,14 +186,14 @@ You get power and a huge window.
 There's an easy bed to get in to, 
 made by reclining the two seats together.
 There's a difficult bed that pulls down from the
-ceiling,
+ceiling, 
 and on the Superliner trains it's nice and dark up there too.
 
-<div class="photos 4up">
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307463728/in/datetaken/" title="IBR_3472"><img src="https://live.staticflickr.com/65535/52307463728_82f0b4c4a1_c.jpg" width="800" height="533" alt="IBR_3472"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307472923/in/datetaken/" title="IBR_3474"><img src="https://live.staticflickr.com/65535/52307472923_cd19a69c8c_c.jpg" width="800" height="533" alt="IBR_3474"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307539210/in/datetaken/" title="IBR_3496"><img src="https://live.staticflickr.com/65535/52307539210_0d32ed0dde_c.jpg" width="800" height="533" alt="IBR_3496"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307471988/in/datetaken/" title="IBR_3524"><img src="https://live.staticflickr.com/65535/52307471988_d40aa9fd5a_c.jpg" width="800" height="533" alt="IBR_3524"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<div class="photos fourup">
+<a href="https://www.flickr.com/photos/bonzoesc/52307463728/in/datetaken/" title="IBR_3472"><img src="https://live.staticflickr.com/65535/52307463728_82f0b4c4a1_c.jpg" width="800" height="533" alt="IBR_3472"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307472923/in/datetaken/" title="IBR_3474"><img src="https://live.staticflickr.com/65535/52307472923_cd19a69c8c_c.jpg" width="800" height="533" alt="IBR_3474"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307539210/in/datetaken/" title="IBR_3496"><img src="https://live.staticflickr.com/65535/52307539210_0d32ed0dde_c.jpg" width="800" height="533" alt="IBR_3496"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307471988/in/datetaken/" title="IBR_3524"><img src="https://live.staticflickr.com/65535/52307471988_d40aa9fd5a_c.jpg" width="800" height="533" alt="IBR_3524"></a>
 </div>
 
 The Starlight has a substantial smoke break
@@ -200,11 +226,11 @@ and while the train station was pretty close to the capitol,
 Downtown Sacramento doesn't have a lot going on for
 visitors at 7am.
 
-<div class="photos 4up">
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307466018/in/datetaken/" title="Milka Coffee Roasters"><img src="https://live.staticflickr.com/65535/52307466018_ce0cd6fd01_c.jpg" width="800" height="533" alt="Milka Coffee Roasters"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307002036/in/datetaken/" title="R0000442"><img src="https://live.staticflickr.com/65535/52307002036_21df7311d6_c.jpg" width="800" height="533" alt="R0000442"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52306279927/in/datetaken/" title="R0000452"><img src="https://live.staticflickr.com/65535/52306279927_8c4fee53f5_c.jpg" width="533" height="800" alt="R0000452"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307538315/in/datetaken/" title="IBR_3623"><img src="https://live.staticflickr.com/65535/52307538315_a6d1700620_c.jpg" width="800" height="533" alt="IBR_3623"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<div class="photos fourup">
+<a href="https://www.flickr.com/photos/bonzoesc/52307466018/in/datetaken/" title="Milka Coffee Roasters"><img src="https://live.staticflickr.com/65535/52307466018_ce0cd6fd01_c.jpg" width="800" height="533" alt="Milka Coffee Roasters"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307002036/in/datetaken/" title="R0000442"><img src="https://live.staticflickr.com/65535/52307002036_21df7311d6_c.jpg" width="800" height="533" alt="R0000442"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52306279927/in/datetaken/" title="R0000452"><img src="https://live.staticflickr.com/65535/52306279927_8c4fee53f5_c.jpg" width="533" height="800" alt="R0000452"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307525764/in/datetaken/" title="IBR_3617"><img src="https://live.staticflickr.com/65535/52307525764_d3aeebde73_c.jpg" width="533" height="800" alt="IBR_3617"></a>
 </div>
 
 I'd looked around online and found
@@ -228,7 +254,15 @@ After that, I walked over the river
 mostly for the sake of filling the ring on my watch,
 and headed back to the station way earlier than necessary.
 
+<a href="https://www.flickr.com/photos/bonzoesc/52307538315/in/datetaken/" title="IBR_3623"><img src="https://live.staticflickr.com/65535/52307538315_805a1f9505_h.jpg" width="1600" height="1067" alt="IBR_3623"></a>
+
 # California Zephyr, Above Denver
+
+<div class="photos mini left">
+
+<a href="https://www.flickr.com/photos/bonzoesc/52380990816/in/datetaken/" title="Zephyr Bedroom Selfie"><img src="https://live.staticflickr.com/65535/52380990816_37e5e5848d_c.jpg" width="600" height="800" alt="Zephyr Bedroom Selfie"></a>
+
+</div>
 
 The California Zephyr is two things.
 It's an absolute beast of a journey,
@@ -250,8 +284,6 @@ another bed that pulls out of the ceiling,
 and a little private bathroom with both a toilet
 and a shower.
 
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52380990816/in/datetaken/" title="Zephyr Bedroom Selfie"><img src="https://live.staticflickr.com/65535/52380990816_fbc9c57c60_4k.jpg" width="3024" height="4032" alt="Zephyr Bedroom Selfie"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-
 The real reason to take the Zephyr is the scenery, 
 especially through the Rockies 
 between Grand Junction and Denver.
@@ -262,8 +294,10 @@ backside as tradition.
 It was enjoyably busy on the river for a Friday afternoon,
 and the scenery didn't disappoint.
 
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307537155/in/datetaken/" title="IBR_4065"><img src="https://live.staticflickr.com/65535/52307537155_3f07488497_6k.jpg" width="6144" height="4096" alt="IBR_4065"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52330246369/in/datetaken/" title="IMG_4952"><img src="https://live.staticflickr.com/65535/52330246369_1e0fc5149a_4k.jpg" width="4032" height="3024" alt="IMG_4952"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<div class="photos mini right">
+<a href="https://www.flickr.com/photos/bonzoesc/52307537155/in/datetaken/" title="IBR_4065"><img src="https://live.staticflickr.com/65535/52307537155_3f07488497_6k.jpg" width="6144" height="4096" alt="IBR_4065"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52330246369/in/datetaken/" title="IMG_4952"><img src="https://live.staticflickr.com/65535/52330246369_1e0fc5149a_4k.jpg" width="4032" height="3024" alt="IMG_4952"></a>
+</div>
 
 The conductor[^conductor], Brad, for this leg was fantastic too,
 with tons of facts about the route and a great sense of
@@ -390,6 +424,11 @@ and eventually moseyed outside to get on the train.
 
 # California Zephyr, Below Denver
 
+<div class="photos mini right">
+<a href="https://www.flickr.com/photos/bonzoesc/52307531070/in/datetaken/" title="R0000596"><img src="https://live.staticflickr.com/65535/52307531070_e2c3a5b2cb_c.jpg" width="800" height="533" alt="R0000596"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307463993/in/datetaken/" title="R0000587"><img src="https://live.staticflickr.com/65535/52307463993_d1892ad6d0_6k.jpg" width="4000" height="6000" alt="R0000587"></a>
+</div>
+
 Out on the platform, 
 there was a big queue before the train even pulled up,
 next to a private railcar I hadn't noticed Friday.
@@ -423,11 +462,12 @@ I either think of as punchlines for jokes or
 not at all, but mostly in a checklist kind of way.
 Omaha? Checked off.
 
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307463993/in/datetaken/" title="R0000587"><img src="https://live.staticflickr.com/65535/52307463993_d1892ad6d0_6k.jpg" width="4000" height="6000" alt="R0000587"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 # Chicago
 
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307530810/in/datetaken/" title="R0000667"><img src="https://live.staticflickr.com/65535/52307530810_d5577706c4_6k.jpg" width="6000" height="4000" alt="R0000667"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<div class="photo center">
+<a href="https://www.flickr.com/photos/bonzoesc/52307530810/in/datetaken/" title="R0000667"><img src="https://live.staticflickr.com/65535/52307530810_d5577706c4_6k.jpg" width="6000" height="4000" alt="R0000667"></a>
+</div>
 
 It was great to pull in to Chicago on Monday evening.
 I'd enjoyed the ride, 
