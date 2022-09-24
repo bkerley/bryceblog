@@ -292,8 +292,8 @@ It was enjoyably busy on the river for a Friday afternoon,
 and the scenery didn't disappoint.
 
 <div class="photos mini right">
-<a href="https://www.flickr.com/photos/bonzoesc/52307537155/in/datetaken/" title="Full Moon"><img src="https://live.staticflickr.com/65535/52307537155_3f07488497_6k.jpg" width="6144" height="4096" alt="Someone on a red inflatable boat with other people is showing their whole ass to the camera, with a black inflatable boat on the right edge of the frame"></a>
-<a href="https://www.flickr.com/photos/bonzoesc/52330246369/in/datetaken/" title="Granby Station Selfie"><img src="https://live.staticflickr.com/65535/52330246369_1e0fc5149a_4k.jpg" width="4032" height="3024" alt="I'm smiling in front of a red building labeled 'GRANBY'"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307537155/in/datetaken/" title="Full Moon"><img src="https://live.staticflickr.com/65535/52307537155_1a5c5a1746_c.jpg" width="800" height="533" alt="Someone on a red inflatable boat with other people is showing their whole ass to the camera, with a black inflatable boat on the right edge of the frame"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52330246369/in/datetaken/" title="Granby Station Selfie"><img src="https://live.staticflickr.com/65535/52330246369_884dbb482f_c.jpg" width="800" height="600" alt="I'm smiling in front of a red building labeled 'GRANBY'"></a>
 </div>
 
 The conductor[^conductor], Brad, for this leg was fantastic too,
