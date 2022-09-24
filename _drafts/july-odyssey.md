@@ -250,6 +250,8 @@ another bed that pulls out of the ceiling,
 and a little private bathroom with both a toilet
 and a shower.
 
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52380990816/in/datetaken/" title="Zephyr Bedroom Selfie"><img src="https://live.staticflickr.com/65535/52380990816_fbc9c57c60_4k.jpg" width="3024" height="4032" alt="Zephyr Bedroom Selfie"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+
 The real reason to take the Zephyr is the scenery, 
 especially through the Rockies 
 between Grand Junction and Denver.
@@ -260,7 +262,8 @@ backside as tradition.
 It was enjoyably busy on the river for a Friday afternoon,
 and the scenery didn't disappoint.
 
-PUT A PIC OF A GUY'S ASS HERE
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307537155/in/datetaken/" title="IBR_4065"><img src="https://live.staticflickr.com/65535/52307537155_3f07488497_6k.jpg" width="6144" height="4096" alt="IBR_4065"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52330246369/in/datetaken/" title="IMG_4952"><img src="https://live.staticflickr.com/65535/52330246369_1e0fc5149a_4k.jpg" width="4032" height="3024" alt="IMG_4952"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 The conductor[^conductor], Brad, for this leg was fantastic too,
 with tons of facts about the route and a great sense of
@@ -387,23 +390,111 @@ and eventually moseyed outside to get on the train.
 
 # California Zephyr, Below Denver
 
-BOARDING AFTER PRIVATE CARS GET WRANGLED
+Out on the platform, 
+there was a big queue before the train even pulled up,
+next to a private railcar I hadn't noticed Friday.
+I walked around the gathering
+to get some photos of the train pulling in,
+and when it did, 
+the conductor yelled at me from a window to get in the line.
+Back in the line,
+we got to watch the back end of a private car pull in,
+and once that was uncoupled, 
+people started streaming off the train 
+just as I had Friday night.
+A few minutes later, we started piling on.
 
-ROOMETTE THAT SMELLED KINDA FUNKY
+I was looking forward to going to bed,
+and my roomette was already set up for it.
+Chairs merged, mattress and sheets in place;
+all I had to do was figure out how to share
+the space with my bags and get over the 
+subtle but persistent aroma I hadn't noticed in
+any of the previous rooms I'd been in.
 
-LOTS OF CORN
+After rigging up the coat strap to 
+keep everything stowed in a sensible way,
+I slept alright.
+
+Riding down into Chicago the next day was pretty relaxed.
+The view is mostly corn, so I got lots of computing in.
+It was kind of neat going through places that 
+I either think of as punchlines for jokes or
+not at all, but mostly in a checklist kind of way.
+Omaha? Checked off.
+
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307463993/in/datetaken/" title="R0000587"><img src="https://live.staticflickr.com/65535/52307463993_d1892ad6d0_6k.jpg" width="4000" height="6000" alt="R0000587"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 # Chicago
 
-EVENING IN CHICAGO
+<a data-flickr-embed="true" href="https://www.flickr.com/photos/bonzoesc/52307530810/in/datetaken/" title="R0000667"><img src="https://live.staticflickr.com/65535/52307530810_d5577706c4_6k.jpg" width="6000" height="4000" alt="R0000667"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
-$26 MANHATTAN F'REAL?
+It was great to pull in to Chicago on Monday evening.
+I'd enjoyed the ride, 
+but real life responsibilities hadn't been on vacation with me.
+The need to finish a work project had been building up,
+the side project I'd been working on was drawing close,
+and I missed people from home too.
 
-GOOD BREAKFAST PLACE
+I was pretty glad I wasn't trying to catch the
+8pm flight to Miami, 
+because that's when the train arrived.
+Instead I'd booked a hotel downtown for the night,
+and I enjoyed a second shower of the day,
+a $26 Manhattan back downstairs in the lobby
+(c'mon that is ridiculous), 
+and a king size bed that didn't wobble around.
 
-TAKING THE BLUE LINE AND LISTENING TO A GUY
-TRY AND TEACH ONE OF HIS KIDS ROCK-PAPER-SCISSORS
+Before heading out to O'Hare,
+I got some amazing huevos rancheros at "Eggy's,"
+enjoyed some of the weird terrain and elevation
+around there (climbed a big staircase after breakfast),
+and finally figured out how to get on the Blue Line.
 
-WAITING AT ORD
+The last train ride of the trip was neat; 
+it was after rush hour, 
+so for most of the ride the real hustle and bustle
+of the car was a guy taking a few kids to the airport,
+trying to teach the oldest how to play rock-paper-scissors.
+At the airport, I waited around while listening
+to a family on their way to the Orlando theme parks
+while ordering DEF CON supplies.
 
-BACK IN MIAMI
+# Miami
+
+The rest of the trip home was honestly kind of a blur!
+More distance than the ride the previous day,
+in a fraction of the time. 
+I didn't even bother with the big computer,
+instead watching a video on my tablet 
+and enjoying a beer.
+The trip from the airport back home was similarly
+quick,
+and all I could think of to do once I got there 
+was throw my stuff down and 
+immediately go walk for groceries,
+in the heat and humidity.
+
+For me, that's kind of how many of these trips end;
+amazing times with friends I miss,
+the blur of travel,
+and after that a quick transition to rejoin the
+world I feel obliged to pay attention to.
+The fascinating and memorable part of 
+this particular experience
+was that the bulk of the trip was memorable, 
+to an extent.
+While the train is primarily a mode of transport,
+it's similar to a Caribbean cruise 
+in that the mode of transport is 
+contemplatively slow enough that it becomes as much
+a goal of the trip instead of simply a facility.
+
+Will I do it again?
+I could absolutely see doing this trip 
+or something similar for a future Toorcamp,
+and I'm absolutely not opposed to taking Amtrak
+to DC or somewhere like that again either.
+It's not great if you've got a schedule,
+but for leisure travel, 
+sometimes you'd rather not have a schedule.
