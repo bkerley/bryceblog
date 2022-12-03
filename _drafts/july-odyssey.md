@@ -425,7 +425,7 @@ and eventually moseyed outside to get on the train.
 
 <div class="photos mini right">
 <a href="https://www.flickr.com/photos/bonzoesc/52307531070/in/datetaken/" title="Omaha Station"><img src="https://live.staticflickr.com/65535/52307531070_e2c3a5b2cb_c.jpg" width="800" height="533" alt="A train waiting at the covered platform behind an Omaha Station sign"></a>
-<a href="https://www.flickr.com/photos/bonzoesc/52307463993/in/datetaken/" title="Luggage Cart"><img src="https://live.staticflickr.com/65535/52307463993_d1892ad6d0_6k.jpg" width="4000" height="6000" alt="A weathered pull cart, with a rusty Amtrak pointless arrow logo, red white and blue"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307463993/in/datetaken/" title="Luggage Cart"><img src="https://live.staticflickr.com/65535/52307463993_576c4097f6_c.jpg" width="533" height="800" alt="A weathered pull cart, with a rusty Amtrak pointless arrow logo, red white and blue"></a>
 </div>
 
 Out on the platform, 
