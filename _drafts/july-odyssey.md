@@ -7,6 +7,7 @@ tags:
     - since-2021
 kind: regular
 css_id: july2022odyssey
+date: '2022-12-02T22:00:00-05:00'
 ---
 
 <div class="photo center">
