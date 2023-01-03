@@ -44,24 +44,24 @@ is basically the standard for final playback.
 
 Annotated:
 
-1. `time` i want to see how long it takes 
-2. `ffmpeg` i'm running it; 
-    i'm pretty sure i did `brew install ffmpeg` to get it
+1. `time` I want to see how long it takes 
+2. `ffmpeg` I'm running it; 
+    pretty sure I did `brew install ffmpeg` to get it
 3. `-i IMG_5744.MOV` this is the video file;
-    i dragged it out of `Photos.app` into 
+    I dragged it out of `Photos.app` into 
     [Yoink](https://eternalstorms.at/yoink/mac/)
     and then from yoink into Finder
 4. `-c:v h264_videotoolbox` 
-    i generally want to use the hardware encoder on this machine
+    I generally want to use the hardware encoder on this machine
     (m1 pro) because it's fast
 5. `-maxrate 2600K -bufsize 2600K`
     these settings match what my mastodon server expects;
-    i think `maxrate` controls how many bytes/sec it'll output
+    I think `maxrate` controls how many bytes/sec it'll output
     (2.6mb in this case), 
     and `bufsize` is a rolling buffer that can allow the maxrate to be
     deviated from?
 6. `-vf` the next command is a video filter 
-    (which i'll annotate the comma-delimited parts separately)
+    (which I'll annotate the comma-delimited parts separately)
 7. `zscale=t=linear:npl=100` Transfer the images to a linear 
     brightness scale, 
     with a Nominal Peak Luminance of 100
