@@ -7,6 +7,7 @@ tags:
     - since-2021
 kind: regular
 css_id: time_tripper_review
+date: '2023-02-01T22:10:00-04:00'
 ---
 
 I played a lot of shareware Doom growing up, 
