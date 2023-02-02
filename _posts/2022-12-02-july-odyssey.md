@@ -466,7 +466,7 @@ Omaha? Checked off.
 # Chicago
 
 <div class="photo center">
-<a href="https://www.flickr.com/photos/bonzoesc/52307530810/in/datetaken/" title="Rapidly Approaching Chicago"><img src="https://live.staticflickr.com/65535/52307530810_d5577706c4_6k.jpg" width="6000" height="4000" alt="The distant Chicago skyline stands tall beyond a helicopter and the motion blurred train tracks"></a>
+<a href="https://www.flickr.com/photos/bonzoesc/52307530810/in/datetaken/" title="Rapidly Approaching Chicago"><img src="https://live.staticflickr.com/65535/52307530810_471ae59c18_k.jpg" width="2048" height="1365" alt="The distant Chicago skyline stands tall beyond a helicopter and the motion blurred train tracks"></a>
 </div>
 
 It was great to pull in to Chicago on Monday evening.
