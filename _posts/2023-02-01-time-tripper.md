@@ -183,7 +183,11 @@ My favorite is possibly "The Forever Plane,"
 which has some really interesting syncopation
 going on.
 
-<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3595895175/size=small/bgcol=333333/linkcol=2ebd35/track=1731019762/transparent=true/" seamless><a href="https://halleylabs.com/album/time-tripper-circuit01-abyssal">TIME TRIPPER circuit01_abyssal by msx</a></iframe>
+
+<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=3595895175/size=small/bgcol=333333/linkcol=2ebd35/track=1731019762/transparent=true/" seamless="true">
+<a href="https://halleylabs.com/album/time-tripper-circuit01-abyssal">TIME TRIPPER circuit01_abyssal by msx</a>
+</iframe>
+
 
 I will caution you to not listen to the whole soundtrack
 before playing, 
