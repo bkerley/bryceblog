@@ -122,6 +122,11 @@ prior armament.
     If you play with pistol start rules, 
     you start every level with the pistol.
 
+The secrets are good!
+Some are useful tidbits,
+some are amusing,
+and some are huge changes to entire stages.
+
 # The Restless, The Tender
 
 The music in Time Tripper goes places.
@@ -151,5 +156,20 @@ late in the game.
 
 # End
 
-link to time tripper
-link to the soundtrack
+Time Tripper is availanle for free at
+<https://heckscaper.com/tt/> . 
+The instructions there are probably good for Windows users.
+Linux and Mac people will probably want to 
+plug their correct filesystem paths into something like:
+```sh
+/Applications/GZDoom.app/Contents/MacOS/gzdoom \
+    -iwad ~/Sync/doom-wads/DOOM2.WAD \
+    -file ~/Sync/doom-wads/pwads/timetrip/timetrip.pk3
+```
+
+The soundtrack's at
+<https://lapfox.bandcamp.com/album/time-tripper-circuit01-abyssal>
+to stream or download on a name your own price deal.
+Again, it's worth holding off if you plan to play the game,
+for spoiler reasons.
+
