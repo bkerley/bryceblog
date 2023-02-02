@@ -20,7 +20,7 @@ games.
 I'm going to be referring to "Doom" a lot here
 as a short-hand for "classic" Doom.
 To me, that means Doom 1, and stuff that's generally
-considered part of the Doom 1 lexicon,
+considered part of the Doom 1 lineage,
 like retail Doom 2 and Final Doom,
 Chex Quest and Heretic,
 the Eternity Engine and GZDoom source ports,
@@ -122,6 +122,41 @@ prior armament.
     If you play with pistol start rules, 
     you start every level with the pistol.
 
+As I played a bit more,
+I started to really enjoy 
+how different it was from other Doom stuff.
+While it has a similarly wild palette to
+Ancient Aliens and others like it,
+Time Tripper goes full GZDoom
+with lighting effects and sky effects.
+It has checkpoints in a few places,
+(but I still quicksaved a bunch.)
+
+I ended up doing multiple playthroughs;
+the second was right after the first,
+but on "Normal" difficulty instead of
+"Light" like my first time through.
+It's much less monstrous than Sunlust,
+which was unplayable on UV[^uvmax] and
+a struggle on HMP.
+Normal is probably on par with
+Ancient Aliens on UV?
+I should replay both of those again…
+
+[^uvmax]: [Doom has different skill levels.][skill]
+    UV is "Ultra-Violence" which is hard,
+    HMP is "Hurt Me Plenty" which is medium,
+    and there's also "Nightmare!" 
+    which isn't even remotely fair.
+
+[skill]: https://doomwiki.org/wiki/Skill_level#Doom_and_Doom_II_skill_levels
+
+My third play-through was
+on "No Miss or Bust,"
+where everything goes down in one shot.
+It's fast, intense,
+and only one spot felt unwinnable.
+
 The secrets are good!
 Some are useful tidbits,
 some are amusing,
@@ -130,7 +165,7 @@ and some are huge changes to entire stages.
 # The Restless, The Tender
 
 The music in Time Tripper goes places.
-Some tracks are an ambience that breaks in to
+Some tracks are an ambiance that breaks in to
 an interesting melody.
 Some tracks are psychedelia with a drill beat,
 like if
@@ -156,7 +191,21 @@ late in the game.
 
 # End
 
-Time Tripper is availanle for free at
+If you're Doom-curious,
+I'd recommend Time Tripper 
+after getting some familiarity with
+Doom canon, Dooms 1 and 2 for sure,
+but maybe Ancient Aliens as well.
+I think Time Tripper hits harder with
+an appreciation for what it changes up,
+and it's *so good* that you want it to hit like that.
+
+If you're a Doom connoisseur,
+Time Tripper is hopefully something you've had a look at,
+but if not, you will probably appreciate 
+the sweeping changes from a more vanilla experience.
+
+Time Tripper is available for free at
 <https://heckscaper.com/tt/> . 
 The instructions there are probably good for Windows users.
 Linux and Mac people will probably want to 
