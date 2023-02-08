@@ -1,0 +1,76 @@
+.social
+    $avatar_size: 4rem
+
+    box-shadow: 2px 2px black
+    margin: 1rem 4rem 2rem
+    padding: 1rem
+    background-color: $scratch-paper-highlight
+    transform: rotateZ(-0.8deg)
+
+    display: grid
+    grid-template-areas: "avatar screenname" "avatar username" "content content" " attachments attachments" "timestamp timestamp" "credit credit"
+    grid-template-columns: $avatar_size auto
+    grid-template-rows: minmax($avatar_size/2, auto) minmax($avatar_size/2, auto) auto auto
+    column-gap: 1rem
+
+    @media (min-width: 60rem)
+        grid-template-columns: $avatar_size auto auto
+        grid-template-areas: "avatar screenname screenname" "avatar username username" "content content content" "attachments attachments attachments" "timestamp timestamp credit"
+
+    p
+        margin: 0
+        padding: 0
+    a:link, a:visited
+        text-decoration: none
+    a:hover
+        text-decoration: underline
+
+    .avatar
+        grid-area: avatar
+        &.round
+            img 
+                border-radius: $avatar_size/2
+        img
+            height: $avatar_size
+            width: $avatar_size
+            object-fit: contain
+            max-width: none
+    .screenname
+        grid-area: screenname
+        align-self: end
+    .username
+        grid-area: username
+        align-self: start
+    .content
+        grid-area: content
+        .content-note
+            &::before
+                content: "Content Note:"
+                margin-right: 1ch
+        .content-warning
+            &::before
+                content: "Content Warning:"
+                margin-right: 1ch
+        .content-note, .content-warning
+            background-color: $scratch-paper-lowlight
+            padding: 0.5rem
+            border-radius: 1rem
+        p
+            margin-bottom: 1rem
+        a:link, a:visited
+            text-decoration: underline
+    ul.attachments
+        grid-area: attachments
+        list-style-type: none
+        padding-left: 0
+        display: flex
+        li
+            display: inline-block
+            margin: auto
+    .timestamp
+        grid-area: timestamp
+        font-size: 0.8rem
+    .credit
+        grid-area: credit
+        font-size: 0.8rem
+        text-align: right
