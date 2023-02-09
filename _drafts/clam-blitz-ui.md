@@ -195,17 +195,115 @@ The tower, rainmaker, and power clams get
 a permanent overlaid icon on your screen
 no matter how far away they are.
 
-XXXX talk about the sheer amount of stuff happening in 720p
+This presents a problem.
+Splatoon 2 and 3 are for the Nintendo Switch,
+which ships with a 720p (1280x720)
+screen on the unit itself.
+The more expensive versions of the hardware
+(the original and OLED switches, not the lite switch)
+can dock to drive a 1080p (1920x1080) screen, 
+but the design of the game *has* to work at 720p on a 5.5" screen.
+This puts a real damper on what you can show UI-wise.
+Elements have to be big to work at 5.5", 
+but too many of them won't leave enough room 
+to notice an opponent casting ripples as they swim in their team's ink.
 
-XXXX you can't communicate everything, gotta prioritize
+<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/4FwwBYzU2gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-https://youtu.be/4FwwBYzU2gE
+This has parallels with aviation.
+In the [July/August 2020 issue of the FAA Safety Briefing][faa-brief],
+the article "Avoiding Information Overload" by Gene Trainor (PDF page 36) 
+mentions how non-diegetic[^htaws-diegesis] interfaces can cause problems:
+
+> For example, Automatic Dependent Surveillance-Broadcast (ADS-B), 
+> Helicopter Terrain Awareness and Warning Systems (HTAWS), 
+> and autopilot technologies have made flying easier and safer. 
+> The drawback is that these systems require concentration 
+> when quick decisions are needed.
+
+[faa-brief]: https://www.faa.gov/newsroom/safety-briefing/faa-safety-briefing-julyaugust-2020
+
+[^htaws-diegesis]: you could absolutely make the argument that
+    because these systems and interfaces inhabit our world,
+    that they are in fact diegetic,
+    but i couldn't think of a better terminology to use
+
+The solution for this,
+as implemented on the Boeing 777 and
+[described by Vincent Czaplyski in AOPA Pilot magazine][aopa-cas]
+is a Crew Alerting System (CAS) that filters and prioritizes warnings:
+
+> Just the right touch, however, and the crew's situational awareness will be maximized, which is what warning systems are really all about. For this reason, some non-critical alerts on the 777 are inhibited at the beginning of the takeoff roll until the aircraft has reached a safe altitude. This is to prevent pilots from initiating high-speed aborted takeoffs for minor problems that could be easily taken care of once safely airborne.
+>
+> […]
+> 
+> What happens if two or more critical conditions are detected simultaneously? CAS will issue alerts in a predetermined priority sequence. 
+> […]
+> Shortly after takeoff, GPWS senses that your aircraft has begun to sink toward rising terrain. At the same time, the reactive wind shear warning system detects that the twinjet has encountered a microburst, just as the right engine catches on fire. To make matters worse, another aircraft is approaching on a collision course, something which causes TCAS to generate a resolution advisory (RA), warning of the traffic conflict.
+> […]
+> According to Boeing spokesman Brian Kelly, voice warnings will sound in quick succession for wind shear, GPWS, and TCAS, in that order. While this is happening, the engine fire will trigger a fire bell and an EICAS text message simultaneously.
+
+[aopa-cas]: https://www.aopa.org/news-and-media/all-news/1997/april/pilot/cockpit-warning-systems
+
+Competitive action games can absolutely put you at or beyond
+the limits of your ability to process and act on information.
+That's why they're fun!
+However, 
+presenting that fun to a wide variety of players
+with a huge range of skill levels
+requires careful consideration of
+how information is communicated to players.
+
+<aside>
+
+## Skill and Getting Clowned On
+
+I'm 40, mostly play while also doing cardio, and I'm A-rank.
+I've played matches where I get absolutely clowned on
+(first day of the sweet/spicy/sour splatfest),
+and I remember joining a friend on his first day in Splatoon 2
+and worrying I was doing that to a bunch of literal children
+(the game's rated for 10-and-up).
+
+
+https://kitty.town/@kelly/109119890705163804 RIP reflexes post XXXX
+
+I don't like to be clowned on of course,
+occasionally clowning on a team can be fun,
+but I've been spending more time in ranked
+modes recently because it's less common,
+and if you are getting clowned on, 
+the match ends sooner.
+I'd rather lose a ranked match than
+suffer the last half of a turf war 
+where the midfield is as distant as the moon.
+
+</aside>
 
 # Clam Discs
 
-XXXX original thread 
+Going back to the original Clam Blitz thing,
+as players get their hands on clams, 
+sometimes non-diegetic numbers show up above them,
+sometimes dark/de-emphasized 
+and someimes bright and vivid.
+We wanted to figure out what caused the
+numbers to show up, in which flavor.
+That probably required two people on the same team,
+and someone on the opponent team.
 
 experiment design
+
+So that's what we did! 
+Splatoon 3 lets you set up a "private battle"
+in which you're not bound by the game's schedule
+or matchmaking.
+Among the different game modes there is a "recon" option,
+which configures the map and UI for a given mode,
+but sets the timer out to an hour so you can
+mess around and do whatever.
+We went with clam blitz and recon at
+Wahoo World.
 
 wild hypotheses
 
