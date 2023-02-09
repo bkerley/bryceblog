@@ -265,8 +265,51 @@ and I remember joining a friend on his first day in Splatoon 2
 and worrying I was doing that to a bunch of literal children
 (the game's rated for 10-and-up).
 
+<div class="social mastodon">
 
-https://kitty.town/@kelly/109119890705163804 RIP reflexes post XXXX
+<div class="avatar round">
+<a href="https://kitty.town/@kelly">
+<img alt="drawing of a person with brown hair rading to pink, wearing orange-rimmed glasses" src="/assets/post_images/clam-blitz-ui/kelly-av.png">
+</a>
+</div>
+
+<div class="screenname">
+
+[Kelly 👾🎧](https://kitty.town/@kelly)
+
+</div>
+<div class="username">
+
+[@kelly@kitty.town](https://kitty.town/@kelly)
+
+</div>
+
+<div class="content">
+
+i-it's okay... Auntie Kelly's just happy to get out of the base once in a while
+#Splatoon3
+
+</div>
+
+<ul class="attachments">
+<li>
+<img alt="SplatNet post: black and white pixel art cartoon of a tombstone which has the engraving RIP REFLEXES 198X-2022 near the slogan BORN IN THE '80s -- SUBPAR K/Ds" src="/assets/post_images/clam-blitz-ui/kelly-rip-reflexes.png">
+</li>
+</ul>
+
+<div class="timestamp">
+
+[October 6, 2022 at 2:23 AM](https://kitty.town/@kelly/109119890705163804)
+
+</div>
+
+<div class="credit">
+
+from <https://kitty.town/@kelly/109119890705163804>
+
+</div>
+
+</div>
 
 I don't like to be clowned on of course,
 occasionally clowning on a team can be fun,
