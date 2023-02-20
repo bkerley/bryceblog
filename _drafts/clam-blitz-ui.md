@@ -313,12 +313,15 @@ from <https://kitty.town/@kelly/109119890705163804>
 I don't like to be clowned on of course,
 occasionally clowning on a team can be fun,
 but I've been spending more time in ranked
-modes recently because it's less common,
-and if you are getting clowned on, 
+modes recently because getting clowned on is less common,
+and if you are getting clowned on[^clown], 
 the match ends sooner.
 I'd rather lose a ranked match than
 suffer the last half of a turf war 
 where the midfield is as distant as the moon.
+
+[^clown]: Big Clown gave me $6 for each time 
+    I said "clowned on"
 
 </aside>
 
@@ -388,32 +391,28 @@ I suspect it's complicated to figure out that priority.
 It can't purely be based on clam count, 
 since having three clams when nobody has any is more interesting
 than having five clams when two teammates have a power clam.
+
 Additionally, there seems to be some stickiness in the
 prioritization of these that means
 newly-low-priority indicators stick around for a bit,
 but I could see that being the responsibility of
-the `IndicatorCollection` that has a big-picture view,
-possibly with history of what's 
-become a high or low priority in previous frames.
-
-
-`FollowIcon` abstract class
-
-subclasses implement `u8 priority()`; 
-persistent stuff returns u8_max,
-players with clams have to query game state, 
-other players with clams,
-doesn't necessarily update each frame
-
-soft budgets for `FollowIcon`s,
-low-priority ones may disappear,
-high-priority ones may stick around,
-hysteresis to keep them from flickering
+an `IndicatorCollection`. 
+The collection would have a budget of how many
+indicators should be displayed,
+possibly holding newly-low-priority 
+ones for a while.
 
 # Conclusion
 
-not a data miner but might be interesting to a
-bored data miner that's also in UI design?
+This is, of course, all speculation,
+and it feels like the kind of reverse engineering
+that would both be a lot of complex work
+and not be particularly useful from a
+minmaxing multiplayer stuff based on data
+mining perspective.
+
+I found it at least interesting to think about though,
+and I hope you got something from it too.
 
 Thanks codl 
 for nerd sniping me with this,
