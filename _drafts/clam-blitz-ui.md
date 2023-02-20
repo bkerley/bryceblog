@@ -5,6 +5,7 @@ tags:
     - since-2021
     - game
     - interface
+    - programming
 kind: regular
 css_id: splatoon
 ---
@@ -111,8 +112,6 @@ and a corona of their ink.
 Outside of the PvE Salmon Run mode,
 your ghost makes it back to your team's
 end of the stage to respawn in a few seconds.
-
-[^brushfast]: brushes let you run at 
 
 Splatoon doesn't look like other 
 big multiplayer shooters.
@@ -331,11 +330,9 @@ sometimes non-diegetic numbers show up above them,
 sometimes dark/de-emphasized 
 and someimes bright and vivid.
 We wanted to figure out what caused the
-numbers to show up, in which flavor.
+numbers to show up, in which flavor of disc.
 That probably required two people on the same team,
 and someone on the opponent team.
-
-experiment design
 
 So that's what we did! 
 Splatoon 3 lets you set up a "private battle"
@@ -348,9 +345,57 @@ mess around and do whatever.
 We went with clam blitz and recon at
 Wahoo World.
 
-wild hypotheses
+After a couple minutes,
+I'd mostly landed on a hypothesis that you could
+sum up disc color with a big spreadsheet,
+with rows of your own clams and columns of
+the other friendly player's clams.
+This fell apart almost immediately,
+because there are too many variables in play.
+We're pretty sure power clams 
+of either team affect visibility
+(four clams are less interesting 
+if someone on your team has a power clam),
+basket state probably affects it
+(you can't score if opponents are currently scoring),
+and so on.
 
-hypothetical implementation
+So this is where the speculation starts,
+and my speculation is mostly based around 
+how I'd try to implement it,
+from my background of playing around with
+WebGL in Three.js a few times
+and knowing nothing about efficiently
+implementing real-time games.
+
+There needs to be a general concept
+(abstract class) of an indicator that follows
+world objects. This is used to show
+nametags, the rainmaker and tower icons, etc.
+I'd call it `FollowIndicator`.
+
+Specializations (subclasses) of this concept
+provide a thing to actually draw,
+and communicate up to some higher level code
+their priority.
+In the case of a `ClamInventoryIndicator`,
+it'd update its drawn representation with the right number
+(or the power clam icon) every frame,
+and every few frames, update its priority.
+
+Why not priority every frame?
+I suspect it's complicated to figure out that priority.
+It can't purely be based on clam count, 
+since having three clams when nobody has any is more interesting
+than having five clams when two teammates have a power clam.
+Additionally, there seems to be some stickiness in the
+prioritization of these that means
+newly-low-priority indicators stick around for a bit,
+but I could see that being the responsibility of
+the `IndicatorCollection` that has a big-picture view,
+possibly with history of what's 
+become a high or low priority in previous frames.
+
 
 `FollowIcon` abstract class
 
