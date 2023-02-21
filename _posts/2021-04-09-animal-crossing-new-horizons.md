@@ -9,80 +9,80 @@ tags:
 kind: regular
 css_id: acnh_review
 ---
-
+ 
 <style type="text/css">
-#acnh_review div.photo img {
+#acnh_review main div.photo img {
     border: 0.5em solid white;
     filter: drop-shadow(0 0.25em 0.5em black);
 }
 
-#acnh_review div.photo.center {
+#acnh_review main div.photo.center {
     text-align: center;
 }
 
-#acnh_review div.photo.center img {
+#acnh_review main div.photo.center img {
     width: 75%;
 }
 
-#acnh_review div.photo.left img,
-#acnh_review div.photo.right img {
+#acnh_review main div.photo.left img,
+#acnh_review main div.photo.right img {
     margin: 1em 0 2em;
     width: 65%;
 }
 
-#acnh_review div.mini.photo img {
+#acnh_review main div.mini.photo img {
     width: 35%
 }
 
-#acnh_review div.small.photo img {
+#acnh_review main div.small.photo img {
     width: 45%;
 }
 
-#acnh_review div.left.photo img {
+#acnh_review main div.left.photo img {
     float: left;
     margin-right: 2em;
 }
 
-#acnh_review div.right.photo img {
+#acnh_review main div.right.photo img {
     float: right;
     margin-left: 2em;
 }
 
-#acnh_review div.jaunty.left.photo img {
+#acnh_review main div.jaunty.left.photo img {
     transform: rotate(-3.1deg);
 }
 
-#acnh_review div.jaunty.right.photo img {
+#acnh_review main div.jaunty.right.photo img {
     transform: rotate(2.8deg);
 }
 
-#acnh_review h1 {
+#acnh_review main h1 {
   clear: both;
 }
 
 @media (min-width: 60rem) {
-    #acnh_review div.left.photo img {
+    #acnh_review main div.left.photo img {
         margin-left: -4em;
     }
 
-    #acnh_review div.right.photo img {
+    #acnh_review main div.right.photo img {
         margin-right: -4em;
     }
 
-    #acnh_review div.photo.center img {
+    #acnh_review main div.photo.center img {
         width: 85%;
     }
 
-    #acnh_review div.photo.left img,
-    #acnh_review div.photo.right img {
+    #acnh_review main div.photo.left img,
+    #acnh_review main div.photo.right img {
         width: 75%;
     }
 
-    #acnh_review div.mini.photo img {
+    #acnh_review main div.mini.photo img {
         width: 45%
     }
 
-    #acnh_review div.small.photo img {
+    #acnh_review main div.small.photo img {
         width: 55%;
     }
 }

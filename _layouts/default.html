@@ -3,7 +3,13 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body data-invalid=""
+
+  {%- if page.css_id -%}
+    id="{{ page.css_id }}"
+  {%- endif -%}
+
+  >
 
     {%- include header.html -%}
 
