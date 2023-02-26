@@ -182,6 +182,10 @@ to it, an extra layer of chaos to an already frantic game.
 [^anarchy]: in Splatoon 3 the battles that establish a
     meritocratic hierarchy among players 
     are called "Anarchy Battles"
+
+This diversity of modes
+(I haven't even talked about Salmon Run or Tricolor Battles)
+is tricky to inform players about.
     
 # Interface Design and Human Factors
 

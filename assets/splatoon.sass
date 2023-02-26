@@ -34,7 +34,15 @@ $lime: #bad421
 $shiver: #1021be
 $neutpurp: #a814d4
 
+$gradleft: #cacae5
+$gradright: #dcdae2
+$aside: #f9f3e7
+$social: #dce2d6
+
 #splatoon
+    background: $shiver url("/assets/splatoon/splat_stripes.png") 33.333%
+    .page-content
+        background: $gradleft linear-gradient(to right, $gradleft, $gradright)
     .post-header
         h1, time
             @include paintball
@@ -59,6 +67,7 @@ $neutpurp: #a814d4
 
         aside 
             margin-top: 2rem
+            background-color: $aside
             h2:first-child
                 margin-top: -1rem
 
@@ -70,6 +79,7 @@ $neutpurp: #a814d4
                 border-bottom: 1px solid #010
 
         .social
+            background-color: $social
             .screenname::before
                 @include its-tape
             &.mastodon .screenname::before
