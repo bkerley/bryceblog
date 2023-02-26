@@ -124,18 +124,19 @@ and your opponents are trying to do the same.
 If you get too much opponents' ink on you
 (either from their attacks or 
 just from spending too much time in their ink)
-you get "splatted" with a big pop, 
+you get splatted with a big pop, 
 a surprised exclamation,
-and a corona of their ink.
+and a corona of the opponents' ink.
 Outside of the PvE Salmon Run mode,
 your ghost makes it back to your team's
-end of the stage to respawn in a few seconds.
+base area to respawn in a few seconds.
 
 Splatoon doesn't look like other 
 big multiplayer shooters.
 The inks are bright and vivid, splashy and wet.
 Once you're in the thick of a
 match,
+there's
 an incredible amount of activity to keep track of,
 because matches only last a few minutes and
 even when you're passing through uncontested territory
@@ -409,7 +410,8 @@ Among the different game modes there is a "recon" option,
 which configures the map and UI for a given mode,
 but sets the timer out to an hour so you can
 mess around and do whatever.
-We went with clam blitz and recon at
+
+We went with Clam Blitz and recon at
 Wahoo World.
 
 After a couple minutes,
@@ -492,4 +494,3 @@ Thanks codl
 for nerd sniping me with this,
 and ctrl-alt-dog/cinnamon
 for helping out with the experiment.
-

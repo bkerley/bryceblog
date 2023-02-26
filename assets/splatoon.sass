@@ -16,6 +16,20 @@
 @mixin inkling
     font-family: "Inkling"
 
+@mixin its-tape
+    content: "its tape its tape"
+    padding: 0rem 0.5rem
+    @include inkling
+    color: #ff8
+    background-color: black
+    float: right
+    z-index: 2
+    position: relative
+    right: -4rem
+    transform: rotateZ(45deg)
+    text-align: center
+    clip-path: path("M138.484,40.334H5.743L0,31.359l12.862-11.192L3.859,15.19,12.862,7.84,5.743,0H138.484l7.086,6.003s-5.339,1.179-6.615,2.389c-1.628,1.544-3.491,8.268-3.491,8.268l3.02,6.063-4.674,7.166,9.555,5.512-4.881,4.932Z")
+
 $lime: #bad421
 $shiver: #1021be
 $neutpurp: #a814d4
@@ -48,20 +62,16 @@ $neutpurp: #a814d4
             h2:first-child
                 margin-top: -1rem
 
+        figure
+            border-bottom: none
+            video, img
+                filter: none
+            figcaption
+                border-bottom: 1px solid #010
+
         .social
             .screenname::before
-                content: "social social social"
-                padding: 0rem 0.5rem
-                @include inkling
-                color: #ff8
-                background-color: black
-                float: right
-                z-index: 2
-                position: relative
-                right: -4rem
-                transform: rotateZ(45deg)
-                text-align: center
-                clip-path: path("M138.484,40.334H5.743L0,31.359l12.862-11.192L3.859,15.19,12.862,7.84,5.743,0H138.484l7.086,6.003s-5.339,1.179-6.615,2.389c-1.628,1.544-3.491,8.268-3.491,8.268l3.02,6.063-4.674,7.166,9.555,5.512-4.881,4.932Z")
+                @include its-tape
             &.mastodon .screenname::before
                 content: "fedi fedi fedi"
 
