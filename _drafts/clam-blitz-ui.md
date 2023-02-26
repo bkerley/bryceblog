@@ -72,6 +72,12 @@ why I found this question really interesting.
 
 # What is Splatoon?
 
+<figure>
+
+![A purple octoling shoving a brush approaches the splat zone on Hammerhead Bridge. Several opponents are in mid with yellow ink, but the zone is evenly split with no scoring at 4m43s on the clock. The player has special ready.](/assets/post_images/clam-blitz-ui/hero%20screenshot.png)
+
+</figure>
+
 Splatoon is a series of third-person shooters from Nintendo.
 You play a kid, sometimes a squid[^octo],
 rendered with considerable artistic license,
@@ -82,7 +88,6 @@ or a player-vs-player contest for fun and in-game prizes.
 Players can walk 
 and shoot ink out of cartoonish weapons
 (many like repurposed real-world gadgets)
-XXXX ballpoint splatling goes here XXXX
 in kid form,
 swim and re-up on ink in squid form,
 and return to the spawn point after being
@@ -90,6 +95,19 @@ blasted with too much opponent ink
 ("splatted," not killed) in ghost form.
 
 [^octo]: or an octopus
+
+<figure class="minigallery">
+<img src="/assets/post_images/clam-blitz-ui/brush.jpeg" alt="an octoling wielding a brush, painting the floor yellow while grinning into the camera" class="bigger">
+
+
+<img src="/assets/post_images/clam-blitz-ui/squeezer.jpeg" alt="an octoling holding the squeezer, a weapon that looks like a champagne bottle with a caged cork">
+<img src="/assets/post_images/clam-blitz-ui/roller.jpeg" alt="an octoling wielding a paint roller, pressed into the floor">
+<img src="/assets/post_images/clam-blitz-ui/ballpoint.jpeg" alt="an octoling holding a gatling gun evoking a ballpoint pen with multiple cartridges">
+
+<figcaption>
+Many Splatoon weapons are inspired by real-world objects.
+</figcaption>
+</figure>
 
 In each stage (map), most floors and some walls accept ink.
 On un-inked ground, you can walk as a kid or
@@ -139,9 +157,11 @@ to move it into the opponents' base to win.
 a slow-charging bazooka you deliver to the opponents'
 goal to win.
 
-XXXX is there an official clam blitz explainer? XXXX
-
 And finally, "Clam Blitz" is complicated.
+It was introduced several months in to
+Splatoon 2 and had
+[an official explainer](https://splatoonus.tumblr.com/post/168473443099/attention-clam-blitz-a-fierce-new-ranked-battle)
+right before release.
 Teams gather clams from around the stage.
 When a player has enough 
 (ten in Splatoon 2, eight in Splatoon 3)
@@ -164,8 +184,25 @@ to it, an extra layer of chaos to an already frantic game.
     
 # Interface Design and Human Factors
 
+<figure>
 
-XXXX ink tank images XXXX
+<video
+src="/assets/post_images/clam-blitz-ui/ink%20tank.mp4"
+poster="/assets/post_images/clam-blitz-ui/ink%20tank.poster.png"
+playsinline controls height="480" width="480" preload="none">
+</video>
+
+<figcaption>
+An octoling painting a part of Scorch Gorge bright pink with the N-Zap.
+After their ink depletes, 
+they morph from kid mode to swim mode,
+their ink tank disappearing in to the wet floor
+as they turn into an octopus,
+with a superimposed ink tank graphic appearing next to their
+swimming form.
+</figcaption>
+
+</figure>
 
 You can categorize the way action games
 communicate state to the player based on diegesis.
@@ -182,8 +219,7 @@ isn't actually playing among spaceships in hard vacuum.
 Splatoon uses both of these.
 When it's viable to do so, 
 state's diegetic.
-Splat zones get highlighting around the edges 
-XXXX do they?
+Splat zones change highlighting around the edges 
 when they change control,
 the tower and the rainmaker are both physical objects
 (and they can hurt you),
@@ -207,7 +243,15 @@ Elements have to be big to work at 5.5",
 but too many of them won't leave enough room 
 to notice an opponent casting ripples as they swim in their team's ink.
 
-<iframe width="800" height="450" src="https://www.youtube-nocookie.com/embed/4FwwBYzU2gE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<figure>
+[![Boeing flight deck picture, as if on a brochure](/assets/post_images/clam-blitz-ui/egpws-sound.jpg)][egpws]
+
+<figcaption>
+["EGPWS SOUND" on YouTube][egpws]
+</figcaption>
+</figure>
+
+[egpws]: https://www.youtube.com/watch?v=4FwwBYzU2gE
 
 This has parallels with aviation.
 In the [July/August 2020 issue of the FAA Safety Briefing][faa-brief],
@@ -327,6 +371,26 @@ where the midfield is as distant as the moon.
 
 # Clam Discs
 
+<figure>
+
+<video
+src="/assets/post_images/clam-blitz-ui/clam%20disc.mp4"
+poster="/assets/post_images/clam-blitz-ui/clam%20disc.poster.png"
+playsinline controls height="480" width="480" preload="none">
+</video>
+
+<figcaption>
+An octoling painting a part of Scorch Gorge
+yellow with a brush.
+They walk into several clams on the ground,
+which, on contact, play a musical tone,
+pop up before following behind them,
+at which point a number pops and increments
+behind the octoling's head.
+</figcaption>
+
+</figure>
+
 Going back to the original Clam Blitz thing,
 as players get their hands on clams, 
 sometimes non-diegetic numbers show up above them,
@@ -413,6 +477,16 @@ mining perspective.
 
 I found it at least interesting to think about though,
 and I hope you got something from it too.
+
+# Credits
+
+The header font is 
+["Project Paintball" by JapanYoshi / theFIZZYnator][pb].
+Unreadable decorative font is
+["Inkling" 2.0 by frozenpandaman][inkling].
+
+[pb]: http://fizzystack.web.fc2.com/paintball.html
+[inkling]: https://frozenpandaman.github.io/inkling.html
 
 Thanks codl 
 for nerd sniping me with this,
