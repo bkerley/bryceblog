@@ -1,5 +1,6 @@
 ---
 layout: post
+date: '2023-02-27T18:30:00-05:00'
 title: "Indicators in Splatoon 3 Clam Blitz"
 tags:
     - since-2021
