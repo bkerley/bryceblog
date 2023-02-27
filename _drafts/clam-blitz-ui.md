@@ -97,12 +97,13 @@ blasted with too much opponent ink
 [^octo]: or an octopus
 
 <figure class="minigallery">
-<img src="/assets/post_images/clam-blitz-ui/brush.jpeg" alt="an octoling wielding a brush, painting the floor yellow while grinning into the camera" class="bigger">
+
+<a href="https://splatoonwiki.org/wiki/Inkbrush"><img src="/assets/post_images/clam-blitz-ui/brush.jpeg" alt="an octoling wielding a brush, painting the floor yellow while grinning into the camera" class="bigger"></a>
 
 
-<img src="/assets/post_images/clam-blitz-ui/squeezer.jpeg" alt="an octoling holding the squeezer, a weapon that looks like a champagne bottle with a caged cork">
-<img src="/assets/post_images/clam-blitz-ui/roller.jpeg" alt="an octoling wielding a paint roller, pressed into the floor">
-<img src="/assets/post_images/clam-blitz-ui/ballpoint.jpeg" alt="an octoling holding a gatling gun evoking a ballpoint pen with multiple cartridges">
+<a href="https://splatoonwiki.org/wiki/Squeezer"><img src="/assets/post_images/clam-blitz-ui/squeezer.jpeg" alt="an octoling holding the squeezer, a weapon that looks like a champagne bottle with a caged cork"></a>
+<a href="https://splatoonwiki.org/wiki/Splat_Roller"><img src="/assets/post_images/clam-blitz-ui/roller.jpeg" alt="an octoling wielding a paint roller, pressed into the floor"></a>
+<a href="https://splatoonwiki.org/wiki/Ballpoint_Splatling"><img src="/assets/post_images/clam-blitz-ui/ballpoint.jpeg" alt="an octoling holding a gatling gun evoking a ballpoint pen with multiple cartridges"></a>
 
 <figcaption>
 Many Splatoon weapons are inspired by real-world objects.
