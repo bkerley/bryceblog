@@ -14,7 +14,7 @@ aside, .aside
     display: grid
     grid-template-areas: "avatar screenname" "avatar username" "content content" " attachments attachments" "timestamp timestamp" "credit credit"
     grid-template-columns: $avatar_size auto
-    grid-template-rows: minmax($avatar_size/2, auto) minmax($avatar_size/2, auto) auto auto
+    grid-template-rows: minmax(calc($avatar_size/2), auto) minmax(calc($avatar_size/2), auto) auto auto
     column-gap: 1rem
 
     @media (min-width: 60rem)
@@ -33,7 +33,7 @@ aside, .aside
         grid-area: avatar
         &.round
             img 
-                border-radius: $avatar_size/2
+                border-radius: calc($avatar_size/2)
         img
             height: $avatar_size
             width: $avatar_size
