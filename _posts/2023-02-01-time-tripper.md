@@ -41,11 +41,11 @@ This wasn't the greys and browns of my childhood,
 but something new and vivid.
 It was still Doom, 
 but it wasn't afraid to be its own vision of Doom.
-Same monsters[^aaliens-monsters],
+Same monsters[>aaliens-monsters],
 but a new architecture, a new setting,
 a new *vocabulary* of shooty game.
 
-[^aaliens-monsters]: well, except for a couple new ones
+[>aaliens-monsters]: well, except for a couple new ones
 
 [aaliens]: https://doomwiki.org/wiki/Ancient_Aliens
 [caco-2016]: https://www.doomworld.com/23years/best1.php

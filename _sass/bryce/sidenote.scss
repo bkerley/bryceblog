@@ -1,0 +1,151 @@
+@use "color";
+@use "layout";
+
+$sp-0-75: 0.6rem;
+$sp-1: 0.75rem;
+$sp-1-75: 0.9375rem;
+$sp-2: 1.5rem;
+$font-size-2: 0.75rem;
+
+$gutter-spacing-sm: 0.25rem;
+$gutter-spacing: 0.5rem;
+$content-width: layout.$wide-breakpoint;
+
+// Sidenotes
+$content-sidenote-width: .375 * $content-width;
+
+@mixin sidenote-container {
+  padding-right: $gutter-spacing-sm;
+  padding-left: $gutter-spacing-sm;
+
+  background: color.$cream-paper-gradient;
+  
+  // @include mq(md) {
+  //   // padding-right: $gutter-spacing;
+  //   // margin-right: $content-width / 3;
+  //   margin-right: -$content-width / 2;
+  //   width: $content-width / 4;
+  // }
+  @media (min-width: layout.$wide-breakpoint) {
+    padding-left: $gutter-spacing;
+    padding-right: $gutter-spacing;
+  }
+}
+
+  // more on sidenote implementation: https://www.gwern.net/Sidenotes
+  article {
+    counter-reset: sidenote-counter;  
+
+    // right-sidenote
+    .rsn {
+      @include sidenote-container;
+      display: none;
+      word-wrap: break-word;
+
+      @media (min-width: layout.$wide-breakpoint) {
+        display: block;
+        float: right;
+        clear: right;
+
+        margin-right: -$content-sidenote-width;
+        width: $content-sidenote-width;
+        margin-top: $sp-1;
+        margin-bottom: 0;
+        font-size: $font-size-2;
+        // line-height: 1.3;
+        vertical-align: baseline;
+        position: relative;
+      }
+    }
+
+    // left-sidenote
+    .lsn {
+      @include sidenote-container;
+      display: none;
+      word-wrap: break-word;
+
+      @media (min-width: layout.$wide-breakpoint) {
+        display: block;
+        float: left;
+        clear: left;
+
+        margin-left: -$content-sidenote-width;
+        width: $content-sidenote-width;
+        margin-top: $sp-1;
+        margin-bottom: 0;
+        font-size: $font-size-2;
+        // line-height: 1.3;
+        vertical-align: baseline;
+        position: relative;
+      }
+    }
+
+    // all sidenotes
+    .sidenote-toggle:checked + .rsn,
+    .sidenote-toggle:checked + .lsn {
+      display: block;
+      float: left;
+      left: 1rem;
+      clear: both;
+      width: 95%;
+      margin: 1rem 2.5%;
+      vertical-align: baseline;
+      position: relative;
+    }
+
+    label.sidenote-toggle:not(.sidenote-number) {
+      display: inline;
+    }
+
+    .sidenote-number {
+      counter-increment: sidenote-counter;
+    }
+
+    input.sidenote-toggle {
+      display: none;
+    }
+
+    label.sidenote-number {
+      display: inline;
+    }
+
+    label.sidenote-toggle:not(.sidenote-number) {
+      display: none;
+    }
+
+    .sidenote-number:after,
+    .rsn:before,
+    .lsn:before {
+      position: relative;
+      vertical-align: baseline;
+    }
+
+    .sidenote-number:after {
+      content: counter(sidenote-counter);
+      color: var(--wiki-link-color);
+      cursor: pointer;
+      font-size: $font-size-2;
+      top: -$sp-1-75;
+      left: $sp-0-75;
+      padding-right: $sp-0-75;
+    }
+
+    .rsn:before,
+    .lsn:before {
+      content: counter(sidenote-counter) " ";
+      font-size: $font-size-2;
+      top: -$sp-2;
+    }
+
+    // blockquote .rsn,
+    // blockquote .lsn {
+    //   margin-right: -82%;
+    //   min-width: 59%;
+    //   text-align: left;
+    // }
+
+    .rsn > code,
+    .lsn > code {
+      font-size: $font-size-2;
+    }
+  }
