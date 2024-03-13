@@ -81,6 +81,14 @@ Haskell, Ocaml, and other languages where
 concepts get names like "applicative functor"
 and variables get names like `v` and `m`.
 
+## G-languages
+Graphical programming languages like G (aka LabVIEW) that
+use dataflow paradigms in a graphical interface.
+G-languages run with a whole slew of assumptions that
+can be hard to debug.
+G itself is spaghetti code come to life and has seemingly
+driven the market for multiple 32"+ monitors.
+
 # Conclusion
 
 computers
