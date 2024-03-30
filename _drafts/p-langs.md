@@ -55,6 +55,10 @@ that tends towards lots of gang of four patterns in codebases
 that make it hard to find the code that actually does stuff.
 They also both really like UTF-16.
 
+## SQL
+
+SQL
+
 ## G-languags
 
 Golang, Rust, Crystal (my beloved),
