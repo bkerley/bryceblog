@@ -1,5 +1,6 @@
 ---
 layout: post
+date: '2024-03-31T22:25:00-05:00'
 title: "A lazy and flippant classification of programming languages"
 tags:
     - programming
@@ -24,7 +25,7 @@ and if it starts a conversation that's good too?
 
 Perl, PHP, Python, Ruby, Javascript 
 (the last two have an honorary "P") 
-are all garbage-collected "scripting" languages
+are all garbage-collected "scripting"[^wall] languages
 that let you get stuff done quick, often in web contexts.
 They often make sense from the beginning
 but get idiosyncratic at the edges.
@@ -33,27 +34,43 @@ very thin wrappers over the C standard library,
 system calls,
 or other platform libraries.
 
+[^wall]: "Well, a script is what you give the actors, but a program is what you give the audience." [Larry Wall](https://www.perl.com/pub/2007/12/06/soto-11.html/) the Perl guy
+
 ## C-languages
 
-C and C++, these have lots of well-named standard library functions
+A wise man once said that 
+"the C++ spec is a case of regulatory capture by compiler vendors."
+There're enough cases of "undefined behavior" 
+doing something absolutely ridiculous
+(like running off the end of an infinite loop
+into the next function)
+that C-language people have helpfully abbreviated it "UB"
+to save time while threatening you that maybe they'll make
+a structural part of your program UB too.
+
+These also have lots of well-named standard library functions
 like `printf`, `strcpy`, and `gets`
 that give control of your program counter and memory to arbitrary input.
-There are almost certainly functions that supersede or obsolete these,
+There are functions that supersede or obsolete these,
 but the old busted ones have to hang around forever.
 For example, C++ added safe ways to access
 `std::vector` and `std::array`, 
 but gave them the name `at` instead of `operator[]`
-to not break the unsafe version.
+to not break the unsafe version that everyone uses.
 
 ## J-languages
 
 Java and C#,
 these have separate compilation steps that go to a non-native
-bytecode that requires some kind of separate executable to run,
-and an early '90s vision of "object oriented"
-that tends towards lots of gang of four patterns in codebases
-that make it hard to find the code that actually does stuff.
+bytecode that requires some kind of separate executable to run.
+They all subscribe to a 
+"[Kingdom of Nouns][nouns]" 
+vision of "object oriented"
+that tends towards lots of gang of four patterns in codebases,
+that makes it hard to find the code that actually does stuff.
 They also both really like UTF-16.
+
+[nouns]: https://steve-yegge.blogspot.com/2006/03/execution-in-kingdom-of-nouns.html
 
 ## SQL
 
@@ -71,9 +88,10 @@ from C- and J-languages.
 ## R-languages
 
 Erlang and Elixir are the big ones.
-They have the compilation step of J-languages,
+They have the compilation to bytecode step of J-languages,
 but instead of calling methods on objects,
-you have lightweight processes passing messages around.
+you have lightweight processes passing messages around,
+and you get to use functional programming stuff too.
 Elixir works really hard to be an on-ramp to these
 for P-language people, 
 but it's not so much "idiosyncratic" at the edges as
