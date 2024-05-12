@@ -116,12 +116,21 @@ I'm putting these in four categories.
 4. "Kings" are a notch above bosses, showing up randomly
   after victories.
 
-Salmonids all ink territory, 
-which makes their movements fundamentally affect the way
-you and your teammates can move around the stage.
+Salmonids all ink territory.
 They can all physically block you with their body.
 They can all splat you too.
 The differences are in *how* they do these things.
+
+The territory inking brings into mind the 
+general spatial awareness aspect of Splatoon movement.
+Your ink is like a nice rug that's super-pleasant to walk on,
+non-inked territory is like a hard floor that's not bad to walk on,
+and opponents' ink is 
+like if a rest stop bathroom was flooded ankle-deep.
+This is omnipresent in Salmon Run, 
+as the salmonids spawn in the dozens and ink territory 
+as they move and attack.
+
 
 ## Fodder
 
@@ -221,9 +230,10 @@ and launch salvos of missiles at two different players.
 While the coolers are open, 
 you can drop a bomb in each one to bring them down.
 Surviving being targeted by the missiles
-requires immediate spatial awareness, 
+requires immediate spatial awareness
 since you don't get much warning about where each one will hit,
-and you don't want to run into ones that target teammates either.
+and you need general spatial awareness because 
+you don't want to run into missiles that target teammates either.
 Bringing them down requires time awareness, 
 since the coolers aren't open for very long.
 It's possible to solo one if you're good,
