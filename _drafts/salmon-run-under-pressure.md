@@ -1,7 +1,7 @@
 ---
 layout: post
 date: '2024-05-01T00:00:00-05:00'
-title: "Under Pressure: Classifying opponents in Salmon Run"
+title: "Under Pressure: Classifying Opponents in Salmon Run"
 tags:
     - since-2021
     - game
