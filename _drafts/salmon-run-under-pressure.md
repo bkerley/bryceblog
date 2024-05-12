@@ -15,7 +15,7 @@ css_id: splatoon
 
 Salmon Run is a co-operative game mode in Splatoons 2 and 3.
 You and three players get teamed up, 
-flown out to a purpose-build stage[^large-ronald],
+flown out to a purpose-built stage[^large-ronald],
 assigned weapons from a fixed (per-rotation) pool,
 and fight your way through three waves of enemy salmonids
 (anthropomorphized salmon armed and armored with repurposed kitchen gear).
@@ -23,17 +23,6 @@ Instead of just slaughter, you have to
 get golden eggs to drop by splatting bosses,
 ferry them to a basket,
 and meet your quota before time runs out.
-
-[^large-ronald]: Some of these rules change in different
-  scheduled events. 
-  ["Big Run"](https://splatoonwiki.org/wiki/Big_Run)
-  reconfigures a PvP stage for Salmon Run,
-  ["Eggstra Work"](https://splatoonwiki.org/wiki/Eggstra_Work)
-  has more waves for the purpose of a more consistently
-  scored challenge,
-  and
-  [wildcard rotations](https://splatoonwiki.org/wiki/Rare_weapon)
-  have more than four weapons in the random assignment pool.
 
 Salmon Run changes what happens when you get splatted.
 Instead of going back to spawn,
@@ -61,13 +50,32 @@ High tide closes off areas and focuses the action in interesting ways,
 while low tide opens up a new section of the map that
 usually functions as an entirely new stage.
 
+<aside>
+<h2>Global Events</h2>
+
+Splatoon loves global events that change how the game
+works for a weekend, and Salmon Run is no exception.
+In Splatoon 2, Salmon Run wasn't always available,
+so sometimes you'd just not get to play it.
+
+Some of the Splatoon 3 global events
+add new wrikles to Salmon Run.
+["Big Run"](https://splatoonwiki.org/wiki/Big_Run)
+reconfigures a PvP stage for Salmon Run.
+["Eggstra Work"](https://splatoonwiki.org/wiki/Eggstra_Work)
+has five waves instead of three, and fixed RNG seeds
+for the purpose of a more consistently
+scored challenge.
+[Wildcard rotations](https://splatoonwiki.org/wiki/Rare_weapon)
+have more than four weapons in the random assignment pool.
+</aside>
 
 # Doom 2 and Classifying Enemies
 
 Andrew "Linguica" Stine, curator of the Doomworld forum,
-wrote a post on August 27, 2014 about 
+wrote a [post on August 27, 2014 about 
 how the added monsters in Doom 2 greatly change the experience
-of the game even for Doom 1 players.
+of the game even for Doom 1 players.][fraggle]
 
 > [The Doom 2 monsters] nearly all enhance the gameplay along one or more of three axes:
 > * time awareness - what is happening that I need to immediately address?
@@ -217,9 +225,11 @@ but teammates really help.
 At the start of a Salmon Run match, I'm wielding a
 Hydra Splatling stands atop the platform in the middle of
 Um'ami Ruins.
-A flyfish appears in the distance, and I start aiming towards it
+A Flyfish shows up, and I start aiming towards it
 and signal "This way!" to my teammates.
-We perfectly put three splat bombs all in the same side of the flyfish.
+We perfectly put three splat bombs 
+all in the same side of the Flyfish 
+as a Drizzler takes flight.
 </figcaption>
 </figure>
 
@@ -387,8 +397,10 @@ This post wouldn't've been possible without
 the [Salmon Run Next Wave page on Inkipedia](https://splatoonwiki.org/wiki/Salmon_Run_Next_Wave).
 
 I'd've never even thought to write it it without
-["Sorry fraggle all the new Doom 2 monsters are great…"](https://www.doomworld.com/forum/topic/94546-doom-1-or-2/?page=30#comment-1300059)
+["Sorry fraggle all the new Doom 2 monsters are great…"][fraggle]
 by Linguica.
+
+[fraggle]: https://www.doomworld.com/forum/topic/94546-doom-1-or-2/?page=30#comment-1300059
 
 Super thanks to the Nintengoons Splatoon chat for helping me
 hash this out a few months ago, and for being good teammates!
