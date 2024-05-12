@@ -45,6 +45,9 @@ $sr_yellow: #b4d933
 $sr_sunyellow: #dda024
 $sr_neutyellow: #e7e710
 
+$sr_dark_orange: #652a19
+$sr_dark_green: #023226
+
 #splatoon
     background: $shiver url("/assets/splatoon/splat_stripes.png") 33.333%
     .page-content
@@ -97,6 +100,10 @@ $sr_neutyellow: #e7e710
                 @include paintball
                 font-size: 2rem
     &.salmon_run
+        background: $sr_dark_green
+        background-image: linear-gradient(71deg, $sr_dark_green 25%, $sr_dark_orange 25%, $sr_dark_orange 50%, $sr_dark_green 50%, $sr_dark_green 75%, $sr_dark_orange 75%, $sr_dark_orange 100%)
+        background-size: 169.22px 491.45px
+        
         article .post-content
             h1, h2, h3, h4, h5, h6
                 color: $sr_sunyellow
