@@ -15,7 +15,7 @@ css_id: splatoon
 
 Salmon Run is a co-operative game mode in Splatoons 2 and 3.
 You and three players get teamed up, 
-flown out to a purpose-built stage[^large-ronald],
+flown out to a purpose-built stage,
 assigned weapons from a fixed (per-rotation) pool,
 and fight your way through three waves of enemy salmonids
 (anthropomorphized salmon armed and armored with repurposed kitchen gear).
@@ -393,6 +393,10 @@ and control where they spawn
 [^toby]: "[Megalovania](https://www.youtube.com/watch?v=0FCvzsVlXpQ&pp=ygULbWVnYWxvdmFuaWE%3D)," to me
 
 # Closing Thoughts
+
+<figure>
+![venn diagram summarizing the above blog post](/assets/post_images/salmon_run_classes.svg)
+</figure>
 
 One problem with categorizing Salmon Run enemies
 in the same way as Doom 2 is the 
