@@ -243,7 +243,7 @@ It's possible to solo one if you're good,
 but teammates really help.
 
 <figure>
-<video controls>
+<video controls preload="metadata">
 <source src="https://mm.bonzoesc.net/media_attachments/files/111/004/443/185/404/709/original/7e61c96d6d39c07b.mp4" type="video/mp4">
 </video>
 
