@@ -39,6 +39,12 @@ $gradright: #dcdae2
 $aside: #f9f3e7
 $social: #dce2d6
 
+$sr_orange: #c95431
+$sr_green: #03644b
+$sr_yellow: #b4d933
+$sr_sunyellow: #dda024
+$sr_neutyellow: #e7e710
+
 #splatoon
     background: $shiver url("/assets/splatoon/splat_stripes.png") 33.333%
     .page-content
@@ -90,3 +96,8 @@ $social: #dce2d6
             .screenname
                 @include paintball
                 font-size: 2rem
+    &.salmon_run
+        article .post-content
+            h1, h2, h3, h4, h5, h6
+                color: $sr_sunyellow
+                background-color: $sr_green

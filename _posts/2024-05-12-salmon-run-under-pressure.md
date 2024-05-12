@@ -1,12 +1,15 @@
 ---
 layout: post
-date: '2024-05-01T00:00:00-05:00'
+date: '2024-05-12T15:00:00-04:00'
 title: "Under Pressure: Classifying Opponents in Salmon Run"
 tags:
     - since-2021
     - game
+    - splatoon
+    - doom
 kind: regular
 css_id: splatoon
+body_class: salmon_run
 ---
 
 <link rel="stylesheet" href="{{"/assets/splatoon.css" | relative_url }}">
@@ -59,7 +62,7 @@ In Splatoon 2, Salmon Run wasn't always available,
 so sometimes you'd just not get to play it.
 
 Some of the Splatoon 3 global events
-add new wrikles to Salmon Run.
+add new wrinkles to Salmon Run.
 ["Big Run"](https://splatoonwiki.org/wiki/Big_Run)
 reconfigures a PvP stage for Salmon Run.
 ["Eggstra Work"](https://splatoonwiki.org/wiki/Eggstra_Work)
@@ -106,7 +109,7 @@ I like to put the salmonids from Salmon Run in these categories too.
 
 # Salmonids
 
-I'm putting these in four categories. 
+I'm putting the salmonids into four groups:
 
 1. "Fodder" are the enemies that move towards you and swat at you.
 2. "Bosses" have complex behaviors and drop golden eggs.

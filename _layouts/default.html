@@ -8,7 +8,9 @@
   {%- if page.css_id -%}
     id="{{ page.css_id }}"
   {%- endif -%}
-
+  {%- if page.body_class -%}
+    class="{{ page.body_class }}"
+  {%- endif -%}
   >
 
     {%- include header.html -%}

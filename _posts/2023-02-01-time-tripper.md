@@ -5,6 +5,7 @@ tags:
     - game
     - review
     - since-2021
+    - doom
 kind: regular
 css_id: time_tripper_review
 date: '2023-02-01T22:10:00-04:00'

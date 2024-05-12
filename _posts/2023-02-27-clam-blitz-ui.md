@@ -7,6 +7,7 @@ tags:
     - game
     - interface
     - programming
+    - splatoon
 kind: regular
 css_id: splatoon
 ---
