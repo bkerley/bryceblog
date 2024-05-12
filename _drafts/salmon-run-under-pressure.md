@@ -208,7 +208,20 @@ since the coolers aren't open for very long.
 It's possible to solo one if you're good,
 but teammates really help.
 
-XXXX TODO put the video of us throwing a bunch in the same basket
+<figure>
+<video controls>
+<source src="https://mm.bonzoesc.net/media_attachments/files/111/004/443/185/404/709/original/7e61c96d6d39c07b.mp4" type="video/mp4">
+</video>
+
+<figcaption>
+At the start of a Salmon Run match, I'm wielding a
+Hydra Splatling stands atop the platform in the middle of
+Um'ami Ruins.
+A flyfish appears in the distance, and I start aiming towards it
+and signal "This way!" to my teammates.
+We perfectly put three splat bombs all in the same side of the flyfish.
+</figcaption>
+</figure>
 
 **Fish sticks[^pronounce]** 
 are a big rusty pillar 
@@ -368,7 +381,7 @@ I wrote this because I was already having interesting
 conversations about it,
 and figured you might as well.
 
-# References
+# References and Thanks
 
 This post wouldn't've been possible without
 the [Salmon Run Next Wave page on Inkipedia](https://splatoonwiki.org/wiki/Salmon_Run_Next_Wave).
@@ -377,4 +390,5 @@ I'd've never even thought to write it it without
 ["Sorry fraggle all the new Doom 2 monsters are great…"](https://www.doomworld.com/forum/topic/94546-doom-1-or-2/?page=30#comment-1300059)
 by Linguica.
 
-
+Super thanks to the Nintengoons Splatoon chat for helping me
+hash this out a few months ago, and for being good teammates!
