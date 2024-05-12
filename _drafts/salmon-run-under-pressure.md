@@ -89,6 +89,19 @@ He then bins the Doom 2 monsters
 sees way more use in Doom 2)
 into the three different awareness categories.
 
+<figure>
+![a venn diagram of three intersecting circles for time awareness, immediate spatial awareness, and general spatial awareness](/assets/post_images/stine_doom2.png)
+
+<figcaption>
+Pain Elemental is in Time Awareness, 
+the Manucubus and Arachnotron
+are in Immediate Spatial Awareness,
+ya boi the Revenant is between Immediate and General Spatial Awareness,
+Chaingunners and Archviles are in Time and General Spatial Awareness,
+and Cyberdemons are in General Spatial Awareness.
+</figcaption>
+</figure>
+
 I like to put the salmonids from Salmon Run in these categories too.
 
 # Salmonids
