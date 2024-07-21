@@ -377,8 +377,7 @@ This puts an additional immediate spatial awareness constraint
 on you, since the other bosses still spawn 
 while you're trying to not get squashed.
 
-[^yz]: I will always call them "Yokozuna" because I worked with
-  Basho's [Yokozuna](https://github.com/basho/yokozuna) back in the day.
+[^yz]: I will always call them "Yokozuna" because I worked with Basho's [Yokozuna](https://github.com/basho/yokozuna) back in the day.
 
 **Horrorboros** is an eel-shaped salmonid 
 that flies in a loop around the stage,
