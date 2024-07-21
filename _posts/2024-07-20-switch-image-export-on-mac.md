@@ -60,7 +60,7 @@ These instructions work on a
 These instructions depend on the "Android File Transfer" app,
 which Google has made difficult to find because it's useful.
 It's in [Homebrew][brew], 
-and if you're reasonably code-savvy the Homebrew formula for it
+and if you're reasonably code-savvy the [Homebrew formula](https://github.com/Homebrew/homebrew-cask/blob/master/Casks/a/android-file-transfer.rb) for it
 can help you find the URL to download it.
 
 [brew]: https://brew.sh
