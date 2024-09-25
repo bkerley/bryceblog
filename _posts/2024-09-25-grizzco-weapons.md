@@ -1,6 +1,6 @@
 ---
 layout: post
-date: '2024-09-09T20:00:00-04:00'
+date: '2024-09-25T18:50:00-04:00'
 title: "Grizzco Weapons"
 tags:
     - since-2021
