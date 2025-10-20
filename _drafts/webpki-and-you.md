@@ -1,24 +1,144 @@
 ---
 layout: post
 title: WebPKI and You
-tags:
+tags: security https
+---
+
+There's been a push over the last twelve years to move
+web traffic off unencrypted 
+[HTTP](https://en.wikipedia.org/wiki/HTTP)
+to encrypted HTTPS,
+to protect the general public from 
+[dragnet surveillance](https://en.wikipedia.org/wiki/MUSCULAR#/media/File:NSA_Muscular_Google_Cloud.jpg), 
+[gaping assholes on public wifi][^airpwn],
+[backhauls over unencrypted satellites](https://satcom.sysnet.ucsd.edu),
+that kinda thing.
+HTTPS relies on an a public key infrastructure to make sure
+only authorized servers have keys for specific websites.
+
+[^airpwn]: ironically this site has an exipired cert,
+  so I've linked the non-HTTPS version;
+  there are shock images in some of the links there so
+  you may want to not browse pas the first page
+  if "gaping asshole" feels like an odd phrasing
+  and not a specific image:
+  <http://gbppr.net/defcon/evilscheme/index.html>
+
+The public key infrastructure of the web, 
+commonly referred to as WebPKI,
+has to work in some difficult scenarios.
+Someone who's never touched a trackpad relies on their ability to
+buy a new computer at the store,
+put it on the wifi at DEF CON,
+and connect to their bank's website to kick off 
+a wire transfer to buy a house with it.[^wiretransfer]
+The way this user's bank,
+the First Example Bank of Money,
+proves that they're the bank is complicated.
+
+[^wiretransfer]: it was actually the airport on the way to DEF CON
+  and a computer I've had for four years,
+  but still felt sketch making a non-reversible transfer of
+  a shitload of money
+
+1. When provisioning their server, 
+   the bank generates a private key and a public key
+2. The bank sends their public key and some proof
+   that they're the legitimate operator of `bank.example`
+   to a Certificate Authority (CA)
+3. The CA validates this proof and issues a 
+   [certificate][ulf-cert] containing:
+  * server addresses this certificate is valid for
+  * the public key for the server, `bank.example`
+  * how the validation happened
+  * who the CA thinks requested the certificate
+  * information about the CA's certificate process
+  * the CA's certificate (or a chain of certs)
+    leading back to a root certificate
+  * a signature from the CA's private key
+4. The bank loads this certificate into 
+   the `bank.example` server next to the private key
+5. When the user connects to `bank.example`,
+   the server sends this certificate to the client
+   as part of 
+   [establishing a secure connection][ulf-tls13].
+6. The user's browser
+   validates the certificate matches
+   both who they're connecting to
+   (i.e. that the certificate lists `bank.example`
+   as one of the subjects of it)
+   and that the certificate is chained back to
+   a root CA the browser recognizes
+
+[ulf-cert]: https://tls13.xargs.org/certificate.html
+[ulf-tls13]: https://tls13.xargs.org/
+
+There're a bunch of participants in this process,
+in different organizational domains because
+security is complicated.
+
+In the organizational, regluatory, *human* domain:
+
+* the user is a **relying party**, 
+  they rely on all this shit working
+  so they can exist in society
+* The First Example Bank of Money
+  is a **subscriber** to certificate services
+* they subscribe to certificates
+  from a **certificate authority** or CA
+* CAs are generally endorsed by a 
+  **root** that signs one or more CA certificates
+* the browser or operating system
+  has certificates for some roots loaded into it by the organization
+  distributing it; these are **root programs**
+ 
+In the hell of x.509 certificates:
+
+* the user is represented by their **client**,
+  a web browser or mobile app or that kinda thing
+* a subscriber is going to have a server that's the
+  **subject** of a certificate
+* their certificate's **issuer** is the CA
+* confusingly, the CA is the subject of *their* cert,
+  which has an issuer of a root CA
+* browsers/OSes keep root CA certs in a **certificate store**
+
+# A Brief History of HTTPS and WebPKI
+
+When HTTPS started to be a thing in the mid-'90s, 
+it was really just a thing for the very nascent
+e-commerce industry and banks and such; 
+and even then sites wouldn't do their general traffic
+on the HTTPS site, instead kicking you to the
+secure server once you'd finished filling your cart
+with actual books written by human authors and 
+no SIXLTR garbage that breaks after six months
+on that hot new online bookstore.
+Browsers started to put locks and such in the UI,
+and they just kind of made up rules for who
+could be in their root store
+in ways to not have too many CAs
+but not make too many governments mad.
+
+<aside>
+
+Certificate Authorities often find themselves wrapped
+up in legal requirements,
+or otherwise attached to government operations.
+Being able to sign a certificate saying that
+Mallory operates Alice's site on which
+Bob and Carol are conversing seems valuable,
+and Certificate Transparency
+(more on CT later)
+hasn't existed forever.
+
+</aside>
+
+
 
 ---
-* What is WebPKI?
-  * Web public key infrastructure is what lets you buy a computer at the store and then use it to go to any normal HTTPS website and see a little padlock in the address bar without having to provision and install a certificate
-  * Certificates are distributed by Certificate Authorities, abbreviated as "CA" and sometimes called an "issuer"
-  * A certificate is a piece of data:
-    * It says what addresses the certificate is valid for
-      * The cert for `blog.brycekerley.net` can't be used to be `google.com`
-    * It says what the cert can be used to do
-      * The cert for `blog.brycekerley.net` can be used for web traffic, but not for making new certificates
-    * It has information about how to check if the cert was issued correctly, and if it's still valid
-    * It includes a public cryptographic key for a given server, or "subject"
-    * It has an unforgeable signature from the issuing CA
-  * Operating Systems (OSes) and browsers come with a collection of root certificates, a "cert store"
-  * Each cert store is administred by a "root program"
-  * Apple, Chrome, Microsoft, and Mozilla run root programs
-  * You rely on this working correctly to use the web safely, making you a "relying party"
+
+
 * The Bad Old Days
   * The cert cartel required you to spend hundreds of dollars and do paperwork
   * the Snowden leaks hadn't happened
@@ -226,6 +346,23 @@ tags:
 * Let's Resume Talking about The Incident
   * 
 
+# chunks i wrote already
+
+* What is WebPKI?
+  * Web public key infrastructure is what lets you buy a computer at the store and then use it to go to any normal HTTPS website and see a little padlock in the address bar without having to provision and install a certificate
+  * Certificates are distributed by Certificate Authorities, abbreviated as "CA" and sometimes called an "issuer"
+  * A certificate is a piece of data:
+    * It says what addresses the certificate is valid for
+      * The cert for `blog.brycekerley.net` can't be used to be `google.com`
+    * It says what the cert can be used to do
+      * The cert for `blog.brycekerley.net` can be used for web traffic, but not for making new certificates
+    * It has information about how to check if the cert was issued correctly, and if it's still valid
+    * It includes a public cryptographic key for a given server, or "subject"
+    * It has an unforgeable signature from the issuing CA
+  * Operating Systems (OSes) and browsers come with a collection of root certificates, a "cert store"
+  * Each cert store is administred by a "root program"
+  * Apple, Chrome, Microsoft, and Mozilla run root programs
+  * You rely on this working correctly to use the web safely, making you a "relying party"
 
 # old outline
 
