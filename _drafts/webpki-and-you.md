@@ -16,13 +16,13 @@ that kinda thing.
 HTTPS relies on an a public key infrastructure to make sure
 only authorized servers have keys for specific websites.
 
-[^airpwn]: ironically this site has an exipired cert,
-  so I've linked the non-HTTPS version;
-  there are shock images in some of the links there so
-  you may want to not browse pas the first page
-  if "gaping asshole" feels like an odd phrasing
-  and not a specific image:
-  <http://gbppr.net/defcon/evilscheme/index.html>
+[^airpwn]: ironically this site has an expired cert,
+    so I've linked the non-HTTPS version;
+    there are shock images in some of the links there so
+    you may want to not browse past the first page
+    if "gaping asshole" feels like an odd phrasing
+    and not a specific image:
+    <http://gbppr.net/defcon/evilscheme/index.html>
 
 The public key infrastructure of the web, 
 commonly referred to as WebPKI,
@@ -37,9 +37,9 @@ the First Example Bank of Money,
 proves that they're the bank is complicated.
 
 [^wiretransfer]: it was actually the airport on the way to DEF CON
-  and a computer I've had for four years,
-  but still felt sketch making a non-reversible transfer of
-  a shitload of money
+    and a computer I've had for four years,
+    but still felt sketch making a non-reversible transfer of
+    a shitload of money
 
 1. When provisioning their server, 
    the bank generates a private key and a public key
@@ -83,7 +83,7 @@ In the organizational, regluatory, *human* domain:
   they rely on all this shit working
   so they can exist in society
 * The First Example Bank of Money
-  is a **subscriber** to certificate services
+  is a **subscriber** to certificate services;
 * they subscribe to certificates
   from a **certificate authority** or CA
 * CAs are generally endorsed by a 
@@ -102,6 +102,16 @@ In the hell of x.509 certificates:
 * confusingly, the CA is the subject of *their* cert,
   which has an issuer of a root CA
 * browsers/OSes keep root CA certs in a **certificate store**
+
+This is all held together by mathematical rules
+that get changed every 5-10 years as new weaknesses
+in any of the layers 
+(political, organizational, mathematical)
+are discovered or publicized,
+but it kind of comes down to
+prime numbers being sufficiently magic
+that CAs can extract rent for doing
+some math with them.
 
 # A Brief History of HTTPS and WebPKI
 
@@ -122,19 +132,313 @@ but not make too many governments mad.
 
 <aside>
 
-Certificate Authorities often find themselves wrapped
-up in legal requirements,
+Certificate Authorities often find themselves 
+entangled in legal requirements,
 or otherwise attached to government operations.
+
+Some jurisdictions require financial
+services companies to get their certs validated
+in specific ways; 
+Organizational Validation
+or Extended Validation 
+instead of Domain Validation.
+
 Being able to sign a certificate saying that
 Mallory operates Alice's site on which
-Bob and Carol are conversing seems valuable,
+Bob and Carol are conversing seems valuable too,
 and Certificate Transparency
-(more on CT later)
-hasn't existed forever.
+hasn't existed forever&hellip;
+
+There'll be more about OV, DV, EV, and CT
+as we go!
 
 </aside>
 
+Eventually, after about a decade of this,
+a bunch of CAs had entered the market,
+resulting in a situation where
+"any fraudster with $20 in his or her pocket could buy an SSL certificate"[^melih-insecure], leading
+Melih Abdulhayoglu, founder of the Comodo CA,
+to introduce two new things.
+One was Extended Validation (EV) certificates,
+that require a more stringent validation process
+and more importantly let CAs charge more money.
+The other was the CA/Browser Forum
+(CA/BF or CABF),
+a place for CAs and Browsers to come to an
+agreement that CAs issuing
+EV certificates should follow
+that more stringent process,
+and that EV certificates should get 
+special UI in the browser
+to upsell subscribers to them on the basis
+that relying parties will look for the EV UI.
 
+[^melih-insecure]: Abdulhayoglu, Melih 
+    "Extended validation and online security: EV SSL gets the green light" 
+    [INSECURE Magazine, Issue 19](https://archive.org/details/INSECUREMag19/page/n39/mode/2up),
+    Page 40, December 2008
+
+## Certificate Types
+
+The difference between
+Domain Validated (DV),
+Organization Validated (OV),
+and Extended Validation (EV) certs is worth discussing.
+
+Domain Validated certs require some kind of process 
+to make sure they're being issued to the
+operator of a given domain.
+With Let's Encrypt and other CAs that use the
+Automatic Certificate Management Environment (ACME),
+a [subscriber/subject demonstrates control of a domain][acme-challs]
+by either setting a "challenge" DNS entry on it
+or responding to a request for the challenge from
+a running web server on it.
+DV certs just say the domains they're validated
+for,
+nothing about the subject/subscriber/server's
+locality, country, or identity.
+
+[acme-challs]: https://letsencrypt.org/docs/challenge-types/
+
+Organization Validated (OV) certs
+come with more attachment to the subscriber they're
+issued to.
+This has to be verified similar to how you'd 
+validate your identity when getting a library card
+or driver's license.
+
+[Extended Validation (EV) certs have their own special
+set of requirements][ev],
+with ostensibly a deeper level 
+of validation of the identity of the subscriber's
+identity.
+To justify this,
+the CA/BF got browsers to add special UI for EV certs,
+usually something green with a padlock
+and the organization name from the 
+server's cert.
+The theory for browsers was that everyone was supposed
+to be looking at the browser chrome to validate the
+site they thought they were on,
+EV certs came with enough information to trust that,
+and that people would definitely notice
+the absence of that additional UI element
+and not get bamboozled by a picture of a lock on the web page.
+This was wrong, nobody[^nobody] ever notices
+a UI element that isn't there,
+and browsers eventually got rid of it in their
+unending quest to make the address bar more and more
+worthless.
+
+[^nobody]: ok statistically very few people, 
+    if you ever noticed that a site had presented a valid
+    cert that wasn't EV when previously it had an EV cert
+    here's your gold star: ⭐️ .
+
+XXXX TODO probably fill OV and EV out more
+
+[ev]: https://cabforum.org/working-groups/server/extended-validation/documents/CA-Browser-Forum-EV-Guidelines-2.0.1.pdf
+
+In 2025, you can see what validation a cert uses
+deepin your browser's UI.
+In Safari on Mac OS Tahoe, you have to
+pop open the web inspector, go to the Network tab,
+reload the page, pick the request for the page,
+and switch to the Security tab.
+Show the full certificate, 
+look for the 
+"Certificate Policies" extension with OID[^oid] 2.5.29.32,
+and
+then look up the OID listed there,
+[2.23.140.1.2.1 in this case](https://oid-base.com/get/2.23.140.1.2.1).
+
+![the "Certificate Policies" section of the `blog.brycekerley.net` cert](/assets/post_images/cert_inspector_policy.png)
+
+[^oid]: an OID or "Object IDentifier" is intended
+    as a unique identifier for a notional object,
+    in a big hierarchy.
+    If you think this is nonsense for sickos,
+    congratulations!
+    IMO it's not like SQL where it's one of those things
+    you can build a career on.
+    All the CABF OIDs are at
+    <https://cabforum.org/resources/object-registry/> ,
+    and you can probably look them up in
+    [the Baseline Requirements (BRs)][brs].
+
+[brs]: https://cabforum.org/working-groups/server/baseline-requirements/documents/CA-Browser-Forum-TLS-BR-2.1.8.pdf
+
+## Certificate Transparency
+
+HTTPS certificates are an incredibly powerful tool to
+safeguard the communication between 
+a relying party and a subscriber,
+a user and a company,
+a person and a website.
+This protection has been carefully designed to be
+difficult to violate for any existing organization,
+including powerful Nation-State Adversaries.
+This relies on CAs doing their job and operating honestly,
+but this requires CAs to follow the rules and
+not succumb to various temptations or impositions.
+
+In July of 2011,
+the DigiNotar CA got caught having
+issued a fraudulent cert for Google,
+which was like *the* website at the time.
+They got caught immediately because
+Google Chrome shipped with
+"pinned" certificates for Google and a bunch
+of other websites to 
+prevent this kind of thing from happening.
+This wasn't workable for the vast majority of
+people running websites,
+and eventually the
+"Certificate Transparency" (CT) 
+system was developed.
+
+When a CA is issuing a cert now,
+they send most of the cert as a "precertificate"
+to some public Certificate Transparency logs,
+get a Signed Certificate Timestamp (SCT)
+back,
+put that SCT in the real certificate,
+and issue that.
+Those [log entries][crtsh] can be observed by
+the general public,
+site operators that might be concerned about
+fraudulent certs being issued,
+CTF players trying to figure out 
+what future challenges might be unlocked,
+attackers trying to map an internal network
+that uses public certs for resources,
+whoever.
+Modern browsers don't accept
+public certs that don't come with a SCT,
+mitigating the risk of a misbehaving CA
+covertly issuing unauthorized certs.
+
+[crtsh]: https://crt.sh/?q=blog.brycekerley.net
+
+Also lol @ 
+[DigiNotar losing their ability to rent-seek a prime numner][lol-diginotar]
+over this.
+
+[lol-diginotar]: https://en.wikipedia.org/wiki/DigiNotar#Issuance_of_fraudulent_certificates
+
+## Expiration and Revocation
+
+Sometimes bad certs are in the wild.
+There are three ways to handle getting these
+out of circulation.
+
+The original way is a
+Certificate Revocation List, or CRL.
+Certs normally have "CRL Distribution Points"
+listed as part of their content,
+you can download them,
+and check a given cert for presence in that list.
+The problem is, in a mass revocation event,
+these lists can be obnoxiously huge.
+A CA can figure out the best way to balance
+the number of certs in a CRL vs. 
+how many CRLs they want to maintain,
+but regardless,
+it's not like browsers can afford to pull the whole
+list on every hit.
+
+Instead, there's an
+Online Certificate Status Protocol (OCSP)
+that used to be supported.
+The original idea was that 
+instead of fetching a list that could be
+kilobytes, megabytes, or longer;
+a browser could just ask the CA if a given cert
+was valid.
+
+There're problems here though.
+[What if the browser can't hit the CA?][iv-ocsp]
+Does making a CA unreachable become a cheap and easy way
+for an attacker to DoS a site,
+or a way for an attacker to get away with a revoked cert 
+for a given target?
+Also, 
+this turns an OCSP responder into a
+very valuable watering hole to surveil users'
+behavior en masse.
+
+
+[iv-ocsp]: https://www.imperialviolet.org/2011/03/18/revocation.html
+
+One solution is "OCSP Stapling," 
+where the subscriber's server periodically
+checks on its own certs, 
+and "staples" the (signed, untamperable, expiring)
+OCSP request to its cert when establishing a connection.
+This requires a "Must-staple" attribute 
+on the certificate to be useful, 
+since otherwise an attacker with a revoked cert
+can just not staple the "yo this is revoked" OCSP response.
+
+
+An option that's still in use is for the
+browser vendors to pre-process the fat and standardized
+CRLs into
+a more compressed form that's cheaper to update and check against.
+Chrome has had CRLSets for like a decade but they're
+kinda fat,
+Firefox has had CRLite[^crlite] for a few years and
+it's raelly slick and efficient.
+
+[^crlite]: these use cascading bloom filters which 
+    are a cool data structure
+    <https://mislove.org/publications/CRLite-Oakland.pdf>
+
+In a world of automated cert management,
+the best method to get bad certs
+out of circulation is just making every cert
+short-lived.
+The Baseline Requirements[^short-lived]
+straight up don't require revocation of short-lived
+certs.
+
+[^short-lived]: the CA/BF baseline requirements
+    define a Short-lived Subscriber Certificate as:
+    > For Certificates issued on or after 15 March 2024
+    > and prior to 15 March 2026, a Subscriber Certificate with a Validity Period less than or
+    > equal to 10 days (864,000 seconds). For Certificates issued on or after 15 March 2026, a
+    > Subscriber Certificate with a Validity Period less than or equal to 7 days (604,800
+    > seconds).
+
+Why is it the best?
+CAs love to push back on revocation because
+some subscribers
+(that pay the CA)
+claim they can't just replace certs easily 
+due to manual processes or other organiaztional
+obstacles.
+Short-lived certs expire often enough that
+automating their issuance is the only practical
+way to operate with them.
+Instead of a CA struggling to get their
+subscribers to accept the exceptional case of
+replacing their one-year certs
+due to revocation,
+subscribers are just always replacing their certs
+as a matter of course.
+
+# Why Expire or Revoke At All?
+
+## trustico private key compromise
+
+lmao 
+<https://groups.google.com/g/mozilla.dev.security.policy/c/wxX4Yv0E3Mk/m/jx6r9jlPAwAJ?utm_source=chatgpt.com>
+
+## entrust's brown m&ms
+
+## microsoft's brown m&ms
 
 ---
 
