@@ -1,4 +1,8 @@
-# Flamin' Hot Aerochrome
+---
+layout: post
+title: Flamin' Hot Aerochrome
+tags: photography art
+---
 
 Aerochrome was a Kodak film
 used to assess the health of vegetation
@@ -59,7 +63,71 @@ he released a video
 that demonstrates his "Flamin' Hot Aerochrome"
 technique to recreate the look on film.
 
-## Jason's Technique
+# Shooting Infrared on Digital
+
+People can't see infrared[^infrared],
+people mostly expect cameras to photograph something
+akin to what they see,
+so digital cameras ship with a "hot mirror"
+that reflects infrared away from the sensor.
+
+[^infrared]: people in the proximity of
+    infrared georg who shorted out the resistor
+    on their DEF CON 16 badge to make the infrared LED
+    so strong it could turn HP laptops on while in a bag
+    are outliers and should not be counted
+
+If you remove this hot mirror
+(or pay a professional to remove it)
+all the channels on the sensor will receive infrared.
+This is what we're interested in, but it has caveats.
+
+Different wavelengths of light 
+go through lenses differently.
+This is what makes rainbows and the
+cover art of "Dark Side of the Moon" that way.
+Lens designers put in a ton of effort to make
+lenses that handle the visible spectrum in a sensible way,
+but often infrared gets sidelined.
+
+Some lenses will have indications 
+for how to focus for infrared.
+The manual for my
+Canon EF50mm f/1.4 USM says:
+
+> The infrared index corrects the focus setting when using monochrome infrared film. 
+> Focus on the subject in MF, then adjust the distance setting by moving the focusing ring to the corresponding infrared index mark.
+
+That's a lens for Canon EF, a system for
+Single Lens Reflex (SLR) cameras.
+SLRs with autofocus
+generally have autofocus sensors in the viewfinder path,
+so you can focus while you look through the lens
+and then have the sensor flip out of the way of the
+medium (whether it's film or an electronic sensor) to shoot.
+If you put an infrared sensitive medium in these cameras,
+it won't affect the focus sensor, 
+so it makes sense to require a manual step.
+
+I got a mirrorless body modified[^mirrorless], which is
+*so* much better in this regard.
+It can mount any EF lens with an adapter,
+and the focus sensor is the image medium,
+so no correction for IR is needed.
+
+[^mirrorless]: a Canon EOS R, their first full-frame
+    mirrorless.
+
+The technique in this article relies on being able to
+have infrared coming in on only one channel,
+and not mixed in to every channel.
+To achieve this,
+we use a yellow filter that blocks
+blue light,
+and then subtract the blue channel
+from the red and green channels.
+
+# Jason's Technique
 
 I really recommend watching the video
 (and all of Jason's videos tbh),
@@ -125,7 +193,7 @@ Jason then points a film SLR at it,
 photographs it on to slide film,
 and has it printed.
 
-## My Lightroom & Photoshop Workflow
+# My Lightroom & Photoshop Workflow
 
 I use Lightroom
 (the cloud one, not classic)
@@ -173,7 +241,7 @@ since mine is just adjustment layers,
 it's expressible as a look-up table
 ("LUT" file, `.cube` is a common file extension).
 
-### Lightroom and a Flamin' Hot Look-Up Table
+## Lightroom and a Flamin' Hot Look-Up Table
 
 XXXX TODO 4I5A8038.CR3
 
@@ -219,5 +287,70 @@ and LR simply[^ordering] won't let you do things out of order.
   artistically and works numerically
   for most photos,
   and making it the only thing that LR provides
-  (with the "edit in Photoshop" escape hatch)
-  is good.
+  is good for the majority of users that just want to
+  develop a photo normal style.
+  "Edit in Photoshop" is a good escape hatch
+  for the weird stuff.
+
+# Acorn
+
+I've played around with this in [Acorn][acorn].
+Acorn is great, if you're on Mac you should
+just have this, it launches real fast
+and does like 90% of what I want to do with
+images.
+
+[acorn]: https://flyingmeat.com/acorn/
+
+It works! 
+It uses Apple's built-in raw image loading,
+You can import a LUT as an effect layer,
+and resequence it with other layers.
+Last time I emailed the developers,
+there wasn't a channel mixer, but whatever.
+
+
+# Da Vinci Resolve
+
+My friend Josef put together something in
+Da Vinci Resolve that worked,
+although I don't know what the story is there
+with importing a camera raw or exporting to
+something for web or print.
+
+# GNU Image Manipulation Program
+
+This refused to open a camera raw,
+which kinda understandable.
+Giving it a tiff I exported from Acorn,
+it was pretty easy to remix the channels,
+and it keeps the mixer and curves as layers
+instead of just baking the pixels.
+
+That said,
+the UI on Mac is somehow 
+more frustrating than both Photoshop and Lightroom,
+and isn't even in the same reality as Acorn's.
+It doesn't feel fast or reactive at all,
+updating previews in tiles from the top-left instead of doing a low-resolution proxy while it figures out the whole image.
+
+# Closing Thoughts
+
+Infrared has been a ton of fun
+to shoot with,
+whether or not I run the resulting image
+through the Flamin' Hot Aerochrome
+process or not.
+I can't see it being something I use
+all the time,
+but it's been super neat to see
+how the world looks through that
+particular electric eye.
+
+This technique has opened up
+a bunch of new possibilities for
+how to create art for me.
+I hope this post has been some kind
+of inspiration for you,
+and that you can use it to find a
+new vision for yourself too.
